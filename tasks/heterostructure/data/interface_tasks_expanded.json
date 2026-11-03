@@ -1,0 +1,2737 @@
+{
+  "_metadata": {
+    "description": "Expanded benchmark tasks for heterostructure interface generation",
+    "version": "3.0",
+    "task_count": 100,
+    "categories": [
+      "2D_heterostructure",
+      "2D_substrate",
+      "metal_metal",
+      "metal_oxide",
+      "metal_semiconductor",
+      "nitride_heterostructure",
+      "oxide_oxide",
+      "semiconductor",
+      "superlattice"
+    ],
+    "difficulty_levels": [
+      "easy",
+      "medium",
+      "hard"
+    ],
+    "last_updated": "2026-01-12"
+  },
+  "tasks": [
+    {
+      "task_id": "interface-001",
+      "category": "metal_oxide",
+      "difficulty": "easy",
+      "description": "Build a Pt(111)/TiO2_rutile(110) interface for photocatalysis",
+      "input": {
+        "film_material": "Pt",
+        "film_facet": "(111)",
+        "substrate_material": "TiO2_rutile",
+        "substrate_facet": "(110)",
+        "application": "photocatalysis",
+        "constraints": {
+          "max_strain": 0.05,
+          "min_vacuum": 15.0,
+          "min_slab_layers": 4
+        }
+      },
+      "expected_properties": {
+        "interface_type": "metal_oxide",
+        "bonding_type": "Pt-O",
+        "interface_distance_range": [
+          2.0,
+          3.0
+        ]
+      },
+      "requires_rag": false
+    },
+    {
+      "task_id": "interface-002",
+      "category": "metal_oxide",
+      "difficulty": "easy",
+      "description": "Build a Au(111)/MgO(001) interface for catalysis",
+      "input": {
+        "film_material": "Au",
+        "film_facet": "(111)",
+        "substrate_material": "MgO",
+        "substrate_facet": "(001)",
+        "application": "catalysis",
+        "constraints": {
+          "max_strain": 0.05,
+          "min_vacuum": 15.0,
+          "min_slab_layers": 4
+        }
+      },
+      "expected_properties": {
+        "interface_type": "metal_oxide",
+        "bonding_type": "Au-O",
+        "interface_distance_range": [
+          2.0,
+          3.0
+        ]
+      },
+      "requires_rag": false
+    },
+    {
+      "task_id": "interface-003",
+      "category": "metal_oxide",
+      "difficulty": "easy",
+      "description": "Build a Pd(111)/MgO(001) interface for hydrogen_storage",
+      "input": {
+        "film_material": "Pd",
+        "film_facet": "(111)",
+        "substrate_material": "MgO",
+        "substrate_facet": "(001)",
+        "application": "hydrogen_storage",
+        "constraints": {
+          "max_strain": 0.05,
+          "min_vacuum": 15.0,
+          "min_slab_layers": 4
+        }
+      },
+      "expected_properties": {
+        "interface_type": "metal_oxide",
+        "bonding_type": "Pd-O",
+        "interface_distance_range": [
+          2.0,
+          3.0
+        ]
+      },
+      "requires_rag": false
+    },
+    {
+      "task_id": "interface-004",
+      "category": "metal_oxide",
+      "difficulty": "easy",
+      "description": "Build a Cu(111)/ZnO(0001) interface for methanol_synthesis",
+      "input": {
+        "film_material": "Cu",
+        "film_facet": "(111)",
+        "substrate_material": "ZnO",
+        "substrate_facet": "(0001)",
+        "application": "methanol_synthesis",
+        "constraints": {
+          "max_strain": 0.05,
+          "min_vacuum": 15.0,
+          "min_slab_layers": 4
+        }
+      },
+      "expected_properties": {
+        "interface_type": "metal_oxide",
+        "bonding_type": "Cu-O",
+        "interface_distance_range": [
+          2.0,
+          3.0
+        ]
+      },
+      "requires_rag": false
+    },
+    {
+      "task_id": "interface-005",
+      "category": "metal_oxide",
+      "difficulty": "easy",
+      "description": "Build a Pt(111)/CeO2(111) interface for catalysis",
+      "input": {
+        "film_material": "Pt",
+        "film_facet": "(111)",
+        "substrate_material": "CeO2",
+        "substrate_facet": "(111)",
+        "application": "catalysis",
+        "constraints": {
+          "max_strain": 0.05,
+          "min_vacuum": 15.0,
+          "min_slab_layers": 4
+        }
+      },
+      "expected_properties": {
+        "interface_type": "metal_oxide",
+        "bonding_type": "Pt-O",
+        "interface_distance_range": [
+          2.0,
+          3.0
+        ]
+      },
+      "requires_rag": false
+    },
+    {
+      "task_id": "interface-006",
+      "category": "metal_oxide",
+      "difficulty": "easy",
+      "description": "Build a Au(111)/TiO2_rutile(110) interface for photocatalysis",
+      "input": {
+        "film_material": "Au",
+        "film_facet": "(111)",
+        "substrate_material": "TiO2_rutile",
+        "substrate_facet": "(110)",
+        "application": "photocatalysis",
+        "constraints": {
+          "max_strain": 0.05,
+          "min_vacuum": 15.0,
+          "min_slab_layers": 4
+        }
+      },
+      "expected_properties": {
+        "interface_type": "metal_oxide",
+        "bonding_type": "Au-O",
+        "interface_distance_range": [
+          2.0,
+          3.0
+        ]
+      },
+      "requires_rag": false
+    },
+    {
+      "task_id": "interface-007",
+      "category": "metal_oxide",
+      "difficulty": "easy",
+      "description": "Build a Ag(111)/MgO(001) interface for plasmonics",
+      "input": {
+        "film_material": "Ag",
+        "film_facet": "(111)",
+        "substrate_material": "MgO",
+        "substrate_facet": "(001)",
+        "application": "plasmonics",
+        "constraints": {
+          "max_strain": 0.05,
+          "min_vacuum": 15.0,
+          "min_slab_layers": 4
+        }
+      },
+      "expected_properties": {
+        "interface_type": "metal_oxide",
+        "bonding_type": "Ag-O",
+        "interface_distance_range": [
+          2.0,
+          3.0
+        ]
+      },
+      "requires_rag": false
+    },
+    {
+      "task_id": "interface-008",
+      "category": "metal_oxide",
+      "difficulty": "easy",
+      "description": "Build a Ni(111)/MgO(001) interface for catalysis",
+      "input": {
+        "film_material": "Ni",
+        "film_facet": "(111)",
+        "substrate_material": "MgO",
+        "substrate_facet": "(001)",
+        "application": "catalysis",
+        "constraints": {
+          "max_strain": 0.05,
+          "min_vacuum": 15.0,
+          "min_slab_layers": 4
+        }
+      },
+      "expected_properties": {
+        "interface_type": "metal_oxide",
+        "bonding_type": "Ni-O",
+        "interface_distance_range": [
+          2.0,
+          3.0
+        ]
+      },
+      "requires_rag": false
+    },
+    {
+      "task_id": "interface-009",
+      "category": "metal_oxide",
+      "difficulty": "easy",
+      "description": "Build a Cu(111)/Al2O3(0001) interface for electronics",
+      "input": {
+        "film_material": "Cu",
+        "film_facet": "(111)",
+        "substrate_material": "Al2O3",
+        "substrate_facet": "(0001)",
+        "application": "electronics",
+        "constraints": {
+          "max_strain": 0.05,
+          "min_vacuum": 15.0,
+          "min_slab_layers": 4
+        }
+      },
+      "expected_properties": {
+        "interface_type": "metal_oxide",
+        "bonding_type": "Cu-O",
+        "interface_distance_range": [
+          2.0,
+          3.0
+        ]
+      },
+      "requires_rag": false
+    },
+    {
+      "task_id": "interface-010",
+      "category": "metal_oxide",
+      "difficulty": "easy",
+      "description": "Build a Pt(100)/MgO(001) interface for catalysis",
+      "input": {
+        "film_material": "Pt",
+        "film_facet": "(100)",
+        "substrate_material": "MgO",
+        "substrate_facet": "(001)",
+        "application": "catalysis",
+        "constraints": {
+          "max_strain": 0.05,
+          "min_vacuum": 15.0,
+          "min_slab_layers": 4
+        }
+      },
+      "expected_properties": {
+        "interface_type": "metal_oxide",
+        "bonding_type": "Pt-O",
+        "interface_distance_range": [
+          2.0,
+          3.0
+        ]
+      },
+      "requires_rag": false
+    },
+    {
+      "task_id": "interface-011",
+      "category": "semiconductor",
+      "difficulty": "easy",
+      "description": "Build a GaAs(001)/AlAs(001) interface for quantum_well",
+      "input": {
+        "film_material": "GaAs",
+        "film_facet": "(001)",
+        "substrate_material": "AlAs",
+        "substrate_facet": "(001)",
+        "application": "quantum_well",
+        "constraints": {
+          "max_strain": 0.02,
+          "min_vacuum": 15.0,
+          "min_slab_layers": 6
+        }
+      },
+      "expected_properties": {
+        "interface_type": "semiconductor_semiconductor",
+        "bonding_type": "covalent",
+        "interface_distance_range": [
+          1.8,
+          2.5
+        ],
+        "band_alignment": "type_I"
+      },
+      "requires_rag": false
+    },
+    {
+      "task_id": "interface-012",
+      "category": "semiconductor",
+      "difficulty": "easy",
+      "description": "Build a InP(001)/GaAs(001) interface for HEMT",
+      "input": {
+        "film_material": "InP",
+        "film_facet": "(001)",
+        "substrate_material": "GaAs",
+        "substrate_facet": "(001)",
+        "application": "HEMT",
+        "constraints": {
+          "max_strain": 0.02,
+          "min_vacuum": 15.0,
+          "min_slab_layers": 6
+        }
+      },
+      "expected_properties": {
+        "interface_type": "semiconductor_semiconductor",
+        "bonding_type": "covalent",
+        "interface_distance_range": [
+          1.8,
+          2.5
+        ]
+      },
+      "requires_rag": false
+    },
+    {
+      "task_id": "interface-013",
+      "category": "semiconductor",
+      "difficulty": "easy",
+      "description": "Build a Si(001)/Ge(001) interface for electronics",
+      "input": {
+        "film_material": "Si",
+        "film_facet": "(001)",
+        "substrate_material": "Ge",
+        "substrate_facet": "(001)",
+        "application": "electronics",
+        "constraints": {
+          "max_strain": 0.02,
+          "min_vacuum": 15.0,
+          "min_slab_layers": 6
+        }
+      },
+      "expected_properties": {
+        "interface_type": "semiconductor_semiconductor",
+        "bonding_type": "covalent",
+        "interface_distance_range": [
+          1.8,
+          2.5
+        ]
+      },
+      "requires_rag": false
+    },
+    {
+      "task_id": "interface-014",
+      "category": "semiconductor",
+      "difficulty": "easy",
+      "description": "Build a GaAs(001)/GaP(001) interface for LED",
+      "input": {
+        "film_material": "GaAs",
+        "film_facet": "(001)",
+        "substrate_material": "GaP",
+        "substrate_facet": "(001)",
+        "application": "LED",
+        "constraints": {
+          "max_strain": 0.02,
+          "min_vacuum": 15.0,
+          "min_slab_layers": 6
+        }
+      },
+      "expected_properties": {
+        "interface_type": "semiconductor_semiconductor",
+        "bonding_type": "covalent",
+        "interface_distance_range": [
+          1.8,
+          2.5
+        ]
+      },
+      "requires_rag": false
+    },
+    {
+      "task_id": "interface-015",
+      "category": "semiconductor",
+      "difficulty": "easy",
+      "description": "Build a AlAs(001)/GaAs(001) interface for quantum_well",
+      "input": {
+        "film_material": "AlAs",
+        "film_facet": "(001)",
+        "substrate_material": "GaAs",
+        "substrate_facet": "(001)",
+        "application": "quantum_well",
+        "constraints": {
+          "max_strain": 0.02,
+          "min_vacuum": 15.0,
+          "min_slab_layers": 6
+        }
+      },
+      "expected_properties": {
+        "interface_type": "semiconductor_semiconductor",
+        "bonding_type": "covalent",
+        "interface_distance_range": [
+          1.8,
+          2.5
+        ],
+        "band_alignment": "type_I"
+      },
+      "requires_rag": false
+    },
+    {
+      "task_id": "interface-016",
+      "category": "semiconductor",
+      "difficulty": "easy",
+      "description": "Build a ZnSe(001)/GaAs(001) interface for optoelectronics",
+      "input": {
+        "film_material": "ZnSe",
+        "film_facet": "(001)",
+        "substrate_material": "GaAs",
+        "substrate_facet": "(001)",
+        "application": "optoelectronics",
+        "constraints": {
+          "max_strain": 0.02,
+          "min_vacuum": 15.0,
+          "min_slab_layers": 6
+        }
+      },
+      "expected_properties": {
+        "interface_type": "semiconductor_semiconductor",
+        "bonding_type": "covalent",
+        "interface_distance_range": [
+          1.8,
+          2.5
+        ],
+        "band_alignment": "type_I"
+      },
+      "requires_rag": false
+    },
+    {
+      "task_id": "interface-017",
+      "category": "semiconductor",
+      "difficulty": "easy",
+      "description": "Build a ZnS(001)/GaAs(001) interface for LED",
+      "input": {
+        "film_material": "ZnS",
+        "film_facet": "(001)",
+        "substrate_material": "GaAs",
+        "substrate_facet": "(001)",
+        "application": "LED",
+        "constraints": {
+          "max_strain": 0.02,
+          "min_vacuum": 15.0,
+          "min_slab_layers": 6
+        }
+      },
+      "expected_properties": {
+        "interface_type": "semiconductor_semiconductor",
+        "bonding_type": "covalent",
+        "interface_distance_range": [
+          1.8,
+          2.5
+        ]
+      },
+      "requires_rag": false
+    },
+    {
+      "task_id": "interface-018",
+      "category": "semiconductor",
+      "difficulty": "easy",
+      "description": "Build a Si(111)/Ge(111) interface for electronics",
+      "input": {
+        "film_material": "Si",
+        "film_facet": "(111)",
+        "substrate_material": "Ge",
+        "substrate_facet": "(111)",
+        "application": "electronics",
+        "constraints": {
+          "max_strain": 0.02,
+          "min_vacuum": 15.0,
+          "min_slab_layers": 6
+        }
+      },
+      "expected_properties": {
+        "interface_type": "semiconductor_semiconductor",
+        "bonding_type": "covalent",
+        "interface_distance_range": [
+          1.8,
+          2.5
+        ]
+      },
+      "requires_rag": false
+    },
+    {
+      "task_id": "interface-019",
+      "category": "2D_heterostructure",
+      "difficulty": "easy",
+      "description": "Build a graphene/hBN van der Waals heterostructure for electronics",
+      "input": {
+        "film_material": "graphene",
+        "film_facet": "monolayer",
+        "substrate_material": "hBN",
+        "substrate_facet": "monolayer",
+        "application": "electronics",
+        "constraints": {
+          "max_strain": 0.02,
+          "min_vacuum": 20.0
+        }
+      },
+      "expected_properties": {
+        "interface_type": "2D_2D",
+        "bonding_type": "vdW",
+        "interface_distance_range": [
+          3.0,
+          3.5
+        ]
+      },
+      "requires_rag": false
+    },
+    {
+      "task_id": "interface-020",
+      "category": "2D_heterostructure",
+      "difficulty": "easy",
+      "description": "Build a MoS2/WS2 van der Waals heterostructure for optoelectronics",
+      "input": {
+        "film_material": "MoS2",
+        "film_facet": "monolayer",
+        "substrate_material": "WS2",
+        "substrate_facet": "monolayer",
+        "application": "optoelectronics",
+        "constraints": {
+          "max_strain": 0.02,
+          "min_vacuum": 20.0
+        }
+      },
+      "expected_properties": {
+        "interface_type": "2D_2D",
+        "bonding_type": "vdW",
+        "interface_distance_range": [
+          3.0,
+          3.5
+        ],
+        "band_alignment": "type_II"
+      },
+      "requires_rag": false
+    },
+    {
+      "task_id": "interface-021",
+      "category": "2D_heterostructure",
+      "difficulty": "easy",
+      "description": "Build a MoS2/hBN van der Waals heterostructure for electronics",
+      "input": {
+        "film_material": "MoS2",
+        "film_facet": "monolayer",
+        "substrate_material": "hBN",
+        "substrate_facet": "monolayer",
+        "application": "electronics",
+        "constraints": {
+          "max_strain": 0.02,
+          "min_vacuum": 20.0
+        }
+      },
+      "expected_properties": {
+        "interface_type": "2D_2D",
+        "bonding_type": "vdW",
+        "interface_distance_range": [
+          3.0,
+          3.5
+        ]
+      },
+      "requires_rag": false
+    },
+    {
+      "task_id": "interface-022",
+      "category": "2D_heterostructure",
+      "difficulty": "easy",
+      "description": "Build a WS2/hBN van der Waals heterostructure for optoelectronics",
+      "input": {
+        "film_material": "WS2",
+        "film_facet": "monolayer",
+        "substrate_material": "hBN",
+        "substrate_facet": "monolayer",
+        "application": "optoelectronics",
+        "constraints": {
+          "max_strain": 0.02,
+          "min_vacuum": 20.0
+        }
+      },
+      "expected_properties": {
+        "interface_type": "2D_2D",
+        "bonding_type": "vdW",
+        "interface_distance_range": [
+          3.0,
+          3.5
+        ]
+      },
+      "requires_rag": false
+    },
+    {
+      "task_id": "interface-023",
+      "category": "2D_heterostructure",
+      "difficulty": "easy",
+      "description": "Build a graphene/MoS2 van der Waals heterostructure for electronics",
+      "input": {
+        "film_material": "graphene",
+        "film_facet": "monolayer",
+        "substrate_material": "MoS2",
+        "substrate_facet": "monolayer",
+        "application": "electronics",
+        "constraints": {
+          "max_strain": 0.02,
+          "min_vacuum": 20.0
+        }
+      },
+      "expected_properties": {
+        "interface_type": "2D_2D",
+        "bonding_type": "vdW",
+        "interface_distance_range": [
+          3.0,
+          3.5
+        ]
+      },
+      "requires_rag": false
+    },
+    {
+      "task_id": "interface-024",
+      "category": "2D_heterostructure",
+      "difficulty": "easy",
+      "description": "Build a MoSe2/WSe2 van der Waals heterostructure for optoelectronics",
+      "input": {
+        "film_material": "MoSe2",
+        "film_facet": "monolayer",
+        "substrate_material": "WSe2",
+        "substrate_facet": "monolayer",
+        "application": "optoelectronics",
+        "constraints": {
+          "max_strain": 0.02,
+          "min_vacuum": 20.0
+        }
+      },
+      "expected_properties": {
+        "interface_type": "2D_2D",
+        "bonding_type": "vdW",
+        "interface_distance_range": [
+          3.0,
+          3.5
+        ],
+        "band_alignment": "type_II"
+      },
+      "requires_rag": false
+    },
+    {
+      "task_id": "interface-025",
+      "category": "2D_heterostructure",
+      "difficulty": "easy",
+      "description": "Build a WS2/MoS2 van der Waals heterostructure for optoelectronics",
+      "input": {
+        "film_material": "WS2",
+        "film_facet": "monolayer",
+        "substrate_material": "MoS2",
+        "substrate_facet": "monolayer",
+        "application": "optoelectronics",
+        "constraints": {
+          "max_strain": 0.02,
+          "min_vacuum": 20.0
+        }
+      },
+      "expected_properties": {
+        "interface_type": "2D_2D",
+        "bonding_type": "vdW",
+        "interface_distance_range": [
+          3.0,
+          3.5
+        ],
+        "band_alignment": "type_II"
+      },
+      "requires_rag": false
+    },
+    {
+      "task_id": "interface-026",
+      "category": "metal_oxide",
+      "difficulty": "medium",
+      "description": "Build a Ni(111)/Al2O3(0001) interface for steam_reforming",
+      "input": {
+        "film_material": "Ni",
+        "film_facet": "(111)",
+        "substrate_material": "Al2O3",
+        "substrate_facet": "(0001)",
+        "application": "steam_reforming",
+        "constraints": {
+          "max_strain": 0.08,
+          "min_vacuum": 15.0,
+          "min_slab_layers": 4
+        }
+      },
+      "expected_properties": {
+        "interface_type": "metal_oxide",
+        "bonding_type": "Ni-O",
+        "interface_distance_range": [
+          2.0,
+          3.0
+        ]
+      },
+      "requires_rag": true
+    },
+    {
+      "task_id": "interface-027",
+      "category": "metal_oxide",
+      "difficulty": "medium",
+      "description": "Build a Pt(111)/SrTiO3(001) interface for SOFC",
+      "input": {
+        "film_material": "Pt",
+        "film_facet": "(111)",
+        "substrate_material": "SrTiO3",
+        "substrate_facet": "(001)",
+        "application": "SOFC",
+        "constraints": {
+          "max_strain": 0.08,
+          "min_vacuum": 15.0,
+          "min_slab_layers": 4
+        }
+      },
+      "expected_properties": {
+        "interface_type": "metal_oxide",
+        "bonding_type": "Pt-O",
+        "interface_distance_range": [
+          2.0,
+          3.0
+        ]
+      },
+      "requires_rag": true
+    },
+    {
+      "task_id": "interface-028",
+      "category": "metal_oxide",
+      "difficulty": "medium",
+      "description": "Build a Cu(111)/CeO2(111) interface for WGS_reaction",
+      "input": {
+        "film_material": "Cu",
+        "film_facet": "(111)",
+        "substrate_material": "CeO2",
+        "substrate_facet": "(111)",
+        "application": "WGS_reaction",
+        "constraints": {
+          "max_strain": 0.08,
+          "min_vacuum": 15.0,
+          "min_slab_layers": 4
+        }
+      },
+      "expected_properties": {
+        "interface_type": "metal_oxide",
+        "bonding_type": "Cu-O",
+        "interface_distance_range": [
+          2.0,
+          3.0
+        ]
+      },
+      "requires_rag": true
+    },
+    {
+      "task_id": "interface-029",
+      "category": "metal_oxide",
+      "difficulty": "medium",
+      "description": "Build a Rh(111)/TiO2_rutile(110) interface for photocatalysis",
+      "input": {
+        "film_material": "Rh",
+        "film_facet": "(111)",
+        "substrate_material": "TiO2_rutile",
+        "substrate_facet": "(110)",
+        "application": "photocatalysis",
+        "constraints": {
+          "max_strain": 0.08,
+          "min_vacuum": 15.0,
+          "min_slab_layers": 4
+        }
+      },
+      "expected_properties": {
+        "interface_type": "metal_oxide",
+        "bonding_type": "Rh-O",
+        "interface_distance_range": [
+          2.0,
+          3.0
+        ]
+      },
+      "requires_rag": true
+    },
+    {
+      "task_id": "interface-030",
+      "category": "metal_oxide",
+      "difficulty": "medium",
+      "description": "Build a Co(0001)/Al2O3(0001) interface for Fischer_Tropsch",
+      "input": {
+        "film_material": "Co",
+        "film_facet": "(0001)",
+        "substrate_material": "Al2O3",
+        "substrate_facet": "(0001)",
+        "application": "Fischer_Tropsch",
+        "constraints": {
+          "max_strain": 0.08,
+          "min_vacuum": 15.0,
+          "min_slab_layers": 4
+        }
+      },
+      "expected_properties": {
+        "interface_type": "metal_oxide",
+        "bonding_type": "Co-O",
+        "interface_distance_range": [
+          2.0,
+          3.0
+        ]
+      },
+      "requires_rag": true
+    },
+    {
+      "task_id": "interface-031",
+      "category": "metal_oxide",
+      "difficulty": "medium",
+      "description": "Build a Ru(0001)/TiO2_rutile(110) interface for ammonia_synthesis",
+      "input": {
+        "film_material": "Ru",
+        "film_facet": "(0001)",
+        "substrate_material": "TiO2_rutile",
+        "substrate_facet": "(110)",
+        "application": "ammonia_synthesis",
+        "constraints": {
+          "max_strain": 0.08,
+          "min_vacuum": 15.0,
+          "min_slab_layers": 4
+        }
+      },
+      "expected_properties": {
+        "interface_type": "metal_oxide",
+        "bonding_type": "Ru-O",
+        "interface_distance_range": [
+          2.0,
+          3.0
+        ]
+      },
+      "requires_rag": true
+    },
+    {
+      "task_id": "interface-032",
+      "category": "oxide_oxide",
+      "difficulty": "medium",
+      "description": "Build a LaAlO3(001)/SrTiO3(001) interface for 2DEG",
+      "input": {
+        "film_material": "LaAlO3",
+        "film_facet": "(001)",
+        "substrate_material": "SrTiO3",
+        "substrate_facet": "(001)",
+        "application": "2DEG",
+        "constraints": {
+          "max_strain": 0.04,
+          "min_vacuum": 15.0,
+          "min_slab_layers": 4
+        }
+      },
+      "expected_properties": {
+        "interface_type": "oxide_oxide",
+        "bonding_type": "ionic",
+        "interface_distance_range": [
+          1.8,
+          2.3
+        ]
+      },
+      "requires_rag": true
+    },
+    {
+      "task_id": "interface-033",
+      "category": "oxide_oxide",
+      "difficulty": "medium",
+      "description": "Build a BaTiO3(001)/SrTiO3(001) interface for ferroelectric",
+      "input": {
+        "film_material": "BaTiO3",
+        "film_facet": "(001)",
+        "substrate_material": "SrTiO3",
+        "substrate_facet": "(001)",
+        "application": "ferroelectric",
+        "constraints": {
+          "max_strain": 0.04,
+          "min_vacuum": 15.0,
+          "min_slab_layers": 4
+        }
+      },
+      "expected_properties": {
+        "interface_type": "oxide_oxide",
+        "bonding_type": "ionic",
+        "interface_distance_range": [
+          1.8,
+          2.3
+        ]
+      },
+      "requires_rag": true
+    },
+    {
+      "task_id": "interface-034",
+      "category": "oxide_oxide",
+      "difficulty": "medium",
+      "description": "Build a NiO(001)/MgO(001) interface for antiferromagnetic",
+      "input": {
+        "film_material": "NiO",
+        "film_facet": "(001)",
+        "substrate_material": "MgO",
+        "substrate_facet": "(001)",
+        "application": "antiferromagnetic",
+        "constraints": {
+          "max_strain": 0.04,
+          "min_vacuum": 15.0,
+          "min_slab_layers": 4
+        }
+      },
+      "expected_properties": {
+        "interface_type": "oxide_oxide",
+        "bonding_type": "ionic",
+        "interface_distance_range": [
+          1.8,
+          2.3
+        ]
+      },
+      "requires_rag": true
+    },
+    {
+      "task_id": "interface-035",
+      "category": "oxide_oxide",
+      "difficulty": "medium",
+      "description": "Build a Fe3O4(001)/MgO(001) interface for spintronics",
+      "input": {
+        "film_material": "Fe3O4",
+        "film_facet": "(001)",
+        "substrate_material": "MgO",
+        "substrate_facet": "(001)",
+        "application": "spintronics",
+        "constraints": {
+          "max_strain": 0.04,
+          "min_vacuum": 15.0,
+          "min_slab_layers": 4
+        }
+      },
+      "expected_properties": {
+        "interface_type": "oxide_oxide",
+        "bonding_type": "ionic",
+        "interface_distance_range": [
+          1.8,
+          2.3
+        ]
+      },
+      "requires_rag": true
+    },
+    {
+      "task_id": "interface-036",
+      "category": "oxide_oxide",
+      "difficulty": "medium",
+      "description": "Build a CeO2(111)/Al2O3(0001) interface for catalysis",
+      "input": {
+        "film_material": "CeO2",
+        "film_facet": "(111)",
+        "substrate_material": "Al2O3",
+        "substrate_facet": "(0001)",
+        "application": "catalysis",
+        "constraints": {
+          "max_strain": 0.04,
+          "min_vacuum": 15.0,
+          "min_slab_layers": 4
+        }
+      },
+      "expected_properties": {
+        "interface_type": "oxide_oxide",
+        "bonding_type": "ionic",
+        "interface_distance_range": [
+          1.8,
+          2.3
+        ]
+      },
+      "requires_rag": true
+    },
+    {
+      "task_id": "interface-037",
+      "category": "metal_semiconductor",
+      "difficulty": "medium",
+      "description": "Build a Au(111)/Si(111) interface for Schottky_contact",
+      "input": {
+        "film_material": "Au",
+        "film_facet": "(111)",
+        "substrate_material": "Si",
+        "substrate_facet": "(111)",
+        "application": "Schottky_contact",
+        "constraints": {
+          "max_strain": 0.08,
+          "min_vacuum": 15.0,
+          "min_slab_layers": 4
+        }
+      },
+      "expected_properties": {
+        "interface_type": "metal_semiconductor",
+        "bonding_type": "metallic-covalent",
+        "interface_distance_range": [
+          2.3,
+          3.0
+        ]
+      },
+      "requires_rag": true
+    },
+    {
+      "task_id": "interface-038",
+      "category": "metal_semiconductor",
+      "difficulty": "medium",
+      "description": "Build a Al(111)/GaAs(001) interface for ohmic_contact",
+      "input": {
+        "film_material": "Al",
+        "film_facet": "(111)",
+        "substrate_material": "GaAs",
+        "substrate_facet": "(001)",
+        "application": "ohmic_contact",
+        "constraints": {
+          "max_strain": 0.08,
+          "min_vacuum": 15.0,
+          "min_slab_layers": 4
+        }
+      },
+      "expected_properties": {
+        "interface_type": "metal_semiconductor",
+        "bonding_type": "metallic-covalent",
+        "interface_distance_range": [
+          2.3,
+          3.0
+        ]
+      },
+      "requires_rag": true
+    },
+    {
+      "task_id": "interface-039",
+      "category": "metal_semiconductor",
+      "difficulty": "medium",
+      "description": "Build a Ti(0001)/Si(001) interface for silicide",
+      "input": {
+        "film_material": "Ti",
+        "film_facet": "(0001)",
+        "substrate_material": "Si",
+        "substrate_facet": "(001)",
+        "application": "silicide",
+        "constraints": {
+          "max_strain": 0.08,
+          "min_vacuum": 15.0,
+          "min_slab_layers": 4
+        }
+      },
+      "expected_properties": {
+        "interface_type": "metal_semiconductor",
+        "bonding_type": "metallic-covalent",
+        "interface_distance_range": [
+          2.3,
+          3.0
+        ]
+      },
+      "requires_rag": true
+    },
+    {
+      "task_id": "interface-040",
+      "category": "metal_semiconductor",
+      "difficulty": "medium",
+      "description": "Build a Pt(111)/Si(001) interface for Schottky_contact",
+      "input": {
+        "film_material": "Pt",
+        "film_facet": "(111)",
+        "substrate_material": "Si",
+        "substrate_facet": "(001)",
+        "application": "Schottky_contact",
+        "constraints": {
+          "max_strain": 0.08,
+          "min_vacuum": 15.0,
+          "min_slab_layers": 4
+        }
+      },
+      "expected_properties": {
+        "interface_type": "metal_semiconductor",
+        "bonding_type": "metallic-covalent",
+        "interface_distance_range": [
+          2.3,
+          3.0
+        ]
+      },
+      "requires_rag": true
+    },
+    {
+      "task_id": "interface-041",
+      "category": "metal_semiconductor",
+      "difficulty": "medium",
+      "description": "Build a Ni(111)/GaAs(001) interface for ohmic_contact",
+      "input": {
+        "film_material": "Ni",
+        "film_facet": "(111)",
+        "substrate_material": "GaAs",
+        "substrate_facet": "(001)",
+        "application": "ohmic_contact",
+        "constraints": {
+          "max_strain": 0.08,
+          "min_vacuum": 15.0,
+          "min_slab_layers": 4
+        }
+      },
+      "expected_properties": {
+        "interface_type": "metal_semiconductor",
+        "bonding_type": "metallic-covalent",
+        "interface_distance_range": [
+          2.3,
+          3.0
+        ]
+      },
+      "requires_rag": true
+    },
+    {
+      "task_id": "interface-042",
+      "category": "2D_substrate",
+      "difficulty": "medium",
+      "description": "Build a graphene/Cu(111) interface for CVD_growth",
+      "input": {
+        "film_material": "graphene",
+        "film_facet": "monolayer",
+        "substrate_material": "Cu",
+        "substrate_facet": "(111)",
+        "application": "CVD_growth",
+        "constraints": {
+          "max_strain": 0.05,
+          "min_vacuum": 20.0,
+          "min_slab_layers": 4
+        }
+      },
+      "expected_properties": {
+        "interface_type": "2D_3D",
+        "bonding_type": "weak_chemisorption",
+        "interface_distance_range": [
+          2.8,
+          3.5
+        ]
+      },
+      "requires_rag": true
+    },
+    {
+      "task_id": "interface-043",
+      "category": "2D_substrate",
+      "difficulty": "medium",
+      "description": "Build a graphene/Ni(111) interface for CVD_growth",
+      "input": {
+        "film_material": "graphene",
+        "film_facet": "monolayer",
+        "substrate_material": "Ni",
+        "substrate_facet": "(111)",
+        "application": "CVD_growth",
+        "constraints": {
+          "max_strain": 0.05,
+          "min_vacuum": 20.0,
+          "min_slab_layers": 4
+        }
+      },
+      "expected_properties": {
+        "interface_type": "2D_3D",
+        "bonding_type": "weak_chemisorption",
+        "interface_distance_range": [
+          2.8,
+          3.5
+        ]
+      },
+      "requires_rag": true
+    },
+    {
+      "task_id": "interface-044",
+      "category": "2D_substrate",
+      "difficulty": "medium",
+      "description": "Build a MoS2/Al2O3(0001) interface for electronics",
+      "input": {
+        "film_material": "MoS2",
+        "film_facet": "monolayer",
+        "substrate_material": "Al2O3",
+        "substrate_facet": "(0001)",
+        "application": "electronics",
+        "constraints": {
+          "max_strain": 0.05,
+          "min_vacuum": 20.0,
+          "min_slab_layers": 4
+        }
+      },
+      "expected_properties": {
+        "interface_type": "2D_3D",
+        "bonding_type": "vdW",
+        "interface_distance_range": [
+          2.8,
+          3.5
+        ]
+      },
+      "requires_rag": true
+    },
+    {
+      "task_id": "interface-045",
+      "category": "2D_substrate",
+      "difficulty": "medium",
+      "description": "Build a hBN/Cu(111) interface for CVD_growth",
+      "input": {
+        "film_material": "hBN",
+        "film_facet": "monolayer",
+        "substrate_material": "Cu",
+        "substrate_facet": "(111)",
+        "application": "CVD_growth",
+        "constraints": {
+          "max_strain": 0.05,
+          "min_vacuum": 20.0,
+          "min_slab_layers": 4
+        }
+      },
+      "expected_properties": {
+        "interface_type": "2D_3D",
+        "bonding_type": "weak_chemisorption",
+        "interface_distance_range": [
+          2.8,
+          3.5
+        ]
+      },
+      "requires_rag": true
+    },
+    {
+      "task_id": "interface-046",
+      "category": "2D_substrate",
+      "difficulty": "medium",
+      "description": "Build a WS2/SiO2(001) interface for electronics",
+      "input": {
+        "film_material": "WS2",
+        "film_facet": "monolayer",
+        "substrate_material": "SiO2",
+        "substrate_facet": "(001)",
+        "application": "electronics",
+        "constraints": {
+          "max_strain": 0.05,
+          "min_vacuum": 20.0,
+          "min_slab_layers": 4
+        }
+      },
+      "expected_properties": {
+        "interface_type": "2D_3D",
+        "bonding_type": "vdW",
+        "interface_distance_range": [
+          2.8,
+          3.5
+        ]
+      },
+      "requires_rag": true
+    },
+    {
+      "task_id": "interface-047",
+      "category": "semiconductor",
+      "difficulty": "medium",
+      "description": "Build a InAs(001)/GaSb(001) interface for infrared_detector",
+      "input": {
+        "film_material": "InAs",
+        "film_facet": "(001)",
+        "substrate_material": "GaSb",
+        "substrate_facet": "(001)",
+        "application": "infrared_detector",
+        "constraints": {
+          "max_strain": 0.05,
+          "min_vacuum": 15.0,
+          "min_slab_layers": 6
+        }
+      },
+      "expected_properties": {
+        "interface_type": "semiconductor_semiconductor",
+        "bonding_type": "covalent",
+        "interface_distance_range": [
+          1.8,
+          2.5
+        ],
+        "band_alignment": "type_II"
+      },
+      "requires_rag": true
+    },
+    {
+      "task_id": "interface-048",
+      "category": "semiconductor",
+      "difficulty": "medium",
+      "description": "Build a GaN(0001)/AlN(0001) interface for HEMT",
+      "input": {
+        "film_material": "GaN",
+        "film_facet": "(0001)",
+        "substrate_material": "AlN",
+        "substrate_facet": "(0001)",
+        "application": "HEMT",
+        "constraints": {
+          "max_strain": 0.05,
+          "min_vacuum": 15.0,
+          "min_slab_layers": 6
+        }
+      },
+      "expected_properties": {
+        "interface_type": "semiconductor_semiconductor",
+        "bonding_type": "covalent",
+        "interface_distance_range": [
+          1.8,
+          2.5
+        ]
+      },
+      "requires_rag": true
+    },
+    {
+      "task_id": "interface-049",
+      "category": "semiconductor",
+      "difficulty": "medium",
+      "description": "Build a InN(0001)/GaN(0001) interface for LED",
+      "input": {
+        "film_material": "InN",
+        "film_facet": "(0001)",
+        "substrate_material": "GaN",
+        "substrate_facet": "(0001)",
+        "application": "LED",
+        "constraints": {
+          "max_strain": 0.05,
+          "min_vacuum": 15.0,
+          "min_slab_layers": 6
+        }
+      },
+      "expected_properties": {
+        "interface_type": "semiconductor_semiconductor",
+        "bonding_type": "covalent",
+        "interface_distance_range": [
+          1.8,
+          2.5
+        ]
+      },
+      "requires_rag": true
+    },
+    {
+      "task_id": "interface-050",
+      "category": "semiconductor",
+      "difficulty": "medium",
+      "description": "Build a InP(001)/InAs(001) interface for laser_diode",
+      "input": {
+        "film_material": "InP",
+        "film_facet": "(001)",
+        "substrate_material": "InAs",
+        "substrate_facet": "(001)",
+        "application": "laser_diode",
+        "constraints": {
+          "max_strain": 0.05,
+          "min_vacuum": 15.0,
+          "min_slab_layers": 6
+        }
+      },
+      "expected_properties": {
+        "interface_type": "semiconductor_semiconductor",
+        "bonding_type": "covalent",
+        "interface_distance_range": [
+          1.8,
+          2.5
+        ]
+      },
+      "requires_rag": true
+    },
+    {
+      "task_id": "interface-051",
+      "category": "semiconductor",
+      "difficulty": "medium",
+      "description": "Build a GaP(001)/Si(001) interface for solar_cell",
+      "input": {
+        "film_material": "GaP",
+        "film_facet": "(001)",
+        "substrate_material": "Si",
+        "substrate_facet": "(001)",
+        "application": "solar_cell",
+        "constraints": {
+          "max_strain": 0.05,
+          "min_vacuum": 15.0,
+          "min_slab_layers": 6
+        }
+      },
+      "expected_properties": {
+        "interface_type": "semiconductor_semiconductor",
+        "bonding_type": "covalent",
+        "interface_distance_range": [
+          1.8,
+          2.5
+        ]
+      },
+      "requires_rag": true
+    },
+    {
+      "task_id": "interface-052",
+      "category": "metal_metal",
+      "difficulty": "medium",
+      "description": "Build a Cu(111)/Ni(111) metal interface for multilayer",
+      "input": {
+        "film_material": "Cu",
+        "film_facet": "(111)",
+        "substrate_material": "Ni",
+        "substrate_facet": "(111)",
+        "application": "multilayer",
+        "constraints": {
+          "max_strain": 0.08,
+          "min_vacuum": 15.0,
+          "min_slab_layers": 4
+        }
+      },
+      "expected_properties": {
+        "interface_type": "metal_metal",
+        "bonding_type": "metallic",
+        "interface_distance_range": [
+          2.2,
+          2.8
+        ]
+      },
+      "requires_rag": true
+    },
+    {
+      "task_id": "interface-053",
+      "category": "metal_metal",
+      "difficulty": "medium",
+      "description": "Build a Au(111)/Ag(111) metal interface for plasmonics",
+      "input": {
+        "film_material": "Au",
+        "film_facet": "(111)",
+        "substrate_material": "Ag",
+        "substrate_facet": "(111)",
+        "application": "plasmonics",
+        "constraints": {
+          "max_strain": 0.08,
+          "min_vacuum": 15.0,
+          "min_slab_layers": 4
+        }
+      },
+      "expected_properties": {
+        "interface_type": "metal_metal",
+        "bonding_type": "metallic",
+        "interface_distance_range": [
+          2.2,
+          2.8
+        ]
+      },
+      "requires_rag": true
+    },
+    {
+      "task_id": "interface-054",
+      "category": "metal_metal",
+      "difficulty": "medium",
+      "description": "Build a Fe(110)/Cr(110) metal interface for GMR",
+      "input": {
+        "film_material": "Fe",
+        "film_facet": "(110)",
+        "substrate_material": "Cr",
+        "substrate_facet": "(110)",
+        "application": "GMR",
+        "constraints": {
+          "max_strain": 0.08,
+          "min_vacuum": 15.0,
+          "min_slab_layers": 4
+        }
+      },
+      "expected_properties": {
+        "interface_type": "metal_metal",
+        "bonding_type": "metallic",
+        "interface_distance_range": [
+          2.2,
+          2.8
+        ]
+      },
+      "requires_rag": true
+    },
+    {
+      "task_id": "interface-055",
+      "category": "metal_metal",
+      "difficulty": "medium",
+      "description": "Build a Pt(111)/Co(0001) metal interface for spintronics",
+      "input": {
+        "film_material": "Pt",
+        "film_facet": "(111)",
+        "substrate_material": "Co",
+        "substrate_facet": "(0001)",
+        "application": "spintronics",
+        "constraints": {
+          "max_strain": 0.08,
+          "min_vacuum": 15.0,
+          "min_slab_layers": 4
+        }
+      },
+      "expected_properties": {
+        "interface_type": "metal_metal",
+        "bonding_type": "metallic",
+        "interface_distance_range": [
+          2.2,
+          2.8
+        ]
+      },
+      "requires_rag": true
+    },
+    {
+      "task_id": "interface-056",
+      "category": "metal_oxide",
+      "difficulty": "hard",
+      "description": "Build a Pt(100)/SrTiO3(001) interface for SOFC_anode",
+      "input": {
+        "film_material": "Pt",
+        "film_facet": "(100)",
+        "substrate_material": "SrTiO3",
+        "substrate_facet": "(001)",
+        "application": "SOFC_anode",
+        "constraints": {
+          "max_strain": 0.08,
+          "min_vacuum": 15.0,
+          "min_slab_layers": 4
+        }
+      },
+      "expected_properties": {
+        "interface_type": "metal_oxide",
+        "bonding_type": "Pt-O",
+        "interface_distance_range": [
+          2.0,
+          3.0
+        ]
+      },
+      "requires_rag": true
+    },
+    {
+      "task_id": "interface-057",
+      "category": "metal_oxide",
+      "difficulty": "hard",
+      "description": "Build a Au(111)/Fe3O4(111) interface for spintronics",
+      "input": {
+        "film_material": "Au",
+        "film_facet": "(111)",
+        "substrate_material": "Fe3O4",
+        "substrate_facet": "(111)",
+        "application": "spintronics",
+        "constraints": {
+          "max_strain": 0.08,
+          "min_vacuum": 15.0,
+          "min_slab_layers": 4
+        }
+      },
+      "expected_properties": {
+        "interface_type": "metal_oxide",
+        "bonding_type": "Au-O",
+        "interface_distance_range": [
+          2.0,
+          3.0
+        ]
+      },
+      "requires_rag": true
+    },
+    {
+      "task_id": "interface-058",
+      "category": "metal_oxide",
+      "difficulty": "hard",
+      "description": "Build a Cu(110)/ZnO(10-10) interface for methanol_synthesis",
+      "input": {
+        "film_material": "Cu",
+        "film_facet": "(110)",
+        "substrate_material": "ZnO",
+        "substrate_facet": "(10-10)",
+        "application": "methanol_synthesis",
+        "constraints": {
+          "max_strain": 0.08,
+          "min_vacuum": 15.0,
+          "min_slab_layers": 4
+        }
+      },
+      "expected_properties": {
+        "interface_type": "metal_oxide",
+        "bonding_type": "Cu-O",
+        "interface_distance_range": [
+          2.0,
+          3.0
+        ]
+      },
+      "requires_rag": true
+    },
+    {
+      "task_id": "interface-059",
+      "category": "metal_oxide",
+      "difficulty": "hard",
+      "description": "Build a Ir(111)/SrTiO3(001) interface for OER_catalyst",
+      "input": {
+        "film_material": "Ir",
+        "film_facet": "(111)",
+        "substrate_material": "SrTiO3",
+        "substrate_facet": "(001)",
+        "application": "OER_catalyst",
+        "constraints": {
+          "max_strain": 0.08,
+          "min_vacuum": 15.0,
+          "min_slab_layers": 4
+        }
+      },
+      "expected_properties": {
+        "interface_type": "metal_oxide",
+        "bonding_type": "Ir-O",
+        "interface_distance_range": [
+          2.0,
+          3.0
+        ]
+      },
+      "requires_rag": true
+    },
+    {
+      "task_id": "interface-060",
+      "category": "metal_oxide",
+      "difficulty": "hard",
+      "description": "Build a Ru(0001)/TiO2_anatase(001) interface for photocatalysis",
+      "input": {
+        "film_material": "Ru",
+        "film_facet": "(0001)",
+        "substrate_material": "TiO2_anatase",
+        "substrate_facet": "(001)",
+        "application": "photocatalysis",
+        "constraints": {
+          "max_strain": 0.08,
+          "min_vacuum": 15.0,
+          "min_slab_layers": 4
+        }
+      },
+      "expected_properties": {
+        "interface_type": "metal_oxide",
+        "bonding_type": "Ru-O",
+        "interface_distance_range": [
+          2.0,
+          3.0
+        ]
+      },
+      "requires_rag": true
+    },
+    {
+      "task_id": "interface-061",
+      "category": "oxide_oxide",
+      "difficulty": "hard",
+      "description": "Build a LaMnO3(001)/SrTiO3(001) interface for magnetism",
+      "input": {
+        "film_material": "LaMnO3",
+        "film_facet": "(001)",
+        "substrate_material": "SrTiO3",
+        "substrate_facet": "(001)",
+        "application": "magnetism",
+        "constraints": {
+          "max_strain": 0.06,
+          "min_vacuum": 15.0,
+          "min_slab_layers": 4
+        }
+      },
+      "expected_properties": {
+        "interface_type": "oxide_oxide",
+        "bonding_type": "ionic",
+        "interface_distance_range": [
+          1.8,
+          2.3
+        ]
+      },
+      "requires_rag": true
+    },
+    {
+      "task_id": "interface-062",
+      "category": "oxide_oxide",
+      "difficulty": "hard",
+      "description": "Build a PbTiO3(001)/SrTiO3(001) interface for ferroelectric",
+      "input": {
+        "film_material": "PbTiO3",
+        "film_facet": "(001)",
+        "substrate_material": "SrTiO3",
+        "substrate_facet": "(001)",
+        "application": "ferroelectric",
+        "constraints": {
+          "max_strain": 0.06,
+          "min_vacuum": 15.0,
+          "min_slab_layers": 4
+        }
+      },
+      "expected_properties": {
+        "interface_type": "oxide_oxide",
+        "bonding_type": "ionic",
+        "interface_distance_range": [
+          1.8,
+          2.3
+        ]
+      },
+      "requires_rag": true
+    },
+    {
+      "task_id": "interface-063",
+      "category": "oxide_oxide",
+      "difficulty": "hard",
+      "description": "Build a LaVO3(001)/SrTiO3(001) interface for Mott_insulator",
+      "input": {
+        "film_material": "LaVO3",
+        "film_facet": "(001)",
+        "substrate_material": "SrTiO3",
+        "substrate_facet": "(001)",
+        "application": "Mott_insulator",
+        "constraints": {
+          "max_strain": 0.06,
+          "min_vacuum": 15.0,
+          "min_slab_layers": 4
+        }
+      },
+      "expected_properties": {
+        "interface_type": "oxide_oxide",
+        "bonding_type": "ionic",
+        "interface_distance_range": [
+          1.8,
+          2.3
+        ]
+      },
+      "requires_rag": true
+    },
+    {
+      "task_id": "interface-064",
+      "category": "oxide_oxide",
+      "difficulty": "hard",
+      "description": "Build a LaNiO3(001)/LaAlO3(001) interface for superlattice",
+      "input": {
+        "film_material": "LaNiO3",
+        "film_facet": "(001)",
+        "substrate_material": "LaAlO3",
+        "substrate_facet": "(001)",
+        "application": "superlattice",
+        "constraints": {
+          "max_strain": 0.06,
+          "min_vacuum": 15.0,
+          "min_slab_layers": 4
+        }
+      },
+      "expected_properties": {
+        "interface_type": "oxide_oxide",
+        "bonding_type": "ionic",
+        "interface_distance_range": [
+          1.8,
+          2.3
+        ]
+      },
+      "requires_rag": true
+    },
+    {
+      "task_id": "interface-065",
+      "category": "oxide_oxide",
+      "difficulty": "hard",
+      "description": "Build a SrRuO3(001)/SrTiO3(001) interface for ferromagnetic_metal",
+      "input": {
+        "film_material": "SrRuO3",
+        "film_facet": "(001)",
+        "substrate_material": "SrTiO3",
+        "substrate_facet": "(001)",
+        "application": "ferromagnetic_metal",
+        "constraints": {
+          "max_strain": 0.06,
+          "min_vacuum": 15.0,
+          "min_slab_layers": 4
+        }
+      },
+      "expected_properties": {
+        "interface_type": "oxide_oxide",
+        "bonding_type": "ionic",
+        "interface_distance_range": [
+          1.8,
+          2.3
+        ]
+      },
+      "requires_rag": true
+    },
+    {
+      "task_id": "interface-066",
+      "category": "2D_heterostructure",
+      "difficulty": "hard",
+      "description": "Build a MoSe2/WSe2 van der Waals heterostructure for exciton_physics",
+      "input": {
+        "film_material": "MoSe2",
+        "film_facet": "monolayer",
+        "substrate_material": "WSe2",
+        "substrate_facet": "monolayer",
+        "application": "exciton_physics",
+        "constraints": {
+          "max_strain": 0.01,
+          "min_vacuum": 25.0
+        }
+      },
+      "expected_properties": {
+        "interface_type": "2D_2D",
+        "bonding_type": "vdW",
+        "interface_distance_range": [
+          3.0,
+          3.5
+        ],
+        "band_alignment": "type_II"
+      },
+      "requires_rag": true
+    },
+    {
+      "task_id": "interface-067",
+      "category": "2D_heterostructure",
+      "difficulty": "hard",
+      "description": "Build a graphene/graphene van der Waals heterostructure for magic_angle",
+      "input": {
+        "film_material": "graphene",
+        "film_facet": "monolayer",
+        "substrate_material": "graphene",
+        "substrate_facet": "monolayer",
+        "application": "magic_angle",
+        "constraints": {
+          "max_strain": 0.01,
+          "min_vacuum": 25.0
+        }
+      },
+      "expected_properties": {
+        "interface_type": "2D_2D",
+        "bonding_type": "vdW",
+        "interface_distance_range": [
+          3.0,
+          3.5
+        ]
+      },
+      "requires_rag": true
+    },
+    {
+      "task_id": "interface-068",
+      "category": "2D_heterostructure",
+      "difficulty": "hard",
+      "description": "Build a MoTe2/WTe2 van der Waals heterostructure for topological",
+      "input": {
+        "film_material": "MoTe2",
+        "film_facet": "monolayer",
+        "substrate_material": "WTe2",
+        "substrate_facet": "monolayer",
+        "application": "topological",
+        "constraints": {
+          "max_strain": 0.01,
+          "min_vacuum": 25.0
+        }
+      },
+      "expected_properties": {
+        "interface_type": "2D_2D",
+        "bonding_type": "vdW",
+        "interface_distance_range": [
+          3.0,
+          3.5
+        ]
+      },
+      "requires_rag": true
+    },
+    {
+      "task_id": "interface-069",
+      "category": "2D_heterostructure",
+      "difficulty": "hard",
+      "description": "Build a NbSe2/hBN van der Waals heterostructure for superconductivity",
+      "input": {
+        "film_material": "NbSe2",
+        "film_facet": "monolayer",
+        "substrate_material": "hBN",
+        "substrate_facet": "monolayer",
+        "application": "superconductivity",
+        "constraints": {
+          "max_strain": 0.01,
+          "min_vacuum": 25.0
+        }
+      },
+      "expected_properties": {
+        "interface_type": "2D_2D",
+        "bonding_type": "vdW",
+        "interface_distance_range": [
+          3.0,
+          3.5
+        ]
+      },
+      "requires_rag": true
+    },
+    {
+      "task_id": "interface-070",
+      "category": "2D_substrate",
+      "difficulty": "hard",
+      "description": "Build a MoS2/Au(111) interface for contact_engineering",
+      "input": {
+        "film_material": "MoS2",
+        "film_facet": "monolayer",
+        "substrate_material": "Au",
+        "substrate_facet": "(111)",
+        "application": "contact_engineering",
+        "constraints": {
+          "max_strain": 0.08,
+          "min_vacuum": 20.0,
+          "min_slab_layers": 4
+        }
+      },
+      "expected_properties": {
+        "interface_type": "2D_3D",
+        "bonding_type": "weak_chemisorption",
+        "interface_distance_range": [
+          2.8,
+          3.5
+        ]
+      },
+      "requires_rag": true
+    },
+    {
+      "task_id": "interface-071",
+      "category": "2D_substrate",
+      "difficulty": "hard",
+      "description": "Build a WS2/Pt(111) interface for catalysis",
+      "input": {
+        "film_material": "WS2",
+        "film_facet": "monolayer",
+        "substrate_material": "Pt",
+        "substrate_facet": "(111)",
+        "application": "catalysis",
+        "constraints": {
+          "max_strain": 0.08,
+          "min_vacuum": 20.0,
+          "min_slab_layers": 4
+        }
+      },
+      "expected_properties": {
+        "interface_type": "2D_3D",
+        "bonding_type": "weak_chemisorption",
+        "interface_distance_range": [
+          2.8,
+          3.5
+        ]
+      },
+      "requires_rag": true
+    },
+    {
+      "task_id": "interface-072",
+      "category": "2D_substrate",
+      "difficulty": "hard",
+      "description": "Build a black_phosphorus/Au(111) interface for electronics",
+      "input": {
+        "film_material": "black_phosphorus",
+        "film_facet": "monolayer",
+        "substrate_material": "Au",
+        "substrate_facet": "(111)",
+        "application": "electronics",
+        "constraints": {
+          "max_strain": 0.08,
+          "min_vacuum": 20.0,
+          "min_slab_layers": 4
+        }
+      },
+      "expected_properties": {
+        "interface_type": "2D_3D",
+        "bonding_type": "weak_chemisorption",
+        "interface_distance_range": [
+          2.8,
+          3.5
+        ]
+      },
+      "requires_rag": true
+    },
+    {
+      "task_id": "interface-073",
+      "category": "nitride_heterostructure",
+      "difficulty": "hard",
+      "description": "Build a GaN(0001)/AlN(0001) III-nitride heterostructure for HEMT",
+      "input": {
+        "film_material": "GaN",
+        "film_facet": "(0001)",
+        "substrate_material": "AlN",
+        "substrate_facet": "(0001)",
+        "application": "HEMT",
+        "constraints": {
+          "max_strain": 0.03,
+          "min_vacuum": 15.0,
+          "min_slab_layers": 4
+        }
+      },
+      "expected_properties": {
+        "interface_type": "semiconductor_semiconductor",
+        "bonding_type": "covalent",
+        "interface_distance_range": [
+          1.8,
+          2.2
+        ],
+        "polarity": "polar"
+      },
+      "requires_rag": true
+    },
+    {
+      "task_id": "interface-074",
+      "category": "nitride_heterostructure",
+      "difficulty": "hard",
+      "description": "Build a InGaN(0001)/GaN(0001) III-nitride heterostructure for LED",
+      "input": {
+        "film_material": "InGaN",
+        "film_facet": "(0001)",
+        "substrate_material": "GaN",
+        "substrate_facet": "(0001)",
+        "application": "LED",
+        "constraints": {
+          "max_strain": 0.03,
+          "min_vacuum": 15.0,
+          "min_slab_layers": 4
+        }
+      },
+      "expected_properties": {
+        "interface_type": "semiconductor_semiconductor",
+        "bonding_type": "covalent",
+        "interface_distance_range": [
+          1.8,
+          2.2
+        ],
+        "polarity": "polar"
+      },
+      "requires_rag": true
+    },
+    {
+      "task_id": "interface-075",
+      "category": "nitride_heterostructure",
+      "difficulty": "hard",
+      "description": "Build a AlGaN(0001)/GaN(0001) III-nitride heterostructure for UV_LED",
+      "input": {
+        "film_material": "AlGaN",
+        "film_facet": "(0001)",
+        "substrate_material": "GaN",
+        "substrate_facet": "(0001)",
+        "application": "UV_LED",
+        "constraints": {
+          "max_strain": 0.03,
+          "min_vacuum": 15.0,
+          "min_slab_layers": 4
+        }
+      },
+      "expected_properties": {
+        "interface_type": "semiconductor_semiconductor",
+        "bonding_type": "covalent",
+        "interface_distance_range": [
+          1.8,
+          2.2
+        ],
+        "polarity": "polar"
+      },
+      "requires_rag": true
+    },
+    {
+      "task_id": "interface-076",
+      "category": "nitride_heterostructure",
+      "difficulty": "hard",
+      "description": "Build a InAlN(0001)/GaN(0001) III-nitride heterostructure for power_electronics",
+      "input": {
+        "film_material": "InAlN",
+        "film_facet": "(0001)",
+        "substrate_material": "GaN",
+        "substrate_facet": "(0001)",
+        "application": "power_electronics",
+        "constraints": {
+          "max_strain": 0.03,
+          "min_vacuum": 15.0,
+          "min_slab_layers": 4
+        }
+      },
+      "expected_properties": {
+        "interface_type": "semiconductor_semiconductor",
+        "bonding_type": "covalent",
+        "interface_distance_range": [
+          1.8,
+          2.2
+        ],
+        "polarity": "polar"
+      },
+      "requires_rag": true
+    },
+    {
+      "task_id": "interface-077",
+      "category": "superlattice",
+      "difficulty": "hard",
+      "description": "Build a GaAs/AlAs superlattice on (001) for quantum_cascade_laser",
+      "input": {
+        "film_material": "GaAs",
+        "film_facet": "(001)",
+        "substrate_material": "AlAs",
+        "substrate_facet": "(001)",
+        "application": "quantum_cascade_laser",
+        "superlattice": true,
+        "constraints": {
+          "max_strain": 0.02,
+          "min_vacuum": 15.0,
+          "min_slab_layers": 6,
+          "period_layers": 4
+        }
+      },
+      "expected_properties": {
+        "interface_type": "superlattice",
+        "bonding_type": "covalent",
+        "interface_distance_range": [
+          1.8,
+          2.3
+        ]
+      },
+      "requires_rag": true
+    },
+    {
+      "task_id": "interface-078",
+      "category": "superlattice",
+      "difficulty": "hard",
+      "description": "Build a InAs/GaSb superlattice on (001) for type_II_superlattice",
+      "input": {
+        "film_material": "InAs",
+        "film_facet": "(001)",
+        "substrate_material": "GaSb",
+        "substrate_facet": "(001)",
+        "application": "type_II_superlattice",
+        "superlattice": true,
+        "constraints": {
+          "max_strain": 0.02,
+          "min_vacuum": 15.0,
+          "min_slab_layers": 6,
+          "period_layers": 4
+        }
+      },
+      "expected_properties": {
+        "interface_type": "superlattice",
+        "bonding_type": "covalent",
+        "interface_distance_range": [
+          1.8,
+          2.3
+        ]
+      },
+      "requires_rag": true
+    },
+    {
+      "task_id": "interface-079",
+      "category": "superlattice",
+      "difficulty": "hard",
+      "description": "Build a SrTiO3/LaAlO3 superlattice on (001) for oxide_superlattice",
+      "input": {
+        "film_material": "SrTiO3",
+        "film_facet": "(001)",
+        "substrate_material": "LaAlO3",
+        "substrate_facet": "(001)",
+        "application": "oxide_superlattice",
+        "superlattice": true,
+        "constraints": {
+          "max_strain": 0.02,
+          "min_vacuum": 15.0,
+          "min_slab_layers": 6,
+          "period_layers": 4
+        }
+      },
+      "expected_properties": {
+        "interface_type": "superlattice",
+        "bonding_type": "covalent",
+        "interface_distance_range": [
+          1.8,
+          2.3
+        ]
+      },
+      "requires_rag": true
+    },
+    {
+      "task_id": "interface-080",
+      "category": "superlattice",
+      "difficulty": "hard",
+      "description": "Build a Si/Ge superlattice on (001) for thermoelectric",
+      "input": {
+        "film_material": "Si",
+        "film_facet": "(001)",
+        "substrate_material": "Ge",
+        "substrate_facet": "(001)",
+        "application": "thermoelectric",
+        "superlattice": true,
+        "constraints": {
+          "max_strain": 0.02,
+          "min_vacuum": 15.0,
+          "min_slab_layers": 6,
+          "period_layers": 4
+        }
+      },
+      "expected_properties": {
+        "interface_type": "superlattice",
+        "bonding_type": "covalent",
+        "interface_distance_range": [
+          1.8,
+          2.3
+        ]
+      },
+      "requires_rag": true
+    },
+    {
+      "task_id": "interface-081",
+      "category": "metal_oxide",
+      "difficulty": "medium",
+      "description": "Build a Ni(111)/CeO2(111) interface for dry_reforming",
+      "input": {
+        "film_material": "Ni",
+        "film_facet": "(111)",
+        "substrate_material": "CeO2",
+        "substrate_facet": "(111)",
+        "application": "dry_reforming",
+        "constraints": {
+          "max_strain": 0.05,
+          "min_vacuum": 15.0,
+          "min_slab_layers": 4
+        }
+      },
+      "expected_properties": {
+        "interface_type": "metal_oxide",
+        "bonding_type": "Ni-O",
+        "interface_distance_range": [
+          2.0,
+          3.0
+        ]
+      },
+      "requires_rag": true
+    },
+    {
+      "task_id": "interface-082",
+      "category": "metal_oxide",
+      "difficulty": "medium",
+      "description": "Build a Cu(111)/ZrO2(111) interface for CO2_reduction",
+      "input": {
+        "film_material": "Cu",
+        "film_facet": "(111)",
+        "substrate_material": "ZrO2",
+        "substrate_facet": "(111)",
+        "application": "CO2_reduction",
+        "constraints": {
+          "max_strain": 0.05,
+          "min_vacuum": 15.0,
+          "min_slab_layers": 4
+        }
+      },
+      "expected_properties": {
+        "interface_type": "metal_oxide",
+        "bonding_type": "Cu-O",
+        "interface_distance_range": [
+          2.0,
+          3.0
+        ]
+      },
+      "requires_rag": true
+    },
+    {
+      "task_id": "interface-083",
+      "category": "metal_oxide",
+      "difficulty": "medium",
+      "description": "Build a Ru(0001)/TiO2_rutile(110) interface for oxidation catalysis",
+      "input": {
+        "film_material": "Ru",
+        "film_facet": "(0001)",
+        "substrate_material": "TiO2_rutile",
+        "substrate_facet": "(110)",
+        "application": "oxidation",
+        "constraints": {
+          "max_strain": 0.06,
+          "min_vacuum": 15.0,
+          "min_slab_layers": 4
+        }
+      },
+      "expected_properties": {
+        "interface_type": "metal_oxide",
+        "bonding_type": "Ru-O",
+        "interface_distance_range": [
+          2.0,
+          3.0
+        ]
+      },
+      "requires_rag": true
+    },
+    {
+      "task_id": "interface-084",
+      "category": "oxide_oxide",
+      "difficulty": "medium",
+      "description": "Build a CeO2(111)/YSZ(111) oxide-oxide interface for oxygen ion transport",
+      "input": {
+        "film_material": "CeO2",
+        "film_facet": "(111)",
+        "substrate_material": "YSZ",
+        "substrate_facet": "(111)",
+        "application": "ion_transport",
+        "constraints": {
+          "max_strain": 0.04,
+          "min_vacuum": 15.0,
+          "min_slab_layers": 4
+        }
+      },
+      "expected_properties": {
+        "interface_type": "oxide_oxide",
+        "bonding_type": "ionic",
+        "interface_distance_range": [
+          1.8,
+          2.6
+        ]
+      },
+      "requires_rag": true
+    },
+    {
+      "task_id": "interface-085",
+      "category": "oxide_oxide",
+      "difficulty": "medium",
+      "description": "Build a BaTiO3(001)/SrTiO3(001) ferroelectric interface",
+      "input": {
+        "film_material": "BaTiO3",
+        "film_facet": "(001)",
+        "substrate_material": "SrTiO3",
+        "substrate_facet": "(001)",
+        "application": "ferroelectric",
+        "constraints": {
+          "max_strain": 0.03,
+          "min_vacuum": 15.0,
+          "min_slab_layers": 5
+        }
+      },
+      "expected_properties": {
+        "interface_type": "oxide_oxide",
+        "bonding_type": "ionic",
+        "interface_distance_range": [
+          1.8,
+          2.6
+        ]
+      },
+      "requires_rag": true
+    },
+    {
+      "task_id": "interface-086",
+      "category": "semiconductor",
+      "difficulty": "medium",
+      "description": "Build a GaAs(001)/AlAs(001) semiconductor interface for quantum wells",
+      "input": {
+        "film_material": "GaAs",
+        "film_facet": "(001)",
+        "substrate_material": "AlAs",
+        "substrate_facet": "(001)",
+        "application": "quantum_well",
+        "constraints": {
+          "max_strain": 0.02,
+          "min_vacuum": 15.0,
+          "min_slab_layers": 6
+        }
+      },
+      "expected_properties": {
+        "interface_type": "semiconductor_semiconductor",
+        "bonding_type": "covalent",
+        "interface_distance_range": [
+          1.8,
+          2.5
+        ]
+      },
+      "requires_rag": true
+    },
+    {
+      "task_id": "interface-087",
+      "category": "semiconductor",
+      "difficulty": "medium",
+      "description": "Build a SiC(0001)/GaN(0001) semiconductor interface for power electronics",
+      "input": {
+        "film_material": "SiC",
+        "film_facet": "(0001)",
+        "substrate_material": "GaN",
+        "substrate_facet": "(0001)",
+        "application": "power_electronics",
+        "constraints": {
+          "max_strain": 0.05,
+          "min_vacuum": 15.0,
+          "min_slab_layers": 6
+        }
+      },
+      "expected_properties": {
+        "interface_type": "semiconductor_semiconductor",
+        "bonding_type": "covalent",
+        "interface_distance_range": [
+          1.8,
+          2.5
+        ]
+      },
+      "requires_rag": true
+    },
+    {
+      "task_id": "interface-088",
+      "category": "semiconductor",
+      "difficulty": "medium",
+      "description": "Build an InP(001)/GaInAs(001) semiconductor interface for photonics",
+      "input": {
+        "film_material": "InP",
+        "film_facet": "(001)",
+        "substrate_material": "GaInAs",
+        "substrate_facet": "(001)",
+        "application": "photonics",
+        "constraints": {
+          "max_strain": 0.03,
+          "min_vacuum": 15.0,
+          "min_slab_layers": 6
+        }
+      },
+      "expected_properties": {
+        "interface_type": "semiconductor_semiconductor",
+        "bonding_type": "covalent",
+        "interface_distance_range": [
+          1.8,
+          2.5
+        ]
+      },
+      "requires_rag": true
+    },
+    {
+      "task_id": "interface-089",
+      "category": "metal_semiconductor",
+      "difficulty": "medium",
+      "description": "Build an Al(111)/Si(111) Schottky interface",
+      "input": {
+        "film_material": "Al",
+        "film_facet": "(111)",
+        "substrate_material": "Si",
+        "substrate_facet": "(111)",
+        "application": "schottky_contact",
+        "constraints": {
+          "max_strain": 0.05,
+          "min_vacuum": 15.0,
+          "min_slab_layers": 4
+        }
+      },
+      "expected_properties": {
+        "interface_type": "metal_semiconductor",
+        "bonding_type": "metallic-covalent",
+        "interface_distance_range": [
+          2.0,
+          3.0
+        ]
+      },
+      "requires_rag": true
+    },
+    {
+      "task_id": "interface-090",
+      "category": "metal_semiconductor",
+      "difficulty": "medium",
+      "description": "Build a Ti(0001)/GaN(0001) contact interface",
+      "input": {
+        "film_material": "Ti",
+        "film_facet": "(0001)",
+        "substrate_material": "GaN",
+        "substrate_facet": "(0001)",
+        "application": "ohmic_contact",
+        "constraints": {
+          "max_strain": 0.06,
+          "min_vacuum": 15.0,
+          "min_slab_layers": 4
+        }
+      },
+      "expected_properties": {
+        "interface_type": "metal_semiconductor",
+        "bonding_type": "metallic-covalent",
+        "interface_distance_range": [
+          2.0,
+          3.0
+        ]
+      },
+      "requires_rag": true
+    },
+    {
+      "task_id": "interface-091",
+      "category": "metal_metal",
+      "difficulty": "medium",
+      "description": "Build a Cu(111)/Ni(111) coherent metal-metal interface",
+      "input": {
+        "film_material": "Cu",
+        "film_facet": "(111)",
+        "substrate_material": "Ni",
+        "substrate_facet": "(111)",
+        "application": "bimetallic_catalyst",
+        "constraints": {
+          "max_strain": 0.04,
+          "min_vacuum": 15.0,
+          "min_slab_layers": 4
+        }
+      },
+      "expected_properties": {
+        "interface_type": "metal_metal",
+        "bonding_type": "metallic",
+        "interface_distance_range": [
+          2.0,
+          3.0
+        ]
+      },
+      "requires_rag": false
+    },
+    {
+      "task_id": "interface-092",
+      "category": "metal_metal",
+      "difficulty": "medium",
+      "description": "Build a Pt(111)/Au(111) metal-metal interface for core-shell catalysis",
+      "input": {
+        "film_material": "Pt",
+        "film_facet": "(111)",
+        "substrate_material": "Au",
+        "substrate_facet": "(111)",
+        "application": "core_shell_catalyst",
+        "constraints": {
+          "max_strain": 0.05,
+          "min_vacuum": 15.0,
+          "min_slab_layers": 4
+        }
+      },
+      "expected_properties": {
+        "interface_type": "metal_metal",
+        "bonding_type": "metallic",
+        "interface_distance_range": [
+          2.0,
+          3.0
+        ]
+      },
+      "requires_rag": false
+    },
+    {
+      "task_id": "interface-093",
+      "category": "nitride_heterostructure",
+      "difficulty": "medium",
+      "description": "Build an AlN(0001)/GaN(0001) nitride heterostructure",
+      "input": {
+        "film_material": "AlN",
+        "film_facet": "(0001)",
+        "substrate_material": "GaN",
+        "substrate_facet": "(0001)",
+        "application": "HEMT",
+        "constraints": {
+          "max_strain": 0.03,
+          "min_vacuum": 15.0,
+          "min_slab_layers": 6
+        }
+      },
+      "expected_properties": {
+        "interface_type": "semiconductor_semiconductor",
+        "bonding_type": "covalent",
+        "interface_distance_range": [
+          1.8,
+          2.5
+        ]
+      },
+      "requires_rag": true
+    },
+    {
+      "task_id": "interface-094",
+      "category": "nitride_heterostructure",
+      "difficulty": "medium",
+      "description": "Build an InN(0001)/AlN(0001) nitride heterostructure",
+      "input": {
+        "film_material": "InN",
+        "film_facet": "(0001)",
+        "substrate_material": "AlN",
+        "substrate_facet": "(0001)",
+        "application": "optoelectronics",
+        "constraints": {
+          "max_strain": 0.06,
+          "min_vacuum": 15.0,
+          "min_slab_layers": 6
+        }
+      },
+      "expected_properties": {
+        "interface_type": "semiconductor_semiconductor",
+        "bonding_type": "covalent",
+        "interface_distance_range": [
+          1.8,
+          2.5
+        ]
+      },
+      "requires_rag": true
+    },
+    {
+      "task_id": "interface-095",
+      "category": "2D_heterostructure",
+      "difficulty": "hard",
+      "description": "Build a MoSe2/WSe2 van der Waals heterobilayer for valleytronics",
+      "input": {
+        "film_material": "MoSe2",
+        "film_facet": "monolayer",
+        "substrate_material": "WSe2",
+        "substrate_facet": "monolayer",
+        "application": "valleytronics",
+        "constraints": {
+          "max_strain": 0.02,
+          "min_vacuum": 25.0
+        }
+      },
+      "expected_properties": {
+        "interface_type": "2D_2D",
+        "bonding_type": "vdW",
+        "interface_distance_range": [
+          3.0,
+          3.5
+        ]
+      },
+      "requires_rag": true
+    },
+    {
+      "task_id": "interface-096",
+      "category": "2D_heterostructure",
+      "difficulty": "hard",
+      "description": "Build a graphene/hBN van der Waals heterostructure for high mobility transport",
+      "input": {
+        "film_material": "graphene",
+        "film_facet": "monolayer",
+        "substrate_material": "hBN",
+        "substrate_facet": "monolayer",
+        "application": "high_mobility_transport",
+        "constraints": {
+          "max_strain": 0.02,
+          "min_vacuum": 25.0
+        }
+      },
+      "expected_properties": {
+        "interface_type": "2D_2D",
+        "bonding_type": "vdW",
+        "interface_distance_range": [
+          3.0,
+          3.5
+        ]
+      },
+      "requires_rag": true
+    },
+    {
+      "task_id": "interface-097",
+      "category": "2D_substrate",
+      "difficulty": "hard",
+      "description": "Build a MoS2 monolayer on Au(111) for contact engineering",
+      "input": {
+        "film_material": "MoS2",
+        "film_facet": "monolayer",
+        "substrate_material": "Au",
+        "substrate_facet": "(111)",
+        "application": "contact_engineering",
+        "constraints": {
+          "max_strain": 0.05,
+          "min_vacuum": 20.0,
+          "min_slab_layers": 4
+        }
+      },
+      "expected_properties": {
+        "interface_type": "2D_3D",
+        "bonding_type": "weak_chemisorption",
+        "interface_distance_range": [
+          2.8,
+          3.5
+        ]
+      },
+      "requires_rag": true
+    },
+    {
+      "task_id": "interface-098",
+      "category": "2D_substrate",
+      "difficulty": "hard",
+      "description": "Build a graphene monolayer on Ni(111) for epitaxial graphene",
+      "input": {
+        "film_material": "graphene",
+        "film_facet": "monolayer",
+        "substrate_material": "Ni",
+        "substrate_facet": "(111)",
+        "application": "epitaxial_graphene",
+        "constraints": {
+          "max_strain": 0.03,
+          "min_vacuum": 20.0,
+          "min_slab_layers": 4
+        }
+      },
+      "expected_properties": {
+        "interface_type": "2D_3D",
+        "bonding_type": "weak_chemisorption",
+        "interface_distance_range": [
+          2.0,
+          3.0
+        ]
+      },
+      "requires_rag": true
+    },
+    {
+      "task_id": "interface-099",
+      "category": "superlattice",
+      "difficulty": "hard",
+      "description": "Build a GaAs/AlGaAs superlattice on (001) for quantum cascade devices",
+      "input": {
+        "film_material": "GaAs",
+        "film_facet": "(001)",
+        "substrate_material": "AlGaAs",
+        "substrate_facet": "(001)",
+        "application": "quantum_cascade",
+        "superlattice": true,
+        "constraints": {
+          "max_strain": 0.02,
+          "min_vacuum": 15.0,
+          "min_slab_layers": 6,
+          "period_layers": 4
+        }
+      },
+      "expected_properties": {
+        "interface_type": "superlattice",
+        "bonding_type": "covalent",
+        "interface_distance_range": [
+          1.8,
+          2.3
+        ]
+      },
+      "requires_rag": true
+    },
+    {
+      "task_id": "interface-100",
+      "category": "superlattice",
+      "difficulty": "hard",
+      "description": "Build a PbTiO3/SrTiO3 superlattice on (001) for ferroelectric devices",
+      "input": {
+        "film_material": "PbTiO3",
+        "film_facet": "(001)",
+        "substrate_material": "SrTiO3",
+        "substrate_facet": "(001)",
+        "application": "ferroelectric_superlattice",
+        "superlattice": true,
+        "constraints": {
+          "max_strain": 0.03,
+          "min_vacuum": 15.0,
+          "min_slab_layers": 6,
+          "period_layers": 4
+        }
+      },
+      "expected_properties": {
+        "interface_type": "superlattice",
+        "bonding_type": "ionic",
+        "interface_distance_range": [
+          1.8,
+          2.6
+        ]
+      },
+      "requires_rag": true
+    }
+  ]
+}

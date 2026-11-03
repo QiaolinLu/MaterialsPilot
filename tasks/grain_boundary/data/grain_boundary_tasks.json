@@ -1,0 +1,2761 @@
+{
+  "_metadata": {
+    "description": "Expanded benchmark tasks for grain boundary structure generation",
+    "version": "3.0",
+    "task_count": 100,
+    "categories": [
+      "asymmetric_tilt",
+      "bcc_tilt",
+      "bcc_twin",
+      "diamond_tilt",
+      "diamond_twin",
+      "fcc_tilt",
+      "fcc_twin",
+      "hcp_gb",
+      "twist"
+    ],
+    "difficulty_levels": [
+      "easy",
+      "medium",
+      "hard"
+    ],
+    "last_updated": "2026-01-12"
+  },
+  "tasks": [
+    {
+      "task_id": "gb-001",
+      "category": "fcc_twin",
+      "difficulty": "easy",
+      "description": "Create a Σ3(111) coherent twin boundary in Cu",
+      "input": {
+        "material": "Cu",
+        "sigma": 3,
+        "gb_plane": "(111)",
+        "gb_type": "twin",
+        "rotation_axis": [
+          1,
+          1,
+          1
+        ],
+        "application": "mechanical_properties",
+        "constraints": {
+          "gb_expansion": 0.3,
+          "min_thickness": 10.0
+        }
+      },
+      "expected_properties": {
+        "structure_type": "fcc",
+        "rotation_angle": 60.0,
+        "gb_energy": "low"
+      },
+      "requires_rag": false
+    },
+    {
+      "task_id": "gb-002",
+      "category": "fcc_twin",
+      "difficulty": "easy",
+      "description": "Create a Σ3(111) coherent twin boundary in Al",
+      "input": {
+        "material": "Al",
+        "sigma": 3,
+        "gb_plane": "(111)",
+        "gb_type": "twin",
+        "rotation_axis": [
+          1,
+          1,
+          1
+        ],
+        "application": "mechanical_properties",
+        "constraints": {
+          "gb_expansion": 0.3,
+          "min_thickness": 10.0
+        }
+      },
+      "expected_properties": {
+        "structure_type": "fcc",
+        "rotation_angle": 60.0,
+        "gb_energy": "low"
+      },
+      "requires_rag": false
+    },
+    {
+      "task_id": "gb-003",
+      "category": "fcc_twin",
+      "difficulty": "easy",
+      "description": "Create a Σ3(111) coherent twin boundary in Ni",
+      "input": {
+        "material": "Ni",
+        "sigma": 3,
+        "gb_plane": "(111)",
+        "gb_type": "twin",
+        "rotation_axis": [
+          1,
+          1,
+          1
+        ],
+        "application": "mechanical_properties",
+        "constraints": {
+          "gb_expansion": 0.3,
+          "min_thickness": 10.0
+        }
+      },
+      "expected_properties": {
+        "structure_type": "fcc",
+        "rotation_angle": 60.0,
+        "gb_energy": "low"
+      },
+      "requires_rag": false
+    },
+    {
+      "task_id": "gb-004",
+      "category": "fcc_twin",
+      "difficulty": "easy",
+      "description": "Create a Σ3(111) coherent twin boundary in Au",
+      "input": {
+        "material": "Au",
+        "sigma": 3,
+        "gb_plane": "(111)",
+        "gb_type": "twin",
+        "rotation_axis": [
+          1,
+          1,
+          1
+        ],
+        "application": "mechanical_properties",
+        "constraints": {
+          "gb_expansion": 0.3,
+          "min_thickness": 10.0
+        }
+      },
+      "expected_properties": {
+        "structure_type": "fcc",
+        "rotation_angle": 60.0,
+        "gb_energy": "low"
+      },
+      "requires_rag": false
+    },
+    {
+      "task_id": "gb-005",
+      "category": "fcc_twin",
+      "difficulty": "easy",
+      "description": "Create a Σ3(111) coherent twin boundary in Ag",
+      "input": {
+        "material": "Ag",
+        "sigma": 3,
+        "gb_plane": "(111)",
+        "gb_type": "twin",
+        "rotation_axis": [
+          1,
+          1,
+          1
+        ],
+        "application": "mechanical_properties",
+        "constraints": {
+          "gb_expansion": 0.3,
+          "min_thickness": 10.0
+        }
+      },
+      "expected_properties": {
+        "structure_type": "fcc",
+        "rotation_angle": 60.0,
+        "gb_energy": "low"
+      },
+      "requires_rag": false
+    },
+    {
+      "task_id": "gb-006",
+      "category": "fcc_twin",
+      "difficulty": "easy",
+      "description": "Create a Σ3(111) coherent twin boundary in Pt",
+      "input": {
+        "material": "Pt",
+        "sigma": 3,
+        "gb_plane": "(111)",
+        "gb_type": "twin",
+        "rotation_axis": [
+          1,
+          1,
+          1
+        ],
+        "application": "mechanical_properties",
+        "constraints": {
+          "gb_expansion": 0.3,
+          "min_thickness": 10.0
+        }
+      },
+      "expected_properties": {
+        "structure_type": "fcc",
+        "rotation_angle": 60.0,
+        "gb_energy": "low"
+      },
+      "requires_rag": false
+    },
+    {
+      "task_id": "gb-007",
+      "category": "fcc_twin",
+      "difficulty": "easy",
+      "description": "Create a Σ3(111) coherent twin boundary in Pd",
+      "input": {
+        "material": "Pd",
+        "sigma": 3,
+        "gb_plane": "(111)",
+        "gb_type": "twin",
+        "rotation_axis": [
+          1,
+          1,
+          1
+        ],
+        "application": "mechanical_properties",
+        "constraints": {
+          "gb_expansion": 0.3,
+          "min_thickness": 10.0
+        }
+      },
+      "expected_properties": {
+        "structure_type": "fcc",
+        "rotation_angle": 60.0,
+        "gb_energy": "low"
+      },
+      "requires_rag": false
+    },
+    {
+      "task_id": "gb-008",
+      "category": "fcc_twin",
+      "difficulty": "easy",
+      "description": "Create a Σ3(111) coherent twin boundary in Rh",
+      "input": {
+        "material": "Rh",
+        "sigma": 3,
+        "gb_plane": "(111)",
+        "gb_type": "twin",
+        "rotation_axis": [
+          1,
+          1,
+          1
+        ],
+        "application": "mechanical_properties",
+        "constraints": {
+          "gb_expansion": 0.3,
+          "min_thickness": 10.0
+        }
+      },
+      "expected_properties": {
+        "structure_type": "fcc",
+        "rotation_angle": 60.0,
+        "gb_energy": "low"
+      },
+      "requires_rag": false
+    },
+    {
+      "task_id": "gb-009",
+      "category": "fcc_twin",
+      "difficulty": "easy",
+      "description": "Create a Σ3(111) coherent twin boundary in Ir",
+      "input": {
+        "material": "Ir",
+        "sigma": 3,
+        "gb_plane": "(111)",
+        "gb_type": "twin",
+        "rotation_axis": [
+          1,
+          1,
+          1
+        ],
+        "application": "mechanical_properties",
+        "constraints": {
+          "gb_expansion": 0.3,
+          "min_thickness": 10.0
+        }
+      },
+      "expected_properties": {
+        "structure_type": "fcc",
+        "rotation_angle": 60.0,
+        "gb_energy": "low"
+      },
+      "requires_rag": false
+    },
+    {
+      "task_id": "gb-010",
+      "category": "fcc_twin",
+      "difficulty": "easy",
+      "description": "Create a Σ3(111) coherent twin boundary in Pb",
+      "input": {
+        "material": "Pb",
+        "sigma": 3,
+        "gb_plane": "(111)",
+        "gb_type": "twin",
+        "rotation_axis": [
+          1,
+          1,
+          1
+        ],
+        "application": "mechanical_properties",
+        "constraints": {
+          "gb_expansion": 0.3,
+          "min_thickness": 10.0
+        }
+      },
+      "expected_properties": {
+        "structure_type": "fcc",
+        "rotation_angle": 60.0,
+        "gb_energy": "low"
+      },
+      "requires_rag": false
+    },
+    {
+      "task_id": "gb-011",
+      "category": "fcc_tilt",
+      "difficulty": "easy",
+      "description": "Create a Σ5(310) symmetric tilt grain boundary in Cu",
+      "input": {
+        "material": "Cu",
+        "sigma": 5,
+        "gb_plane": "(310)",
+        "gb_type": "tilt",
+        "rotation_axis": [
+          0,
+          0,
+          1
+        ],
+        "application": "diffusion",
+        "constraints": {
+          "gb_expansion": 1.5,
+          "min_thickness": 10.0
+        }
+      },
+      "expected_properties": {
+        "structure_type": "fcc",
+        "rotation_angle": 36.87,
+        "gb_energy": "medium"
+      },
+      "requires_rag": false
+    },
+    {
+      "task_id": "gb-012",
+      "category": "fcc_tilt",
+      "difficulty": "easy",
+      "description": "Create a Σ5(310) symmetric tilt grain boundary in Al",
+      "input": {
+        "material": "Al",
+        "sigma": 5,
+        "gb_plane": "(310)",
+        "gb_type": "tilt",
+        "rotation_axis": [
+          0,
+          0,
+          1
+        ],
+        "application": "diffusion",
+        "constraints": {
+          "gb_expansion": 1.5,
+          "min_thickness": 10.0
+        }
+      },
+      "expected_properties": {
+        "structure_type": "fcc",
+        "rotation_angle": 36.87,
+        "gb_energy": "medium"
+      },
+      "requires_rag": false
+    },
+    {
+      "task_id": "gb-013",
+      "category": "fcc_tilt",
+      "difficulty": "easy",
+      "description": "Create a Σ5(310) symmetric tilt grain boundary in Ni",
+      "input": {
+        "material": "Ni",
+        "sigma": 5,
+        "gb_plane": "(310)",
+        "gb_type": "tilt",
+        "rotation_axis": [
+          0,
+          0,
+          1
+        ],
+        "application": "diffusion",
+        "constraints": {
+          "gb_expansion": 1.5,
+          "min_thickness": 10.0
+        }
+      },
+      "expected_properties": {
+        "structure_type": "fcc",
+        "rotation_angle": 36.87,
+        "gb_energy": "medium"
+      },
+      "requires_rag": false
+    },
+    {
+      "task_id": "gb-014",
+      "category": "fcc_tilt",
+      "difficulty": "easy",
+      "description": "Create a Σ5(310) symmetric tilt grain boundary in Au",
+      "input": {
+        "material": "Au",
+        "sigma": 5,
+        "gb_plane": "(310)",
+        "gb_type": "tilt",
+        "rotation_axis": [
+          0,
+          0,
+          1
+        ],
+        "application": "diffusion",
+        "constraints": {
+          "gb_expansion": 1.5,
+          "min_thickness": 10.0
+        }
+      },
+      "expected_properties": {
+        "structure_type": "fcc",
+        "rotation_angle": 36.87,
+        "gb_energy": "medium"
+      },
+      "requires_rag": false
+    },
+    {
+      "task_id": "gb-015",
+      "category": "fcc_tilt",
+      "difficulty": "easy",
+      "description": "Create a Σ5(310) symmetric tilt grain boundary in Ag",
+      "input": {
+        "material": "Ag",
+        "sigma": 5,
+        "gb_plane": "(310)",
+        "gb_type": "tilt",
+        "rotation_axis": [
+          0,
+          0,
+          1
+        ],
+        "application": "diffusion",
+        "constraints": {
+          "gb_expansion": 1.5,
+          "min_thickness": 10.0
+        }
+      },
+      "expected_properties": {
+        "structure_type": "fcc",
+        "rotation_angle": 36.87,
+        "gb_energy": "medium"
+      },
+      "requires_rag": false
+    },
+    {
+      "task_id": "gb-016",
+      "category": "fcc_tilt",
+      "difficulty": "easy",
+      "description": "Create a Σ5(310) symmetric tilt grain boundary in Pt",
+      "input": {
+        "material": "Pt",
+        "sigma": 5,
+        "gb_plane": "(310)",
+        "gb_type": "tilt",
+        "rotation_axis": [
+          0,
+          0,
+          1
+        ],
+        "application": "diffusion",
+        "constraints": {
+          "gb_expansion": 1.5,
+          "min_thickness": 10.0
+        }
+      },
+      "expected_properties": {
+        "structure_type": "fcc",
+        "rotation_angle": 36.87,
+        "gb_energy": "medium"
+      },
+      "requires_rag": false
+    },
+    {
+      "task_id": "gb-017",
+      "category": "fcc_tilt",
+      "difficulty": "easy",
+      "description": "Create a Σ5(310) symmetric tilt grain boundary in Pd",
+      "input": {
+        "material": "Pd",
+        "sigma": 5,
+        "gb_plane": "(310)",
+        "gb_type": "tilt",
+        "rotation_axis": [
+          0,
+          0,
+          1
+        ],
+        "application": "diffusion",
+        "constraints": {
+          "gb_expansion": 1.5,
+          "min_thickness": 10.0
+        }
+      },
+      "expected_properties": {
+        "structure_type": "fcc",
+        "rotation_angle": 36.87,
+        "gb_energy": "medium"
+      },
+      "requires_rag": false
+    },
+    {
+      "task_id": "gb-018",
+      "category": "bcc_twin",
+      "difficulty": "easy",
+      "description": "Create a Σ3(112) twin boundary in Fe",
+      "input": {
+        "material": "Fe",
+        "sigma": 3,
+        "gb_plane": "(112)",
+        "gb_type": "twin",
+        "rotation_axis": [
+          1,
+          1,
+          0
+        ],
+        "application": "mechanical_properties",
+        "constraints": {
+          "gb_expansion": 0.5,
+          "min_thickness": 10.0
+        }
+      },
+      "expected_properties": {
+        "structure_type": "bcc",
+        "rotation_angle": 70.53,
+        "gb_energy": "low"
+      },
+      "requires_rag": false
+    },
+    {
+      "task_id": "gb-019",
+      "category": "bcc_twin",
+      "difficulty": "easy",
+      "description": "Create a Σ3(112) twin boundary in W",
+      "input": {
+        "material": "W",
+        "sigma": 3,
+        "gb_plane": "(112)",
+        "gb_type": "twin",
+        "rotation_axis": [
+          1,
+          1,
+          0
+        ],
+        "application": "mechanical_properties",
+        "constraints": {
+          "gb_expansion": 0.5,
+          "min_thickness": 10.0
+        }
+      },
+      "expected_properties": {
+        "structure_type": "bcc",
+        "rotation_angle": 70.53,
+        "gb_energy": "low"
+      },
+      "requires_rag": false
+    },
+    {
+      "task_id": "gb-020",
+      "category": "bcc_twin",
+      "difficulty": "easy",
+      "description": "Create a Σ3(112) twin boundary in Mo",
+      "input": {
+        "material": "Mo",
+        "sigma": 3,
+        "gb_plane": "(112)",
+        "gb_type": "twin",
+        "rotation_axis": [
+          1,
+          1,
+          0
+        ],
+        "application": "mechanical_properties",
+        "constraints": {
+          "gb_expansion": 0.5,
+          "min_thickness": 10.0
+        }
+      },
+      "expected_properties": {
+        "structure_type": "bcc",
+        "rotation_angle": 70.53,
+        "gb_energy": "low"
+      },
+      "requires_rag": false
+    },
+    {
+      "task_id": "gb-021",
+      "category": "bcc_twin",
+      "difficulty": "easy",
+      "description": "Create a Σ3(112) twin boundary in Cr",
+      "input": {
+        "material": "Cr",
+        "sigma": 3,
+        "gb_plane": "(112)",
+        "gb_type": "twin",
+        "rotation_axis": [
+          1,
+          1,
+          0
+        ],
+        "application": "mechanical_properties",
+        "constraints": {
+          "gb_expansion": 0.5,
+          "min_thickness": 10.0
+        }
+      },
+      "expected_properties": {
+        "structure_type": "bcc",
+        "rotation_angle": 70.53,
+        "gb_energy": "low"
+      },
+      "requires_rag": false
+    },
+    {
+      "task_id": "gb-022",
+      "category": "bcc_twin",
+      "difficulty": "easy",
+      "description": "Create a Σ3(112) twin boundary in V",
+      "input": {
+        "material": "V",
+        "sigma": 3,
+        "gb_plane": "(112)",
+        "gb_type": "twin",
+        "rotation_axis": [
+          1,
+          1,
+          0
+        ],
+        "application": "mechanical_properties",
+        "constraints": {
+          "gb_expansion": 0.5,
+          "min_thickness": 10.0
+        }
+      },
+      "expected_properties": {
+        "structure_type": "bcc",
+        "rotation_angle": 70.53,
+        "gb_energy": "low"
+      },
+      "requires_rag": false
+    },
+    {
+      "task_id": "gb-023",
+      "category": "bcc_twin",
+      "difficulty": "easy",
+      "description": "Create a Σ3(112) twin boundary in Nb",
+      "input": {
+        "material": "Nb",
+        "sigma": 3,
+        "gb_plane": "(112)",
+        "gb_type": "twin",
+        "rotation_axis": [
+          1,
+          1,
+          0
+        ],
+        "application": "mechanical_properties",
+        "constraints": {
+          "gb_expansion": 0.5,
+          "min_thickness": 10.0
+        }
+      },
+      "expected_properties": {
+        "structure_type": "bcc",
+        "rotation_angle": 70.53,
+        "gb_energy": "low"
+      },
+      "requires_rag": false
+    },
+    {
+      "task_id": "gb-024",
+      "category": "bcc_twin",
+      "difficulty": "easy",
+      "description": "Create a Σ3(112) twin boundary in Ta",
+      "input": {
+        "material": "Ta",
+        "sigma": 3,
+        "gb_plane": "(112)",
+        "gb_type": "twin",
+        "rotation_axis": [
+          1,
+          1,
+          0
+        ],
+        "application": "mechanical_properties",
+        "constraints": {
+          "gb_expansion": 0.5,
+          "min_thickness": 10.0
+        }
+      },
+      "expected_properties": {
+        "structure_type": "bcc",
+        "rotation_angle": 70.53,
+        "gb_energy": "low"
+      },
+      "requires_rag": false
+    },
+    {
+      "task_id": "gb-025",
+      "category": "bcc_twin",
+      "difficulty": "easy",
+      "description": "Create a Σ3(112) twin boundary in Li",
+      "input": {
+        "material": "Li",
+        "sigma": 3,
+        "gb_plane": "(112)",
+        "gb_type": "twin",
+        "rotation_axis": [
+          1,
+          1,
+          0
+        ],
+        "application": "mechanical_properties",
+        "constraints": {
+          "gb_expansion": 0.5,
+          "min_thickness": 10.0
+        }
+      },
+      "expected_properties": {
+        "structure_type": "bcc",
+        "rotation_angle": 70.53,
+        "gb_energy": "low"
+      },
+      "requires_rag": false
+    },
+    {
+      "task_id": "gb-026",
+      "category": "fcc_tilt",
+      "difficulty": "medium",
+      "description": "Create a Σ9(221) symmetric tilt grain boundary in Cu",
+      "input": {
+        "material": "Cu",
+        "sigma": 9,
+        "gb_plane": "(221)",
+        "gb_type": "tilt",
+        "rotation_axis": [
+          1,
+          1,
+          0
+        ],
+        "application": "segregation",
+        "constraints": {
+          "gb_expansion": 1.5,
+          "min_thickness": 12.0
+        }
+      },
+      "expected_properties": {
+        "structure_type": "fcc",
+        "rotation_angle": 38.94,
+        "gb_energy": "medium"
+      },
+      "requires_rag": true
+    },
+    {
+      "task_id": "gb-027",
+      "category": "fcc_tilt",
+      "difficulty": "medium",
+      "description": "Create a Σ9(221) symmetric tilt grain boundary in Ni",
+      "input": {
+        "material": "Ni",
+        "sigma": 9,
+        "gb_plane": "(221)",
+        "gb_type": "tilt",
+        "rotation_axis": [
+          1,
+          1,
+          0
+        ],
+        "application": "segregation",
+        "constraints": {
+          "gb_expansion": 1.5,
+          "min_thickness": 12.0
+        }
+      },
+      "expected_properties": {
+        "structure_type": "fcc",
+        "rotation_angle": 38.94,
+        "gb_energy": "medium"
+      },
+      "requires_rag": true
+    },
+    {
+      "task_id": "gb-028",
+      "category": "fcc_tilt",
+      "difficulty": "medium",
+      "description": "Create a Σ9(221) symmetric tilt grain boundary in Au",
+      "input": {
+        "material": "Au",
+        "sigma": 9,
+        "gb_plane": "(221)",
+        "gb_type": "tilt",
+        "rotation_axis": [
+          1,
+          1,
+          0
+        ],
+        "application": "segregation",
+        "constraints": {
+          "gb_expansion": 1.5,
+          "min_thickness": 12.0
+        }
+      },
+      "expected_properties": {
+        "structure_type": "fcc",
+        "rotation_angle": 38.94,
+        "gb_energy": "medium"
+      },
+      "requires_rag": true
+    },
+    {
+      "task_id": "gb-029",
+      "category": "fcc_tilt",
+      "difficulty": "medium",
+      "description": "Create a Σ9(221) symmetric tilt grain boundary in Pt",
+      "input": {
+        "material": "Pt",
+        "sigma": 9,
+        "gb_plane": "(221)",
+        "gb_type": "tilt",
+        "rotation_axis": [
+          1,
+          1,
+          0
+        ],
+        "application": "segregation",
+        "constraints": {
+          "gb_expansion": 1.5,
+          "min_thickness": 12.0
+        }
+      },
+      "expected_properties": {
+        "structure_type": "fcc",
+        "rotation_angle": 38.94,
+        "gb_energy": "medium"
+      },
+      "requires_rag": true
+    },
+    {
+      "task_id": "gb-030",
+      "category": "fcc_tilt",
+      "difficulty": "medium",
+      "description": "Create a Σ9(221) symmetric tilt grain boundary in Pd",
+      "input": {
+        "material": "Pd",
+        "sigma": 9,
+        "gb_plane": "(221)",
+        "gb_type": "tilt",
+        "rotation_axis": [
+          1,
+          1,
+          0
+        ],
+        "application": "segregation",
+        "constraints": {
+          "gb_expansion": 1.5,
+          "min_thickness": 12.0
+        }
+      },
+      "expected_properties": {
+        "structure_type": "fcc",
+        "rotation_angle": 38.94,
+        "gb_energy": "medium"
+      },
+      "requires_rag": true
+    },
+    {
+      "task_id": "gb-031",
+      "category": "fcc_tilt",
+      "difficulty": "medium",
+      "description": "Create a Σ9(221) symmetric tilt grain boundary in Ag",
+      "input": {
+        "material": "Ag",
+        "sigma": 9,
+        "gb_plane": "(221)",
+        "gb_type": "tilt",
+        "rotation_axis": [
+          1,
+          1,
+          0
+        ],
+        "application": "segregation",
+        "constraints": {
+          "gb_expansion": 1.5,
+          "min_thickness": 12.0
+        }
+      },
+      "expected_properties": {
+        "structure_type": "fcc",
+        "rotation_angle": 38.94,
+        "gb_energy": "medium"
+      },
+      "requires_rag": true
+    },
+    {
+      "task_id": "gb-032",
+      "category": "fcc_tilt",
+      "difficulty": "medium",
+      "description": "Create a Σ11(311) symmetric tilt grain boundary in Cu",
+      "input": {
+        "material": "Cu",
+        "sigma": 11,
+        "gb_plane": "(311)",
+        "gb_type": "tilt",
+        "rotation_axis": [
+          1,
+          1,
+          0
+        ],
+        "application": "mechanical_properties",
+        "constraints": {
+          "gb_expansion": 1.5,
+          "min_thickness": 12.0
+        }
+      },
+      "expected_properties": {
+        "structure_type": "fcc",
+        "rotation_angle": 50.48,
+        "gb_energy": "medium"
+      },
+      "requires_rag": true
+    },
+    {
+      "task_id": "gb-033",
+      "category": "fcc_tilt",
+      "difficulty": "medium",
+      "description": "Create a Σ11(311) symmetric tilt grain boundary in Al",
+      "input": {
+        "material": "Al",
+        "sigma": 11,
+        "gb_plane": "(311)",
+        "gb_type": "tilt",
+        "rotation_axis": [
+          1,
+          1,
+          0
+        ],
+        "application": "mechanical_properties",
+        "constraints": {
+          "gb_expansion": 1.5,
+          "min_thickness": 12.0
+        }
+      },
+      "expected_properties": {
+        "structure_type": "fcc",
+        "rotation_angle": 50.48,
+        "gb_energy": "medium"
+      },
+      "requires_rag": true
+    },
+    {
+      "task_id": "gb-034",
+      "category": "fcc_tilt",
+      "difficulty": "medium",
+      "description": "Create a Σ11(311) symmetric tilt grain boundary in Au",
+      "input": {
+        "material": "Au",
+        "sigma": 11,
+        "gb_plane": "(311)",
+        "gb_type": "tilt",
+        "rotation_axis": [
+          1,
+          1,
+          0
+        ],
+        "application": "mechanical_properties",
+        "constraints": {
+          "gb_expansion": 1.5,
+          "min_thickness": 12.0
+        }
+      },
+      "expected_properties": {
+        "structure_type": "fcc",
+        "rotation_angle": 50.48,
+        "gb_energy": "medium"
+      },
+      "requires_rag": true
+    },
+    {
+      "task_id": "gb-035",
+      "category": "fcc_tilt",
+      "difficulty": "medium",
+      "description": "Create a Σ11(311) symmetric tilt grain boundary in Pd",
+      "input": {
+        "material": "Pd",
+        "sigma": 11,
+        "gb_plane": "(311)",
+        "gb_type": "tilt",
+        "rotation_axis": [
+          1,
+          1,
+          0
+        ],
+        "application": "mechanical_properties",
+        "constraints": {
+          "gb_expansion": 1.5,
+          "min_thickness": 12.0
+        }
+      },
+      "expected_properties": {
+        "structure_type": "fcc",
+        "rotation_angle": 50.48,
+        "gb_energy": "medium"
+      },
+      "requires_rag": true
+    },
+    {
+      "task_id": "gb-036",
+      "category": "fcc_tilt",
+      "difficulty": "medium",
+      "description": "Create a Σ11(311) symmetric tilt grain boundary in Ni",
+      "input": {
+        "material": "Ni",
+        "sigma": 11,
+        "gb_plane": "(311)",
+        "gb_type": "tilt",
+        "rotation_axis": [
+          1,
+          1,
+          0
+        ],
+        "application": "mechanical_properties",
+        "constraints": {
+          "gb_expansion": 1.5,
+          "min_thickness": 12.0
+        }
+      },
+      "expected_properties": {
+        "structure_type": "fcc",
+        "rotation_angle": 50.48,
+        "gb_energy": "medium"
+      },
+      "requires_rag": true
+    },
+    {
+      "task_id": "gb-037",
+      "category": "fcc_tilt",
+      "difficulty": "medium",
+      "description": "Create a Σ7(321) symmetric tilt grain boundary in Cu",
+      "input": {
+        "material": "Cu",
+        "sigma": 7,
+        "gb_plane": "(321)",
+        "gb_type": "tilt",
+        "rotation_axis": [
+          1,
+          1,
+          1
+        ],
+        "application": "corrosion",
+        "constraints": {
+          "gb_expansion": 1.5,
+          "min_thickness": 12.0
+        }
+      },
+      "expected_properties": {
+        "structure_type": "fcc",
+        "rotation_angle": 38.21,
+        "gb_energy": "medium"
+      },
+      "requires_rag": true
+    },
+    {
+      "task_id": "gb-038",
+      "category": "fcc_tilt",
+      "difficulty": "medium",
+      "description": "Create a Σ7(321) symmetric tilt grain boundary in Ni",
+      "input": {
+        "material": "Ni",
+        "sigma": 7,
+        "gb_plane": "(321)",
+        "gb_type": "tilt",
+        "rotation_axis": [
+          1,
+          1,
+          1
+        ],
+        "application": "corrosion",
+        "constraints": {
+          "gb_expansion": 1.5,
+          "min_thickness": 12.0
+        }
+      },
+      "expected_properties": {
+        "structure_type": "fcc",
+        "rotation_angle": 38.21,
+        "gb_energy": "medium"
+      },
+      "requires_rag": true
+    },
+    {
+      "task_id": "gb-039",
+      "category": "fcc_tilt",
+      "difficulty": "medium",
+      "description": "Create a Σ7(321) symmetric tilt grain boundary in Pt",
+      "input": {
+        "material": "Pt",
+        "sigma": 7,
+        "gb_plane": "(321)",
+        "gb_type": "tilt",
+        "rotation_axis": [
+          1,
+          1,
+          1
+        ],
+        "application": "corrosion",
+        "constraints": {
+          "gb_expansion": 1.5,
+          "min_thickness": 12.0
+        }
+      },
+      "expected_properties": {
+        "structure_type": "fcc",
+        "rotation_angle": 38.21,
+        "gb_energy": "medium"
+      },
+      "requires_rag": true
+    },
+    {
+      "task_id": "gb-040",
+      "category": "fcc_tilt",
+      "difficulty": "medium",
+      "description": "Create a Σ7(321) symmetric tilt grain boundary in Ag",
+      "input": {
+        "material": "Ag",
+        "sigma": 7,
+        "gb_plane": "(321)",
+        "gb_type": "tilt",
+        "rotation_axis": [
+          1,
+          1,
+          1
+        ],
+        "application": "corrosion",
+        "constraints": {
+          "gb_expansion": 1.5,
+          "min_thickness": 12.0
+        }
+      },
+      "expected_properties": {
+        "structure_type": "fcc",
+        "rotation_angle": 38.21,
+        "gb_energy": "medium"
+      },
+      "requires_rag": true
+    },
+    {
+      "task_id": "gb-041",
+      "category": "fcc_tilt",
+      "difficulty": "medium",
+      "description": "Create a Σ7(321) symmetric tilt grain boundary in Rh",
+      "input": {
+        "material": "Rh",
+        "sigma": 7,
+        "gb_plane": "(321)",
+        "gb_type": "tilt",
+        "rotation_axis": [
+          1,
+          1,
+          1
+        ],
+        "application": "corrosion",
+        "constraints": {
+          "gb_expansion": 1.5,
+          "min_thickness": 12.0
+        }
+      },
+      "expected_properties": {
+        "structure_type": "fcc",
+        "rotation_angle": 38.21,
+        "gb_energy": "medium"
+      },
+      "requires_rag": true
+    },
+    {
+      "task_id": "gb-042",
+      "category": "bcc_tilt",
+      "difficulty": "medium",
+      "description": "Create a Σ5(310) symmetric tilt grain boundary in Fe",
+      "input": {
+        "material": "Fe",
+        "sigma": 5,
+        "gb_plane": "(310)",
+        "gb_type": "tilt",
+        "rotation_axis": [
+          0,
+          0,
+          1
+        ],
+        "application": "diffusion",
+        "constraints": {
+          "gb_expansion": 1.5,
+          "min_thickness": 12.0
+        }
+      },
+      "expected_properties": {
+        "structure_type": "bcc",
+        "rotation_angle": 36.87,
+        "gb_energy": "medium"
+      },
+      "requires_rag": true
+    },
+    {
+      "task_id": "gb-043",
+      "category": "bcc_tilt",
+      "difficulty": "medium",
+      "description": "Create a Σ5(310) symmetric tilt grain boundary in W",
+      "input": {
+        "material": "W",
+        "sigma": 5,
+        "gb_plane": "(310)",
+        "gb_type": "tilt",
+        "rotation_axis": [
+          0,
+          0,
+          1
+        ],
+        "application": "diffusion",
+        "constraints": {
+          "gb_expansion": 1.5,
+          "min_thickness": 12.0
+        }
+      },
+      "expected_properties": {
+        "structure_type": "bcc",
+        "rotation_angle": 36.87,
+        "gb_energy": "medium"
+      },
+      "requires_rag": true
+    },
+    {
+      "task_id": "gb-044",
+      "category": "bcc_tilt",
+      "difficulty": "medium",
+      "description": "Create a Σ5(310) symmetric tilt grain boundary in Mo",
+      "input": {
+        "material": "Mo",
+        "sigma": 5,
+        "gb_plane": "(310)",
+        "gb_type": "tilt",
+        "rotation_axis": [
+          0,
+          0,
+          1
+        ],
+        "application": "diffusion",
+        "constraints": {
+          "gb_expansion": 1.5,
+          "min_thickness": 12.0
+        }
+      },
+      "expected_properties": {
+        "structure_type": "bcc",
+        "rotation_angle": 36.87,
+        "gb_energy": "medium"
+      },
+      "requires_rag": true
+    },
+    {
+      "task_id": "gb-045",
+      "category": "bcc_tilt",
+      "difficulty": "medium",
+      "description": "Create a Σ5(310) symmetric tilt grain boundary in Cr",
+      "input": {
+        "material": "Cr",
+        "sigma": 5,
+        "gb_plane": "(310)",
+        "gb_type": "tilt",
+        "rotation_axis": [
+          0,
+          0,
+          1
+        ],
+        "application": "diffusion",
+        "constraints": {
+          "gb_expansion": 1.5,
+          "min_thickness": 12.0
+        }
+      },
+      "expected_properties": {
+        "structure_type": "bcc",
+        "rotation_angle": 36.87,
+        "gb_energy": "medium"
+      },
+      "requires_rag": true
+    },
+    {
+      "task_id": "gb-046",
+      "category": "bcc_tilt",
+      "difficulty": "medium",
+      "description": "Create a Σ5(310) symmetric tilt grain boundary in V",
+      "input": {
+        "material": "V",
+        "sigma": 5,
+        "gb_plane": "(310)",
+        "gb_type": "tilt",
+        "rotation_axis": [
+          0,
+          0,
+          1
+        ],
+        "application": "diffusion",
+        "constraints": {
+          "gb_expansion": 1.5,
+          "min_thickness": 12.0
+        }
+      },
+      "expected_properties": {
+        "structure_type": "bcc",
+        "rotation_angle": 36.87,
+        "gb_energy": "medium"
+      },
+      "requires_rag": true
+    },
+    {
+      "task_id": "gb-047",
+      "category": "diamond_twin",
+      "difficulty": "medium",
+      "description": "Create a Σ3(111) twin boundary in Si",
+      "input": {
+        "material": "Si",
+        "sigma": 3,
+        "gb_plane": "(111)",
+        "gb_type": "twin",
+        "rotation_axis": [
+          1,
+          1,
+          1
+        ],
+        "application": "electronics",
+        "constraints": {
+          "gb_expansion": 0.3,
+          "min_thickness": 12.0
+        }
+      },
+      "expected_properties": {
+        "structure_type": "diamond",
+        "rotation_angle": 60.0,
+        "gb_energy": "low"
+      },
+      "requires_rag": true
+    },
+    {
+      "task_id": "gb-048",
+      "category": "diamond_twin",
+      "difficulty": "medium",
+      "description": "Create a Σ3(111) twin boundary in Ge",
+      "input": {
+        "material": "Ge",
+        "sigma": 3,
+        "gb_plane": "(111)",
+        "gb_type": "twin",
+        "rotation_axis": [
+          1,
+          1,
+          1
+        ],
+        "application": "electronics",
+        "constraints": {
+          "gb_expansion": 0.3,
+          "min_thickness": 12.0
+        }
+      },
+      "expected_properties": {
+        "structure_type": "diamond",
+        "rotation_angle": 60.0,
+        "gb_energy": "low"
+      },
+      "requires_rag": true
+    },
+    {
+      "task_id": "gb-049",
+      "category": "diamond_twin",
+      "difficulty": "medium",
+      "description": "Create a Σ3(111) twin boundary in C",
+      "input": {
+        "material": "C",
+        "sigma": 3,
+        "gb_plane": "(111)",
+        "gb_type": "twin",
+        "rotation_axis": [
+          1,
+          1,
+          1
+        ],
+        "application": "electronics",
+        "constraints": {
+          "gb_expansion": 0.3,
+          "min_thickness": 12.0
+        }
+      },
+      "expected_properties": {
+        "structure_type": "diamond",
+        "rotation_angle": 60.0,
+        "gb_energy": "low"
+      },
+      "requires_rag": true
+    },
+    {
+      "task_id": "gb-050",
+      "category": "diamond_twin",
+      "difficulty": "medium",
+      "description": "Create a Σ3(111) twin boundary in SiC",
+      "input": {
+        "material": "SiC",
+        "sigma": 3,
+        "gb_plane": "(111)",
+        "gb_type": "twin",
+        "rotation_axis": [
+          1,
+          1,
+          1
+        ],
+        "application": "electronics",
+        "constraints": {
+          "gb_expansion": 0.3,
+          "min_thickness": 12.0
+        }
+      },
+      "expected_properties": {
+        "structure_type": "diamond",
+        "rotation_angle": 60.0,
+        "gb_energy": "low"
+      },
+      "requires_rag": true
+    },
+    {
+      "task_id": "gb-051",
+      "category": "fcc_tilt",
+      "difficulty": "medium",
+      "description": "Create a Σ5(210) symmetric tilt grain boundary in Cu",
+      "input": {
+        "material": "Cu",
+        "sigma": 5,
+        "gb_plane": "(210)",
+        "gb_type": "tilt",
+        "rotation_axis": [
+          0,
+          0,
+          1
+        ],
+        "application": "catalysis",
+        "constraints": {
+          "gb_expansion": 1.5,
+          "min_thickness": 12.0
+        }
+      },
+      "expected_properties": {
+        "structure_type": "fcc",
+        "rotation_angle": 36.87,
+        "gb_energy": "medium"
+      },
+      "requires_rag": true
+    },
+    {
+      "task_id": "gb-052",
+      "category": "fcc_tilt",
+      "difficulty": "medium",
+      "description": "Create a Σ5(210) symmetric tilt grain boundary in Al",
+      "input": {
+        "material": "Al",
+        "sigma": 5,
+        "gb_plane": "(210)",
+        "gb_type": "tilt",
+        "rotation_axis": [
+          0,
+          0,
+          1
+        ],
+        "application": "catalysis",
+        "constraints": {
+          "gb_expansion": 1.5,
+          "min_thickness": 12.0
+        }
+      },
+      "expected_properties": {
+        "structure_type": "fcc",
+        "rotation_angle": 36.87,
+        "gb_energy": "medium"
+      },
+      "requires_rag": true
+    },
+    {
+      "task_id": "gb-053",
+      "category": "fcc_tilt",
+      "difficulty": "medium",
+      "description": "Create a Σ5(210) symmetric tilt grain boundary in Ni",
+      "input": {
+        "material": "Ni",
+        "sigma": 5,
+        "gb_plane": "(210)",
+        "gb_type": "tilt",
+        "rotation_axis": [
+          0,
+          0,
+          1
+        ],
+        "application": "catalysis",
+        "constraints": {
+          "gb_expansion": 1.5,
+          "min_thickness": 12.0
+        }
+      },
+      "expected_properties": {
+        "structure_type": "fcc",
+        "rotation_angle": 36.87,
+        "gb_energy": "medium"
+      },
+      "requires_rag": true
+    },
+    {
+      "task_id": "gb-054",
+      "category": "fcc_tilt",
+      "difficulty": "medium",
+      "description": "Create a Σ5(210) symmetric tilt grain boundary in Au",
+      "input": {
+        "material": "Au",
+        "sigma": 5,
+        "gb_plane": "(210)",
+        "gb_type": "tilt",
+        "rotation_axis": [
+          0,
+          0,
+          1
+        ],
+        "application": "catalysis",
+        "constraints": {
+          "gb_expansion": 1.5,
+          "min_thickness": 12.0
+        }
+      },
+      "expected_properties": {
+        "structure_type": "fcc",
+        "rotation_angle": 36.87,
+        "gb_energy": "medium"
+      },
+      "requires_rag": true
+    },
+    {
+      "task_id": "gb-055",
+      "category": "fcc_tilt",
+      "difficulty": "medium",
+      "description": "Create a Σ5(210) symmetric tilt grain boundary in Ag",
+      "input": {
+        "material": "Ag",
+        "sigma": 5,
+        "gb_plane": "(210)",
+        "gb_type": "tilt",
+        "rotation_axis": [
+          0,
+          0,
+          1
+        ],
+        "application": "catalysis",
+        "constraints": {
+          "gb_expansion": 1.5,
+          "min_thickness": 12.0
+        }
+      },
+      "expected_properties": {
+        "structure_type": "fcc",
+        "rotation_angle": 36.87,
+        "gb_energy": "medium"
+      },
+      "requires_rag": true
+    },
+    {
+      "task_id": "gb-056",
+      "category": "twist",
+      "difficulty": "hard",
+      "description": "Create a Σ5(001) twist grain boundary in Al",
+      "input": {
+        "material": "Al",
+        "sigma": 5,
+        "gb_plane": "(001)",
+        "gb_type": "twist",
+        "rotation_axis": [
+          0,
+          0,
+          1
+        ],
+        "application": "diffusion",
+        "constraints": {
+          "gb_expansion": 1.5,
+          "min_thickness": 10.0
+        }
+      },
+      "expected_properties": {
+        "structure_type": "fcc",
+        "rotation_angle": 36.87,
+        "gb_energy": "medium"
+      },
+      "requires_rag": true
+    },
+    {
+      "task_id": "gb-057",
+      "category": "twist",
+      "difficulty": "hard",
+      "description": "Create a Σ13(001) twist grain boundary in Cu",
+      "input": {
+        "material": "Cu",
+        "sigma": 13,
+        "gb_plane": "(001)",
+        "gb_type": "twist",
+        "rotation_axis": [
+          0,
+          0,
+          1
+        ],
+        "application": "thermal_conductivity",
+        "constraints": {
+          "gb_expansion": 1.5,
+          "min_thickness": 10.0
+        }
+      },
+      "expected_properties": {
+        "structure_type": "fcc",
+        "rotation_angle": 22.62,
+        "gb_energy": "high"
+      },
+      "requires_rag": true
+    },
+    {
+      "task_id": "gb-058",
+      "category": "twist",
+      "difficulty": "hard",
+      "description": "Create a Σ17(001) twist grain boundary in Ni",
+      "input": {
+        "material": "Ni",
+        "sigma": 17,
+        "gb_plane": "(001)",
+        "gb_type": "twist",
+        "rotation_axis": [
+          0,
+          0,
+          1
+        ],
+        "application": "creep_resistance",
+        "constraints": {
+          "gb_expansion": 1.5,
+          "min_thickness": 10.0
+        }
+      },
+      "expected_properties": {
+        "structure_type": "fcc",
+        "rotation_angle": 28.07,
+        "gb_energy": "high"
+      },
+      "requires_rag": true
+    },
+    {
+      "task_id": "gb-059",
+      "category": "twist",
+      "difficulty": "hard",
+      "description": "Create a Σ5(001) twist grain boundary in Fe",
+      "input": {
+        "material": "Fe",
+        "sigma": 5,
+        "gb_plane": "(001)",
+        "gb_type": "twist",
+        "rotation_axis": [
+          0,
+          0,
+          1
+        ],
+        "application": "radiation_damage",
+        "constraints": {
+          "gb_expansion": 1.5,
+          "min_thickness": 10.0
+        }
+      },
+      "expected_properties": {
+        "structure_type": "bcc",
+        "rotation_angle": 36.87,
+        "gb_energy": "medium"
+      },
+      "requires_rag": true
+    },
+    {
+      "task_id": "gb-060",
+      "category": "twist",
+      "difficulty": "hard",
+      "description": "Create a Σ13(001) twist grain boundary in W",
+      "input": {
+        "material": "W",
+        "sigma": 13,
+        "gb_plane": "(001)",
+        "gb_type": "twist",
+        "rotation_axis": [
+          0,
+          0,
+          1
+        ],
+        "application": "thermal_conductivity",
+        "constraints": {
+          "gb_expansion": 1.5,
+          "min_thickness": 10.0
+        }
+      },
+      "expected_properties": {
+        "structure_type": "bcc",
+        "rotation_angle": 22.62,
+        "gb_energy": "high"
+      },
+      "requires_rag": true
+    },
+    {
+      "task_id": "gb-061",
+      "category": "twist",
+      "difficulty": "hard",
+      "description": "Create a Σ17(001) twist grain boundary in Mo",
+      "input": {
+        "material": "Mo",
+        "sigma": 17,
+        "gb_plane": "(001)",
+        "gb_type": "twist",
+        "rotation_axis": [
+          0,
+          0,
+          1
+        ],
+        "application": "mechanical_properties",
+        "constraints": {
+          "gb_expansion": 1.5,
+          "min_thickness": 10.0
+        }
+      },
+      "expected_properties": {
+        "structure_type": "bcc",
+        "rotation_angle": 28.07,
+        "gb_energy": "high"
+      },
+      "requires_rag": true
+    },
+    {
+      "task_id": "gb-062",
+      "category": "diamond_tilt",
+      "difficulty": "hard",
+      "description": "Create a Σ9(221) grain boundary in Si",
+      "input": {
+        "material": "Si",
+        "sigma": 9,
+        "gb_plane": "(221)",
+        "gb_type": "tilt",
+        "rotation_axis": [
+          1,
+          1,
+          0
+        ],
+        "application": "electronics",
+        "constraints": {
+          "gb_expansion": 1.5,
+          "min_thickness": 15.0
+        }
+      },
+      "expected_properties": {
+        "structure_type": "diamond",
+        "rotation_angle": 38.94,
+        "gb_energy": "medium"
+      },
+      "requires_rag": true
+    },
+    {
+      "task_id": "gb-063",
+      "category": "diamond_tilt",
+      "difficulty": "hard",
+      "description": "Create a Σ9(221) grain boundary in Ge",
+      "input": {
+        "material": "Ge",
+        "sigma": 9,
+        "gb_plane": "(221)",
+        "gb_type": "tilt",
+        "rotation_axis": [
+          1,
+          1,
+          0
+        ],
+        "application": "electronics",
+        "constraints": {
+          "gb_expansion": 1.5,
+          "min_thickness": 15.0
+        }
+      },
+      "expected_properties": {
+        "structure_type": "diamond",
+        "rotation_angle": 38.94,
+        "gb_energy": "medium"
+      },
+      "requires_rag": true
+    },
+    {
+      "task_id": "gb-064",
+      "category": "diamond_tilt",
+      "difficulty": "hard",
+      "description": "Create a Σ27(115) grain boundary in Si",
+      "input": {
+        "material": "Si",
+        "sigma": 27,
+        "gb_plane": "(115)",
+        "gb_type": "tilt",
+        "rotation_axis": [
+          1,
+          1,
+          0
+        ],
+        "application": "electronics",
+        "constraints": {
+          "gb_expansion": 1.5,
+          "min_thickness": 15.0
+        }
+      },
+      "expected_properties": {
+        "structure_type": "diamond",
+        "rotation_angle": 31.59,
+        "gb_energy": "high"
+      },
+      "requires_rag": true
+    },
+    {
+      "task_id": "gb-065",
+      "category": "diamond_tilt",
+      "difficulty": "hard",
+      "description": "Create a Σ9(221) grain boundary in SiC",
+      "input": {
+        "material": "SiC",
+        "sigma": 9,
+        "gb_plane": "(221)",
+        "gb_type": "tilt",
+        "rotation_axis": [
+          1,
+          1,
+          0
+        ],
+        "application": "electronics",
+        "constraints": {
+          "gb_expansion": 1.5,
+          "min_thickness": 15.0
+        }
+      },
+      "expected_properties": {
+        "structure_type": "diamond",
+        "rotation_angle": 38.94,
+        "gb_energy": "medium"
+      },
+      "requires_rag": true
+    },
+    {
+      "task_id": "gb-066",
+      "category": "bcc_tilt",
+      "difficulty": "hard",
+      "description": "Create a Σ9(114) symmetric tilt grain boundary in Fe",
+      "input": {
+        "material": "Fe",
+        "sigma": 9,
+        "gb_plane": "(114)",
+        "gb_type": "tilt",
+        "rotation_axis": [
+          1,
+          1,
+          0
+        ],
+        "application": "mechanical_properties",
+        "constraints": {
+          "gb_expansion": 1.5,
+          "min_thickness": 12.0
+        }
+      },
+      "expected_properties": {
+        "structure_type": "bcc",
+        "rotation_angle": 38.94,
+        "gb_energy": "medium"
+      },
+      "requires_rag": true
+    },
+    {
+      "task_id": "gb-067",
+      "category": "bcc_tilt",
+      "difficulty": "hard",
+      "description": "Create a Σ9(114) symmetric tilt grain boundary in Mo",
+      "input": {
+        "material": "Mo",
+        "sigma": 9,
+        "gb_plane": "(114)",
+        "gb_type": "tilt",
+        "rotation_axis": [
+          1,
+          1,
+          0
+        ],
+        "application": "mechanical_properties",
+        "constraints": {
+          "gb_expansion": 1.5,
+          "min_thickness": 12.0
+        }
+      },
+      "expected_properties": {
+        "structure_type": "bcc",
+        "rotation_angle": 38.94,
+        "gb_energy": "medium"
+      },
+      "requires_rag": true
+    },
+    {
+      "task_id": "gb-068",
+      "category": "bcc_tilt",
+      "difficulty": "hard",
+      "description": "Create a Σ11(332) symmetric tilt grain boundary in Fe",
+      "input": {
+        "material": "Fe",
+        "sigma": 11,
+        "gb_plane": "(332)",
+        "gb_type": "tilt",
+        "rotation_axis": [
+          1,
+          1,
+          0
+        ],
+        "application": "mechanical_properties",
+        "constraints": {
+          "gb_expansion": 1.5,
+          "min_thickness": 12.0
+        }
+      },
+      "expected_properties": {
+        "structure_type": "bcc",
+        "rotation_angle": 50.48,
+        "gb_energy": "medium"
+      },
+      "requires_rag": true
+    },
+    {
+      "task_id": "gb-069",
+      "category": "bcc_tilt",
+      "difficulty": "hard",
+      "description": "Create a Σ11(332) symmetric tilt grain boundary in W",
+      "input": {
+        "material": "W",
+        "sigma": 11,
+        "gb_plane": "(332)",
+        "gb_type": "tilt",
+        "rotation_axis": [
+          1,
+          1,
+          0
+        ],
+        "application": "mechanical_properties",
+        "constraints": {
+          "gb_expansion": 1.5,
+          "min_thickness": 12.0
+        }
+      },
+      "expected_properties": {
+        "structure_type": "bcc",
+        "rotation_angle": 50.48,
+        "gb_energy": "medium"
+      },
+      "requires_rag": true
+    },
+    {
+      "task_id": "gb-070",
+      "category": "bcc_tilt",
+      "difficulty": "hard",
+      "description": "Create a Σ9(114) symmetric tilt grain boundary in Cr",
+      "input": {
+        "material": "Cr",
+        "sigma": 9,
+        "gb_plane": "(114)",
+        "gb_type": "tilt",
+        "rotation_axis": [
+          1,
+          1,
+          0
+        ],
+        "application": "mechanical_properties",
+        "constraints": {
+          "gb_expansion": 1.5,
+          "min_thickness": 12.0
+        }
+      },
+      "expected_properties": {
+        "structure_type": "bcc",
+        "rotation_angle": 38.94,
+        "gb_energy": "medium"
+      },
+      "requires_rag": true
+    },
+    {
+      "task_id": "gb-071",
+      "category": "hcp_gb",
+      "difficulty": "hard",
+      "description": "Create a basal grain boundary in Ti (HCP)",
+      "input": {
+        "material": "Ti",
+        "gb_plane": "(0001)",
+        "gb_type": "basal",
+        "structure": "hcp",
+        "application": "mechanical_properties",
+        "constraints": {
+          "gb_expansion": 1.0,
+          "min_thickness": 12.0
+        }
+      },
+      "expected_properties": {
+        "structure_type": "hcp",
+        "gb_energy": "medium"
+      },
+      "requires_rag": true
+    },
+    {
+      "task_id": "gb-072",
+      "category": "hcp_gb",
+      "difficulty": "hard",
+      "description": "Create a twin grain boundary in Mg (HCP)",
+      "input": {
+        "material": "Mg",
+        "gb_plane": "(10-12)",
+        "gb_type": "twin",
+        "structure": "hcp",
+        "application": "fatigue_resistance",
+        "constraints": {
+          "gb_expansion": 1.0,
+          "min_thickness": 12.0
+        }
+      },
+      "expected_properties": {
+        "structure_type": "hcp",
+        "gb_energy": "low"
+      },
+      "requires_rag": true
+    },
+    {
+      "task_id": "gb-073",
+      "category": "hcp_gb",
+      "difficulty": "hard",
+      "description": "Create a prismatic grain boundary in Zr (HCP)",
+      "input": {
+        "material": "Zr",
+        "gb_plane": "(10-10)",
+        "gb_type": "prismatic",
+        "structure": "hcp",
+        "application": "radiation_damage",
+        "constraints": {
+          "gb_expansion": 1.0,
+          "min_thickness": 12.0
+        }
+      },
+      "expected_properties": {
+        "structure_type": "hcp",
+        "gb_energy": "medium"
+      },
+      "requires_rag": true
+    },
+    {
+      "task_id": "gb-074",
+      "category": "hcp_gb",
+      "difficulty": "hard",
+      "description": "Create a pyramidal grain boundary in Ti (HCP)",
+      "input": {
+        "material": "Ti",
+        "gb_plane": "(10-11)",
+        "gb_type": "pyramidal",
+        "structure": "hcp",
+        "application": "creep_resistance",
+        "constraints": {
+          "gb_expansion": 1.0,
+          "min_thickness": 12.0
+        }
+      },
+      "expected_properties": {
+        "structure_type": "hcp",
+        "gb_energy": "medium"
+      },
+      "requires_rag": true
+    },
+    {
+      "task_id": "gb-075",
+      "category": "hcp_gb",
+      "difficulty": "hard",
+      "description": "Create a twin grain boundary in Be (HCP)",
+      "input": {
+        "material": "Be",
+        "gb_plane": "(10-12)",
+        "gb_type": "twin",
+        "structure": "hcp",
+        "application": "thermal_conductivity",
+        "constraints": {
+          "gb_expansion": 1.0,
+          "min_thickness": 12.0
+        }
+      },
+      "expected_properties": {
+        "structure_type": "hcp",
+        "gb_energy": "low"
+      },
+      "requires_rag": true
+    },
+    {
+      "task_id": "gb-076",
+      "category": "asymmetric_tilt",
+      "difficulty": "hard",
+      "description": "Create an asymmetric Σ5 tilt grain boundary in Cu",
+      "input": {
+        "material": "Cu",
+        "sigma": 5,
+        "gb_type": "asymmetric_tilt",
+        "application": "segregation",
+        "constraints": {
+          "gb_expansion": 2.0,
+          "min_thickness": 15.0
+        }
+      },
+      "expected_properties": {
+        "structure_type": "fcc",
+        "gb_energy": "high"
+      },
+      "requires_rag": true
+    },
+    {
+      "task_id": "gb-077",
+      "category": "asymmetric_tilt",
+      "difficulty": "hard",
+      "description": "Create an asymmetric Σ9 tilt grain boundary in Ni",
+      "input": {
+        "material": "Ni",
+        "sigma": 9,
+        "gb_type": "asymmetric_tilt",
+        "application": "corrosion",
+        "constraints": {
+          "gb_expansion": 2.0,
+          "min_thickness": 15.0
+        }
+      },
+      "expected_properties": {
+        "structure_type": "fcc",
+        "gb_energy": "high"
+      },
+      "requires_rag": true
+    },
+    {
+      "task_id": "gb-078",
+      "category": "asymmetric_tilt",
+      "difficulty": "hard",
+      "description": "Create an asymmetric Σ5 tilt grain boundary in Fe",
+      "input": {
+        "material": "Fe",
+        "sigma": 5,
+        "gb_type": "asymmetric_tilt",
+        "application": "hydrogen_storage",
+        "constraints": {
+          "gb_expansion": 2.0,
+          "min_thickness": 15.0
+        }
+      },
+      "expected_properties": {
+        "structure_type": "bcc",
+        "gb_energy": "high"
+      },
+      "requires_rag": true
+    },
+    {
+      "task_id": "gb-079",
+      "category": "asymmetric_tilt",
+      "difficulty": "hard",
+      "description": "Create an asymmetric Σ9 tilt grain boundary in Si",
+      "input": {
+        "material": "Si",
+        "sigma": 9,
+        "gb_type": "asymmetric_tilt",
+        "application": "electronics",
+        "constraints": {
+          "gb_expansion": 2.0,
+          "min_thickness": 15.0
+        }
+      },
+      "expected_properties": {
+        "structure_type": "diamond",
+        "gb_energy": "high"
+      },
+      "requires_rag": true
+    },
+    {
+      "task_id": "gb-080",
+      "category": "asymmetric_tilt",
+      "difficulty": "hard",
+      "description": "Create an asymmetric Σ7 tilt grain boundary in Al",
+      "input": {
+        "material": "Al",
+        "sigma": 7,
+        "gb_type": "asymmetric_tilt",
+        "application": "diffusion",
+        "constraints": {
+          "gb_expansion": 2.0,
+          "min_thickness": 15.0
+        }
+      },
+      "expected_properties": {
+        "structure_type": "fcc",
+        "gb_energy": "high"
+      },
+      "requires_rag": true
+    },
+    {
+      "task_id": "gb-081",
+      "category": "fcc_twin",
+      "difficulty": "easy",
+      "description": "Create a Sigma3(112) incoherent twin boundary in Cu",
+      "input": {
+        "material": "Cu",
+        "sigma": 3,
+        "gb_plane": "(112)",
+        "gb_type": "twin",
+        "rotation_axis": [
+          1,
+          1,
+          1
+        ],
+        "application": "mechanical_properties",
+        "constraints": {
+          "gb_expansion": 0.5,
+          "min_thickness": 12.0
+        }
+      },
+      "expected_properties": {
+        "structure_type": "fcc",
+        "rotation_angle": 60.0,
+        "gb_energy": "medium"
+      },
+      "requires_rag": false
+    },
+    {
+      "task_id": "gb-082",
+      "category": "fcc_tilt",
+      "difficulty": "medium",
+      "description": "Create a Sigma5(210) symmetric tilt grain boundary in Ni",
+      "input": {
+        "material": "Ni",
+        "sigma": 5,
+        "gb_plane": "(210)",
+        "gb_type": "symmetric_tilt",
+        "rotation_axis": [
+          0,
+          0,
+          1
+        ],
+        "application": "diffusion",
+        "constraints": {
+          "gb_expansion": 0.8,
+          "min_thickness": 12.0
+        }
+      },
+      "expected_properties": {
+        "structure_type": "fcc",
+        "rotation_angle": 36.87,
+        "gb_energy": "medium"
+      },
+      "requires_rag": false
+    },
+    {
+      "task_id": "gb-083",
+      "category": "fcc_tilt",
+      "difficulty": "medium",
+      "description": "Create a Sigma5(310) symmetric tilt grain boundary in Ag",
+      "input": {
+        "material": "Ag",
+        "sigma": 5,
+        "gb_plane": "(310)",
+        "gb_type": "symmetric_tilt",
+        "rotation_axis": [
+          0,
+          0,
+          1
+        ],
+        "application": "conductivity",
+        "constraints": {
+          "gb_expansion": 0.8,
+          "min_thickness": 12.0
+        }
+      },
+      "expected_properties": {
+        "structure_type": "fcc",
+        "rotation_angle": 36.87,
+        "gb_energy": "medium"
+      },
+      "requires_rag": false
+    },
+    {
+      "task_id": "gb-084",
+      "category": "fcc_tilt",
+      "difficulty": "medium",
+      "description": "Create a Sigma7 tilt grain boundary in Al with [111] rotation axis",
+      "input": {
+        "material": "Al",
+        "sigma": 7,
+        "gb_plane": "(123)",
+        "gb_type": "tilt",
+        "rotation_axis": [
+          1,
+          1,
+          1
+        ],
+        "application": "mechanical_properties",
+        "constraints": {
+          "gb_expansion": 1.0,
+          "min_thickness": 12.0
+        }
+      },
+      "expected_properties": {
+        "structure_type": "fcc",
+        "rotation_angle": 38.21,
+        "gb_energy": "medium"
+      },
+      "requires_rag": true
+    },
+    {
+      "task_id": "gb-085",
+      "category": "bcc_tilt",
+      "difficulty": "medium",
+      "description": "Create a Sigma5(310) symmetric tilt grain boundary in BCC Fe",
+      "input": {
+        "material": "Fe",
+        "sigma": 5,
+        "gb_plane": "(310)",
+        "gb_type": "symmetric_tilt",
+        "rotation_axis": [
+          0,
+          0,
+          1
+        ],
+        "application": "hydrogen_embrittlement",
+        "constraints": {
+          "gb_expansion": 0.8,
+          "min_thickness": 12.0
+        }
+      },
+      "expected_properties": {
+        "structure_type": "bcc",
+        "rotation_angle": 36.87,
+        "gb_energy": "medium"
+      },
+      "requires_rag": false
+    },
+    {
+      "task_id": "gb-086",
+      "category": "bcc_tilt",
+      "difficulty": "medium",
+      "description": "Create a Sigma3(112) tilt grain boundary in BCC W",
+      "input": {
+        "material": "W",
+        "sigma": 3,
+        "gb_plane": "(112)",
+        "gb_type": "tilt",
+        "rotation_axis": [
+          1,
+          1,
+          0
+        ],
+        "application": "radiation_damage",
+        "constraints": {
+          "gb_expansion": 0.8,
+          "min_thickness": 12.0
+        }
+      },
+      "expected_properties": {
+        "structure_type": "bcc",
+        "rotation_angle": 70.53,
+        "gb_energy": "medium"
+      },
+      "requires_rag": true
+    },
+    {
+      "task_id": "gb-087",
+      "category": "bcc_twin",
+      "difficulty": "medium",
+      "description": "Create a Sigma3 twin-like boundary in BCC Mo",
+      "input": {
+        "material": "Mo",
+        "sigma": 3,
+        "gb_plane": "(112)",
+        "gb_type": "twin",
+        "rotation_axis": [
+          1,
+          1,
+          0
+        ],
+        "application": "refractory_alloys",
+        "constraints": {
+          "gb_expansion": 0.7,
+          "min_thickness": 12.0
+        }
+      },
+      "expected_properties": {
+        "structure_type": "bcc",
+        "rotation_angle": 70.53,
+        "gb_energy": "medium"
+      },
+      "requires_rag": true
+    },
+    {
+      "task_id": "gb-088",
+      "category": "diamond_twin",
+      "difficulty": "medium",
+      "description": "Create a Sigma3(111) coherent twin boundary in diamond Si",
+      "input": {
+        "material": "Si",
+        "sigma": 3,
+        "gb_plane": "(111)",
+        "gb_type": "twin",
+        "rotation_axis": [
+          1,
+          1,
+          1
+        ],
+        "application": "electronics",
+        "constraints": {
+          "gb_expansion": 0.4,
+          "min_thickness": 12.0
+        }
+      },
+      "expected_properties": {
+        "structure_type": "diamond",
+        "rotation_angle": 60.0,
+        "gb_energy": "low"
+      },
+      "requires_rag": false
+    },
+    {
+      "task_id": "gb-089",
+      "category": "diamond_tilt",
+      "difficulty": "hard",
+      "description": "Create a Sigma9 tilt grain boundary in diamond Ge",
+      "input": {
+        "material": "Ge",
+        "sigma": 9,
+        "gb_plane": "(221)",
+        "gb_type": "tilt",
+        "rotation_axis": [
+          1,
+          1,
+          0
+        ],
+        "application": "semiconductors",
+        "constraints": {
+          "gb_expansion": 1.0,
+          "min_thickness": 14.0
+        }
+      },
+      "expected_properties": {
+        "structure_type": "diamond",
+        "rotation_angle": 38.94,
+        "gb_energy": "medium"
+      },
+      "requires_rag": true
+    },
+    {
+      "task_id": "gb-090",
+      "category": "twist",
+      "difficulty": "hard",
+      "description": "Create a Sigma5 twist grain boundary in Cu about the [001] axis",
+      "input": {
+        "material": "Cu",
+        "sigma": 5,
+        "gb_plane": "(001)",
+        "gb_type": "twist",
+        "rotation_axis": [
+          0,
+          0,
+          1
+        ],
+        "application": "diffusion",
+        "constraints": {
+          "gb_expansion": 1.0,
+          "min_thickness": 14.0
+        }
+      },
+      "expected_properties": {
+        "structure_type": "fcc",
+        "rotation_angle": 36.87,
+        "gb_energy": "medium"
+      },
+      "requires_rag": true
+    },
+    {
+      "task_id": "gb-091",
+      "category": "twist",
+      "difficulty": "hard",
+      "description": "Create a Sigma7 twist grain boundary in Ni about the [111] axis",
+      "input": {
+        "material": "Ni",
+        "sigma": 7,
+        "gb_plane": "(111)",
+        "gb_type": "twist",
+        "rotation_axis": [
+          1,
+          1,
+          1
+        ],
+        "application": "grain_growth",
+        "constraints": {
+          "gb_expansion": 1.0,
+          "min_thickness": 14.0
+        }
+      },
+      "expected_properties": {
+        "structure_type": "fcc",
+        "rotation_angle": 38.21,
+        "gb_energy": "medium"
+      },
+      "requires_rag": true
+    },
+    {
+      "task_id": "gb-092",
+      "category": "hcp_gb",
+      "difficulty": "hard",
+      "description": "Create a basal twist grain boundary in HCP Ti",
+      "input": {
+        "material": "Ti",
+        "sigma": 7,
+        "gb_plane": "(0001)",
+        "gb_type": "twist",
+        "rotation_axis": [
+          0,
+          0,
+          1
+        ],
+        "application": "titanium_alloys",
+        "constraints": {
+          "gb_expansion": 1.0,
+          "min_thickness": 14.0
+        }
+      },
+      "expected_properties": {
+        "structure_type": "hcp",
+        "rotation_angle": 30.0,
+        "gb_energy": "medium"
+      },
+      "requires_rag": true
+    },
+    {
+      "task_id": "gb-093",
+      "category": "hcp_gb",
+      "difficulty": "hard",
+      "description": "Create a prismatic tilt grain boundary in HCP Mg",
+      "input": {
+        "material": "Mg",
+        "sigma": 7,
+        "gb_plane": "(10-10)",
+        "gb_type": "tilt",
+        "rotation_axis": [
+          0,
+          0,
+          1
+        ],
+        "application": "lightweight_alloys",
+        "constraints": {
+          "gb_expansion": 1.0,
+          "min_thickness": 14.0
+        }
+      },
+      "expected_properties": {
+        "structure_type": "hcp",
+        "rotation_angle": 30.0,
+        "gb_energy": "medium"
+      },
+      "requires_rag": true
+    },
+    {
+      "task_id": "gb-094",
+      "category": "asymmetric_tilt",
+      "difficulty": "hard",
+      "description": "Create an asymmetric Sigma5 tilt grain boundary in Cu",
+      "input": {
+        "material": "Cu",
+        "sigma": 5,
+        "gb_type": "asymmetric_tilt",
+        "gb_plane": "(210)",
+        "rotation_axis": [
+          0,
+          0,
+          1
+        ],
+        "application": "segregation",
+        "constraints": {
+          "gb_expansion": 1.5,
+          "min_thickness": 15.0
+        }
+      },
+      "expected_properties": {
+        "structure_type": "fcc",
+        "rotation_angle": 36.87,
+        "gb_energy": "high"
+      },
+      "requires_rag": true
+    },
+    {
+      "task_id": "gb-095",
+      "category": "asymmetric_tilt",
+      "difficulty": "hard",
+      "description": "Create an asymmetric Sigma11 tilt grain boundary in Al",
+      "input": {
+        "material": "Al",
+        "sigma": 11,
+        "gb_type": "asymmetric_tilt",
+        "gb_plane": "(113)",
+        "rotation_axis": [
+          1,
+          1,
+          0
+        ],
+        "application": "precipitation",
+        "constraints": {
+          "gb_expansion": 1.5,
+          "min_thickness": 15.0
+        }
+      },
+      "expected_properties": {
+        "structure_type": "fcc",
+        "rotation_angle": 50.48,
+        "gb_energy": "high"
+      },
+      "requires_rag": true
+    },
+    {
+      "task_id": "gb-096",
+      "category": "fcc_twin",
+      "difficulty": "easy",
+      "description": "Create a Sigma3(111) twin boundary in Au",
+      "input": {
+        "material": "Au",
+        "sigma": 3,
+        "gb_plane": "(111)",
+        "gb_type": "twin",
+        "rotation_axis": [
+          1,
+          1,
+          1
+        ],
+        "application": "nanotwinned_metals",
+        "constraints": {
+          "gb_expansion": 0.3,
+          "min_thickness": 10.0
+        }
+      },
+      "expected_properties": {
+        "structure_type": "fcc",
+        "rotation_angle": 60.0,
+        "gb_energy": "low"
+      },
+      "requires_rag": false
+    },
+    {
+      "task_id": "gb-097",
+      "category": "fcc_twin",
+      "difficulty": "easy",
+      "description": "Create a Sigma3(111) twin boundary in Pt",
+      "input": {
+        "material": "Pt",
+        "sigma": 3,
+        "gb_plane": "(111)",
+        "gb_type": "twin",
+        "rotation_axis": [
+          1,
+          1,
+          1
+        ],
+        "application": "catalysis",
+        "constraints": {
+          "gb_expansion": 0.3,
+          "min_thickness": 10.0
+        }
+      },
+      "expected_properties": {
+        "structure_type": "fcc",
+        "rotation_angle": 60.0,
+        "gb_energy": "low"
+      },
+      "requires_rag": false
+    },
+    {
+      "task_id": "gb-098",
+      "category": "bcc_tilt",
+      "difficulty": "medium",
+      "description": "Create a Sigma9 tilt grain boundary in BCC Cr",
+      "input": {
+        "material": "Cr",
+        "sigma": 9,
+        "gb_plane": "(221)",
+        "gb_type": "tilt",
+        "rotation_axis": [
+          1,
+          1,
+          0
+        ],
+        "application": "corrosion",
+        "constraints": {
+          "gb_expansion": 1.0,
+          "min_thickness": 14.0
+        }
+      },
+      "expected_properties": {
+        "structure_type": "bcc",
+        "rotation_angle": 38.94,
+        "gb_energy": "medium"
+      },
+      "requires_rag": true
+    },
+    {
+      "task_id": "gb-099",
+      "category": "diamond_tilt",
+      "difficulty": "hard",
+      "description": "Create a Sigma5 tilt grain boundary in diamond C",
+      "input": {
+        "material": "C",
+        "sigma": 5,
+        "gb_plane": "(310)",
+        "gb_type": "tilt",
+        "rotation_axis": [
+          0,
+          0,
+          1
+        ],
+        "application": "diamond_electronics",
+        "constraints": {
+          "gb_expansion": 0.8,
+          "min_thickness": 12.0
+        }
+      },
+      "expected_properties": {
+        "structure_type": "diamond",
+        "rotation_angle": 36.87,
+        "gb_energy": "medium"
+      },
+      "requires_rag": true
+    },
+    {
+      "task_id": "gb-100",
+      "category": "fcc_tilt",
+      "difficulty": "medium",
+      "description": "Create a Sigma13(510) tilt grain boundary in Cu",
+      "input": {
+        "material": "Cu",
+        "sigma": 13,
+        "gb_plane": "(510)",
+        "gb_type": "tilt",
+        "rotation_axis": [
+          0,
+          0,
+          1
+        ],
+        "application": "grain_boundary_engineering",
+        "constraints": {
+          "gb_expansion": 1.0,
+          "min_thickness": 14.0
+        }
+      },
+      "expected_properties": {
+        "structure_type": "fcc",
+        "rotation_angle": 22.62,
+        "gb_energy": "medium"
+      },
+      "requires_rag": true
+    }
+  ]
+}

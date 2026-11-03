@@ -1,0 +1,322 @@
+{
+  "_metadata": {
+    "description": "Generalized construction patterns for interfaces and grain boundaries",
+    "purpose": "Provide parameterized code templates based on crystal structure types",
+    "version": "2026.11-r4",
+    "last_updated": "2026-11-03",
+    "design_principle": "Patterns are parameterized by structure type, not specific materials",
+    "changelog": "Replace GB rotation/stacking proxies and unverified size/performance rules with a native CSL construction contract. Remove automatic interface strain-limit relaxation.",
+    "sources": [
+      "https://pymatgen.org/pymatgen.core.html#pymatgen.core.interface.GrainBoundaryGenerator"
+    ]
+  },
+  "bulk_structure_patterns": {
+    "description": "Parameterized bulk structure creation by Bravais lattice type",
+    "fcc": {
+      "atoms_per_cell": 4,
+      "basis_positions": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0.5,
+          0.5,
+          0
+        ],
+        [
+          0.5,
+          0,
+          0.5
+        ],
+        [
+          0,
+          0.5,
+          0.5
+        ]
+      ],
+      "lattice_type": "cubic",
+      "code_pattern": "lattice = Lattice.cubic(a)\nspecies = [element] * 4\ncoords = [[0, 0, 0], [0.5, 0.5, 0], [0.5, 0, 0.5], [0, 0.5, 0.5]]\nbulk = Structure(lattice, species, coords)"
+    },
+    "bcc": {
+      "atoms_per_cell": 2,
+      "basis_positions": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0.5,
+          0.5,
+          0.5
+        ]
+      ],
+      "lattice_type": "cubic",
+      "code_pattern": "lattice = Lattice.cubic(a)\nspecies = [element] * 2\ncoords = [[0, 0, 0], [0.5, 0.5, 0.5]]\nbulk = Structure(lattice, species, coords)"
+    },
+    "hcp": {
+      "atoms_per_cell": 2,
+      "basis_positions": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0.333,
+          0.667,
+          0.5
+        ]
+      ],
+      "lattice_type": "hexagonal",
+      "code_pattern": "lattice = Lattice.hexagonal(a, c)\nspecies = [element] * 2\ncoords = [[0, 0, 0], [1/3, 2/3, 0.5]]\nbulk = Structure(lattice, species, coords)"
+    },
+    "diamond": {
+      "atoms_per_cell": 8,
+      "basis_positions": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0.25,
+          0.25,
+          0.25
+        ],
+        [
+          0.5,
+          0.5,
+          0
+        ],
+        [
+          0.75,
+          0.75,
+          0.25
+        ],
+        [
+          0.5,
+          0,
+          0.5
+        ],
+        [
+          0.75,
+          0.25,
+          0.75
+        ],
+        [
+          0,
+          0.5,
+          0.5
+        ],
+        [
+          0.25,
+          0.75,
+          0.75
+        ]
+      ],
+      "lattice_type": "cubic",
+      "code_pattern": "lattice = Lattice.cubic(a)\nspecies = [element] * 8\ncoords = [[0, 0, 0], [0.25, 0.25, 0.25], [0.5, 0.5, 0], [0.75, 0.75, 0.25], [0.5, 0, 0.5], [0.75, 0.25, 0.75], [0, 0.5, 0.5], [0.25, 0.75, 0.75]]\nbulk = Structure(lattice, species, coords)"
+    },
+    "rocksalt": {
+      "atoms_per_cell": 8,
+      "basis_positions_cation": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0.5,
+          0.5,
+          0
+        ],
+        [
+          0.5,
+          0,
+          0.5
+        ],
+        [
+          0,
+          0.5,
+          0.5
+        ]
+      ],
+      "basis_positions_anion": [
+        [
+          0.5,
+          0,
+          0
+        ],
+        [
+          0,
+          0.5,
+          0
+        ],
+        [
+          0,
+          0,
+          0.5
+        ],
+        [
+          0.5,
+          0.5,
+          0.5
+        ]
+      ],
+      "lattice_type": "cubic",
+      "code_pattern": "lattice = Lattice.cubic(a)\nspecies = [cation]*4 + [anion]*4\ncoords = [[0, 0, 0], [0.5, 0.5, 0], [0.5, 0, 0.5], [0, 0.5, 0.5], [0.5, 0, 0], [0, 0.5, 0], [0, 0, 0.5], [0.5, 0.5, 0.5]]\nbulk = Structure(lattice, species, coords)"
+    },
+    "wurtzite": {
+      "atoms_per_cell": 4,
+      "basis_positions": [
+        [
+          0.333,
+          0.667,
+          0
+        ],
+        [
+          0.667,
+          0.333,
+          0.5
+        ],
+        [
+          0.333,
+          0.667,
+          0.375
+        ],
+        [
+          0.667,
+          0.333,
+          0.875
+        ]
+      ],
+      "lattice_type": "hexagonal",
+      "code_pattern": "lattice = Lattice.hexagonal(a, c)\nspecies = [cation, cation, anion, anion]\ncoords = [[1/3, 2/3, 0], [2/3, 1/3, 0.5], [1/3, 2/3, 0.375], [2/3, 1/3, 0.875]]\nbulk = Structure(lattice, species, coords)",
+      "note": "These are ideal prototype coordinates; verify the requested basis/internal parameter. SlabGenerator takes three plane indices; grain-boundary index conventions depend on the lattice-specific API."
+    },
+    "rutile": {
+      "atoms_per_cell": 6,
+      "basis_positions_metal": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0.5,
+          0.5,
+          0.5
+        ]
+      ],
+      "basis_positions_oxygen": [
+        [
+          0.3,
+          0.3,
+          0
+        ],
+        [
+          0.7,
+          0.7,
+          0
+        ],
+        [
+          0.2,
+          0.8,
+          0.5
+        ],
+        [
+          0.8,
+          0.2,
+          0.5
+        ]
+      ],
+      "lattice_type": "tetragonal",
+      "code_pattern": "lattice = Lattice.from_parameters(a, a, c, 90, 90, 90)\nspecies = [metal, metal, 'O', 'O', 'O', 'O']\ncoords = [[0, 0, 0], [0.5, 0.5, 0.5], [0.3, 0.3, 0], [0.7, 0.7, 0], [0.2, 0.8, 0.5], [0.8, 0.2, 0.5]]\nbulk = Structure(lattice, species, coords)"
+    }
+  },
+  "miller_index_conventions": {
+    "description": "Indices are coordinates in a specified crystallographic basis; plane indices and direction indices transform differently.",
+    "surface_api": "SlabGenerator.miller_index uses three plane indices. For a hexagonal Miller-Bravais plane (h,k,i,l), verify i=-(h+k) before converting to (h,k,l).",
+    "grain_boundary_api": "GrainBoundaryGenerator accepts four-index hexagonal directions and planes in its lattice-specific path. A direction [u,v,t,w] cannot be converted by simply dropping t; follow the installed API and preserve the physical direction.",
+    "basis_changes": "Track index transformations if changing the cell basis. Do not silently substitute symmetry-family members for literal signed indices."
+  },
+  "grain_boundary_construction": {
+    "description": "Construct a commensurate bicrystal from a verified bulk prototype, requested axis, misorientation and boundary plane.",
+    "principles": [
+      "Use the native GrainBoundaryGenerator CSL lattice; preserve its coordinates and periodic cell together. A rotated slab placed in an unrelated orthorhombic box is not a periodic CSL construction.",
+      "For cubic tasks, Sigma plus axis gives a list of candidate angles. Select the full-precision candidate consistent with the angle as displayed in the task; never round it again or fall back to a smaller Sigma.",
+      "Use the task-supplied normal thickness and intergrain gap. Verify occupied grain thickness and both periodic boundaries. No universal atom count, supercell factor, execution time or vacuum follows from the Miller-index sum.",
+      "For noncubic lattices, use the corresponding enum_sigma_* method and a justified axial ratio; retain its basis/index conventions. Report incompatible or unspecified inputs without changing literal axis/plane constraints."
+    ],
+    "code_pattern": "# select_cubic_csl_angle and construct_periodic_gb are provided by the GB API guard.\n# angle_text retains the task display precision; axis and plane remain unchanged.\nstructure = construct_periodic_gb(bulk, rotation_axis, plane=gb_plane, sigma=sigma, requested_angle=angle_text, min_grain_thickness=min_thickness, gap=gb_expansion)",
+    "validation": "Independently check periodic contacts, species/stoichiometry, occupied thickness and local grain orientations. A successful constructor call or attached metadata does not prove the requested crystallography.",
+    "resources": "Seek a compact commensurate cell without changing the requested geometry. Do not remove atoms or reduce requested thickness to satisfy a model atom budget; expose resource limits separately."
+  },
+  "interface_construction": {
+    "description": "Step-by-step interface construction pattern",
+    "critical_requirements": [
+      "Calculate strain between materials before construction",
+      "Find a commensurate in-plane match that satisfies the task strain limit and preserves the requested orientations",
+      "Consider 45-degree rotation for strain reduction",
+      "Stack with appropriate interface distance based on bonding type"
+    ],
+    "strain_matching": {
+      "description": "Search integer in-plane supercells using both lattice vectors and their angle; cell lengths alone do not establish a match.",
+      "acceptance": "A candidate must satisfy the task-defined strain measure and explicit strain limit. Resource bounds limit the search, not the allowed strain.",
+      "no_match": "If no candidate meets the limit within the available search/resources, report the unmet constraint; do not silently raise the limit or label the closest incompatible candidate a success."
+    },
+    "code_template": {
+      "imports": [
+        "from pymatgen.core import Structure, Lattice",
+        "from pymatgen.core.surface import SlabGenerator",
+        "import numpy as np"
+      ],
+      "step1_materials": {
+        "description": "Create bulk structures for both materials",
+        "pattern": "# Use bulk_structure_patterns for each material type"
+      },
+      "step2_slabs": {
+        "description": "Generate surface slabs",
+        "pattern": "slab_gen = SlabGenerator(bulk, miller_index, min_slab_size=8.0, min_vacuum_size=0.0, center_slab=True)\nslabs = slab_gen.get_slabs()\nslab = slabs[0]"
+      },
+      "step3_matching": {
+        "description": "Search commensurate in-plane cell transformations; retain only matches satisfying the explicit task strain limit and requested orientations."
+      },
+      "step4_supercell": {
+        "description": "Apply the verified full-rank integer transformations to each slab, then apply only the accepted in-plane deformation. If no acceptable match exists, report it instead of continuing with an incompatible pair."
+      },
+      "step5_stack": {
+        "description": "Stack slabs with interface distance",
+        "interface_distances": {
+          "metal_metal": 2.5,
+          "metal_oxide": 2.5,
+          "metal_semiconductor": 2.5,
+          "semiconductor_semiconductor": 2.0,
+          "van_der_waals": 3.5
+        },
+        "pattern": "# Get coordinates\nsub_coords = [site.coords for site in substrate_slab]\nfilm_coords = [site.coords for site in film_slab]\n\n# Calculate shift\nsub_max_z = max(c[2] for c in sub_coords)\nfilm_min_z = min(c[2] for c in film_coords)\ninterface_dist = 2.5  # Angstrom, adjust based on bonding type\nshift_z = sub_max_z + interface_dist - film_min_z\n\n# Shift film\nshifted_film = [[c[0], c[1], c[2] + shift_z] for c in film_coords]\n\n# Combine\nall_species = list(substrate_slab.species) + list(film_slab.species)\nall_coords = sub_coords + shifted_film\n\n# New lattice with vacuum\ntotal_height = max(c[2] for c in all_coords) - min(c[2] for c in all_coords)\nnew_c = total_height + 15.0  # vacuum\n\n# Use substrate lattice for a,b; new c for vacuum\nmatrix = substrate_slab.lattice.matrix.copy()\nmatrix[2] = [0, 0, new_c]\n\nstructure = Structure(Lattice(matrix), all_species, all_coords, coords_are_cartesian=True)"
+      }
+    }
+  },
+  "common_errors_and_fixes": {
+    "lattice_mismatch": {
+      "symptom": "No commensurate match found within the task strain limit",
+      "fix": "Search alternative permitted cell transformations within resource bounds. Preserve the strain limit and requested orientations; if no candidate satisfies them, report the unmet constraint."
+    },
+    "periodic_contacts": {
+      "symptom": "Unexpected close contacts across a cell boundary",
+      "fix": "Check minimum-image contacts and periodic self images in the final cell. Repair orientation, commensurability or task-allowed registry/gap; do not use a global pruning rule."
+    },
+    "index_dimension": {
+      "symptom": "A direction/plane array has the wrong dimension",
+      "fix": "Check the target API and lattice system. Plane and direction conversions are different; do not apply one unconditional index-dropping rule."
+    },
+    "csl_angle": {
+      "symptom": "Native CSL construction reports an unexpected very large Sigma",
+      "fix": "Check that the requested Sigma key exists and the selected value is a full-precision numeric angle from its enum list. A rounded angle or incompatible lattice system is not a different valid Sigma choice."
+    }
+  }
+}

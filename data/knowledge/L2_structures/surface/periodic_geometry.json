@@ -1,0 +1,46 @@
+{
+  "_metadata": {
+    "version": "1.0.0",
+    "scope": "General periodic surface geometry; no benchmark answers or scoring thresholds.",
+    "verified_versions": {"ase": "3.28.0", "pymatgen": "2026.3.23"},
+    "source_urls": [
+      "https://docs.ase-lib.org/_modules/ase/geometry/geometry.html",
+      "https://pymatgen.org/pymatgen.core.html#pymatgen.core.adsorption.AdsorbateSiteFinder"
+    ]
+  },
+  "surface_frame": {
+    "summary": "Use cross(a,b) as the exposed surface normal; measure anchor heights by local-normal projection, not global z.",
+    "keywords": ["surface normal", "height", "projection"],
+    "principles": [
+      "For surface lattice vectors a,b, normalize cross(a,b) and orient it toward the selected exposed side. Check finite, nondegenerate geometry first.",
+      "Measure coordinates by projection onto this normal, not global Cartesian z. Measure a binding anchor's height from its local coordinating surface plane, especially near steps."
+    ]
+  },
+  "continuous_slab_representation": {
+    "summary": "For a verified single slab with vacuum, unwrap at the substrate's largest periodic gap; preserve atom identities and molecular groups.",
+    "keywords": ["unwrap", "vacuum", "periodic"],
+    "principles": [
+      "Only for one slab with a clearly identified vacuum gap, locate the largest gap in substrate projections modulo the normal cell period abs(dot(c,normal)); choose an origin that makes the slab continuous.",
+      "Apply a common translation and integer cell-image shifts, retaining lattice, species, atom order, indices and molecular-group mappings. Keep each bonded adsorbate coherent across images. Use image shifts only along physically periodic directions; do not wrap a nonperiodic slab normal.",
+      "Multiple slabs, uncertain vacuum or interpenetrating layers need explicit component identification; largest-gap wrapping alone does not establish a surface."
+    ]
+  },
+  "surface_minimum_image": {
+    "summary": "Use a robust 2D minimum-image algorithm in the surface lattice; componentwise fractional rounding fails for skew cells.",
+    "keywords": ["minimum image", "distance", "skew"],
+    "principles": [
+      "Raw Cartesian differences and independently rounded fractional components can select the wrong image in skew cells.",
+      "The recipe assumes cell rows a,b span the declared surface and c crosses the vacuum. Restrict periodic images to a,b, then separate normal and tangential displacement."
+    ],
+    "code": "import numpy as np\nfrom ase.geometry import find_mic\n\ndef surface_displacement(delta, cell):\n    cell = np.asarray(cell, dtype=float)\n    normal = np.cross(cell[0], cell[1])\n    normal /= np.linalg.norm(normal)\n    vector, _ = find_mic(np.asarray(delta, dtype=float), cell, pbc=(True, True, False))\n    height = vector @ normal\n    return vector - np.asarray(height)[..., None] * normal, height\n"
+  },
+  "local_site_topology": {
+    "summary": "Derive sites from local neighbors and stacking; use subsurface layers for fcc/hcp and undercoordination for steps.",
+    "keywords": ["adsorption site", "hollow", "step"],
+    "principles": [
+      "Use local surface atoms for top sites, nearest-neighbor edges for bridge midpoints, and adjacent surface faces for hollow centers, including periodic neighbors.",
+      "Where fcc/hcp hollow labels apply, distinguish them using subsurface stacking, not lateral offsets alone. Identify step sites from terrace edges and local undercoordination.",
+      "Do not transplant fixed fractional offsets between cells. Preserve the requested site class and the chosen local surface reference."
+    ]
+  }
+}

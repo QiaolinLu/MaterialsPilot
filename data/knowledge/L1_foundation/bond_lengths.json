@@ -1,0 +1,661 @@
+{
+  "_metadata": {
+    "description": "Typical bond lengths for element pairs",
+    "unit": "Angstrom",
+    "source": "CRC Handbook and pymatgen",
+    "license": "Reference data",
+    "citation": "CRC Handbook of Chemistry and Physics",
+    "version": "2025.12",
+    "last_updated": "2025-12-31T18:02:33.843637"
+  },
+  "covalent_bonds": {
+    "C-C": {
+      "single": 1.54,
+      "double": 1.34,
+      "triple": 1.2,
+      "aromatic": 1.4
+    },
+    "C-H": {
+      "single": 1.09
+    },
+    "C-N": {
+      "single": 1.47,
+      "double": 1.27,
+      "triple": 1.16,
+      "aromatic": 1.34
+    },
+    "C-O": {
+      "single": 1.43,
+      "double": 1.21,
+      "aromatic": 1.36
+    },
+    "C-S": {
+      "single": 1.82,
+      "double": 1.6
+    },
+    "C-F": {
+      "single": 1.35
+    },
+    "C-Cl": {
+      "single": 1.77
+    },
+    "C-Br": {
+      "single": 1.94
+    },
+    "C-I": {
+      "single": 2.14
+    },
+    "N-H": {
+      "single": 1.01
+    },
+    "N-N": {
+      "single": 1.45,
+      "double": 1.25,
+      "triple": 1.1
+    },
+    "N-O": {
+      "single": 1.4,
+      "double": 1.21
+    },
+    "O-H": {
+      "single": 0.96
+    },
+    "O-O": {
+      "single": 1.48,
+      "double": 1.21
+    },
+    "S-H": {
+      "single": 1.34
+    },
+    "S-S": {
+      "single": 2.05
+    },
+    "S-O": {
+      "single": 1.43,
+      "double": 1.43
+    },
+    "P-O": {
+      "single": 1.63,
+      "double": 1.5
+    },
+    "P-H": {
+      "single": 1.44
+    },
+    "Si-O": {
+      "single": 1.63
+    },
+    "Si-C": {
+      "single": 1.87
+    },
+    "Si-H": {
+      "single": 1.48
+    },
+    "Si-Si": {
+      "single": 2.35
+    },
+    "Ge-Ge": {
+      "single": 2.45
+    },
+    "Ge-H": {
+      "single": 1.53
+    }
+  },
+  "metal_metal_bonds": {
+    "description": "Nearest neighbor distances in bulk metals",
+    "Cu-Cu": 2.56,
+    "Ag-Ag": 2.89,
+    "Au-Au": 2.88,
+    "Pt-Pt": 2.77,
+    "Pd-Pd": 2.75,
+    "Ni-Ni": 2.49,
+    "Co-Co": 2.51,
+    "Fe-Fe": 2.48,
+    "Rh-Rh": 2.69,
+    "Ir-Ir": 2.71,
+    "Ru-Ru": 2.65,
+    "W-W": 2.74,
+    "Mo-Mo": 2.73,
+    "Ti-Ti": 2.89,
+    "Zr-Zr": 3.18,
+    "Al-Al": 2.86,
+    "Zn-Zn": 2.66,
+    "Mg-Mg": 3.2
+  },
+  "metal_oxygen_bonds": {
+    "description": "Typical M-O bond lengths in oxides",
+    "Ti-O": {
+      "range": [
+        1.85,
+        2.1
+      ],
+      "typical": 1.95
+    },
+    "V-O": {
+      "range": [
+        1.58,
+        2.05
+      ],
+      "typical": 1.9
+    },
+    "Cr-O": {
+      "range": [
+        1.55,
+        2.0
+      ],
+      "typical": 1.9
+    },
+    "Mn-O": {
+      "range": [
+        1.8,
+        2.2
+      ],
+      "typical": 2.0
+    },
+    "Fe-O": {
+      "range": [
+        1.85,
+        2.15
+      ],
+      "typical": 2.0
+    },
+    "Co-O": {
+      "range": [
+        1.85,
+        2.15
+      ],
+      "typical": 1.95
+    },
+    "Ni-O": {
+      "range": [
+        1.85,
+        2.1
+      ],
+      "typical": 2.0
+    },
+    "Cu-O": {
+      "range": [
+        1.9,
+        2.4
+      ],
+      "typical": 1.95
+    },
+    "Zn-O": {
+      "range": [
+        1.95,
+        2.15
+      ],
+      "typical": 2.0
+    },
+    "Zr-O": {
+      "range": [
+        2.05,
+        2.25
+      ],
+      "typical": 2.15
+    },
+    "Al-O": {
+      "range": [
+        1.7,
+        1.95
+      ],
+      "typical": 1.85
+    },
+    "Si-O": {
+      "range": [
+        1.58,
+        1.68
+      ],
+      "typical": 1.63
+    },
+    "Mg-O": {
+      "range": [
+        2.05,
+        2.15
+      ],
+      "typical": 2.1
+    },
+    "Ca-O": {
+      "range": [
+        2.3,
+        2.5
+      ],
+      "typical": 2.4
+    },
+    "Sr-O": {
+      "range": [
+        2.5,
+        2.7
+      ],
+      "typical": 2.6
+    },
+    "Ba-O": {
+      "range": [
+        2.7,
+        2.9
+      ],
+      "typical": 2.8
+    },
+    "La-O": {
+      "range": [
+        2.35,
+        2.65
+      ],
+      "typical": 2.5
+    },
+    "Ce-O": {
+      "range": [
+        2.3,
+        2.6
+      ],
+      "typical": 2.45
+    },
+    "Y-O": {
+      "range": [
+        2.25,
+        2.45
+      ],
+      "typical": 2.35
+    }
+  },
+  "metal_nitrogen_bonds": {
+    "description": "Typical M-N bond lengths in nitrides and coordination compounds",
+    "Ti-N": {
+      "range": [
+        1.9,
+        2.2
+      ],
+      "typical": 2.05
+    },
+    "V-N": {
+      "range": [
+        1.85,
+        2.15
+      ],
+      "typical": 2.0
+    },
+    "Cr-N": {
+      "range": [
+        1.85,
+        2.1
+      ],
+      "typical": 1.95
+    },
+    "Mn-N": {
+      "range": [
+        1.9,
+        2.2
+      ],
+      "typical": 2.05
+    },
+    "Fe-N": {
+      "range": [
+        1.85,
+        2.15
+      ],
+      "typical": 2.0
+    },
+    "Co-N": {
+      "range": [
+        1.85,
+        2.1
+      ],
+      "typical": 1.95
+    },
+    "Ni-N": {
+      "range": [
+        1.85,
+        2.1
+      ],
+      "typical": 1.95
+    },
+    "Cu-N": {
+      "range": [
+        1.9,
+        2.2
+      ],
+      "typical": 2.0
+    },
+    "Zn-N": {
+      "range": [
+        1.95,
+        2.2
+      ],
+      "typical": 2.05
+    },
+    "Al-N": {
+      "range": [
+        1.85,
+        2.0
+      ],
+      "typical": 1.9
+    },
+    "Ga-N": {
+      "range": [
+        1.9,
+        2.0
+      ],
+      "typical": 1.95
+    }
+  },
+  "metal_carbon_bonds": {
+    "description": "Typical M-C bond lengths in carbides and organometallics",
+    "Ti-C": {
+      "range": [
+        2.05,
+        2.25
+      ],
+      "typical": 2.15
+    },
+    "V-C": {
+      "range": [
+        2.0,
+        2.2
+      ],
+      "typical": 2.1
+    },
+    "Cr-C": {
+      "range": [
+        1.85,
+        2.15
+      ],
+      "typical": 2.0
+    },
+    "Mn-C": {
+      "range": [
+        1.85,
+        2.15
+      ],
+      "typical": 2.0
+    },
+    "Fe-C": {
+      "range": [
+        1.8,
+        2.1
+      ],
+      "typical": 1.95
+    },
+    "Co-C": {
+      "range": [
+        1.8,
+        2.05
+      ],
+      "typical": 1.9
+    },
+    "Ni-C": {
+      "range": [
+        1.8,
+        2.05
+      ],
+      "typical": 1.9
+    },
+    "Cu-C": {
+      "range": [
+        1.9,
+        2.1
+      ],
+      "typical": 2.0
+    },
+    "Pt-C": {
+      "range": [
+        1.95,
+        2.15
+      ],
+      "typical": 2.05
+    },
+    "Pd-C": {
+      "range": [
+        1.95,
+        2.15
+      ],
+      "typical": 2.05
+    },
+    "Rh-C": {
+      "range": [
+        1.95,
+        2.15
+      ],
+      "typical": 2.05
+    }
+  },
+  "metal_sulfur_bonds": {
+    "description": "Typical M-S bond lengths in sulfides",
+    "Fe-S": {
+      "range": [
+        2.2,
+        2.45
+      ],
+      "typical": 2.3
+    },
+    "Co-S": {
+      "range": [
+        2.15,
+        2.4
+      ],
+      "typical": 2.25
+    },
+    "Ni-S": {
+      "range": [
+        2.15,
+        2.4
+      ],
+      "typical": 2.25
+    },
+    "Cu-S": {
+      "range": [
+        2.2,
+        2.45
+      ],
+      "typical": 2.3
+    },
+    "Zn-S": {
+      "range": [
+        2.3,
+        2.45
+      ],
+      "typical": 2.35
+    },
+    "Mo-S": {
+      "range": [
+        2.35,
+        2.5
+      ],
+      "typical": 2.4
+    },
+    "W-S": {
+      "range": [
+        2.35,
+        2.5
+      ],
+      "typical": 2.4
+    },
+    "Cd-S": {
+      "range": [
+        2.5,
+        2.6
+      ],
+      "typical": 2.55
+    },
+    "Pb-S": {
+      "range": [
+        2.85,
+        3.0
+      ],
+      "typical": 2.95
+    }
+  },
+  "semiconductor_bonds": {
+    "description": "Bond lengths in common semiconductors",
+    "Si-Si": 2.35,
+    "Ge-Ge": 2.45,
+    "GaAs": {
+      "Ga-As": 2.45
+    },
+    "GaN": {
+      "Ga-N": 1.95
+    },
+    "InP": {
+      "In-P": 2.54
+    },
+    "InAs": {
+      "In-As": 2.62
+    },
+    "InSb": {
+      "In-Sb": 2.81
+    },
+    "GaP": {
+      "Ga-P": 2.36
+    },
+    "AlAs": {
+      "Al-As": 2.43
+    },
+    "AlN": {
+      "Al-N": 1.89
+    },
+    "ZnO": {
+      "Zn-O": 1.98
+    },
+    "ZnS": {
+      "Zn-S": 2.34
+    },
+    "ZnSe": {
+      "Zn-Se": 2.45
+    },
+    "ZnTe": {
+      "Zn-Te": 2.64
+    },
+    "CdS": {
+      "Cd-S": 2.53
+    },
+    "CdSe": {
+      "Cd-Se": 2.63
+    },
+    "CdTe": {
+      "Cd-Te": 2.81
+    }
+  },
+  "mof_coordination_bonds": {
+    "description": "Typical coordination bond lengths in MOFs",
+    "Zn-O_carboxylate": {
+      "range": [
+        1.95,
+        2.1
+      ],
+      "typical": 2.0
+    },
+    "Zn-N_imidazole": {
+      "range": [
+        1.98,
+        2.08
+      ],
+      "typical": 2.02
+    },
+    "Cu-O_carboxylate": {
+      "range": [
+        1.95,
+        2.05
+      ],
+      "typical": 1.98
+    },
+    "Cu-N_pyridine": {
+      "range": [
+        1.98,
+        2.1
+      ],
+      "typical": 2.02
+    },
+    "Zr-O_carboxylate": {
+      "range": [
+        2.15,
+        2.3
+      ],
+      "typical": 2.22
+    },
+    "Zr-O_hydroxyl": {
+      "range": [
+        2.05,
+        2.15
+      ],
+      "typical": 2.1
+    },
+    "Fe-O_carboxylate": {
+      "range": [
+        1.95,
+        2.15
+      ],
+      "typical": 2.05
+    },
+    "Cr-O_carboxylate": {
+      "range": [
+        1.95,
+        2.1
+      ],
+      "typical": 2.0
+    },
+    "Al-O_carboxylate": {
+      "range": [
+        1.85,
+        2.0
+      ],
+      "typical": 1.92
+    }
+  },
+  "hydrogen_bonds": {
+    "description": "Typical hydrogen bond lengths (donor-acceptor distance)",
+    "O-H...O": {
+      "strong": [
+        2.5,
+        2.7
+      ],
+      "moderate": [
+        2.7,
+        3.0
+      ],
+      "weak": [
+        3.0,
+        3.2
+      ]
+    },
+    "N-H...O": {
+      "strong": [
+        2.6,
+        2.8
+      ],
+      "moderate": [
+        2.8,
+        3.1
+      ],
+      "weak": [
+        3.1,
+        3.3
+      ]
+    },
+    "O-H...N": {
+      "strong": [
+        2.6,
+        2.8
+      ],
+      "moderate": [
+        2.8,
+        3.1
+      ],
+      "weak": [
+        3.1,
+        3.3
+      ]
+    },
+    "N-H...N": {
+      "strong": [
+        2.7,
+        2.9
+      ],
+      "moderate": [
+        2.9,
+        3.2
+      ],
+      "weak": [
+        3.2,
+        3.4
+      ]
+    }
+  }
+}

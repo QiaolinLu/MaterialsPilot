@@ -1,0 +1,295 @@
+{
+  "_metadata": {
+    "description": "Physical principles for heterostructure interface design",
+    "purpose": "Enable LLM to reason about interface construction using first-principles understanding",
+    "usage": "Reference when building heterostructure interfaces between different materials",
+    "source": "Solid state physics and thin film growth literature",
+    "license": "Educational reference",
+    "citation": "Zur & McGill (1984), Matthews & Blakeslee (1974)",
+    "version": "2026.01",
+    "last_updated": "2026-01-01"
+  },
+  "lattice_matching_principles": {
+    "description": "Principles for matching lattices at interfaces",
+    "strain_definition": {
+      "formula": "ε_film = (a_matched - a_film_free) / a_film_free",
+      "positive_strain": "Tensile: the matched film length exceeds its unstrained length.",
+      "negative_strain": "Compressive: the matched film length is smaller than its unstrained length.",
+      "scope": "Scalar engineering strain along one matched in-plane direction; lattice mismatch with a substrate denominator is a different convention."
+    },
+    "strain_tolerance": {
+      "description": "Coherency depends on material, thickness, relaxation and dislocations; there is no universal mismatch threshold separating coherent, semicoherent and incoherent interfaces.",
+      "construction": "Use the explicit task strain limit in the stated reference convention; report mismatch in both in-plane directions."
+    },
+    "supercell_matching": {
+      "principle": "Search integer in-plane supercells and relative orientations within an explicit area or atom budget; compare both lengths and angles.",
+      "formula": "Scalar mismatch for aligned directions: |m*a1 - n*a2| / (n*a2)",
+      "scope": "The scalar expression applies to aligned directions only; a general oblique interface requires matching two lattice vectors. Report the search bounds and any residual strain."
+    },
+    "coincidence_site_lattice": {
+      "description": "CSL theory for grain boundary/interface structure",
+      "sigma_value": "Reciprocal density of coincidence sites",
+      "low_sigma_preferred": "Lower Sigma means a larger coincidence fraction; it alone does not determine boundary energy, which also depends on the plane, chemistry and atomic structure."
+    }
+  },
+  "interface_geometry_principles": {
+    "orientation_relationships": {
+      "description": "Common epitaxial relationships between materials",
+      "cube_on_cube": {
+        "notation": "(001)[100]_A || (001)[100]_B",
+        "description": "Same orientation, simplest case",
+        "applicable": "Similar crystal structures"
+      },
+      "45_degree_rotation": {
+        "notation": "(001)[110]_A || (001)[100]_B",
+        "description": "45° in-plane rotation",
+        "strain_reduction": "√2 factor in one direction"
+      },
+      "domain_matching": {
+        "description": "Integer domains of one material match integer domains of another",
+        "example": "4 unit cells of A match 5 unit cells of B"
+      }
+    },
+    "surface_termination": {
+      "importance": "Determines interface chemistry and bonding",
+      "polar_surfaces": {
+        "description": "Surfaces with net dipole moment",
+        "examples": [
+          "ZnO(0001)",
+          "GaN(0001)",
+          "SrTiO3(001)"
+        ],
+        "reconstruction": "Often reconstruct to cancel dipole"
+      },
+      "nonpolar_surfaces": {
+        "description": "Charge-neutral surfaces",
+        "examples": [
+          "Si(001)",
+          "GaAs(110)",
+          "MgO(001)"
+        ],
+        "stability": "Generally more stable"
+      }
+    },
+    "interface_distance": {
+      "description": "Initial separation estimates; choose the relevant contacting species and geometry, then verify the requested gap and interatomic contacts.",
+      "estimation_rules": {
+        "metal_metal": {
+          "range": [
+            2.5,
+            3.5
+          ],
+          "unit": "Å",
+          "principle": "Sum of metallic radii * 0.9"
+        },
+        "metal_oxide": {
+          "range": [
+            2.0,
+            3.0
+          ],
+          "unit": "Å",
+          "principle": "Metal-oxygen bond length"
+        },
+        "metal_semiconductor": {
+          "range": [
+            2.2,
+            3.2
+          ],
+          "unit": "Å",
+          "principle": "Depends on bonding type"
+        },
+        "semiconductor_semiconductor": {
+          "range": [
+            1.5,
+            2.5
+          ],
+          "unit": "Å",
+          "principle": "Covalent bond length"
+        },
+        "2D_substrate": {
+          "range": [
+            3.0,
+            4.0
+          ],
+          "unit": "Å",
+          "principle": "van der Waals gap"
+        }
+      }
+    }
+  },
+  "electronic_structure_principles": {
+    "band_alignment": {
+      "description": "How bands align at interface",
+      "anderson_rule": {
+        "formula": "ΔE_c = χ_A - χ_B",
+        "description": "Conduction band offset from electron affinity difference",
+        "limitation": "Ignores interface dipoles"
+      },
+      "schottky_barrier": {
+        "formula": "φ_B = φ_M - χ_S",
+        "description": "Metal-semiconductor barrier height",
+        "n_type": "φ_Bn = φ_M - χ_S",
+        "p_type": "φ_Bp = E_g - φ_Bn"
+      },
+      "type_I_alignment": {
+        "description": "Straddling gap - both carriers confined in same material",
+        "example": "GaAs/AlGaAs quantum wells"
+      },
+      "type_II_alignment": {
+        "description": "Staggered gap - electrons and holes in different materials",
+        "example": "InAs/GaSb superlattices"
+      },
+      "type_III_alignment": {
+        "description": "Broken gap - conduction band below valence band",
+        "example": "InAs/GaSb (extreme case)"
+      }
+    },
+    "work_function_alignment": {
+      "description": "Fermi level alignment at metal-semiconductor interface",
+      "fermi_level_pinning": {
+        "description": "Interface states can pin Fermi level",
+        "effect": "Barrier height becomes independent of metal work function"
+      },
+      "charge_transfer": {
+        "direction": "From lower to higher work function material",
+        "interface_dipole": "Creates potential step at interface"
+      }
+    }
+  },
+  "stability_principles": {
+    "surface_energy": {
+      "description": "Energy cost to create surface",
+      "unit": "J/m² or eV/Å²",
+      "typical_values": {
+        "metals": [
+          1.0,
+          3.0
+        ],
+        "semiconductors": [
+          0.5,
+          2.0
+        ],
+        "oxides": [
+          0.5,
+          2.5
+        ],
+        "2D_materials": [
+          0.1,
+          0.5
+        ]
+      },
+      "wulff_construction": "Equilibrium shape minimizes total surface energy"
+    },
+    "interface_energy": {
+      "description": "Energy of interface relative to free surfaces",
+      "formula": "γ_int = γ_A + γ_B - W_ad",
+      "adhesion_work": "W_ad = work to separate interface",
+      "negative_interface_energy": "Thermodynamically favorable interface"
+    },
+    "critical_thickness": {
+      "description": "Maximum thickness before misfit dislocations form",
+      "matthews_blakeslee": {
+        "formula": "h_c = b/(8πε) * (1 + ln(h_c/b))",
+        "b": "Burgers vector magnitude",
+        "ε": "Lattice mismatch"
+      },
+      "typical_values": {
+        "1_percent_strain": "~100 nm",
+        "2_percent_strain": "~25 nm",
+        "4_percent_strain": "~5 nm"
+      }
+    }
+  },
+  "construction_guidelines": {
+    "slab_construction": {
+      "minimum_layers": {
+        "metals": 4,
+        "semiconductors": 6,
+        "oxides": 4,
+        "description": "Illustrative starting layer counts; obey explicit tasks and assess convergence for the material and observable."
+      },
+      "vacuum_spacing": {
+        "example_angstrom": 15.0,
+        "purpose": "Illustrative vacuum for an isolated slab; periodic interfaces may have no vacuum. Follow the task boundary conditions and assess image interactions."
+      },
+      "symmetric_vs_asymmetric": {
+        "symmetric": "Same termination top and bottom, no net dipole",
+        "asymmetric": "Different terminations, may have dipole"
+      }
+    },
+    "interface_construction_steps": [
+      "1. Identify crystal structures and lattice parameters",
+      "2. Choose compatible surface orientations",
+      "3. Calculate lattice mismatch and find optimal supercell",
+      "4. Build individual slabs with appropriate thickness",
+      "5. Determine interface termination and distance",
+      "6. Stack slabs using the requested boundary conditions and vacuum, if any",
+      "7. Check periodic contacts using the active task contract and species/bond geometry",
+      "8. Verify charge neutrality if applicable"
+    ]
+  },
+  "common_interface_systems": {
+    "metal_on_oxide": {
+      "examples": [
+        "Pt/TiO2",
+        "Au/MgO",
+        "Cu/Al2O3"
+      ],
+      "applications": [
+        "Catalysis",
+        "CMOS gates",
+        "Thermal barriers"
+      ],
+      "challenges": [
+        "Adhesion",
+        "Oxidation",
+        "Interdiffusion"
+      ]
+    },
+    "semiconductor_heterostructures": {
+      "examples": [
+        "GaAs/AlGaAs",
+        "InGaAs/InP",
+        "Si/Ge"
+      ],
+      "applications": [
+        "Quantum wells",
+        "HEMTs",
+        "Lasers"
+      ],
+      "challenges": [
+        "Strain relaxation",
+        "Threading dislocations"
+      ]
+    },
+    "oxide_heterostructures": {
+      "examples": [
+        "LaAlO3/SrTiO3",
+        "BaTiO3/SrTiO3"
+      ],
+      "applications": [
+        "2DEG",
+        "Ferroelectrics",
+        "Multiferroics"
+      ],
+      "challenges": [
+        "Polar discontinuity",
+        "Oxygen vacancies"
+      ]
+    },
+    "2D_heterostructures": {
+      "examples": [
+        "Graphene/hBN",
+        "MoS2/WSe2"
+      ],
+      "applications": [
+        "Electronics",
+        "Optoelectronics"
+      ],
+      "challenges": [
+        "Twist angle",
+        "Moiré patterns"
+      ]
+    }
+  }
+}

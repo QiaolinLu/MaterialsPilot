@@ -1,0 +1,223 @@
+{
+  "_metadata": {
+    "description": "Complex defect configurations and multi-defect systems",
+    "purpose": "Enable construction of advanced defect structures beyond simple point defects",
+    "source": "Literature and computational materials science references",
+    "version": "2026.01",
+    "last_updated": "2026-11-03",
+    "source_urls": [
+      "https://www.nature.com/articles/srep12882",
+      "https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.119.253601",
+      "https://pymatgen.org/pymatgen.core.html"
+    ],
+    "revision": "r4_contract_clarification"
+  },
+  "defect_complexes": {
+    "NV_center": {
+      "host_material": "diamond",
+      "components": ["N_C substitution", "V_C vacancy"],
+      "geometry": {"N_V_distance": 1.54, "unit": "Angstrom", "direction": "<111>"},
+      "construction": [
+        "1. Build the requested verified C host supercell; let its pristine site count be N0",
+        "2. Replace one C at the selected site with N",
+        "3. Remove a distinct neighboring C chosen with a periodic-image displacement in the requested crystal frame",
+        "4. Final composition: (N0-2) C + 1 N; total N0-1 sites. Preserve the reference site indices."
+      ],
+      "applications": ["quantum computing", "magnetometry", "single photon source"],
+      "charge_states": ["NV-", "NV0"],
+      "optical_properties": {"ZPL": 637, "unit": "nm", "description": "Zero-phonon line for NV-"}
+    },
+    "SiV_center": {
+      "host_material": "diamond",
+      "components": ["Si at the bond-centered interstitial position", "two neighboring original C sites unoccupied"],
+      "geometry": {
+        "structure": "split-vacancy",
+        "dopant_position": "Midpoint of two adjacent original C sites along a diamond <111> bond, using their nearest periodic images.",
+        "ideal_symmetry": "D3d before symmetry-breaking strain or distortion"
+      },
+      "construction": [
+        "From the requested verified diamond supercell (N0 sites), remove two selected neighboring C sites and insert Si at their periodic-image midpoint.",
+        "Final: (N0-2) C + 1 Si; total N0-1. Retain original site/image assignments; split_vacancy_geometry provides the common operation."
+      ],
+      "optical_properties": {"ZPL": 738, "unit": "nm"}
+    },
+    "GeV_center": {
+      "host_material": "diamond",
+      "components": ["Ge at the bond-centered interstitial position", "two neighboring original C sites unoccupied"],
+      "geometry": {
+        "structure": "split-vacancy",
+        "dopant_position": "Midpoint of two adjacent original C sites along a diamond <111> bond, using their nearest periodic images.",
+        "ideal_symmetry": "D3d before symmetry-breaking strain or distortion"
+      },
+      "construction": [
+        "From the requested verified diamond supercell (N0 sites), remove two selected neighboring C sites and insert Ge at their periodic-image midpoint.",
+        "Final: (N0-2) C + 1 Ge; total N0-1. Retain original site/image assignments; split_vacancy_geometry provides the common operation."
+      ],
+      "note": "A substitutional Ge next to one empty site is a different unrelaxed geometry; the cited calculation relaxes Ge to the bond-centered split configuration. If an explicit task asks for the former, label that requested geometry rather than silently treating it as the relaxed GeV center."
+    },
+    "E_center": {
+      "host_material": "Si",
+      "alternative_name": "P-V center",
+      "components": ["P_Si substitution", "V_Si vacancy"],
+      "geometry": {"P_V_distance": 2.35, "unit": "Angstrom", "direction": "<111>"},
+      "construction": [
+        "1. Build the requested verified Si host supercell; let its pristine site count be N0",
+        "2. Replace one Si at the selected site with P",
+        "3. Remove a distinct neighboring Si chosen with a periodic-image displacement in the requested crystal frame",
+        "4. Final composition: (N0-2) Si + 1 P; total N0-1 sites. Preserve the reference site indices."
+      ]
+    },
+    "A_center": {
+      "host_material": "Si",
+      "alternative_name": "O-V center",
+      "components": ["O interstitial", "V_Si vacancy"],
+      "description": "Oxygen trapped at vacancy site"
+    },
+    "divacancy": {
+      "applicable_materials": ["Si", "diamond", "SiC", "metals"],
+      "geometry": {
+        "selection": "Choose two distinct original sites using the requested direction and separation, with periodic images and the corresponding neighbor shell. A divacancy need not be a nearest-neighbor pair."
+      },
+      "construction": [
+        "1. Create supercell",
+        "2. Select the requested periodic pair; require nearest neighbors only if the task specifies that shell",
+        "3. Remove both atoms",
+        "4. Final: original - 2 atoms"
+      ],
+      "stability": "Often more stable than two isolated vacancies"
+    },
+    "trivacancy": {
+      "applicable_materials": ["Si", "diamond", "metals"],
+      "configurations": {
+        "linear": "Three vacancies in a row along crystallographic direction",
+        "triangular": "Three vacancies forming triangle on close-packed plane"
+      },
+      "construction": [
+        "1. Build the explicitly requested supercell; otherwise choose and validate a cell for the intended cluster and periodic separation",
+        "2. Find three neighboring atoms in desired configuration",
+        "3. Store their indices in a list",
+        "4. Sort indices in descending order",
+        "5. Remove atoms one by one from highest to lowest index",
+        "6. Verify minimum distances after removal"
+      ],
+      "fcc_111_plane": {
+        "description": "Three vacancies on {111} plane forming triangle",
+        "relative_positions": "Three atoms sharing common nearest neighbors on (111)"
+      }
+    },
+    "vacancy_cluster": {
+      "description": "Multiple vacancies aggregated together",
+      "formation": "Vacancies migrate and aggregate at high temperature",
+      "stability": "Larger clusters often more stable per vacancy",
+      "construction": [
+        "1. Build the explicitly requested supercell; otherwise choose and validate a cell for the intended cluster and periodic separation",
+        "2. Identify all atoms to be removed",
+        "3. Collect their indices in a list",
+        "4. Sort indices in DESCENDING order (critical to preserve indices)",
+        "5. Remove sites one by one: for idx in sorted_indices: structure.remove_sites([idx])",
+        "6. Alternatively: structure.remove_sites(sorted_indices_descending)"
+      ],
+      "pymatgen_pattern": [
+        "indices_to_remove = [i1, i2, i3, ...]  # collect all indices",
+        "for idx in sorted(indices_to_remove, reverse=True):",
+        "    structure.remove_sites([idx])"
+      ]
+    }
+  },
+  "dopant_pairs": {
+    "donor_acceptor_pair": {
+      "description": "Adjacent donor and acceptor dopants",
+      "example": "B-P pair in Si",
+      "separation_effects": "Closer pairs have stronger interaction"
+    },
+    "co_doping": {
+      "description": "Intentional doping with multiple species",
+      "examples": {"Si": "B + Ge for strain compensation", "GaN": "Mg + H for p-type activation", "ZnO": "Al + N for p-type"}
+    }
+  },
+  "charged_defects": {
+    "description": "Defects with non-neutral charge states",
+    "charge_states": {
+      "vacancy": {"Si": ["V0", "V+", "V-", "V2-"], "GaAs_Ga": ["V0", "V+", "V2+", "V3+"], "MgO_O": ["V0", "V+", "V2+"]},
+      "substitution": {"B_Si": ["B-", "B0"], "P_Si": ["P+", "P0"], "Al_Ga_GaAs": ["Al0"]}
+    },
+    "charge_compensation": {
+      "principle": "Represent the requested charge state and specify its electronic/background or structural compensation model; do not invent compensating atoms.",
+      "methods": ["Background charge (jellium)", "Compensating defects", "Surface charges"]
+    },
+    "formation_energy_correction": {
+      "methods": ["Makov-Payne", "Freysoldt", "Kumagai"],
+      "description": "Correct for periodic image interaction in charged supercells"
+    }
+  },
+  "extended_defects": {
+    "dislocation": {
+      "types": ["edge", "screw", "mixed"],
+      "description": "Line defect from lattice mismatch",
+      "construction_note": "Requires large simulation cell, typically not for point defect benchmarks"
+    },
+    "stacking_fault": {
+      "description": "Planar defect from stacking sequence error",
+      "fcc_example": "ABCABC -> ABCBCABC (intrinsic)",
+      "energy_unit": "mJ/m2"
+    },
+    "twin_boundary": {"description": "Mirror plane in crystal", "fcc": "Sigma3 (111) twin", "formation": "During growth or deformation"}
+  },
+  "defect_interactions": {
+    "binding_energy": {
+      "description": "Energy gain when defects associate",
+      "formula": "E_bind = E_isolated_A + E_isolated_B - E_complex - E_bulk",
+      "positive_binding": "Defects prefer to associate"
+    },
+    "strain_interaction": {
+      "description": "Defects interact through strain fields",
+      "range": "Long-range, decays as 1/r^3",
+      "effect": "Can cause ordering or clustering"
+    },
+    "electronic_interaction": {"description": "Charged defects interact electrostatically", "range": "Screened by dielectric, decays as exp(-r)/r"}
+  },
+  "structure_specific_defects": {
+    "perovskite_ABO3": {
+      "oxygen_vacancy": {
+        "notation": "V_O",
+        "position": "O site",
+        "charge_states": ["V_O^0", "V_O^+", "V_O^{2+}"],
+        "effect": "Creates oxygen ion conductor"
+      },
+      "A_site_vacancy": {"notation": "V_A", "example": "V_Sr in SrTiO3"},
+      "B_site_substitution": {"examples": ["Fe_Ti in SrTiO3", "Mn_Ti in BaTiO3"], "effect": "Changes electronic/magnetic properties"}
+    },
+    "fluorite_MO2": {
+      "oxygen_vacancy": {"position": "Tetrahedral O site", "ordering": "Can order at high concentration"},
+      "oxygen_interstitial": {"position": "Octahedral void at (0.5, 0.5, 0.5)", "mechanism": "Push-pull with lattice oxygen"},
+      "cation_substitution": {"examples": ["Y in ZrO2", "Gd in CeO2"], "effect": "Creates oxygen vacancies for ionic conductivity"}
+    },
+    "spinel_AB2O4": {
+      "inversion": {"description": "B cations on A sites and vice versa", "inversion_parameter": "x in (A_{1-x}B_x)[A_x B_{2-x}]O4"},
+      "cation_vacancy": {"sites": ["tetrahedral A", "octahedral B"]}
+    },
+    "layered_oxide": {
+      "Li_vacancy": {"material": "LiCoO2, LiNiO2", "effect": "Delithiation during battery cycling"},
+      "transition_metal_migration": {"description": "TM ions move to Li layer", "effect": "Capacity fade"}
+    }
+  },
+  "construction_validation": {
+    "checks": [
+      "Site and species counts follow the explicit edits to the pristine reference",
+      "Periodic contacts are physically appropriate to the species and requested geometry",
+      "Defect sites and directions are verified against the retained reference",
+      "Requested charge state and compensation model are distinguished from formal oxidation-state bookkeeping"
+    ],
+    "common_errors": {
+      "wrong_supercell_size": "Verify the lattice/basis convention and determinant multiplicity; a primitive parent is valid when used consistently.",
+      "wrong_site_index": "Verify site indices after supercell creation",
+      "periodic_image_interaction": "Measure actual periodic defect-image separations and follow task constraints; no universal cell repetition guarantees convergence."
+    }
+  },
+  "split_vacancy_geometry": {
+    "summary": "Periodic midpoint construction for two selected host sites; use only after independently verifying the requested neighbor pair and crystal direction.",
+    "counting": "Removing two host atoms and inserting one dopant changes total sites by -1. Two unoccupied original sites and the net atom deficit are distinct vacancy-count conventions.",
+    "code": "import numpy as np\nfrom numbers import Integral\n\ndef make_split_vacancy(pristine, first, second, dopant):\n    \"\"\"The caller selects a valid host nearest-neighbor pair; no defect is certified here.\"\"\"\n    if any(isinstance(i, bool) or not isinstance(i, Integral) or not 0 <= i < len(pristine)\n           for i in (first, second)) or first == second:\n        raise ValueError(\"Use two distinct original site indices\")\n    a, b = pristine[first].frac_coords, pristine[second].frac_coords\n    distance, image = pristine.lattice.get_distance_and_image(a, b)\n    if not np.isfinite(distance) or distance <= 0:\n        raise ValueError(\"Selected original sites must be separated\")\n    midpoint = (a + b + image) / 2\n    result = pristine.copy()\n    removed = [str(pristine[i].specie) for i in (first, second)]\n    result.remove_sites([first, second])\n    result.append(dopant, midpoint % 1, coords_are_cartesian=False)\n    evidence = {\"original_indices\": [int(first), int(second)], \"removed_species\": removed,\n                \"second_site_image\": image.tolist(), \"pair_distance\": float(distance),\n                \"midpoint_fractional\": (midpoint % 1).tolist()}\n    return result, evidence\n",
+    "source_urls": ["https://www.nature.com/articles/srep12882", "https://pymatgen.org/pymatgen.core.html"]
+  }
+}

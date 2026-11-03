@@ -1,0 +1,52 @@
+{
+  "cgcnn_pooling_dimension": 64,
+  "cgcnn_source_sha256": "4059a136d7bdf09f2c51d30736ab9957747a57346c1179f6dbc0ef1540ef0d7d",
+  "conversion": "Exact uppercase elemental rows; unchanged trained CGCNN state_dict; mean of final atom convolution states before dense head.",
+  "files": {
+    "atom_init.json": "cb90bd2257dbf8cfc4e6b2b6d4348d4616e8e9680f1339b1461137032e0f1894",
+    "cgcnn_LICENSE": "29b499b111e32f8e39a0b121f317857a08eccbe9d6b34ba1704020cf6b99d4ba",
+    "cgcnn_formation_energy.pt": "2953cbed803cf444ffee490bead7a9fcd002d4790a1ced79e80e52f02e7465b7",
+    "mat2vec_LICENSE": "42ba9500895e23969d154e3930f720966bdd0583ca0e86b0f220b9cdca2af9c0",
+    "mat2vec_elements.json": "f6da9cdb3d6f31d9064235e0d981864ca73f5210e4329b279b460815a2c5e650"
+  },
+  "mat2vec_dimension": 200,
+  "mat2vec_elements": 118,
+  "schema_version": 1,
+  "upstream": {
+    "atom_init.json": {
+      "bytes": 28392,
+      "sha256": "cb90bd2257dbf8cfc4e6b2b6d4348d4616e8e9680f1339b1461137032e0f1894",
+      "source_url": "https://raw.githubusercontent.com/txie-93/cgcnn/f42ab233c4ee0c416879d6bc2d22a264418413ad/data/sample-regression/atom_init.json"
+    },
+    "cgcnn_LICENSE": {
+      "bytes": 1065,
+      "sha256": "29b499b111e32f8e39a0b121f317857a08eccbe9d6b34ba1704020cf6b99d4ba",
+      "source_url": "https://raw.githubusercontent.com/txie-93/cgcnn/f42ab233c4ee0c416879d6bc2d22a264418413ad/LICENSE"
+    },
+    "cgcnn_checkpoint.pth.tar": {
+      "bytes": 791195,
+      "sha256": "e2f8bb910744f2c2f21d968285b6fd4316d795d0f3e7465ed0e3b4f3c92651a1",
+      "source_url": "https://raw.githubusercontent.com/txie-93/cgcnn/f42ab233c4ee0c416879d6bc2d22a264418413ad/pre-trained/formation-energy-per-atom.pth.tar"
+    },
+    "cgcnn_model.py": {
+      "bytes": 6655,
+      "sha256": "4059a136d7bdf09f2c51d30736ab9957747a57346c1179f6dbc0ef1540ef0d7d",
+      "source_url": "https://raw.githubusercontent.com/txie-93/cgcnn/f42ab233c4ee0c416879d6bc2d22a264418413ad/cgcnn/model.py"
+    },
+    "mat2vec_LICENSE": {
+      "bytes": 1098,
+      "sha256": "42ba9500895e23969d154e3930f720966bdd0583ca0e86b0f220b9cdca2af9c0",
+      "source_url": "https://raw.githubusercontent.com/materialsintelligence/mat2vec/7ca8961c09ad9995694a41edfd80da6c4ac7e307/LICENSE"
+    },
+    "mat2vec_model": {
+      "bytes": 36633231,
+      "sha256": "1b0257d3295e571cbe87690c0bc0cbebdbe5b7a3ecf2299dc50eb4c7183e73c8",
+      "source_url": "https://storage.googleapis.com/mat2vec/pretrained_embeddings"
+    },
+    "mat2vec_vectors.npy": {
+      "bytes": 423748928,
+      "sha256": "11c21e77f046446a000e37b236e6e97ae2a44dc86cca8e042732794e14dc6dfd",
+      "source_url": "https://storage.googleapis.com/mat2vec/pretrained_embeddings.wv.vectors.npy"
+    }
+  }
+}

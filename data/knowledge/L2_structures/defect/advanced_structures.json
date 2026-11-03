@@ -1,0 +1,226 @@
+{
+  "_metadata": {
+    "description": "Advanced crystal structures and their defect site information",
+    "purpose": "Enable correct defect construction in complex materials",
+    "source": "Crystallographic databases and literature",
+    "version": "2026.01",
+    "last_updated": "2026-11-03",
+    "source_urls": [
+      "https://www.nature.com/articles/srep12882",
+      "https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.119.253601",
+      "https://doi.org/10.1103/PhysRevB.92.165204"
+    ],
+    "revision": "r4_contract_clarification"
+  },
+  "corundum": {
+    "formula": "A2O3",
+    "examples": ["Al2O3", "Cr2O3", "Fe2O3"],
+    "space_group": "R-3c (167)",
+    "crystal_system": "trigonal",
+    "conventional_cell": {"atoms": 30, "cation_count": 12, "anion_count": 18},
+    "wyckoff_positions": {
+      "cation_12c": {"site": "12c", "coordination": 6, "description": "Octahedral sites for Al"},
+      "anion_18e": {"site": "18e", "description": "Oxygen positions in hcp-like arrangement"}
+    },
+    "substitution": {
+      "Cr_Al": {
+        "product": "ruby",
+        "charge_compensation": "none_needed",
+        "reason": "Cr3+ replaces Al3+ directly (same oxidation state)",
+        "color_center": true,
+        "concentration_effect": "Low Cr = red ruby, high Cr = green"
+      },
+      "Ti_Al": {"product": "sapphire (blue)", "mechanism": "Ti4+/Fe2+ pair for charge transfer"},
+      "Fe_Al": {"notes": "Fe3+ can substitute directly, Fe2+ needs compensation"}
+    },
+    "pymatgen_construction": {
+      "from_spacegroup": "Structure.from_spacegroup('R-3c', lattice, ['Al', 'O'], [[0, 0, 0.3523], [0.3064, 0, 0.25]])",
+      "lattice_params": {"a": 4.76, "c": 12.99, "alpha": 90, "gamma": 120}
+    }
+  },
+  "chalcopyrite": {
+    "formula": "ABX2",
+    "examples": ["CuFeS2", "CuGaS2", "CuInSe2"],
+    "space_group": "I-42d (122)",
+    "crystal_system": "tetragonal",
+    "relationship": "Derived from zinc blende by cation ordering",
+    "conventional_cell": {"atoms": 8, "a_cation_count": 2, "b_cation_count": 2, "anion_count": 4},
+    "wyckoff_positions": {
+      "Cu_4a": {"position": [0, 0, 0], "also_at": [0.5, 0.5, 0.5], "description": "Tetrahedral Cu sites"},
+      "Fe_4b": {"position": [0, 0, 0.5], "also_at": [0.5, 0.5, 0], "description": "Tetrahedral Fe sites"},
+      "S_8d": {"description": "Sulfur in distorted tetrahedral arrangement"}
+    },
+    "site_identification": {
+      "Cu_vs_Fe": "In pymatgen, check z-coordinate: Cu at z≈0,0.5,1; Fe at z≈0.25,0.75",
+      "by_element": "species attribute directly gives element type"
+    },
+    "defects": {
+      "Cu_vacancy": {"common": true, "creates": "p-type conductivity", "identification": "Remove atom where species=='Cu'"},
+      "Cu_Fe_antisite": {"description": "Cu on Fe site", "effect": "Changes magnetic properties"}
+    },
+    "pymatgen_construction": {"method": "Use Materials Project structure or build from spacegroup", "mp_id": "mp-10280"}
+  },
+  "MoS2_2H": {
+    "formula": "MX2",
+    "examples": ["MoS2", "WS2", "MoSe2", "WSe2"],
+    "phase": "2H",
+    "space_group": "P6_3/mmc (194)",
+    "crystal_system": "hexagonal",
+    "monolayer": {"structure": "S-Mo-S sandwich", "Mo_coordination": "trigonal prismatic", "layer_thickness": 3.17},
+    "bilayer_construction": {
+      "stacking": "AB (2H phase)",
+      "steps": [
+        "1. Create monolayer from primitive cell",
+        "2. Make supercell in xy-plane (e.g., 3x3x1)",
+        "3. Create second layer by translation + rotation",
+        "4. Stack with interlayer spacing ~6.15 Å",
+        "5. Add vacuum in c-direction (~15 Å)"
+      ],
+      "layer_identification": {
+        "method": "Compare z-coordinates of atoms",
+        "top_layer_S": "S atoms with highest z (excluding vacuum)",
+        "bottom_layer_S": "S atoms with lowest z (above substrate/vacuum)"
+      }
+    },
+    "defects": {
+      "S_vacancy": {
+        "common_in": "Exfoliated samples",
+        "effect": "n-type doping, localized states",
+        "layer_selective": {"description": "Can create vacancy in specific layer", "method": "Select S atoms by z-coordinate range"}
+      },
+      "Mo_vacancy": {"rare": true, "formation_energy": "Higher than S vacancy"}
+    },
+    "pymatgen_construction": {"monolayer": "Build P6_3/mmc unit cell, then slice", "slab_approach": "Use SlabGenerator with (001) surface"}
+  },
+  "vacancy_clusters": {
+    "description": "Multi-vacancy configurations in metals",
+    "formation": "Irradiation, quenching, or thermal equilibrium",
+    "fcc_clusters": {
+      "divacancy": {"orientation": "<110>", "description": "Two nearest-neighbor vacancies", "distance": "a/sqrt(2) ≈ 0.707a"},
+      "trivacancy": {
+        "configurations": {
+          "triangular": {
+            "description": "Three vacancies forming equilateral triangle on {111}",
+            "neighbors": "Each vacancy has 2 vacancy neighbors",
+            "construction": [
+              "1. Find atom at position r0",
+              "2. Find two nearest neighbors in {111} plane",
+              "3. Remove all three atoms",
+              "4. Verify triangular arrangement"
+            ],
+            "example_positions": {
+              "note": "For FCC with atom at (0,0,0)",
+              "vacancy_1": [0, 0, 0],
+              "vacancy_2": [0.5, 0.5, 0],
+              "vacancy_3": [0.5, 0, 0.5]
+            }
+          },
+          "linear": {"description": "Three vacancies in a row along <110>", "neighbors": "Middle vacancy has 2 neighbors, ends have 1"}
+        }
+      },
+      "tetravacancy": {"description": "Four vacancies in tetrahedral arrangement", "relevance": "Precursor to stacking fault tetrahedron (SFT)"}
+    },
+    "bcc_clusters": {"divacancy": {"orientations": ["<111>", "<100>"], "note": "<111> typically more stable"}},
+    "stability": {
+      "binding_energy": "Larger clusters often more stable per vacancy",
+      "migration": "Clusters migrate slower than single vacancies"
+    }
+  },
+  "frenkel_defects": {
+    "definition": "Vacancy-interstitial pair of same species",
+    "charge_neutrality": "Automatically maintained",
+    "common_in": ["AgBr", "AgCl", "CaF2", "CeO2", "UO2"],
+    "fluorite_MO2": {
+      "mechanism": {
+        "description": "Anion moves from lattice to interstitial",
+        "vacancy_site": "Tetrahedral anion site (0.25, 0.25, 0.25)",
+        "interstitial_site": "Octahedral void (0.5, 0.5, 0.5)"
+      },
+      "construction": {
+        "steps": [
+          "1. Create fluorite supercell (e.g., 2x2x2)",
+          "2. Identify O atom at tetrahedral site",
+          "3. Remove this O atom (creates vacancy)",
+          "4. Add O atom at octahedral void (0.5, 0.5, 0.5 in unit cell)",
+          "5. For supercell: divide coordinates by supercell size"
+        ],
+        "supercell_coordinates": {"2x2x2": {"vacancy_example": [0.125, 0.125, 0.125], "interstitial": [0.25, 0.25, 0.25]}}
+      },
+      "separation": {"importance": "Vacancy and interstitial should be separated", "min_distance": "At least 2nd nearest neighbor"}
+    },
+    "rocksalt_NaCl": {
+      "cation_frenkel": {"description": "Na moves to interstitial", "less_common": true},
+      "anion_frenkel": {"description": "Cl moves to interstitial", "rare": true}
+    }
+  },
+  "dumbbell_interstitials": {
+    "description": "Two atoms sharing one lattice site, displaced along specific direction",
+    "types": {
+      "self_dumbbell": {"description": "Same element as host (e.g., Fe-Fe in Fe)", "notation": "<uvw> dumbbell"},
+      "mixed_dumbbell": {"description": "Host + foreign atom (e.g., Fe-C in Fe)", "notation": "A-B dumbbell"}
+    },
+    "bcc_Fe": {
+      "110_dumbbell": {
+        "description": "Most stable self-interstitial in BCC Fe",
+        "construction": [
+          "1. Identify lattice site to replace",
+          "2. Remove Fe at (x, y, z)",
+          "3. Add Fe at (x, y, z) + d*[110]/|[110]|",
+          "4. Add Fe at (x, y, z) - d*[110]/|[110]|",
+          "5. d ≈ 0.5-0.7 Å (half the equilibrium spacing)"
+        ],
+        "displacement": {"direction": [1, 1, 0], "magnitude": "~0.5-0.7 Å from center"}
+      },
+      "Fe_C_dumbbell": {
+        "description": "Carbon interstitial with displaced Fe",
+        "stable_orientation": "<110>",
+        "construction": [
+          "1. Identify Fe lattice site",
+          "2. Displace Fe by ~0.4 Å along <110>",
+          "3. Add C at opposite displacement (~0.3 Å)",
+          "4. Total Fe-C distance ~1.7-1.9 Å"
+        ],
+        "distances": {"Fe_C_bond": 1.8, "unit": "Angstrom"}
+      }
+    },
+    "fcc": {"100_dumbbell": {"description": "Common in FCC metals", "displacement_direction": [1, 0, 0]}}
+  },
+  "diamond_color_centers": {
+    "host": "diamond",
+    "common_centers": {
+      "NV": {"composition": "1N + 1V", "geometry": "N and V are nearest neighbors along <111>"},
+      "SiV": {
+        "composition": "(N0-2) C + 1 Si; total N0-1 sites",
+        "geometry": "Dopant at the periodic-image midpoint of two adjacent unoccupied original C sites; split-vacancy geometry.",
+        "source_urls": ["https://www.nature.com/articles/srep12882"]
+      },
+      "GeV": {
+        "composition": "(N0-2) C + 1 Ge; total N0-1 sites",
+        "geometry": "Dopant at the periodic-image midpoint of two adjacent unoccupied original C sites; split-vacancy geometry.",
+        "source_urls": ["https://www.nature.com/articles/srep12882"]
+      },
+      "SnV": {
+        "composition": "(N0-2) C + 1 Sn; total N0-1 sites",
+        "geometry": "Dopant at the periodic-image midpoint of two adjacent unoccupied original C sites; split-vacancy geometry.",
+        "source_urls": ["https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.119.253601"]
+      }
+    },
+    "NVN_center": {
+      "also_called": "N2V; H3 denotes the neutral N2V0 optical center",
+      "composition": "(N0-3) C + 2 N; total N0-1 sites",
+      "geometry": {
+        "description": "Two substitutional N atoms occupy two distinct nearest-neighbor sites of one vacancy in diamond. The ideal N2V arrangement has C2v symmetry; the two vacancy-to-N directions are not opposite.",
+        "linear": false
+      },
+      "construction": [
+        "1. Retain a verified pristine diamond reference and choose the site to become vacant",
+        "2. Enumerate its periodic first-neighbor shell; select two distinct sites for substitution, keeping their image displacements",
+        "3. Replace those two C atoms with N and remove the central C site; preserve the reference identities during index changes",
+        "4. Verify both N sites belong to the original vacancy-neighbor shell rather than imposing a collinear N-vacancy-N chain",
+        "5. Count (N0-3) C + 2 N, total N0-1; specify the charge state separately"
+      ],
+      "source_urls": ["https://doi.org/10.1103/PhysRevB.92.165204"]
+    },
+    "construction_contract": "Use the requested parent cell and retain original site identities. For split geometry use complex_defects.split_vacancy_geometry; counts alone do not identify geometry."
+  }
+}

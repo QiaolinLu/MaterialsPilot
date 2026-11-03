@@ -1,0 +1,159 @@
+{
+  "_metadata": {
+    "version": "1.0.0",
+    "upstream_commit": "db1933021551236f5a989e5339e89baa84e4ebcb",
+    "license": "MIT",
+    "scope": "General action semantics and parameterized recipes for the ten AtomMotor actions; no dataset rows or target structures.",
+    "source_sha256": {
+      "actions.py": "206db8d7e9409f3f33d58ca3b29c4ac5faa3e8cda6ed0ff46768a23bb9b0e694",
+      "cell_actions.py": "c39cb8327eca320f999e961cd4eb42baf96ec8448b868bafbf5ce5a1d8ba5320"
+    }
+  },
+  "change_atom_action": {
+    "summary": "Replace the species at one zero-based site index; retain its position and properties.",
+    "parameters": "index: int; species: element symbol",
+    "pitfalls": [
+      "replace_species changes ALL sites of a species; use replace(index, ...)."
+    ],
+    "code": "structure = input_structure.copy()\nsite = structure[index]\nstructure.replace(index, species, properties=site.properties, label=site.label)\n",
+    "sources": [
+      {
+        "url": "https://github.com/MasterAI-EAM/atomworld/blob/db1933021551236f5a989e5339e89baa84e4ebcb/src/atom_world/actions.py",
+        "symbol": "ChangeAtomAction"
+      }
+    ]
+  },
+  "remove_atom_action": {
+    "summary": "Remove exactly the requested site. The remaining sites retain their relative order.",
+    "parameters": "index: int",
+    "pitfalls": [
+      "For multiple removals, calculate indices before mutation and call remove_sites once."
+    ],
+    "code": "structure = input_structure.copy()\nstructure.remove_sites([index])\n",
+    "sources": [
+      {
+        "url": "https://github.com/MasterAI-EAM/atomworld/blob/db1933021551236f5a989e5339e89baa84e4ebcb/src/atom_world/actions.py",
+        "symbol": "RemoveAtomAction"
+      }
+    ]
+  },
+  "add_atom_action": {
+    "summary": "Append one atom at the specified absolute Cartesian position in angstrom.",
+    "parameters": "species: element symbol; position: length-3 Cartesian vector",
+    "pitfalls": [
+      "Set coords_are_cartesian=True; do not interpret this vector as fractional coordinates or as a displacement."
+    ],
+    "code": "structure = input_structure.copy()\nstructure.append(species, position, coords_are_cartesian=True, validate_proximity=False)\n",
+    "sources": [
+      {
+        "url": "https://github.com/MasterAI-EAM/atomworld/blob/db1933021551236f5a989e5339e89baa84e4ebcb/src/atom_world/actions.py",
+        "symbol": "AddAtomAction"
+      }
+    ]
+  },
+  "move_atom_action": {
+    "summary": "Translate one atom by a Cartesian displacement in angstrom.",
+    "parameters": "index: int; displacement: length-3 Cartesian vector",
+    "pitfalls": [
+      "The vector is added to the original position, not assigned as the new position.",
+      "Do not wrap the result into the cell during the requested edit."
+    ],
+    "code": "structure = input_structure.copy()\nstructure.translate_sites([index], displacement, frac_coords=False, to_unit_cell=False)\n",
+    "sources": [
+      {
+        "url": "https://github.com/MasterAI-EAM/atomworld/blob/db1933021551236f5a989e5339e89baa84e4ebcb/src/atom_world/actions.py",
+        "symbol": "MoveAtomAction"
+      }
+    ]
+  },
+  "move_towards_atom_action": {
+    "summary": "Move the first atom by distance angstrom along the direct Cartesian vector toward the second atom.",
+    "parameters": "index1, index2: int; distance: float in angstrom",
+    "pitfalls": [
+      "Normalize r2-r1; distance is a length, not a fractional ratio.",
+      "The pinned action uses the direct vector, not a minimum-image vector; the second atom stays fixed."
+    ],
+    "code": "import numpy as np\nstructure = input_structure.copy()\ndirection = structure[index2].coords - structure[index1].coords\nlength = np.linalg.norm(direction)\nif length == 0:\n    raise ValueError(\"The two sites have coincident Cartesian positions\")\nstructure.translate_sites([index1], distance * direction / length,\n                          frac_coords=False, to_unit_cell=False)\n",
+    "sources": [
+      {
+        "url": "https://github.com/MasterAI-EAM/atomworld/blob/db1933021551236f5a989e5339e89baa84e4ebcb/src/atom_world/actions.py",
+        "symbol": "MoveTowardsAtomAction"
+      }
+    ]
+  },
+  "insert_between_atoms_action": {
+    "summary": "Append an atom on the direct line from the first site toward the second, distance angstrom from the first.",
+    "parameters": "index1, index2: int; species: element symbol; distance: float in angstrom",
+    "pitfalls": [
+      "Use r1 + distance * (r2-r1)/norm(r2-r1), not the midpoint unless specified.",
+      "Do not apply minimum-image geometry. The upstream generator rounds the displayed distance to two decimals; the hidden ratio is unavailable."
+    ],
+    "code": "import numpy as np\nstructure = input_structure.copy()\nstart = structure[index1].coords.copy()\ndirection = structure[index2].coords - start\nlength = np.linalg.norm(direction)\nif length == 0:\n    raise ValueError(\"Cannot define a line between coincident sites\")\nposition = start + distance * direction / length\nstructure.append(species, position, coords_are_cartesian=True, validate_proximity=False)\n",
+    "sources": [
+      {
+        "url": "https://github.com/MasterAI-EAM/atomworld/blob/db1933021551236f5a989e5339e89baa84e4ebcb/src/atom_world/actions.py",
+        "symbol": "InsertBetweenAtomsAction"
+      }
+    ]
+  },
+  "swap_atoms_action": {
+    "summary": "Exchange the two species at their fixed sites, preserving all Cartesian positions.",
+    "parameters": "index1, index2: int",
+    "pitfalls": [
+      "The pinned implementation swaps species even though its prompt says swap spatial positions. For CIF geometry these give the same species-position multiset; site identity differs.",
+      "Capture both original species before either replacement."
+    ],
+    "code": "structure = input_structure.copy()\nfirst, second = structure[index1], structure[index2]\nstructure.replace(index1, second.species, properties=first.properties, label=first.label)\nstructure.replace(index2, first.species, properties=second.properties, label=second.label)\n",
+    "sources": [
+      {
+        "url": "https://github.com/MasterAI-EAM/atomworld/blob/db1933021551236f5a989e5339e89baa84e4ebcb/src/atom_world/actions.py",
+        "symbol": "SwapAtomsAction"
+      }
+    ]
+  },
+  "delete_below_atom_action": {
+    "summary": "Delete sites with Cartesian z strictly below the reference site; retain equal-height sites.",
+    "parameters": "index: int",
+    "pitfalls": [
+      "Snapshot z before deleting. Fractional z is not Cartesian height in a tilted cell.",
+      "Pinned-source discrepancy: execute uses strict z < z_ref and never adds the reference site, even when the generated text says Including itself. This recipe follows that implementation."
+    ],
+    "code": "structure = input_structure.copy()\nz = structure.cart_coords[:, 2].copy()\nindices = [i for i, value in enumerate(z) if value < z[index]]\nif not indices:\n    raise ValueError(\"No sites below the reference site\")\nstructure.remove_sites(indices)\n",
+    "sources": [
+      {
+        "url": "https://github.com/MasterAI-EAM/atomworld/blob/db1933021551236f5a989e5339e89baa84e4ebcb/src/atom_world/actions.py",
+        "symbol": "DeleteBelowAtomAction"
+      }
+    ]
+  },
+  "rotate_around_atom_action": {
+    "summary": "Select original neighbors by periodic shortest distance < radius, excluding the center; rotate their stored Cartesian coordinates around the center.",
+    "parameters": "index: int; radius: angstrom; angle: degrees; axis: nonzero Cartesian vector",
+    "pitfalls": [
+      "Right-hand rotation; radians are required by pymatgen rotate_sites.",
+      "Use MIC only for neighbor selection. Pinned AtomWorld rotates original coordinates, not their nearest periodic images; keep the lattice fixed."
+    ],
+    "code": "import numpy as np\nstructure = input_structure.copy()\ncenter = structure[index].coords.copy()\nselected = [i for i in range(len(structure))\n            if i != index and structure.get_distance(index, i) < radius]\nif np.linalg.norm(axis) == 0:\n    raise ValueError(\"Rotation axis must be nonzero\")\nif selected:\n    structure.rotate_sites(selected, theta=np.deg2rad(angle), axis=axis,\n                           anchor=center, to_unit_cell=False)\n",
+    "sources": [
+      {
+        "url": "https://github.com/MasterAI-EAM/atomworld/blob/db1933021551236f5a989e5339e89baa84e4ebcb/src/atom_world/actions.py",
+        "symbol": "RotateAroundAtomAction"
+      }
+    ]
+  },
+  "super_cell_action": {
+    "summary": "Repeat the existing unit cell along each lattice vector by positive integer factors.",
+    "parameters": "repeats: three positive integers (na, nb, nc)",
+    "pitfalls": [
+      "Atom count and volume multiply by na*nb*nc. Scaling only the lattice strains the material and is not a supercell.",
+      "pymatgen and ASE use different output site ordering; their species-position multisets agree for structure evaluation."
+    ],
+    "code": "import numpy as np\nstructure = input_structure.copy()\nif len(repeats) != 3 or any(int(n) != n or n <= 0 for n in repeats):\n    raise ValueError(\"Expected three positive integer repeats\")\nstructure.make_supercell([int(n) for n in repeats], to_unit_cell=False)\n",
+    "sources": [
+      {
+        "url": "https://github.com/MasterAI-EAM/atomworld/blob/db1933021551236f5a989e5339e89baa84e4ebcb/src/atom_world/cell_actions.py",
+        "symbol": "SuperCellAction"
+      }
+    ]
+  }
+}

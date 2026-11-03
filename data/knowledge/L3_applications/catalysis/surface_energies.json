@@ -1,0 +1,745 @@
+{
+  "_metadata": {
+    "description": "Surface energies for metal facets",
+    "unit": "J/m² (unless otherwise specified)",
+    "source": "Materials Project and DFT literature",
+    "note": "Values depend on DFT functional and computational parameters",
+    "license": "CC BY 4.0",
+    "citation": "Materials Project (materialsproject.org)",
+    "version": "2025.12",
+    "last_updated": "2025-12-31T18:02:33.854917"
+  },
+  "metals": {
+    "Pt": {
+      "fcc": {
+        "(111)": {
+          "surface_energy": 1.49,
+          "work_function_eV": 5.93,
+          "coordination": 9
+        },
+        "(100)": {
+          "surface_energy": 1.81,
+          "work_function_eV": 5.84,
+          "coordination": 8
+        },
+        "(110)": {
+          "surface_energy": 1.86,
+          "work_function_eV": 5.35,
+          "coordination": 7
+        },
+        "(211)": {
+          "surface_energy": 1.72,
+          "work_function_eV": 5.45,
+          "coordination": "mixed"
+        },
+        "(311)": {
+          "surface_energy": 1.78,
+          "work_function_eV": 5.5,
+          "coordination": "mixed"
+        },
+        "(321)": {
+          "surface_energy": 1.75,
+          "work_function_eV": 5.4,
+          "coordination": "mixed"
+        }
+      },
+      "wulff_shape": [
+        "(111)",
+        "(100)"
+      ],
+      "notes": "Most stable surface is (111)"
+    },
+    "Pd": {
+      "fcc": {
+        "(111)": {
+          "surface_energy": 1.31,
+          "work_function_eV": 5.6,
+          "coordination": 9
+        },
+        "(100)": {
+          "surface_energy": 1.49,
+          "work_function_eV": 5.4,
+          "coordination": 8
+        },
+        "(110)": {
+          "surface_energy": 1.55,
+          "work_function_eV": 5.2,
+          "coordination": 7
+        }
+      },
+      "wulff_shape": [
+        "(111)",
+        "(100)"
+      ],
+      "notes": "Similar to Pt but lower surface energies"
+    },
+    "Ni": {
+      "fcc": {
+        "(111)": {
+          "surface_energy": 1.92,
+          "work_function_eV": 5.35,
+          "coordination": 9
+        },
+        "(100)": {
+          "surface_energy": 2.21,
+          "work_function_eV": 5.22,
+          "coordination": 8
+        },
+        "(110)": {
+          "surface_energy": 2.28,
+          "work_function_eV": 5.04,
+          "coordination": 7
+        }
+      },
+      "wulff_shape": [
+        "(111)"
+      ],
+      "notes": "Higher surface energy than Pt/Pd"
+    },
+    "Cu": {
+      "fcc": {
+        "(111)": {
+          "surface_energy": 1.29,
+          "work_function_eV": 4.94,
+          "coordination": 9
+        },
+        "(100)": {
+          "surface_energy": 1.43,
+          "work_function_eV": 4.59,
+          "coordination": 8
+        },
+        "(110)": {
+          "surface_energy": 1.53,
+          "work_function_eV": 4.48,
+          "coordination": 7
+        }
+      },
+      "wulff_shape": [
+        "(111)",
+        "(100)"
+      ],
+      "notes": "Important for CO2 reduction"
+    },
+    "Au": {
+      "fcc": {
+        "(111)": {
+          "surface_energy": 0.79,
+          "work_function_eV": 5.31,
+          "coordination": 9
+        },
+        "(100)": {
+          "surface_energy": 0.92,
+          "work_function_eV": 5.22,
+          "coordination": 8
+        },
+        "(110)": {
+          "surface_energy": 0.98,
+          "work_function_eV": 5.2,
+          "coordination": 7
+        }
+      },
+      "wulff_shape": [
+        "(111)"
+      ],
+      "notes": "Very low surface energy, stable nanoparticles"
+    },
+    "Ag": {
+      "fcc": {
+        "(111)": {
+          "surface_energy": 0.78,
+          "work_function_eV": 4.74,
+          "coordination": 9
+        },
+        "(100)": {
+          "surface_energy": 0.89,
+          "work_function_eV": 4.64,
+          "coordination": 8
+        },
+        "(110)": {
+          "surface_energy": 0.95,
+          "work_function_eV": 4.52,
+          "coordination": 7
+        }
+      },
+      "wulff_shape": [
+        "(111)"
+      ],
+      "notes": "Similar to Au"
+    },
+    "Rh": {
+      "fcc": {
+        "(111)": {
+          "surface_energy": 2.0,
+          "work_function_eV": 5.6,
+          "coordination": 9
+        },
+        "(100)": {
+          "surface_energy": 2.3,
+          "work_function_eV": 5.4,
+          "coordination": 8
+        },
+        "(110)": {
+          "surface_energy": 2.4,
+          "work_function_eV": 5.2,
+          "coordination": 7
+        }
+      },
+      "wulff_shape": [
+        "(111)"
+      ],
+      "notes": "Important for automotive catalysis"
+    },
+    "Ir": {
+      "fcc": {
+        "(111)": {
+          "surface_energy": 2.46,
+          "work_function_eV": 5.76,
+          "coordination": 9
+        },
+        "(100)": {
+          "surface_energy": 2.84,
+          "work_function_eV": 5.67,
+          "coordination": 8
+        },
+        "(110)": {
+          "surface_energy": 2.95,
+          "work_function_eV": 5.42,
+          "coordination": 7
+        }
+      },
+      "wulff_shape": [
+        "(111)"
+      ],
+      "notes": "High surface energy, stable at high temperatures"
+    },
+    "Ru": {
+      "hcp": {
+        "(0001)": {
+          "surface_energy": 2.1,
+          "work_function_eV": 5.4,
+          "coordination": 9
+        },
+        "(10-10)": {
+          "surface_energy": 2.35,
+          "work_function_eV": 5.2,
+          "coordination": 8
+        },
+        "(10-11)": {
+          "surface_energy": 2.25,
+          "work_function_eV": 5.3,
+          "coordination": "mixed"
+        }
+      },
+      "wulff_shape": [
+        "(0001)",
+        "(10-11)"
+      ],
+      "notes": "HCP structure, important for ammonia synthesis"
+    },
+    "Co": {
+      "hcp": {
+        "(0001)": {
+          "surface_energy": 2.08,
+          "work_function_eV": 5.0,
+          "coordination": 9
+        },
+        "(10-10)": {
+          "surface_energy": 2.3,
+          "work_function_eV": 4.8,
+          "coordination": 8
+        }
+      },
+      "fcc": {
+        "(111)": {
+          "surface_energy": 2.05,
+          "work_function_eV": 5.0,
+          "coordination": 9
+        }
+      },
+      "wulff_shape": [
+        "(0001)"
+      ],
+      "notes": "Fischer-Tropsch catalyst"
+    },
+    "Fe": {
+      "bcc": {
+        "(110)": {
+          "surface_energy": 2.37,
+          "work_function_eV": 4.67,
+          "coordination": 6
+        },
+        "(100)": {
+          "surface_energy": 2.47,
+          "work_function_eV": 4.29,
+          "coordination": 4
+        },
+        "(111)": {
+          "surface_energy": 2.69,
+          "work_function_eV": 4.81,
+          "coordination": 4
+        },
+        "(211)": {
+          "surface_energy": 2.52,
+          "work_function_eV": 4.5,
+          "coordination": "mixed"
+        }
+      },
+      "wulff_shape": [
+        "(110)"
+      ],
+      "notes": "BCC structure, ammonia synthesis catalyst"
+    },
+    "Mo": {
+      "bcc": {
+        "(110)": {
+          "surface_energy": 2.91,
+          "work_function_eV": 4.95,
+          "coordination": 6
+        },
+        "(100)": {
+          "surface_energy": 3.34,
+          "work_function_eV": 4.53,
+          "coordination": 4
+        },
+        "(111)": {
+          "surface_energy": 3.15,
+          "work_function_eV": 4.55,
+          "coordination": 4
+        }
+      },
+      "wulff_shape": [
+        "(110)"
+      ],
+      "notes": "Refractory metal, HDS catalyst"
+    },
+    "W": {
+      "bcc": {
+        "(110)": {
+          "surface_energy": 3.27,
+          "work_function_eV": 5.25,
+          "coordination": 6
+        },
+        "(100)": {
+          "surface_energy": 3.68,
+          "work_function_eV": 4.63,
+          "coordination": 4
+        },
+        "(111)": {
+          "surface_energy": 3.5,
+          "work_function_eV": 4.47,
+          "coordination": 4
+        }
+      },
+      "wulff_shape": [
+        "(110)"
+      ],
+      "notes": "Highest surface energy among common metals"
+    }
+  },
+  "oxides": {
+    "TiO2_rutile": {
+      "(110)": {
+        "surface_energy": 0.31,
+        "termination": "bridging O",
+        "coordination_Ti": 5
+      },
+      "(100)": {
+        "surface_energy": 0.53,
+        "termination": "mixed",
+        "coordination_Ti": 5
+      },
+      "(101)": {
+        "surface_energy": 0.44,
+        "termination": "mixed",
+        "coordination_Ti": 5
+      },
+      "(001)": {
+        "surface_energy": 0.9,
+        "termination": "Ti",
+        "coordination_Ti": 4
+      },
+      "notes": "(110) is most stable and most studied"
+    },
+    "TiO2_anatase": {
+      "(101)": {
+        "surface_energy": 0.44,
+        "termination": "mixed",
+        "coordination_Ti": 5
+      },
+      "(001)": {
+        "surface_energy": 0.9,
+        "termination": "Ti",
+        "coordination_Ti": 4
+      },
+      "(100)": {
+        "surface_energy": 0.53,
+        "termination": "mixed",
+        "coordination_Ti": 5
+      },
+      "notes": "(101) dominates Wulff shape, (001) is more reactive"
+    },
+    "Al2O3_alpha": {
+      "(0001)": {
+        "surface_energy": 1.5,
+        "termination": "Al",
+        "coordination_Al": 3
+      },
+      "(1-102)": {
+        "surface_energy": 1.85,
+        "termination": "mixed"
+      },
+      "notes": "Corundum structure, common support"
+    },
+    "MgO": {
+      "(100)": {
+        "surface_energy": 1.04,
+        "termination": "Mg-O",
+        "coordination": 5
+      },
+      "(110)": {
+        "surface_energy": 1.55,
+        "termination": "mixed"
+      },
+      "(111)": {
+        "surface_energy": 2.8,
+        "termination": "polar"
+      },
+      "notes": "Rock salt structure, (100) is most stable"
+    },
+    "CeO2": {
+      "(111)": {
+        "surface_energy": 0.68,
+        "termination": "O",
+        "coordination_Ce": 7
+      },
+      "(110)": {
+        "surface_energy": 1.01,
+        "termination": "mixed",
+        "coordination_Ce": 6
+      },
+      "(100)": {
+        "surface_energy": 1.41,
+        "termination": "O",
+        "coordination_Ce": 6
+      },
+      "notes": "Fluorite structure, oxygen storage material"
+    },
+    "ZnO": {
+      "(10-10)": {
+        "surface_energy": 0.99,
+        "termination": "mixed"
+      },
+      "(11-20)": {
+        "surface_energy": 1.06,
+        "termination": "mixed"
+      },
+      "(0001)_Zn": {
+        "surface_energy": 1.6,
+        "termination": "Zn",
+        "polar": true
+      },
+      "(000-1)_O": {
+        "surface_energy": 1.8,
+        "termination": "O",
+        "polar": true
+      },
+      "notes": "Wurtzite structure, polar surfaces are reactive"
+    },
+    "Fe2O3_hematite": {
+      "(0001)": {
+        "surface_energy": 1.15,
+        "termination": "Fe"
+      },
+      "(1-102)": {
+        "surface_energy": 1.35,
+        "termination": "mixed"
+      },
+      "notes": "Photoanode material"
+    },
+    "Fe3O4_magnetite": {
+      "(111)": {
+        "surface_energy": 0.95,
+        "termination": "Fe_tet"
+      },
+      "(100)": {
+        "surface_energy": 1.2,
+        "termination": "mixed"
+      },
+      "notes": "Inverse spinel, magnetic"
+    },
+    "RuO2": {
+      "(110)": {
+        "surface_energy": 0.75,
+        "termination": "bridging O"
+      },
+      "(100)": {
+        "surface_energy": 0.95,
+        "termination": "mixed"
+      },
+      "notes": "OER catalyst"
+    },
+    "IrO2": {
+      "(110)": {
+        "surface_energy": 0.8,
+        "termination": "bridging O"
+      },
+      "(100)": {
+        "surface_energy": 1.0,
+        "termination": "mixed"
+      },
+      "notes": "OER catalyst, more stable than RuO2"
+    },
+    "NiO": {
+      "(100)": {
+        "surface_energy": 0.85,
+        "termination": "Ni-O"
+      },
+      "(110)": {
+        "surface_energy": 1.2,
+        "termination": "mixed"
+      },
+      "(111)": {
+        "surface_energy": 1.8,
+        "termination": "polar"
+      },
+      "notes": "Rock salt structure"
+    },
+    "Co3O4": {
+      "(110)": {
+        "surface_energy": 0.9,
+        "termination": "mixed"
+      },
+      "(111)": {
+        "surface_energy": 1.05,
+        "termination": "Co"
+      },
+      "(100)": {
+        "surface_energy": 1.15,
+        "termination": "mixed"
+      },
+      "notes": "Spinel structure, OER catalyst"
+    }
+  },
+  "carbides_nitrides": {
+    "WC": {
+      "(0001)_W": {
+        "surface_energy": 2.8,
+        "termination": "W"
+      },
+      "(0001)_C": {
+        "surface_energy": 3.2,
+        "termination": "C"
+      },
+      "(10-10)": {
+        "surface_energy": 3.0,
+        "termination": "mixed"
+      },
+      "notes": "Pt-like catalytic properties"
+    },
+    "MoC": {
+      "(001)": {
+        "surface_energy": 2.5,
+        "termination": "mixed"
+      },
+      "(111)": {
+        "surface_energy": 2.7,
+        "termination": "mixed"
+      },
+      "notes": "HER catalyst"
+    },
+    "TiC": {
+      "(100)": {
+        "surface_energy": 1.8,
+        "termination": "mixed"
+      },
+      "(111)": {
+        "surface_energy": 2.1,
+        "termination": "Ti or C"
+      },
+      "notes": "Rock salt structure"
+    },
+    "TiN": {
+      "(100)": {
+        "surface_energy": 1.2,
+        "termination": "mixed"
+      },
+      "(111)": {
+        "surface_energy": 1.5,
+        "termination": "Ti or N"
+      },
+      "notes": "Rock salt structure, conductive"
+    },
+    "Mo2N": {
+      "(111)": {
+        "surface_energy": 2.2,
+        "termination": "mixed"
+      },
+      "notes": "HDN catalyst"
+    }
+  },
+  "sulfides": {
+    "MoS2": {
+      "(0001)_S": {
+        "surface_energy": 0.1,
+        "termination": "S",
+        "coordination_Mo": 6
+      },
+      "(10-10)_Mo": {
+        "surface_energy": 0.45,
+        "termination": "Mo edge",
+        "active_site": true
+      },
+      "(10-10)_S": {
+        "surface_energy": 0.35,
+        "termination": "S edge"
+      },
+      "notes": "Layered structure, edges are active for HDS and HER"
+    },
+    "WS2": {
+      "(0001)_S": {
+        "surface_energy": 0.12,
+        "termination": "S"
+      },
+      "(10-10)_W": {
+        "surface_energy": 0.5,
+        "termination": "W edge"
+      },
+      "notes": "Similar to MoS2"
+    },
+    "FeS2_pyrite": {
+      "(100)": {
+        "surface_energy": 1.2,
+        "termination": "S2"
+      },
+      "(111)": {
+        "surface_energy": 1.4,
+        "termination": "mixed"
+      },
+      "notes": "Earth-abundant HER catalyst"
+    },
+    "CoS2": {
+      "(100)": {
+        "surface_energy": 1.1,
+        "termination": "S2"
+      },
+      "notes": "HER catalyst"
+    }
+  },
+  "alloys": {
+    "PtNi": {
+      "Pt3Ni(111)": {
+        "surface_energy": 1.35,
+        "segregation": "Pt-skin"
+      },
+      "PtNi(111)": {
+        "surface_energy": 1.45,
+        "segregation": "depends on environment"
+      },
+      "notes": "ORR catalyst, Pt segregates to surface in vacuum"
+    },
+    "PtCo": {
+      "Pt3Co(111)": {
+        "surface_energy": 1.4,
+        "segregation": "Pt-skin"
+      },
+      "notes": "ORR catalyst"
+    },
+    "PtRu": {
+      "PtRu(111)": {
+        "surface_energy": 1.55,
+        "segregation": "Pt-rich"
+      },
+      "notes": "CO-tolerant anode catalyst"
+    },
+    "AuPd": {
+      "Au3Pd(111)": {
+        "surface_energy": 0.85,
+        "segregation": "Au-rich"
+      },
+      "notes": "Selective oxidation catalyst"
+    },
+    "NiFe": {
+      "NiFe(111)": {
+        "surface_energy": 2.0,
+        "segregation": "composition-dependent"
+      },
+      "notes": "OER catalyst as oxyhydroxide"
+    }
+  },
+  "surface_reconstruction": {
+    "description": "Common surface reconstructions",
+    "Au(111)": {
+      "reconstruction": "herringbone (22 x sqrt(3))",
+      "energy_gain_meV_per_atom": 20,
+      "notes": "Characteristic herringbone pattern"
+    },
+    "Pt(100)": {
+      "reconstruction": "hex",
+      "energy_gain_meV_per_atom": 50,
+      "notes": "Hexagonal overlayer on square substrate"
+    },
+    "Si(100)": {
+      "reconstruction": "2x1 dimer",
+      "energy_gain_meV_per_atom": 200,
+      "notes": "Dimer rows"
+    },
+    "TiO2(110)": {
+      "reconstruction": "1x2 added row",
+      "conditions": "reduced conditions",
+      "notes": "Ti2O3 rows"
+    }
+  },
+  "step_edge_energies": {
+    "description": "Energy cost of step edges (meV/Å)",
+    "Pt": {
+      "A_step_111": 230,
+      "B_step_111": 250,
+      "notes": "A-step (100) microfacet, B-step (111) microfacet"
+    },
+    "Cu": {
+      "A_step_111": 180,
+      "B_step_111": 200
+    },
+    "Au": {
+      "A_step_111": 120,
+      "B_step_111": 140
+    }
+  },
+  "nanoparticle_size_effects": {
+    "description": "Surface energy contribution to nanoparticle stability",
+    "formula": "delta_mu = 2 * gamma * V_m / r",
+    "notes": "Gibbs-Thomson equation for chemical potential shift",
+    "examples": {
+      "Pt_2nm": {
+        "surface_fraction": 0.5,
+        "delta_mu_eV": 0.15
+      },
+      "Pt_5nm": {
+        "surface_fraction": 0.25,
+        "delta_mu_eV": 0.06
+      },
+      "Pt_10nm": {
+        "surface_fraction": 0.12,
+        "delta_mu_eV": 0.03
+      }
+    }
+  },
+  "adsorbate_induced_reconstruction": {
+    "description": "Surface structure changes upon adsorption",
+    "CO_on_Pt111": {
+      "coverage_threshold": 0.5,
+      "reconstruction": "c(4x2)",
+      "notes": "CO islands form ordered structures"
+    },
+    "O_on_Pt111": {
+      "coverage_threshold": 0.25,
+      "reconstruction": "p(2x2)",
+      "notes": "Ordered oxygen overlayer"
+    },
+    "S_on_Ni111": {
+      "coverage_threshold": 0.25,
+      "reconstruction": "p(2x2)",
+      "notes": "Sulfur poisoning structure"
+    }
+  }
+}

@@ -1,0 +1,402 @@
+{
+  "_metadata": {
+    "description": "Estimation rules for material properties",
+    "purpose": "Enable LLM to reason about unknown materials using physical principles",
+    "usage": "When a material is not in the static database, use these rules to estimate properties",
+    "source": "Materials science literature and empirical rules",
+    "license": "Educational reference",
+    "citation": "Various materials science textbooks",
+    "version": "2025.12",
+    "last_updated": "2025-12-31T18:02:33.846230"
+  },
+  "lattice_constant_estimation": {
+    "description": "Rules for estimating lattice constants when exact values are unavailable",
+    "methods": [
+      {
+        "name": "vegards_law",
+        "description": "Linear interpolation for binary alloys",
+        "formula": "a_alloy = x * a_A + (1-x) * a_B",
+        "applicability": "Binary alloys with similar crystal structures",
+        "accuracy": "Within 1-2% for most alloys",
+        "example": "For Pt0.5Ni0.5: a = 0.5 * 3.92 + 0.5 * 3.52 = 3.72 Å"
+      },
+      {
+        "name": "atomic_radius_correlation",
+        "description": "Estimate from metallic/covalent radii",
+        "formulas": {
+          "fcc": "a ≈ 2√2 * r_metallic ≈ 2.83 * r",
+          "bcc": "a ≈ 4 * r_metallic / √3 ≈ 2.31 * r",
+          "hcp": "a ≈ 2 * r_metallic, c ≈ 1.633 * a (ideal)",
+          "diamond": "a ≈ 8 * r_covalent / √3 ≈ 4.62 * r",
+          "zincblende": "a ≈ 4 * (r_A + r_B) / √3"
+        },
+        "accuracy": "Within 5% for most materials"
+      },
+      {
+        "name": "periodic_trends",
+        "description": "Use trends within element groups",
+        "rules": [
+          "Lattice constant increases down a group (larger atomic radius)",
+          "Lattice constant generally decreases across a period",
+          "Similar elements in same group have similar structure types"
+        ],
+        "reference_data": {
+          "group_10_fcc": {
+            "Ni": 3.52,
+            "Pd": 3.89,
+            "Pt": 3.92
+          },
+          "group_11_fcc": {
+            "Cu": 3.61,
+            "Ag": 4.09,
+            "Au": 4.08
+          },
+          "group_6_bcc": {
+            "Cr": 2.88,
+            "Mo": 3.15,
+            "W": 3.16
+          }
+        }
+      }
+    ]
+  },
+  "structure_type_prediction": {
+    "description": "Rules for predicting crystal structure type",
+    "methods": [
+      {
+        "name": "electron_count_rule",
+        "description": "Structure depends on valence electron count for metals",
+        "rules": {
+          "1-2_electrons": "Usually BCC (alkali, alkaline earth)",
+          "3-5_electrons": "Often HCP or complex structures",
+          "6-10_electrons": "Usually FCC or HCP (late transition metals)",
+          "11_electrons": "FCC (coinage metals: Cu, Ag, Au)"
+        }
+      },
+      {
+        "name": "radius_ratio_rule",
+        "description": "For ionic compounds, cation/anion radius ratio determines structure",
+        "ranges": {
+          "0.155-0.225": {
+            "coordination": 3,
+            "structure": "trigonal"
+          },
+          "0.225-0.414": {
+            "coordination": 4,
+            "structure": "tetrahedral (zincblende, wurtzite)"
+          },
+          "0.414-0.732": {
+            "coordination": 6,
+            "structure": "octahedral (rocksalt)"
+          },
+          "0.732-1.0": {
+            "coordination": 8,
+            "structure": "cubic (CsCl-type)"
+          }
+        },
+        "example": "NaCl: r_Na+/r_Cl- = 1.02/1.81 = 0.56 → rocksalt structure"
+      },
+      {
+        "name": "electronegativity_difference",
+        "description": "Determines ionic vs covalent character",
+        "rules": {
+          "delta_EN > 1.7": "Ionic bonding, rocksalt or fluorite structures",
+          "delta_EN < 1.7": "Covalent bonding, zincblende or wurtzite structures",
+          "delta_EN ≈ 0": "Metallic bonding"
+        }
+      }
+    ]
+  },
+  "adsorption_energy_estimation": {
+    "description": "Rules for estimating adsorption energies on unknown surfaces",
+    "methods": [
+      {
+        "name": "d_band_center_correlation",
+        "description": "Adsorption energy correlates linearly with d-band center",
+        "principle": "Higher (less negative) d-band center → stronger adsorption",
+        "linear_fits": {
+          "H": {
+            "slope": -0.15,
+            "intercept": -0.3,
+            "unit": "eV",
+            "R2": 0.85
+          },
+          "O": {
+            "slope": -0.5,
+            "intercept": -0.8,
+            "unit": "eV",
+            "R2": 0.9
+          },
+          "CO": {
+            "slope": -0.3,
+            "intercept": -1.2,
+            "unit": "eV",
+            "R2": 0.88
+          },
+          "N": {
+            "slope": -0.45,
+            "intercept": -0.5,
+            "unit": "eV",
+            "R2": 0.87
+          },
+          "OH": {
+            "slope": -0.4,
+            "intercept": -1.8,
+            "unit": "eV",
+            "R2": 0.86
+          }
+        },
+        "d_band_centers_eV": {
+          "Pt": -2.25,
+          "Pd": -1.83,
+          "Ni": -1.29,
+          "Cu": -2.67,
+          "Au": -3.56,
+          "Ag": -4.3,
+          "Rh": -1.73,
+          "Ir": -2.11,
+          "Ru": -1.41,
+          "Co": -1.17,
+          "Fe": -1.5,
+          "W": -0.8,
+          "Mo": -0.92,
+          "Cr": -1.1,
+          "V": -0.7,
+          "Ti": -0.5
+        },
+        "example": "E_H on unknown metal M: E_H ≈ -0.15 * ε_d(M) - 0.30"
+      },
+      {
+        "name": "scaling_relations",
+        "description": "Adsorbate energies scale with each other",
+        "relations": [
+          {
+            "from": "O",
+            "to": "OH",
+            "formula": "E_OH ≈ 0.50 * E_O + 0.25",
+            "error": "±0.15 eV"
+          },
+          {
+            "from": "OH",
+            "to": "OOH",
+            "formula": "E_OOH ≈ E_OH + 3.20",
+            "error": "±0.20 eV"
+          },
+          {
+            "from": "C",
+            "to": "CH",
+            "formula": "E_CH ≈ 0.75 * E_C - 0.50",
+            "error": "±0.20 eV"
+          },
+          {
+            "from": "N",
+            "to": "NH",
+            "formula": "E_NH ≈ 0.70 * E_N - 0.30",
+            "error": "±0.15 eV"
+          },
+          {
+            "from": "CO",
+            "to": "CHO",
+            "formula": "E_CHO ≈ E_CO + 0.90",
+            "error": "±0.25 eV"
+          }
+        ],
+        "usage": "If you know E_O, you can estimate E_OH without separate calculation"
+      },
+      {
+        "name": "coordination_effect",
+        "description": "Lower coordination → stronger binding",
+        "coordination_shifts": {
+          "terrace_to_step": -0.2,
+          "step_to_kink": -0.3,
+          "kink_to_adatom": -0.5
+        },
+        "coordination_numbers": {
+          "fcc_111_terrace": 9,
+          "fcc_100_terrace": 8,
+          "fcc_110_terrace": 7,
+          "step_edge": 7,
+          "kink_site": 6,
+          "adatom": 3
+        },
+        "unit": "eV shift per coordination number decrease"
+      },
+      {
+        "name": "alloy_effect",
+        "description": "Estimate adsorption on alloys from pure metals",
+        "methods": [
+          {
+            "name": "linear_interpolation",
+            "formula": "E_ads(AxB1-x) ≈ x * E_ads(A) + (1-x) * E_ads(B)",
+            "applicability": "Random alloys, ensemble effect"
+          },
+          {
+            "name": "ligand_effect",
+            "description": "Subsurface atoms modify d-band of surface",
+            "typical_shift": "0.1-0.3 eV per subsurface layer change"
+          }
+        ]
+      }
+    ]
+  },
+  "defect_formation_energy_estimation": {
+    "description": "Rules for estimating defect formation energies",
+    "methods": [
+      {
+        "name": "cohesive_energy_correlation",
+        "description": "Vacancy formation energy scales with cohesive energy",
+        "formula": "E_vac ≈ 0.30 * E_coh",
+        "accuracy": "Within 20% for most metals",
+        "cohesive_energies_eV": {
+          "Fe": 4.28,
+          "Co": 4.39,
+          "Ni": 4.44,
+          "Cu": 3.49,
+          "Ag": 2.95,
+          "Au": 3.81,
+          "Pt": 5.84,
+          "Pd": 3.89,
+          "Al": 3.39,
+          "W": 8.9,
+          "Mo": 6.82,
+          "Ti": 4.85
+        }
+      },
+      {
+        "name": "melting_point_correlation",
+        "description": "Vacancy formation energy scales with melting point",
+        "formula": "E_vac ≈ 8.5e-4 * T_m (eV)",
+        "example": "Cu: T_m = 1358 K → E_vac ≈ 1.15 eV (actual: 1.3 eV)"
+      },
+      {
+        "name": "substitution_energy_estimation",
+        "description": "Estimate substitution energy from size mismatch",
+        "formula": "E_sub ≈ k * (Δr/r)^2",
+        "k_value": "~10 eV for metals",
+        "note": "Larger size mismatch → higher formation energy"
+      }
+    ]
+  },
+  "bond_length_estimation": {
+    "description": "Rules for estimating bond lengths",
+    "methods": [
+      {
+        "name": "covalent_radii_sum",
+        "description": "Bond length ≈ sum of covalent radii",
+        "formula": "d_AB ≈ r_A + r_B",
+        "accuracy": "Within 5% for covalent bonds",
+        "covalent_radii_pm": {
+          "H": 31,
+          "C": 77,
+          "N": 71,
+          "O": 66,
+          "S": 105,
+          "Si": 111,
+          "P": 107,
+          "Cl": 102,
+          "Br": 120
+        }
+      },
+      {
+        "name": "metal_adsorbate_distance",
+        "description": "Typical metal-adsorbate distances",
+        "typical_values_angstrom": {
+          "M-H": {
+            "range": [
+              1.5,
+              1.8
+            ],
+            "typical": 1.6
+          },
+          "M-C": {
+            "range": [
+              1.8,
+              2.1
+            ],
+            "typical": 1.9
+          },
+          "M-N": {
+            "range": [
+              1.8,
+              2.1
+            ],
+            "typical": 1.9
+          },
+          "M-O": {
+            "range": [
+              1.8,
+              2.2
+            ],
+            "typical": 2.0
+          },
+          "M-S": {
+            "range": [
+              2.2,
+              2.5
+            ],
+            "typical": 2.3
+          }
+        }
+      }
+    ]
+  },
+  "surface_energy_estimation": {
+    "description": "Rules for estimating surface energies",
+    "methods": [
+      {
+        "name": "broken_bond_model",
+        "description": "Surface energy from number of broken bonds",
+        "formula": "γ ≈ (Z_bulk - Z_surf) * E_bond / (2 * A)",
+        "coordination_numbers": {
+          "fcc_111": {
+            "bulk": 12,
+            "surface": 9
+          },
+          "fcc_100": {
+            "bulk": 12,
+            "surface": 8
+          },
+          "fcc_110": {
+            "bulk": 12,
+            "surface": 7
+          },
+          "bcc_110": {
+            "bulk": 8,
+            "surface": 6
+          },
+          "bcc_100": {
+            "bulk": 8,
+            "surface": 4
+          }
+        }
+      },
+      {
+        "name": "surface_energy_ordering",
+        "description": "General ordering of surface energies",
+        "fcc_ordering": "γ(111) < γ(100) < γ(110)",
+        "bcc_ordering": "γ(110) < γ(100) < γ(111)",
+        "hcp_ordering": "γ(0001) < γ(10-10) < γ(11-20)"
+      }
+    ]
+  },
+  "usage_guidelines": {
+    "when_to_use": [
+      "Material not found in static knowledge base",
+      "Need to estimate properties for alloys or mixed compositions",
+      "Validating LLM-generated values against physical expectations",
+      "Providing bounds or sanity checks for calculations"
+    ],
+    "limitations": [
+      "Estimates have typical errors of 10-20%",
+      "May not capture complex electronic effects",
+      "Alloy estimates assume random mixing",
+      "Surface reconstructions not accounted for"
+    ],
+    "best_practices": [
+      "Always state that values are estimates when using these rules",
+      "Provide uncertainty ranges when possible",
+      "Cross-check with multiple estimation methods",
+      "Use experimental data when available"
+    ]
+  }
+}

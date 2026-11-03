@@ -1,0 +1,44 @@
+{
+  "_metadata": {
+    "version": "1.0.0",
+    "scope": "General adsorbate construction and verification; no material-specific answer rules.",
+    "verified_versions": {"pymatgen": "2026.3.23"},
+    "source_urls": [
+      "https://pymatgen.org/pymatgen.core.html#pymatgen.core.composition.Composition.get_el_amt_dict",
+      "https://pymatgen.org/pymatgen.core.html#pymatgen.core.adsorption.AdsorbateSiteFinder.add_adsorbate"
+    ]
+  },
+  "formula_and_molecule_inventory": {
+    "summary": "Parse resolved formulas with Composition and sum molecule count times formula for every adsorbate; retain group identities.",
+    "keywords": ["formula", "stoichiometry", "composition"],
+    "principles": [
+      "Resolve molecular names to explicit formulas and connectivity. Composition parses formulas; it does not infer connectivity, isomers or binding geometry. Avoid a finite lookup table of supported formula strings.",
+      "Sum count times formula for every requested molecule, including repeated species. Track adsorbate groups separately from substrate atoms, especially when their elements overlap."
+    ],
+    "code": "from pymatgen.core import Composition\n\ndef adsorbate_inventory(formula_counts):\n    total = Composition({})\n    for formula, count in formula_counts:\n        if count < 0 or int(count) != count:\n            raise ValueError('Molecule counts must be nonnegative integers')\n        total += Composition(formula) * int(count)\n    return total.get_el_amt_dict()\n"
+  },
+  "coverage_and_surface_side": {
+    "summary": "Define coverage denominator and populated surface side explicitly; require integer counts without silent rounding.",
+    "keywords": ["coverage", "monolayer", "surface side"],
+    "principles": [
+      "State the coverage denominator, such as exposed substrate sites on a specified side, and whether one or both slab surfaces are populated. Compute each molecule count from that convention.",
+      "If the requested coverage is incompatible with integer counts, enlarge the allowed surface supercell or report the incompatibility; never silently round. Preserve coverage when changing the cell."
+    ]
+  },
+  "groupwise_binding_geometry": {
+    "summary": "Place complete molecules by anchors and rigid orientation; check every adsorbate and honor explicit task constraints.",
+    "keywords": ["anchor", "orientation", "coadsorption"],
+    "principles": [
+      "Assign each adsorbate a group, binding atom or binding-atom set, target site and surface side. Use rigid translation and rotation of a coherent molecular geometry; molecular composition alone is insufficient.",
+      "Evaluate every group's anchor height, orientation, connectivity and periodic separation from other groups. Explicit task constraints take priority over typical literature heights or default site preferences."
+    ]
+  },
+  "post_relaxation_verification": {
+    "summary": "Recheck geometry, inventory, sites and molecular integrity after relaxation; low forces do not prove correct adsorption.",
+    "keywords": ["relaxation", "forces", "connectivity"],
+    "principles": [
+      "After any relaxation, wrapping or cell change, verify finite coordinates and lattice, molecular connectivity, atom inventory, coverage, selected sites and local-normal binding geometry using periodic images.",
+      "Lower forces alone do not establish correct adsorption. Do not resolve repulsion by moving molecules arbitrarily far away or silently changing the requested binding mode; retain and recheck the construction constraints."
+    ]
+  }
+}

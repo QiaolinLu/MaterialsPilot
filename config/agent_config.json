@@ -1,0 +1,135 @@
+{
+  "version": "1.0.0",
+  "description": "Agent configuration for multi-agent crystal structure generation",
+
+  "physical_validation": {
+    "min_interatomic_distance": {
+      "default": 1.2,
+      "by_bond_type": {
+        "metallic": 2.0,
+        "ionic": 1.8,
+        "covalent": 1.2,
+        "van_der_waals": 3.0
+      },
+      "by_material_class": {
+        "metals": 2.0,
+        "oxides": 1.5,
+        "semiconductors": 1.2,
+        "molecular": 0.9
+      }
+    },
+    "energy_per_atom_range": {
+      "min": -15.0,
+      "max": 0.0
+    },
+    "max_coordination_number": 12,
+    "charge_tolerance": 0.1
+  },
+
+  "structure_types": [
+    "rocksalt", "zincblende", "wurtzite", "diamond", "fluorite",
+    "perovskite", "spinel", "corundum", "rutile", "antifluorite",
+    "cesium_chloride", "nickel_arsenide", "layered", "framework",
+    "high_entropy_alloy", "clathrate", "skutterudite", "heusler",
+    "delafossite", "garnet", "pyrochlore", "brownmillerite",
+    "inverse_spinel", "double_perovskite", "ruddlesden_popper"
+  ],
+
+  "operations": [
+    "vacancy", "substitution", "interstitial", "antisite",
+    "frenkel_pair", "schottky_defect", "doping",
+    "adsorption", "surface_generation", "interface_construction",
+    "grain_boundary", "supercell_creation",
+    "alloy_generation", "solid_solution", "ordered_alloy",
+    "strain_engineering", "layer_stacking", "polymorph_selection"
+  ],
+
+  "common_issues": [
+    {
+      "type": "atom_overlap",
+      "category": "physical_validity",
+      "severity": "critical",
+      "description": "Atoms are too close together",
+      "suggestion": "Check coordinate calculations and ensure minimum distance constraints"
+    },
+    {
+      "type": "wrong_composition",
+      "category": "task_alignment",
+      "severity": "critical",
+      "description": "Generated structure has incorrect chemical composition",
+      "suggestion": "Verify element types and atom counts match the target material"
+    },
+    {
+      "type": "charge_imbalance",
+      "category": "physical_validity",
+      "severity": "major",
+      "description": "Structure is not charge neutral",
+      "suggestion": "For ionic systems, ensure balanced removal/addition of cations and anions"
+    },
+    {
+      "type": "wrong_supercell_size",
+      "category": "task_alignment",
+      "severity": "major",
+      "description": "Supercell dimensions do not match requirements",
+      "suggestion": "Check make_supercell parameters match the requested size"
+    },
+    {
+      "type": "incorrect_operation",
+      "category": "task_alignment",
+      "severity": "critical",
+      "description": "Wrong type of defect or modification performed",
+      "suggestion": "Review the operation logic (vacancy vs substitution vs interstitial)"
+    },
+    {
+      "type": "missing_structure_variable",
+      "category": "code_quality",
+      "severity": "critical",
+      "description": "Code does not create a 'structure' variable",
+      "suggestion": "Ensure the final Structure object is assigned to a variable named 'structure'"
+    },
+    {
+      "type": "import_error",
+      "category": "code_quality",
+      "severity": "critical",
+      "description": "Missing or incorrect import statements",
+      "suggestion": "Add required pymatgen imports at the top of the code"
+    },
+    {
+      "type": "wrong_lattice_parameters",
+      "category": "physical_validity",
+      "severity": "major",
+      "description": "Lattice parameters are unrealistic",
+      "suggestion": "Use experimental or calculated lattice constants for the material"
+    }
+  ],
+
+  "validation_criteria": {
+    "geometric": [
+      "no_atom_overlap",
+      "reasonable_density",
+      "valid_coordination"
+    ],
+    "chemical": [
+      "correct_composition",
+      "charge_balance",
+      "valid_oxidation_states"
+    ],
+    "task_specific": [
+      "defect_count_matches",
+      "supercell_size_matches",
+      "adsorbate_height_correct"
+    ]
+  },
+
+  "output_formats": {
+    "planner": {
+      "required_fields": ["task_understanding", "execution_steps", "validation_criteria"],
+      "task_understanding_fields": ["material", "structure_type", "operation", "constraints"]
+    },
+    "critic": {
+      "required_fields": ["overall_assessment", "confidence", "issues", "recommendation"],
+      "assessment_values": ["pass", "fail"],
+      "recommendation_values": ["accept", "refine", "regenerate"]
+    }
+  }
+}

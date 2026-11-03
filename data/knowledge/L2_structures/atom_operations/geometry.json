@@ -1,0 +1,19 @@
+{
+  "_metadata": {
+    "version": "1.0.0",
+    "upstream_commit": "db1933021551236f5a989e5339e89baa84e4ebcb",
+    "license": "MIT",
+    "scope": "General action semantics and parameterized recipes for the ten AtomMotor actions; no dataset rows or target structures.",
+    "source_sha256": {
+      "actions.py": "206db8d7e9409f3f33d58ca3b29c4ac5faa3e8cda6ed0ff46768a23bb9b0e694",
+      "cell_actions.py": "c39cb8327eca320f999e961cd4eb42baf96ec8448b868bafbf5ce5a1d8ba5320"
+    }
+  },
+  "rules": [
+    "Use the preloaded input_structure.copy(); edit only the requested sites and retain the lattice except for supercell creation.",
+    "Indices are zero-based. Cartesian coordinates and displacements are in angstrom. Fractional row vectors satisfy cart = frac @ lattice.matrix.",
+    "Do not sort, standardize, relax, optimize, or wrap a structure while executing a precise coordinate edit.",
+    "Check the expected atom-count change and untouched sites. Physical instability alone does not invalidate an explicitly requested synthetic edit.",
+    "Retrieve only generic operation semantics. Target CIFs, sample answers, and official evaluator feedback are never generation context."
+  ]
+}

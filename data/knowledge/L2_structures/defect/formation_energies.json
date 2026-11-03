@@ -1,0 +1,383 @@
+{
+  "_metadata": {
+    "description": "Defect formation energies from DFT calculations",
+    "unit": "eV",
+    "source": "JARVIS-DFT, Materials Project, literature",
+    "note": "Values are approximate and depend on chemical potential conditions",
+    "license": "Public Domain (NIST) / CC BY 4.0",
+    "citation": "Choudhary et al., npj Comput. Mater. 6, 173 (2020)",
+    "version": "2025.12",
+    "last_updated": "2025-12-31T18:02:33.835266"
+  },
+  "vacancies": {
+    "Si": {
+      "neutral": 3.5,
+      "charge_states": {
+        "-2": 4.2,
+        "-1": 3.8,
+        "0": 3.5,
+        "+1": 3.3,
+        "+2": 3.2
+      },
+      "migration_barrier": 0.4,
+      "notes": "Most studied vacancy in semiconductors"
+    },
+    "Ge": {
+      "neutral": 2.5,
+      "charge_states": {
+        "-2": 3.2,
+        "0": 2.5,
+        "+2": 2.3
+      },
+      "migration_barrier": 0.3,
+      "notes": "Lower formation energy than Si"
+    },
+    "GaAs_Ga": {
+      "neutral": 2.5,
+      "charge_states": {
+        "-3": 4.0,
+        "0": 2.5,
+        "+1": 2.2
+      },
+      "notes": "Ga vacancy in GaAs, acceptor-like"
+    },
+    "GaAs_As": {
+      "neutral": 3.0,
+      "charge_states": {
+        "-1": 3.5,
+        "0": 3.0,
+        "+1": 2.7,
+        "+2": 2.5
+      },
+      "notes": "As vacancy in GaAs, donor-like"
+    },
+    "ZnO_Zn": {
+      "neutral": 5.5,
+      "charge_states": {
+        "-2": 7.0,
+        "0": 5.5
+      },
+      "notes": "High formation energy, acceptor"
+    },
+    "ZnO_O": {
+      "neutral": 3.5,
+      "charge_states": {
+        "0": 3.5,
+        "+1": 3.0,
+        "+2": 2.5
+      },
+      "notes": "Oxygen vacancy, donor, causes n-type conductivity"
+    },
+    "TiO2_O": {
+      "neutral": 4.2,
+      "charge_states": {
+        "0": 4.2,
+        "+1": 3.8,
+        "+2": 3.5
+      },
+      "notes": "Oxygen vacancy in rutile TiO2"
+    },
+    "MgO_Mg": {
+      "neutral": 7.5,
+      "notes": "Very high formation energy"
+    },
+    "MgO_O": {
+      "neutral": 6.0,
+      "notes": "F-center when charged"
+    },
+    "Fe_bcc": {
+      "neutral": 1.5,
+      "migration_barrier": 0.67,
+      "notes": "Important for steel properties"
+    },
+    "Cu_fcc": {
+      "neutral": 1.3,
+      "migration_barrier": 0.7,
+      "notes": "Well-studied metal vacancy"
+    },
+    "Al_fcc": {
+      "neutral": 0.7,
+      "migration_barrier": 0.62,
+      "notes": "Low formation energy"
+    },
+    "Ni_fcc": {
+      "neutral": 1.6,
+      "migration_barrier": 1.04,
+      "notes": "Higher migration barrier"
+    },
+    "Pt_fcc": {
+      "neutral": 1.1,
+      "migration_barrier": 1.43,
+      "notes": "Noble metal vacancy"
+    },
+    "Au_fcc": {
+      "neutral": 0.9,
+      "migration_barrier": 0.71,
+      "notes": "Low formation energy"
+    },
+    "W_bcc": {
+      "neutral": 3.5,
+      "migration_barrier": 1.78,
+      "notes": "Refractory metal, high values"
+    },
+    "Mo_bcc": {
+      "neutral": 3.0,
+      "migration_barrier": 1.35,
+      "notes": "Refractory metal"
+    },
+    "NaCl_Na": {
+      "neutral": 2.0,
+      "notes": "Schottky defect component"
+    },
+    "NaCl_Cl": {
+      "neutral": 2.0,
+      "notes": "Schottky defect component"
+    },
+    "CeO2_O": {
+      "neutral": 4.5,
+      "charge_states": {
+        "0": 4.5,
+        "+1": 4.0,
+        "+2": 3.5
+      },
+      "notes": "Important for oxygen storage"
+    },
+    "SrTiO3_O": {
+      "neutral": 5.0,
+      "charge_states": {
+        "0": 5.0,
+        "+2": 4.0
+      },
+      "notes": "Perovskite oxygen vacancy"
+    },
+    "BaTiO3_O": {
+      "neutral": 4.8,
+      "notes": "Ferroelectric perovskite"
+    }
+  },
+  "interstitials": {
+    "Si_Si": {
+      "neutral": 3.8,
+      "configurations": {
+        "tetrahedral": 4.5,
+        "hexagonal": 4.2,
+        "split_110": 3.8,
+        "split_100": 4.0
+      },
+      "migration_barrier": 0.2,
+      "notes": "Split-110 is most stable"
+    },
+    "Si_C": {
+      "neutral": 2.5,
+      "notes": "Carbon interstitial in Si"
+    },
+    "Si_O": {
+      "neutral": 1.5,
+      "notes": "Oxygen interstitial in Si"
+    },
+    "Fe_C": {
+      "neutral": 0.8,
+      "configurations": {
+        "octahedral": 0.8,
+        "tetrahedral": 1.2
+      },
+      "migration_barrier": 0.87,
+      "notes": "Carbon in bcc Fe, octahedral preferred"
+    },
+    "Fe_N": {
+      "neutral": 0.9,
+      "notes": "Nitrogen in bcc Fe"
+    },
+    "Fe_H": {
+      "neutral": 0.3,
+      "migration_barrier": 0.04,
+      "notes": "Very mobile hydrogen"
+    },
+    "Cu_H": {
+      "neutral": 0.5,
+      "notes": "Hydrogen in Cu"
+    },
+    "Ni_H": {
+      "neutral": 0.4,
+      "notes": "Hydrogen in Ni"
+    },
+    "Pd_H": {
+      "neutral": 0.1,
+      "notes": "Very low, Pd absorbs H easily"
+    },
+    "Ti_O": {
+      "neutral": 2.0,
+      "notes": "Oxygen in Ti"
+    },
+    "Zr_O": {
+      "neutral": 1.8,
+      "notes": "Oxygen in Zr"
+    }
+  },
+  "substitutions": {
+    "Si_Ge": {
+      "neutral": 0.3,
+      "notes": "Ge substituting Si, small size mismatch"
+    },
+    "Si_C": {
+      "neutral": 1.5,
+      "notes": "C substituting Si"
+    },
+    "Si_B": {
+      "neutral": 0.5,
+      "charge_states": {
+        "-1": 0.3,
+        "0": 0.5
+      },
+      "notes": "p-type dopant"
+    },
+    "Si_P": {
+      "neutral": 0.4,
+      "charge_states": {
+        "0": 0.4,
+        "+1": 0.2
+      },
+      "notes": "n-type dopant"
+    },
+    "Si_As": {
+      "neutral": 0.5,
+      "notes": "n-type dopant"
+    },
+    "Si_Al": {
+      "neutral": 0.6,
+      "notes": "p-type dopant"
+    },
+    "GaAs_Si_Ga": {
+      "neutral": 0.8,
+      "notes": "Si on Ga site, n-type"
+    },
+    "GaAs_Si_As": {
+      "neutral": 1.2,
+      "notes": "Si on As site, p-type"
+    },
+    "GaAs_Zn_Ga": {
+      "neutral": 0.7,
+      "notes": "Zn acceptor"
+    },
+    "GaAs_Te_As": {
+      "neutral": 0.6,
+      "notes": "Te donor"
+    },
+    "ZnO_Al_Zn": {
+      "neutral": 1.0,
+      "notes": "Al donor in ZnO"
+    },
+    "ZnO_Ga_Zn": {
+      "neutral": 0.9,
+      "notes": "Ga donor in ZnO"
+    },
+    "ZnO_N_O": {
+      "neutral": 2.5,
+      "notes": "N acceptor, difficult p-type doping"
+    },
+    "TiO2_Nb_Ti": {
+      "neutral": 1.5,
+      "notes": "Nb donor in TiO2"
+    },
+    "TiO2_N_O": {
+      "neutral": 2.0,
+      "notes": "N doping for visible light absorption"
+    },
+    "Fe_Cr": {
+      "neutral": 0.1,
+      "notes": "Cr in Fe, stainless steel"
+    },
+    "Fe_Ni": {
+      "neutral": 0.05,
+      "notes": "Ni in Fe, very favorable"
+    },
+    "Fe_Mn": {
+      "neutral": 0.08,
+      "notes": "Mn in Fe"
+    },
+    "Fe_Co": {
+      "neutral": 0.03,
+      "notes": "Co in Fe, very similar"
+    },
+    "Cu_Zn": {
+      "neutral": 0.2,
+      "notes": "Zn in Cu, brass"
+    },
+    "Cu_Ni": {
+      "neutral": 0.1,
+      "notes": "Ni in Cu, cupronickel"
+    },
+    "Al_Mg": {
+      "neutral": 0.15,
+      "notes": "Mg in Al"
+    },
+    "Al_Si": {
+      "neutral": 0.2,
+      "notes": "Si in Al"
+    },
+    "Al_Cu": {
+      "neutral": 0.25,
+      "notes": "Cu in Al, age hardening"
+    }
+  },
+  "antisites": {
+    "GaAs_Ga_As": {
+      "neutral": 2.5,
+      "notes": "Ga on As site"
+    },
+    "GaAs_As_Ga": {
+      "neutral": 3.0,
+      "notes": "As on Ga site, EL2 defect"
+    },
+    "InP_In_P": {
+      "neutral": 2.8,
+      "notes": "In on P site"
+    },
+    "InP_P_In": {
+      "neutral": 3.2,
+      "notes": "P on In site"
+    },
+    "SiC_Si_C": {
+      "neutral": 4.0,
+      "notes": "Si on C site"
+    },
+    "SiC_C_Si": {
+      "neutral": 3.5,
+      "notes": "C on Si site"
+    },
+    "ZnS_Zn_S": {
+      "neutral": 3.0,
+      "notes": "Zn on S site"
+    },
+    "ZnS_S_Zn": {
+      "neutral": 3.5,
+      "notes": "S on Zn site"
+    }
+  },
+  "complexes": {
+    "Si_V-O": {
+      "binding_energy": 1.5,
+      "notes": "Vacancy-oxygen complex, A-center"
+    },
+    "Si_V-V": {
+      "binding_energy": 1.2,
+      "notes": "Divacancy"
+    },
+    "Si_B-O": {
+      "binding_energy": 0.5,
+      "notes": "Boron-oxygen complex, LID"
+    },
+    "Fe_V-C": {
+      "binding_energy": 0.4,
+      "notes": "Vacancy-carbon complex"
+    },
+    "Fe_V-N": {
+      "binding_energy": 0.3,
+      "notes": "Vacancy-nitrogen complex"
+    },
+    "GaAs_V_Ga-V_As": {
+      "binding_energy": 2.0,
+      "notes": "Divacancy in GaAs"
+    }
+  }
+}

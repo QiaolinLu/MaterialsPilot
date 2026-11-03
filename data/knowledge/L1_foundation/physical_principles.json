@@ -1,0 +1,395 @@
+{
+  "_metadata": {
+    "description": "Fundamental physical principles for materials science reasoning",
+    "purpose": "Enable LLM to reason about material behavior using first-principles understanding",
+    "usage": "Reference these principles when explaining or predicting material properties",
+    "source": "Solid state physics and materials science textbooks",
+    "license": "Educational reference",
+    "citation": "Kittel, Ashcroft & Mermin, and other standard references",
+    "version": "2025.12",
+    "last_updated": "2025-12-31T18:02:33.848604"
+  },
+  "crystal_structure_principles": {
+    "bonding_types": {
+      "metallic": {
+        "description": "Delocalized electrons shared among all atoms",
+        "characteristics": [
+          "High electrical and thermal conductivity",
+          "Ductile and malleable",
+          "Metallic luster",
+          "Close-packed structures preferred (FCC, HCP, BCC)"
+        ],
+        "typical_materials": [
+          "Fe",
+          "Cu",
+          "Al",
+          "Au",
+          "Pt",
+          "Ni"
+        ]
+      },
+      "covalent": {
+        "description": "Localized electron sharing between specific atoms",
+        "characteristics": [
+          "Directional bonds",
+          "Often semiconducting or insulating",
+          "Hard but brittle",
+          "Open structures (diamond, zincblende)"
+        ],
+        "typical_materials": [
+          "Si",
+          "Ge",
+          "C (diamond)",
+          "SiC",
+          "GaAs"
+        ]
+      },
+      "ionic": {
+        "description": "Electrostatic attraction between cations and anions",
+        "characteristics": [
+          "High melting points",
+          "Brittle",
+          "Insulating (solid), conducting (molten/dissolved)",
+          "Rocksalt, fluorite, perovskite structures"
+        ],
+        "typical_materials": [
+          "NaCl",
+          "MgO",
+          "CaF2",
+          "SrTiO3"
+        ]
+      },
+      "van_der_waals": {
+        "description": "Weak dispersion forces between layers/molecules",
+        "characteristics": [
+          "Layered structures",
+          "Easy cleavage between layers",
+          "Anisotropic properties",
+          "Low interlayer binding energy"
+        ],
+        "typical_materials": [
+          "graphite",
+          "MoS2",
+          "WS2",
+          "hBN"
+        ]
+      }
+    },
+    "close_packing": {
+      "description": "Atoms pack to maximize density and minimize energy",
+      "packing_efficiency": {
+        "fcc": {
+          "efficiency": 0.74,
+          "coordination": 12,
+          "stacking": "ABCABC"
+        },
+        "hcp": {
+          "efficiency": 0.74,
+          "coordination": 12,
+          "stacking": "ABAB"
+        },
+        "bcc": {
+          "efficiency": 0.68,
+          "coordination": 8,
+          "stacking": "not close-packed"
+        },
+        "simple_cubic": {
+          "efficiency": 0.52,
+          "coordination": 6
+        },
+        "diamond": {
+          "efficiency": 0.34,
+          "coordination": 4
+        }
+      },
+      "principle": "Metals prefer high packing efficiency; covalent materials sacrifice packing for directional bonds"
+    },
+    "symmetry_principles": {
+      "space_groups": {
+        "description": "230 unique 3D symmetry combinations",
+        "common_examples": {
+          "Fm-3m": "FCC metals (Cu, Al, Au, Pt, Ni)",
+          "Im-3m": "BCC metals (Fe, W, Mo, Cr)",
+          "P63/mmc": "HCP metals (Co, Ti, Zn, Mg)",
+          "Fd-3m": "Diamond structure (Si, Ge, C)",
+          "F-43m": "Zincblende (GaAs, ZnS, InP)",
+          "P63mc": "Wurtzite (GaN, ZnO, AlN)",
+          "Pm-3m": "Perovskite (SrTiO3, BaTiO3)"
+        }
+      },
+      "wyckoff_positions": {
+        "description": "Symmetry-equivalent atomic positions within unit cell",
+        "importance": "Determines which sites are equivalent for defect formation"
+      }
+    }
+  },
+  "defect_physics_principles": {
+    "thermodynamics": {
+      "formation_energy": {
+        "description": "Neutral-defect energy accounting; charged defects additionally require an electron-reservoir term and finite-size corrections.",
+        "formula": "E_f = E_defect - E_perfect - Σ n_i * μ_i",
+        "components": {
+          "E_defect": "Total energy of system with defect",
+          "E_perfect": "Total energy of perfect system",
+          "n_i": "N_i(defect) - N_i(reference): positive for added atoms, negative for removed atoms",
+          "μ_i": "Chemical potential of species i"
+        },
+        "source": "https://materialsproject.github.io/pymatgen-analysis-defects/content/formation-energy/"
+      },
+      "equilibrium_concentration": {
+        "description": "Defect concentration at thermal equilibrium",
+        "formula": "c = N_sites * exp(-E_f / kT)",
+        "implications": [
+          "Higher temperature → more defects",
+          "Lower formation energy → more defects",
+          "Defects are thermodynamically inevitable at T > 0"
+        ]
+      }
+    },
+    "vacancy_physics": {
+      "formation": {
+        "description": "Remove atom from lattice site to surface/grain boundary",
+        "energy_trends": [
+          "Higher cohesive energy → higher vacancy formation energy",
+          "Higher melting point → higher vacancy formation energy",
+          "Typical range: 0.5-4 eV for metals"
+        ]
+      },
+      "relaxation": {
+        "description": "Neighboring atoms relax toward vacancy",
+        "typical_relaxation": "1-5% inward displacement",
+        "effect": "Reduces formation energy by 0.1-0.5 eV"
+      },
+      "migration": {
+        "description": "Vacancy moves by atom hopping into empty site",
+        "migration_barrier": "Typically 0.5-1.5 eV for metals",
+        "diffusion": "D = D_0 * exp(-E_m / kT)"
+      },
+      "interactions": {
+        "vacancy_vacancy": "Attractive at short range, can form di-vacancies",
+        "vacancy_impurity": "Can form vacancy-impurity complexes",
+        "minimum_separation": "Typically > 5 Å to avoid strong interactions"
+      }
+    },
+    "substitution_physics": {
+      "hume_rothery_rules": {
+        "description": "Empirical rules for substitutional solid solubility",
+        "rules": [
+          {
+            "name": "Size factor",
+            "rule": "A radius difference below about 15% is an empirical indicator for extensive substitutional solubility, not a hard gate for constructing a specified dopant.",
+            "formula": "|r_A - r_B| / r_A < 0.15",
+            "importance": "Most important factor"
+          },
+          {
+            "name": "Electronegativity",
+            "rule": "Similar electronegativity preferred",
+            "effect": "Large difference → compound formation instead of solid solution"
+          },
+          {
+            "name": "Valence",
+            "rule": "Same valence preferred for high solubility",
+            "effect": "Different valence → limited solubility"
+          },
+          {
+            "name": "Crystal structure",
+            "rule": "Same crystal structure preferred",
+            "effect": "Different structures → limited mutual solubility"
+          }
+        ]
+      },
+      "strain_effects": {
+        "description": "Size mismatch creates local strain field",
+        "formula": "ε ≈ (r_dopant - r_host) / r_host",
+        "effects": [
+          "Larger dopant → compressive strain on neighbors",
+          "Smaller dopant → tensile strain on neighbors",
+          "Strain energy ∝ ε²"
+        ]
+      },
+      "electronic_effects": {
+        "description": "Dopants modify local electronic structure",
+        "n_type_dopants": "Donate electrons (e.g., P in Si)",
+        "p_type_dopants": "Accept electrons (e.g., B in Si)",
+        "isoelectronic": "Same valence, no carrier change (e.g., Ge in Si)"
+      }
+    },
+    "interstitial_physics": {
+      "site_types": {
+        "octahedral": {
+          "description": "Surrounded by 6 atoms in octahedral arrangement",
+          "fcc_position": "In the conventional FCC cell: body center [0.5, 0.5, 0.5] and edge centers such as [0.5, 0, 0]; face centers are occupied host sites.",
+          "bcc_position": "[0.5, 0.5, 0] and equivalents",
+          "size": "Void size and distortions depend on the host lattice."
+        },
+        "tetrahedral": {
+          "description": "Surrounded by 4 atoms in tetrahedral arrangement",
+          "fcc_position": "[0.25, 0.25, 0.25] and equivalents",
+          "bcc_position": "[0.25, 0.5, 0] and equivalents",
+          "size": "Compare actual host-neighbor geometry; no host-independent size ordering."
+        }
+      },
+      "common_interstitials": {
+        "H": "Hydrogen can occupy interstitial sites; tetrahedral versus octahedral preference depends on the host and conditions.",
+        "C": "Prefers octahedral sites, causes lattice expansion",
+        "N": "Similar to C, important for steel hardening",
+        "O": "Can form oxide precipitates at high concentration"
+      }
+    }
+  },
+  "surface_chemistry_principles": {
+    "d_band_theory": {
+      "description": "Hammer-Nørskov d-band model for adsorption",
+      "principle": "Adsorption strength correlates with d-band center position",
+      "mechanism": [
+        "Adsorbate states hybridize with metal d-band",
+        "Creates bonding and antibonding states",
+        "Higher d-band center → more antibonding states above Fermi level → stronger binding"
+      ],
+      "trends": {
+        "across_period": "d-band center moves down (more negative) → weaker binding",
+        "down_group": "d-band center relatively constant",
+        "filling_effect": "More d-electrons → lower d-band center → weaker binding"
+      },
+      "d_band_centers_eV": {
+        "early_TM": {
+          "Sc": -0.2,
+          "Ti": -0.5,
+          "V": -0.7,
+          "Cr": -1.1
+        },
+        "mid_TM": {
+          "Mn": -1.2,
+          "Fe": -1.5,
+          "Co": -1.17,
+          "Ni": -1.29
+        },
+        "late_TM": {
+          "Cu": -2.67,
+          "Pd": -1.83,
+          "Ag": -4.3,
+          "Pt": -2.25,
+          "Au": -3.56
+        }
+      }
+    },
+    "coordination_effects": {
+      "description": "Lower coordination → stronger binding",
+      "mechanism": "Undercoordinated atoms have narrower d-band, higher d-band center",
+      "site_hierarchy": {
+        "terrace": "Highest coordination, weakest binding",
+        "step": "Intermediate coordination",
+        "kink": "Low coordination, strong binding",
+        "adatom": "Lowest coordination, strongest binding"
+      },
+      "binding_shift": "~0.1-0.3 eV per coordination number decrease"
+    },
+    "adsorbate_site_preferences": {
+      "general_rules": [
+        "Small adsorbates (H) prefer high-coordination hollow sites",
+        "CO prefers top sites on late TM, hollow on early TM",
+        "O strongly prefers hollow sites",
+        "OH prefers top or bridge sites",
+        "Large molecules prefer lower coordination due to steric effects"
+      ],
+      "electronic_factors": [
+        "Adsorbates with unpaired electrons prefer high coordination",
+        "Adsorbates with lone pairs can bind at top sites",
+        "π-bonding adsorbates (CO, NO) have complex site preferences"
+      ]
+    },
+    "surface_structure": {
+      "miller_indices": {
+        "description": "Notation for crystal planes",
+        "fcc_surfaces": {
+          "(111)": "Close-packed, lowest energy, 3-fold hollow sites",
+          "(100)": "Square arrangement, 4-fold hollow sites",
+          "(110)": "Rows of atoms, bridge sites along rows",
+          "(211)": "Stepped surface with (111) terraces and (100) steps"
+        },
+        "bcc_surfaces": {
+          "(110)": "Close-packed for BCC, lowest energy",
+          "(100)": "Open surface, high reactivity",
+          "(111)": "Very open, highest energy"
+        }
+      },
+      "surface_energy_ordering": {
+        "fcc": "γ(111) < γ(100) < γ(110)",
+        "bcc": "γ(110) < γ(100) < γ(111)",
+        "principle": "Lower surface energy → more stable → larger facets in nanoparticles"
+      }
+    }
+  },
+  "thermodynamic_principles": {
+    "gibbs_free_energy": {
+      "formula": "G = H - TS",
+      "application": "Determines phase stability and reaction spontaneity",
+      "for_surfaces": "γ = (∂G/∂A)_{T,P,n}"
+    },
+    "chemical_potential": {
+      "description": "Energy cost to add one atom/molecule to system",
+      "formula": "μ = (∂G/∂n)_{T,P}",
+      "importance": "Determines defect formation energies and equilibrium compositions"
+    },
+    "phase_stability": {
+      "convex_hull": "Stable phases lie on convex hull of formation energy vs composition",
+      "metastability": "Phases above hull are metastable, may transform given kinetic pathway"
+    }
+  },
+  "kinetic_principles": {
+    "arrhenius_equation": {
+      "formula": "k = A * exp(-E_a / kT)",
+      "components": {
+        "k": "Rate constant",
+        "A": "Pre-exponential factor (attempt frequency)",
+        "E_a": "Activation energy",
+        "kT": "Thermal energy"
+      }
+    },
+    "diffusion": {
+      "ficks_laws": {
+        "first_law": "J = -D * ∇c (flux proportional to concentration gradient)",
+        "second_law": "∂c/∂t = D * ∇²c (concentration evolution)"
+      },
+      "diffusion_mechanisms": {
+        "vacancy": "Atom jumps into neighboring vacancy",
+        "interstitial": "Small atom jumps between interstitial sites",
+        "interstitialcy": "Interstitial pushes lattice atom to new interstitial site"
+      },
+      "diffusion_coefficient": "D = D_0 * exp(-E_m / kT)"
+    },
+    "nucleation": {
+      "classical_nucleation_theory": {
+        "critical_radius": "r* = 2γ / ΔG_v",
+        "nucleation_barrier": "ΔG* = 16πγ³ / (3ΔG_v²)"
+      },
+      "heterogeneous_nucleation": "Lower barrier at surfaces, defects, grain boundaries"
+    }
+  },
+  "electronic_structure_principles": {
+    "band_theory": {
+      "metals": "Partially filled bands, no band gap",
+      "semiconductors": "Small band gap (< 3 eV), can be doped",
+      "insulators": "Large band gap (> 3 eV)"
+    },
+    "fermi_level": {
+      "description": "Highest occupied energy level at T=0",
+      "in_metals": "Within a band",
+      "in_semiconductors": "In the band gap"
+    },
+    "work_function": {
+      "description": "Energy to remove electron from surface to vacuum",
+      "typical_values_eV": {
+        "Pt": 5.65,
+        "Au": 5.1,
+        "Ag": 4.26,
+        "Cu": 4.65,
+        "Ni": 5.15,
+        "Fe": 4.5,
+        "Al": 4.28,
+        "W": 4.55
+      },
+      "importance": "Affects electron transfer in catalysis and electrochemistry"
+    }
+  }
+}

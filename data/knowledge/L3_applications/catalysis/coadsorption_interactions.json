@@ -1,0 +1,127 @@
+{
+  "_metadata": {
+    "source": "To be documented",
+    "description": "Data from adsorbates/coadsorption_interactions.json",
+    "license": "See source",
+    "version": "2025.12",
+    "last_updated": "2025-12-31T18:02:33.851685"
+  },
+  "CO+H": {
+    "adsorbates": [
+      "CO",
+      "H"
+    ],
+    "interaction_type": "repulsive at short range",
+    "minimum_separation": 2.5,
+    "site_competition": "low",
+    "notes": "CO prefers top, H prefers hollow - naturally separated",
+    "reaction_possible": false
+  },
+  "CO+O": {
+    "adsorbates": [
+      "CO",
+      "O"
+    ],
+    "interaction_type": "can react to form CO2",
+    "minimum_separation": 2.0,
+    "site_competition": "medium",
+    "notes": "Both can occupy hollow sites - may compete",
+    "reaction_possible": true,
+    "reaction_product": "CO2"
+  },
+  "H+O": {
+    "adsorbates": [
+      "H",
+      "O"
+    ],
+    "interaction_type": "can react to form OH/H2O",
+    "minimum_separation": 2.0,
+    "site_competition": "high",
+    "notes": "Both prefer hollow sites - compete for same sites",
+    "reaction_possible": true,
+    "reaction_product": "OH or H2O"
+  },
+  "H+N": {
+    "adsorbates": [
+      "H",
+      "N"
+    ],
+    "interaction_type": "can react to form NH",
+    "minimum_separation": 2.0,
+    "site_competition": "high",
+    "notes": "Both prefer hollow sites",
+    "reaction_possible": true,
+    "reaction_product": "NH"
+  },
+  "CO+NO": {
+    "adsorbates": [
+      "CO",
+      "NO"
+    ],
+    "interaction_type": "competitive adsorption",
+    "minimum_separation": 2.5,
+    "site_competition": "medium",
+    "notes": "Similar binding mechanisms, compete for sites",
+    "reaction_possible": false
+  },
+  "O+O": {
+    "adsorbates": [
+      "O",
+      "O"
+    ],
+    "interaction_type": "repulsive",
+    "minimum_separation": 2.5,
+    "site_competition": "high",
+    "notes": "Both prefer hollow sites, repel each other",
+    "reaction_possible": true,
+    "reaction_product": "O2 (desorption)"
+  },
+  "H+H": {
+    "adsorbates": [
+      "H",
+      "H"
+    ],
+    "interaction_type": "can recombine",
+    "minimum_separation": 2.0,
+    "site_competition": "high",
+    "notes": "Can recombine to form H2 and desorb",
+    "reaction_possible": true,
+    "reaction_product": "H2 (desorption)"
+  },
+  "OH+H": {
+    "adsorbates": [
+      "OH",
+      "H"
+    ],
+    "interaction_type": "can react to form H2O",
+    "minimum_separation": 2.0,
+    "site_competition": "low",
+    "notes": "OH at top/bridge, H at hollow",
+    "reaction_possible": true,
+    "reaction_product": "H2O"
+  },
+  "CO+OH": {
+    "adsorbates": [
+      "CO",
+      "OH"
+    ],
+    "interaction_type": "can react to form COOH",
+    "minimum_separation": 2.5,
+    "site_competition": "low",
+    "notes": "Important water-gas shift intermediate",
+    "reaction_possible": true,
+    "reaction_product": "COOH"
+  },
+  "N+N": {
+    "adsorbates": [
+      "N",
+      "N"
+    ],
+    "interaction_type": "can recombine",
+    "minimum_separation": 2.5,
+    "site_competition": "high",
+    "notes": "Can recombine to form N2 and desorb",
+    "reaction_possible": true,
+    "reaction_product": "N2 (desorption)"
+  }
+}

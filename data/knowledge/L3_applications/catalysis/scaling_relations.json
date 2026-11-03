@@ -1,0 +1,366 @@
+{
+  "_metadata": {
+    "description": "Scaling relations for catalysis",
+    "source": "Nørskov group publications, CatApp",
+    "note": "Scaling relations connect adsorption energies of related species",
+    "license": "Academic reference",
+    "citation": "Abild-Pedersen et al., Phys. Rev. Lett. 99, 016105 (2007)",
+    "version": "2025.12",
+    "last_updated": "2025-12-31T18:02:33.854006"
+  },
+  "adsorbate_scaling": {
+    "description": "Linear relations between adsorption energies of different species",
+    "AHx_scaling": {
+      "description": "Scaling between AHx species (A = C, N, O, S)",
+      "relations": {
+        "CH3_vs_C": {
+          "slope": 0.75,
+          "intercept": 0.0,
+          "MAE": 0.15
+        },
+        "CH2_vs_C": {
+          "slope": 0.5,
+          "intercept": 0.0,
+          "MAE": 0.12
+        },
+        "CH_vs_C": {
+          "slope": 0.25,
+          "intercept": 0.0,
+          "MAE": 0.1
+        },
+        "NH2_vs_N": {
+          "slope": 0.67,
+          "intercept": 0.0,
+          "MAE": 0.12
+        },
+        "NH_vs_N": {
+          "slope": 0.33,
+          "intercept": 0.0,
+          "MAE": 0.1
+        },
+        "OH_vs_O": {
+          "slope": 0.5,
+          "intercept": 0.0,
+          "MAE": 0.15
+        },
+        "SH_vs_S": {
+          "slope": 0.5,
+          "intercept": 0.0,
+          "MAE": 0.12
+        }
+      },
+      "formula": "E_AHx = slope * E_A + intercept",
+      "notes": "Based on bond-order conservation principle"
+    },
+    "OOH_OH_O_scaling": {
+      "description": "Scaling relations for oxygen reduction reaction intermediates",
+      "relations": {
+        "OOH_vs_OH": {
+          "slope": 1.0,
+          "intercept": 3.2,
+          "MAE": 0.2
+        },
+        "O_vs_OH": {
+          "slope": 2.0,
+          "intercept": 0.0,
+          "MAE": 0.25
+        }
+      },
+      "formula": "E_OOH = E_OH + 3.2 eV (approximately)",
+      "notes": "This universal scaling limits ORR overpotential to ~0.3-0.4 V"
+    },
+    "CO_C_O_scaling": {
+      "description": "CO adsorption related to C and O adsorption",
+      "relations": {
+        "CO_vs_C": {
+          "slope": 0.75,
+          "intercept": -1.5,
+          "MAE": 0.2
+        },
+        "CO_vs_O": {
+          "slope": 0.6,
+          "intercept": -0.5,
+          "MAE": 0.25
+        }
+      },
+      "notes": "CO binding correlates with both C and O affinity"
+    }
+  },
+  "transition_state_scaling": {
+    "description": "BEP (Brønsted-Evans-Polanyi) relations for activation energies",
+    "general_form": "E_a = alpha * delta_E + beta",
+    "reactions": {
+      "N2_dissociation": {
+        "alpha": 0.9,
+        "beta": 2.0,
+        "descriptor": "E_N",
+        "MAE": 0.2,
+        "notes": "Rate-limiting for ammonia synthesis"
+      },
+      "CO_dissociation": {
+        "alpha": 0.87,
+        "beta": 1.5,
+        "descriptor": "E_C + E_O - E_CO",
+        "MAE": 0.18,
+        "notes": "Important for Fischer-Tropsch"
+      },
+      "O2_dissociation": {
+        "alpha": 0.85,
+        "beta": 1.0,
+        "descriptor": "E_O",
+        "MAE": 0.15,
+        "notes": "Key step in oxidation reactions"
+      },
+      "H2_dissociation": {
+        "alpha": 0.75,
+        "beta": 0.5,
+        "descriptor": "E_H",
+        "MAE": 0.1,
+        "notes": "Usually not rate-limiting"
+      },
+      "CH4_activation": {
+        "alpha": 0.8,
+        "beta": 1.2,
+        "descriptor": "E_C",
+        "MAE": 0.15,
+        "notes": "C-H bond activation"
+      },
+      "NO_dissociation": {
+        "alpha": 0.88,
+        "beta": 1.8,
+        "descriptor": "E_N + E_O - E_NO",
+        "MAE": 0.2
+      },
+      "C-C_coupling": {
+        "alpha": 0.65,
+        "beta": 0.8,
+        "descriptor": "E_C",
+        "MAE": 0.25,
+        "notes": "Fischer-Tropsch chain growth"
+      },
+      "C-O_coupling": {
+        "alpha": 0.7,
+        "beta": 1.0,
+        "descriptor": "E_C + E_O",
+        "MAE": 0.2
+      },
+      "N-H_formation": {
+        "alpha": 0.6,
+        "beta": 0.5,
+        "descriptor": "E_N + E_H",
+        "MAE": 0.12
+      },
+      "O-H_formation": {
+        "alpha": 0.55,
+        "beta": 0.4,
+        "descriptor": "E_O + E_H",
+        "MAE": 0.1
+      }
+    }
+  },
+  "d_band_model": {
+    "description": "d-band center model for predicting adsorption trends",
+    "formula": "E_ads = a * epsilon_d + b",
+    "parameters": {
+      "H": {
+        "a": -0.5,
+        "b": -0.3
+      },
+      "O": {
+        "a": -1.2,
+        "b": -1.0
+      },
+      "CO": {
+        "a": -0.8,
+        "b": -1.2
+      },
+      "N": {
+        "a": -1.0,
+        "b": -0.8
+      }
+    },
+    "d_band_centers_eV": {
+      "Pt": -2.25,
+      "Pd": -1.83,
+      "Ni": -1.29,
+      "Cu": -2.67,
+      "Au": -3.56,
+      "Ag": -4.3,
+      "Rh": -1.73,
+      "Ir": -2.11,
+      "Ru": -1.41,
+      "Co": -1.17,
+      "Fe": -0.92,
+      "Mo": -0.35,
+      "W": -0.6
+    },
+    "notes": "Higher (less negative) d-band center = stronger adsorption"
+  },
+  "volcano_relations": {
+    "description": "Volcano plot descriptors for various reactions",
+    "HER": {
+      "descriptor": "E_H",
+      "optimal_value": 0.0,
+      "unit": "eV",
+      "top_catalysts": [
+        "Pt",
+        "Pd",
+        "Rh",
+        "Ir"
+      ],
+      "notes": "Sabatier principle: optimal binding not too strong or weak"
+    },
+    "ORR": {
+      "descriptor": "E_OH",
+      "optimal_value": -0.8,
+      "unit": "eV",
+      "top_catalysts": [
+        "Pt",
+        "Pd",
+        "PtNi",
+        "PtCo"
+      ],
+      "limiting_potential": "0.9 V vs RHE (theoretical max ~1.23 V)",
+      "notes": "Limited by OOH-OH scaling relation"
+    },
+    "OER": {
+      "descriptor": "E_O - E_OH",
+      "optimal_value": 1.6,
+      "unit": "eV",
+      "top_catalysts": [
+        "RuO2",
+        "IrO2",
+        "NiFeOOH"
+      ],
+      "notes": "Scaling relations limit minimum overpotential to ~0.3-0.4 V"
+    },
+    "CO2RR_to_CO": {
+      "descriptor": "E_CO",
+      "optimal_value": -0.5,
+      "unit": "eV",
+      "top_catalysts": [
+        "Au",
+        "Ag",
+        "Zn"
+      ],
+      "notes": "Weak CO binding favors CO desorption"
+    },
+    "CO2RR_to_CH4": {
+      "descriptor": "E_CO",
+      "optimal_value": -0.8,
+      "unit": "eV",
+      "top_catalysts": [
+        "Cu"
+      ],
+      "notes": "Moderate CO binding allows further reduction"
+    },
+    "NH3_synthesis": {
+      "descriptor": "E_N",
+      "optimal_value": -0.5,
+      "unit": "eV",
+      "top_catalysts": [
+        "Ru",
+        "Fe",
+        "Os"
+      ],
+      "notes": "Trade-off between N2 activation and NH3 desorption"
+    },
+    "NO_reduction": {
+      "descriptor": "E_N",
+      "optimal_value": -0.8,
+      "unit": "eV",
+      "top_catalysts": [
+        "Rh",
+        "Pt",
+        "Pd"
+      ],
+      "notes": "Automotive three-way catalyst"
+    },
+    "methanol_synthesis": {
+      "descriptor": "E_CO + E_O",
+      "optimal_value": -2.5,
+      "unit": "eV",
+      "top_catalysts": [
+        "Cu/ZnO/Al2O3"
+      ],
+      "notes": "Industrial catalyst for CO2 hydrogenation"
+    }
+  },
+  "selectivity_descriptors": {
+    "description": "Descriptors for reaction selectivity",
+    "CO2RR_selectivity": {
+      "CO_vs_HCOO": {
+        "descriptor": "E_COOH - E_HCOO",
+        "CO_selective": "< 0",
+        "HCOO_selective": "> 0"
+      },
+      "C1_vs_C2": {
+        "descriptor": "E_CO",
+        "C2_favorable": "moderate E_CO (-0.6 to -0.9 eV)",
+        "notes": "Cu is unique in producing C2+ products"
+      }
+    },
+    "Fischer_Tropsch": {
+      "chain_growth_probability": {
+        "descriptor": "E_C",
+        "high_alpha": "strong C binding",
+        "low_alpha": "weak C binding"
+      },
+      "olefin_vs_paraffin": {
+        "descriptor": "E_H",
+        "olefin_selective": "weak H binding"
+      }
+    }
+  },
+  "breaking_scaling": {
+    "description": "Strategies to break unfavorable scaling relations",
+    "strategies": [
+      {
+        "name": "Bifunctional catalysts",
+        "description": "Different sites for different intermediates",
+        "example": "Pt-Ru for CO oxidation"
+      },
+      {
+        "name": "Confinement effects",
+        "description": "Pore/cavity effects modify scaling",
+        "example": "Zeolite-encapsulated metals"
+      },
+      {
+        "name": "Electric field effects",
+        "description": "Applied field shifts binding differently for different species",
+        "example": "Electrochemical promotion"
+      },
+      {
+        "name": "Strain engineering",
+        "description": "Lattice strain modifies d-band and scaling",
+        "example": "Core-shell nanoparticles"
+      },
+      {
+        "name": "Single atom catalysts",
+        "description": "Isolated atoms have different scaling",
+        "example": "Pt1/CeO2"
+      },
+      {
+        "name": "Frustrated Lewis pairs",
+        "description": "Separate acid-base sites",
+        "example": "H2 activation on oxides"
+      }
+    ]
+  },
+  "computational_notes": {
+    "functional_dependence": {
+      "description": "DFT functional affects absolute values but not trends",
+      "PBE_vs_RPBE": "RPBE gives ~0.2-0.3 eV weaker binding than PBE",
+      "BEEF_vdW": "Includes van der Waals, better for physisorption"
+    },
+    "coverage_effects": {
+      "description": "Scaling relations derived at low coverage",
+      "high_coverage": "Lateral interactions can modify slopes"
+    },
+    "surface_dependence": {
+      "description": "Relations are surface-specific",
+      "close_packed": "Most scaling relations derived for (111)/(0001)",
+      "stepped": "Different slopes for undercoordinated sites"
+    }
+  }
+}

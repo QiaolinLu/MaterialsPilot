@@ -1,0 +1,2779 @@
+{
+  "_metadata": {
+    "description": "Complex defect engineering tasks V3 - requires domain knowledge",
+    "version": "v3.2",
+    "total_tasks": 100,
+    "categories": [
+      "F_center",
+      "NVN_center",
+      "NV_center",
+      "antisite",
+      "antisite_pair",
+      "charged_defect",
+      "crowdion",
+      "divacancy",
+      "dopant_segregation",
+      "dopant_vacancy_pair",
+      "frenkel",
+      "interstitial",
+      "mixed_dumbbell",
+      "schottky",
+      "self_dumbbell",
+      "sft_precursor",
+      "split_vacancy_center",
+      "substitution",
+      "vacancy",
+      "vacancy_cluster"
+    ],
+    "design_rationale": "Tasks requiring specialized knowledge about crystal structures and defect chemistry"
+  },
+  "tasks": [
+    {
+      "task_id": "cv3_001",
+      "description": "Create a Cr³⁺ substitution at Al site in corundum (α-Al₂O₃) with correct oxidation state balance. The result should be a ruby-like structure.",
+      "input": {
+        "host_material": "Al2O3",
+        "structure_type": "corundum",
+        "defect_type": "substitution",
+        "dopant": "Cr",
+        "dopant_site": "Al",
+        "supercell": [
+          2,
+          2,
+          1
+        ],
+        "concentration": "single_defect"
+      },
+      "expected_properties": {
+        "composition_contains": [
+          "Cr"
+        ],
+        "original_elements": [
+          "Al",
+          "O"
+        ],
+        "min_atoms": 40,
+        "defect_count": 1,
+        "charge_neutral": true
+      },
+      "validation": {
+        "check_no_overlap": true,
+        "min_distance": 1.5,
+        "check_composition": true
+      }
+    },
+    {
+      "task_id": "cv3_002",
+      "description": "Create a Schottky defect pair in rocksalt NaCl: remove one Na atom and one Cl atom to maintain charge neutrality. The vacancies should not be nearest neighbors.",
+      "input": {
+        "host_material": "NaCl",
+        "structure_type": "rocksalt",
+        "defect_type": "schottky",
+        "supercell": [
+          3,
+          3,
+          3
+        ],
+        "concentration": "single_pair"
+      },
+      "expected_properties": {
+        "vacancy_types": [
+          "Na",
+          "Cl"
+        ],
+        "vacancy_count": 2,
+        "charge_neutral": true,
+        "min_vacancy_distance": 3.0
+      },
+      "validation": {
+        "check_no_overlap": true,
+        "check_charge_balance": true,
+        "check_vacancy_separation": true
+      }
+    },
+    {
+      "task_id": "cv3_003",
+      "description": "Create a Cu vacancy in chalcopyrite CuFeS₂. Must correctly identify Cu sites (not Fe sites) in the ordered tetragonal structure.",
+      "input": {
+        "host_material": "CuFeS2",
+        "structure_type": "chalcopyrite",
+        "defect_type": "vacancy",
+        "vacancy_element": "Cu",
+        "supercell": [
+          2,
+          2,
+          1
+        ],
+        "concentration": "single_defect"
+      },
+      "expected_properties": {
+        "original_composition": {
+          "Cu": 4,
+          "Fe": 4,
+          "S": 8
+        },
+        "final_has_less_Cu": true,
+        "Fe_count_unchanged": true,
+        "defect_count": 1
+      },
+      "validation": {
+        "check_no_overlap": true,
+        "check_cu_removal": true,
+        "check_fe_preserved": true
+      }
+    },
+    {
+      "task_id": "cv3_004",
+      "description": "Create a sulfur vacancy in the TOP layer only of bilayer MoS₂ (2H phase). Must correctly build bilayer and identify which S atoms are in the top layer.",
+      "input": {
+        "host_material": "MoS2",
+        "structure_type": "2H_bilayer",
+        "defect_type": "vacancy",
+        "vacancy_element": "S",
+        "vacancy_layer": "top",
+        "supercell": [
+          3,
+          3,
+          1
+        ],
+        "concentration": "single_defect"
+      },
+      "expected_properties": {
+        "is_layered": true,
+        "layer_count": 2,
+        "vacancy_in_top_layer": true,
+        "defect_count": 1
+      },
+      "validation": {
+        "check_no_overlap": true,
+        "check_layer_identification": true,
+        "check_c_axis_vacuum": true
+      }
+    },
+    {
+      "task_id": "cv3_005",
+      "description": "Create an A-site/B-site antisite swap in BaTiO₃: exchange positions of one Ba and one Ti atom. This maintains stoichiometry but creates a defect pair.",
+      "input": {
+        "host_material": "BaTiO3",
+        "structure_type": "perovskite",
+        "defect_type": "antisite_pair",
+        "swap_atoms": [
+          "Ba",
+          "Ti"
+        ],
+        "supercell": [
+          2,
+          2,
+          2
+        ],
+        "concentration": "single_pair"
+      },
+      "expected_properties": {
+        "stoichiometry_preserved": true,
+        "antisite_count": 2,
+        "Ba_at_Ti_site": 1,
+        "Ti_at_Ba_site": 1
+      },
+      "validation": {
+        "check_no_overlap": true,
+        "check_stoichiometry": true,
+        "check_antisite_positions": true
+      }
+    },
+    {
+      "task_id": "cv3_006",
+      "description": "Create a <110> mixed dumbbell interstitial with Fe-C pair in BCC iron. Two atoms (one Fe displaced from lattice + one C) share the region around a lattice site.",
+      "input": {
+        "host_material": "Fe",
+        "structure_type": "bcc",
+        "defect_type": "mixed_dumbbell",
+        "interstitial_element": "C",
+        "dumbbell_direction": [
+          1,
+          1,
+          0
+        ],
+        "supercell": [
+          3,
+          3,
+          3
+        ],
+        "concentration": "single_defect"
+      },
+      "expected_properties": {
+        "contains_C": true,
+        "extra_atoms": 1,
+        "dumbbell_configuration": true,
+        "Fe_displaced": true
+      },
+      "validation": {
+        "check_C_present": true,
+        "check_dumbbell_geometry": true,
+        "min_Fe_C_distance": 1.5,
+        "max_Fe_C_distance": 2.5
+      }
+    },
+    {
+      "task_id": "cv3_007",
+      "description": "Create a trivacancy cluster in FCC aluminum: three adjacent vacancies forming a triangular arrangement on a {111} plane.",
+      "input": {
+        "host_material": "Al",
+        "structure_type": "fcc",
+        "defect_type": "vacancy_cluster",
+        "cluster_type": "trivacancy",
+        "cluster_plane": [
+          1,
+          1,
+          1
+        ],
+        "supercell": [
+          4,
+          4,
+          4
+        ],
+        "concentration": "single_cluster"
+      },
+      "expected_properties": {
+        "vacancy_count": 3,
+        "vacancies_are_neighbors": true,
+        "triangular_arrangement": true
+      },
+      "validation": {
+        "check_no_overlap": true,
+        "check_vacancy_count": true,
+        "check_neighbor_connectivity": true
+      }
+    },
+    {
+      "task_id": "cv3_008",
+      "description": "Create a Frenkel defect pair in fluorite CeO₂: one O vacancy plus one O interstitial at the octahedral site (not tetrahedral).",
+      "input": {
+        "host_material": "CeO2",
+        "structure_type": "fluorite",
+        "defect_type": "frenkel",
+        "defect_element": "O",
+        "interstitial_site": "octahedral",
+        "supercell": [
+          2,
+          2,
+          2
+        ],
+        "concentration": "single_pair"
+      },
+      "expected_properties": {
+        "O_vacancy_count": 1,
+        "O_interstitial_count": 1,
+        "net_O_change": 0,
+        "interstitial_at_octahedral": true
+      },
+      "validation": {
+        "check_no_overlap": true,
+        "check_O_conservation": true,
+        "check_interstitial_site": true
+      }
+    },
+    {
+      "task_id": "cv3_009",
+      "description": "Create a germanium-vacancy (GeV) center in diamond: Ge substitution adjacent to a vacancy, similar to NV center but with group-IV element.",
+      "input": {
+        "host_material": "C",
+        "structure_type": "diamond",
+        "defect_type": "split_vacancy_center",
+        "dopant": "Ge",
+        "supercell": [
+          3,
+          3,
+          3
+        ],
+        "concentration": "single_center"
+      },
+      "expected_properties": {
+        "contains_Ge": true,
+        "Ge_count": 1,
+        "vacancy_count": 1,
+        "Ge_adjacent_to_vacancy": true
+      },
+      "validation": {
+        "check_no_overlap": true,
+        "check_Ge_present": true,
+        "check_vacancy_neighbor": true
+      }
+    },
+    {
+      "task_id": "cv3_010",
+      "description": "Create a nitrogen-vacancy-nitrogen (NVN) center in diamond: two substitutional N atoms flanking a vacancy along <111>.",
+      "input": {
+        "host_material": "C",
+        "structure_type": "diamond",
+        "defect_type": "NVN_center",
+        "dopant": "N",
+        "dopant_count": 2,
+        "vacancy_count": 1,
+        "alignment": [
+          1,
+          1,
+          1
+        ],
+        "supercell": [
+          3,
+          3,
+          3
+        ],
+        "concentration": "single_center"
+      },
+      "expected_properties": {
+        "contains_N": true,
+        "N_count": 2,
+        "vacancy_count": 1,
+        "linear_NVN_arrangement": true
+      },
+      "validation": {
+        "check_no_overlap": true,
+        "check_N_count": true,
+        "check_linear_arrangement": true
+      }
+    },
+    {
+      "task_id": "cv3_011",
+      "description": "Create a doubly-ionized oxygen vacancy (V_O) in rutile TiO₂. The vacancy creates localized electrons that reduce nearby Ti⁴⁺ to Ti³⁺.",
+      "input": {
+        "host_material": "TiO2",
+        "structure_type": "rutile",
+        "defect_type": "charged_defect",
+        "vacancy_element": "O",
+        "supercell": [
+          2,
+          2,
+          3
+        ],
+        "concentration": "single_defect"
+      },
+      "expected_properties": {
+        "O_vacancy_count": 1,
+        "structure_valid": true,
+        "min_atoms": 40
+      },
+      "validation": {
+        "check_no_overlap": true,
+        "check_O_removed": true,
+        "min_distance": 1.5
+      }
+    },
+    {
+      "task_id": "cv3_012",
+      "description": "Create a crowdion defect in BCC tungsten: a linear chain of displaced atoms along <111> direction.",
+      "input": {
+        "host_material": "W",
+        "structure_type": "bcc",
+        "defect_type": "crowdion",
+        "direction": [
+          1,
+          1,
+          1
+        ],
+        "supercell": [
+          4,
+          4,
+          4
+        ],
+        "concentration": "single_defect"
+      },
+      "expected_properties": {
+        "extra_atoms": 1,
+        "displaced_chain": true,
+        "chain_direction": [
+          1,
+          1,
+          1
+        ]
+      },
+      "validation": {
+        "check_no_overlap": true,
+        "check_atom_count": true,
+        "min_distance": 1.8
+      }
+    },
+    {
+      "task_id": "cv3_013",
+      "description": "Create an Fe antisite defect (Fe on Ni site) in ordered L1₀ FeNi while maintaining the layered ordering.",
+      "input": {
+        "host_material": "FeNi",
+        "structure_type": "L10",
+        "defect_type": "antisite",
+        "antisite_species": "Fe",
+        "target_site": "Ni",
+        "supercell": [
+          3,
+          3,
+          2
+        ],
+        "concentration": "single_defect"
+      },
+      "expected_properties": {
+        "layered_structure_preserved": true,
+        "antisite_count": 1,
+        "Fe_on_Ni_layer": true
+      },
+      "validation": {
+        "check_no_overlap": true,
+        "check_layering": true,
+        "min_distance": 2.0
+      }
+    },
+    {
+      "task_id": "cv3_014",
+      "description": "Create a stacking fault tetrahedron (SFT) precursor by removing 4 atoms in tetrahedral arrangement in FCC copper.",
+      "input": {
+        "host_material": "Cu",
+        "structure_type": "fcc",
+        "defect_type": "sft_precursor",
+        "vacancy_count": 4,
+        "arrangement": "tetrahedral",
+        "supercell": [
+          4,
+          4,
+          4
+        ],
+        "concentration": "single_cluster"
+      },
+      "expected_properties": {
+        "vacancy_count": 4,
+        "tetrahedral_arrangement": true,
+        "all_vacancies_neighbors": true
+      },
+      "validation": {
+        "check_no_overlap": true,
+        "check_vacancy_count": true,
+        "check_tetrahedral_geometry": true
+      }
+    },
+    {
+      "task_id": "cv3_015",
+      "description": "Create a silicon-vacancy (SiV) center in diamond: Si atom sitting between two vacant C sites (split-vacancy configuration).",
+      "input": {
+        "host_material": "C",
+        "structure_type": "diamond",
+        "defect_type": "split_vacancy_center",
+        "dopant": "Si",
+        "vacancy_count": 2,
+        "supercell": [
+          3,
+          3,
+          3
+        ],
+        "concentration": "single_center"
+      },
+      "expected_properties": {
+        "contains_Si": true,
+        "Si_count": 1,
+        "vacancy_count": 2,
+        "Si_at_midpoint": true
+      },
+      "validation": {
+        "check_no_overlap": true,
+        "check_Si_present": true,
+        "check_split_vacancy_geometry": true
+      }
+    },
+    {
+      "task_id": "cv3_016",
+      "description": "Create a Mg dopant at a subsurface position in wurtzite GaN slab, simulating p-type doping near a surface/grain boundary.",
+      "input": {
+        "host_material": "GaN",
+        "structure_type": "wurtzite_slab",
+        "defect_type": "dopant_segregation",
+        "dopant": "Mg",
+        "dopant_site": "Ga",
+        "position": "subsurface",
+        "supercell": [
+          3,
+          3,
+          1
+        ],
+        "slab_layers": 6,
+        "vacuum": 15
+      },
+      "expected_properties": {
+        "contains_Mg": true,
+        "Mg_count": 1,
+        "Mg_near_surface": true,
+        "is_slab": true
+      },
+      "validation": {
+        "check_no_overlap": true,
+        "check_Mg_position": true,
+        "check_vacuum": true
+      }
+    },
+    {
+      "task_id": "cv3_017",
+      "description": "Create a <111> divacancy in BCC iron: two adjacent vacancies oriented along the most stable direction.",
+      "input": {
+        "host_material": "Fe",
+        "structure_type": "bcc",
+        "defect_type": "divacancy",
+        "orientation": [
+          1,
+          1,
+          1
+        ],
+        "supercell": [
+          4,
+          4,
+          4
+        ],
+        "concentration": "single_pair"
+      },
+      "expected_properties": {
+        "vacancy_count": 2,
+        "vacancies_along_111": true,
+        "vacancies_are_neighbors": true
+      },
+      "validation": {
+        "check_no_overlap": true,
+        "check_vacancy_count": true,
+        "check_orientation": true
+      }
+    },
+    {
+      "task_id": "cv3_018",
+      "description": "Create a Ti-Al antisite pair in γ-TiAl (L1₀ structure): swap one Ti and one Al atom to create coupled antisites.",
+      "input": {
+        "host_material": "TiAl",
+        "structure_type": "L10",
+        "defect_type": "antisite_pair",
+        "swap_atoms": [
+          "Ti",
+          "Al"
+        ],
+        "supercell": [
+          3,
+          3,
+          2
+        ],
+        "concentration": "single_pair"
+      },
+      "expected_properties": {
+        "stoichiometry_preserved": true,
+        "antisite_count": 2,
+        "Ti_at_Al_site": 1,
+        "Al_at_Ti_site": 1
+      },
+      "validation": {
+        "check_no_overlap": true,
+        "check_stoichiometry": true,
+        "min_distance": 2.0
+      }
+    },
+    {
+      "task_id": "cv3_019",
+      "description": "Create a self-interstitial <110> dumbbell in BCC iron: two Fe atoms sharing one lattice site along the most stable orientation.",
+      "input": {
+        "host_material": "Fe",
+        "structure_type": "bcc",
+        "defect_type": "self_dumbbell",
+        "dumbbell_direction": [
+          1,
+          1,
+          0
+        ],
+        "supercell": [
+          4,
+          4,
+          4
+        ],
+        "concentration": "single_defect"
+      },
+      "expected_properties": {
+        "extra_atoms": 1,
+        "dumbbell_configuration": true,
+        "dumbbell_axis": [
+          1,
+          1,
+          0
+        ]
+      },
+      "validation": {
+        "check_dumbbell_geometry": true,
+        "dumbbell_separation": {
+          "min": 0.8,
+          "max": 1.5
+        },
+        "min_distance": 0.8
+      }
+    },
+    {
+      "task_id": "cv3_020",
+      "description": "Create an oxygen Frenkel pair in UO₂ fluorite structure with the interstitial at the correct octahedral void site.",
+      "input": {
+        "host_material": "UO2",
+        "structure_type": "fluorite",
+        "defect_type": "frenkel",
+        "defect_element": "O",
+        "interstitial_site": "octahedral",
+        "supercell": [
+          2,
+          2,
+          2
+        ],
+        "concentration": "single_pair"
+      },
+      "expected_properties": {
+        "O_vacancy_count": 1,
+        "O_interstitial_count": 1,
+        "net_O_change": 0,
+        "interstitial_at_octahedral": true
+      },
+      "validation": {
+        "check_no_overlap": true,
+        "check_O_conservation": true,
+        "check_interstitial_site": true,
+        "vacancy_interstitial_separation": {
+          "min": 3.0
+        }
+      }
+    },
+    {
+      "task_id": "cv3_021",
+      "description": "Create an oxygen vacancy in cubic perovskite SrTiO₃ at the face-center position.",
+      "input": {
+        "host_material": "SrTiO3",
+        "structure_type": "perovskite",
+        "defect_type": "vacancy",
+        "vacancy_element": "O",
+        "supercell": [
+          3,
+          3,
+          3
+        ],
+        "concentration": "single_defect"
+      },
+      "expected_properties": {
+        "O_vacancy_count": 1,
+        "structure_valid": true,
+        "min_atoms": 130
+      },
+      "validation": {
+        "check_no_overlap": true,
+        "check_O_removed": true,
+        "min_distance": 1.5
+      }
+    },
+    {
+      "task_id": "cv3_022",
+      "description": "Create a Zn vacancy in wurtzite ZnO. Must correctly identify Zn sites in the hexagonal structure.",
+      "input": {
+        "host_material": "ZnO",
+        "structure_type": "wurtzite",
+        "defect_type": "vacancy",
+        "vacancy_element": "Zn",
+        "supercell": [
+          3,
+          3,
+          2
+        ],
+        "concentration": "single_defect"
+      },
+      "expected_properties": {
+        "Zn_vacancy_count": 1,
+        "O_count_unchanged": true,
+        "min_atoms": 30
+      },
+      "validation": {
+        "check_no_overlap": true,
+        "check_Zn_removed": true,
+        "min_distance": 1.5
+      }
+    },
+    {
+      "task_id": "cv3_023",
+      "description": "Create a Ti vacancy in rutile TiO₂ tetragonal structure.",
+      "input": {
+        "host_material": "TiO2",
+        "structure_type": "rutile",
+        "defect_type": "vacancy",
+        "vacancy_element": "Ti",
+        "supercell": [
+          2,
+          2,
+          3
+        ],
+        "concentration": "single_defect"
+      },
+      "expected_properties": {
+        "Ti_vacancy_count": 1,
+        "structure_valid": true,
+        "min_atoms": 35
+      },
+      "validation": {
+        "check_no_overlap": true,
+        "check_Ti_removed": true,
+        "min_distance": 1.5
+      }
+    },
+    {
+      "task_id": "cv3_024",
+      "description": "Create a Ga vacancy in zincblende GaAs semiconductor.",
+      "input": {
+        "host_material": "GaAs",
+        "structure_type": "zincblende",
+        "defect_type": "vacancy",
+        "vacancy_element": "Ga",
+        "supercell": [
+          3,
+          3,
+          3
+        ],
+        "concentration": "single_defect"
+      },
+      "expected_properties": {
+        "Ga_vacancy_count": 1,
+        "As_count_unchanged": true,
+        "min_atoms": 210
+      },
+      "validation": {
+        "check_no_overlap": true,
+        "check_Ga_removed": true,
+        "min_distance": 2.0
+      }
+    },
+    {
+      "task_id": "cv3_025",
+      "description": "Create a Mo vacancy in 2H-MoS₂ monolayer structure.",
+      "input": {
+        "host_material": "MoS2",
+        "structure_type": "2H_monolayer",
+        "defect_type": "vacancy",
+        "vacancy_element": "Mo",
+        "supercell": [
+          4,
+          4,
+          1
+        ],
+        "concentration": "single_defect"
+      },
+      "expected_properties": {
+        "Mo_vacancy_count": 1,
+        "is_monolayer": true,
+        "min_atoms": 40
+      },
+      "validation": {
+        "check_no_overlap": true,
+        "check_Mo_removed": true,
+        "min_distance": 1.5
+      }
+    },
+    {
+      "task_id": "cv3_026",
+      "description": "Create a Ni vacancy in FCC nickel metal.",
+      "input": {
+        "host_material": "Ni",
+        "structure_type": "fcc",
+        "defect_type": "vacancy",
+        "vacancy_element": "Ni",
+        "supercell": [
+          4,
+          4,
+          4
+        ],
+        "concentration": "single_defect"
+      },
+      "expected_properties": {
+        "vacancy_count": 1,
+        "min_atoms": 255
+      },
+      "validation": {
+        "check_no_overlap": true,
+        "check_atom_count": true,
+        "min_distance": 2.0
+      }
+    },
+    {
+      "task_id": "cv3_027",
+      "description": "Create a W vacancy in BCC tungsten metal.",
+      "input": {
+        "host_material": "W",
+        "structure_type": "bcc",
+        "defect_type": "vacancy",
+        "vacancy_element": "W",
+        "supercell": [
+          4,
+          4,
+          4
+        ],
+        "concentration": "single_defect"
+      },
+      "expected_properties": {
+        "vacancy_count": 1,
+        "min_atoms": 127
+      },
+      "validation": {
+        "check_no_overlap": true,
+        "check_atom_count": true,
+        "min_distance": 2.2
+      }
+    },
+    {
+      "task_id": "cv3_028",
+      "description": "Create an In vacancy in zincblende InP semiconductor.",
+      "input": {
+        "host_material": "InP",
+        "structure_type": "zincblende",
+        "defect_type": "vacancy",
+        "vacancy_element": "In",
+        "supercell": [
+          3,
+          3,
+          3
+        ],
+        "concentration": "single_defect"
+      },
+      "expected_properties": {
+        "In_vacancy_count": 1,
+        "P_count_unchanged": true,
+        "min_atoms": 210
+      },
+      "validation": {
+        "check_no_overlap": true,
+        "check_In_removed": true,
+        "min_distance": 2.0
+      }
+    },
+    {
+      "task_id": "cv3_029",
+      "description": "Create a Ca vacancy in fluorite CaF₂ structure.",
+      "input": {
+        "host_material": "CaF2",
+        "structure_type": "fluorite",
+        "defect_type": "vacancy",
+        "vacancy_element": "Ca",
+        "supercell": [
+          2,
+          2,
+          2
+        ],
+        "concentration": "single_defect"
+      },
+      "expected_properties": {
+        "Ca_vacancy_count": 1,
+        "F_count_unchanged": true,
+        "min_atoms": 90
+      },
+      "validation": {
+        "check_no_overlap": true,
+        "check_Ca_removed": true,
+        "min_distance": 2.0
+      }
+    },
+    {
+      "task_id": "cv3_030",
+      "description": "Create a Pt vacancy in FCC platinum metal.",
+      "input": {
+        "host_material": "Pt",
+        "structure_type": "fcc",
+        "defect_type": "vacancy",
+        "vacancy_element": "Pt",
+        "supercell": [
+          3,
+          3,
+          3
+        ],
+        "concentration": "single_defect"
+      },
+      "expected_properties": {
+        "vacancy_count": 1,
+        "min_atoms": 107
+      },
+      "validation": {
+        "check_no_overlap": true,
+        "check_atom_count": true,
+        "min_distance": 2.3
+      }
+    },
+    {
+      "task_id": "cv3_031",
+      "description": "Create a P substitution (n-type dopant) at Si site in diamond cubic silicon.",
+      "input": {
+        "host_material": "Si",
+        "structure_type": "diamond",
+        "defect_type": "substitution",
+        "dopant": "P",
+        "dopant_site": "Si",
+        "supercell": [
+          3,
+          3,
+          3
+        ],
+        "concentration": "single_defect"
+      },
+      "expected_properties": {
+        "contains_P": true,
+        "P_count": 1,
+        "n_type_dopant": true
+      },
+      "validation": {
+        "check_no_overlap": true,
+        "check_P_present": true,
+        "min_distance": 2.0
+      }
+    },
+    {
+      "task_id": "cv3_032",
+      "description": "Create a B substitution (p-type dopant) at Si site in diamond cubic silicon.",
+      "input": {
+        "host_material": "Si",
+        "structure_type": "diamond",
+        "defect_type": "substitution",
+        "dopant": "B",
+        "dopant_site": "Si",
+        "supercell": [
+          3,
+          3,
+          3
+        ],
+        "concentration": "single_defect"
+      },
+      "expected_properties": {
+        "contains_B": true,
+        "B_count": 1,
+        "p_type_dopant": true
+      },
+      "validation": {
+        "check_no_overlap": true,
+        "check_B_present": true,
+        "min_distance": 2.0
+      }
+    },
+    {
+      "task_id": "cv3_033",
+      "description": "Create a La substitution at Sr site in perovskite SrTiO₃ (electron doping).",
+      "input": {
+        "host_material": "SrTiO3",
+        "structure_type": "perovskite",
+        "defect_type": "substitution",
+        "dopant": "La",
+        "dopant_site": "Sr",
+        "supercell": [
+          3,
+          3,
+          3
+        ],
+        "concentration": "single_defect"
+      },
+      "expected_properties": {
+        "contains_La": true,
+        "La_count": 1,
+        "A_site_doping": true
+      },
+      "validation": {
+        "check_no_overlap": true,
+        "check_La_present": true,
+        "min_distance": 1.8
+      }
+    },
+    {
+      "task_id": "cv3_034",
+      "description": "Create a Nb substitution at Ti site in perovskite SrTiO₃ (B-site doping).",
+      "input": {
+        "host_material": "SrTiO3",
+        "structure_type": "perovskite",
+        "defect_type": "substitution",
+        "dopant": "Nb",
+        "dopant_site": "Ti",
+        "supercell": [
+          3,
+          3,
+          3
+        ],
+        "concentration": "single_defect"
+      },
+      "expected_properties": {
+        "contains_Nb": true,
+        "Nb_count": 1,
+        "B_site_doping": true
+      },
+      "validation": {
+        "check_no_overlap": true,
+        "check_Nb_present": true,
+        "min_distance": 1.8
+      }
+    },
+    {
+      "task_id": "cv3_035",
+      "description": "Create an Al substitution at Ga site in zincblende GaAs.",
+      "input": {
+        "host_material": "GaAs",
+        "structure_type": "zincblende",
+        "defect_type": "substitution",
+        "dopant": "Al",
+        "dopant_site": "Ga",
+        "supercell": [
+          3,
+          3,
+          3
+        ],
+        "concentration": "single_defect"
+      },
+      "expected_properties": {
+        "contains_Al": true,
+        "Al_count": 1,
+        "isovalent_dopant": true
+      },
+      "validation": {
+        "check_no_overlap": true,
+        "check_Al_present": true,
+        "min_distance": 2.0
+      }
+    },
+    {
+      "task_id": "cv3_036",
+      "description": "Create a Gd³⁺ substitution at Ce⁴⁺ site in fluorite CeO₂ (aliovalent doping).",
+      "input": {
+        "host_material": "CeO2",
+        "structure_type": "fluorite",
+        "defect_type": "substitution",
+        "dopant": "Gd",
+        "dopant_site": "Ce",
+        "supercell": [
+          2,
+          2,
+          2
+        ],
+        "concentration": "single_defect"
+      },
+      "expected_properties": {
+        "contains_Gd": true,
+        "Gd_count": 1,
+        "aliovalent_dopant": true
+      },
+      "validation": {
+        "check_no_overlap": true,
+        "check_Gd_present": true,
+        "min_distance": 2.0
+      }
+    },
+    {
+      "task_id": "cv3_037",
+      "description": "Create an Fe³⁺ substitution at Al³⁺ site in corundum Al₂O₃.",
+      "input": {
+        "host_material": "Al2O3",
+        "structure_type": "corundum",
+        "defect_type": "substitution",
+        "dopant": "Fe",
+        "dopant_site": "Al",
+        "supercell": [
+          2,
+          2,
+          1
+        ],
+        "concentration": "single_defect"
+      },
+      "expected_properties": {
+        "contains_Fe": true,
+        "Fe_count": 1,
+        "isovalent_dopant": true
+      },
+      "validation": {
+        "check_no_overlap": true,
+        "check_Fe_present": true,
+        "min_distance": 1.5
+      }
+    },
+    {
+      "task_id": "cv3_038",
+      "description": "Create an N substitution at O site in rutile TiO₂ (anion doping).",
+      "input": {
+        "host_material": "TiO2",
+        "structure_type": "rutile",
+        "defect_type": "substitution",
+        "dopant": "N",
+        "dopant_site": "O",
+        "supercell": [
+          2,
+          2,
+          3
+        ],
+        "concentration": "single_defect"
+      },
+      "expected_properties": {
+        "contains_N": true,
+        "N_count": 1,
+        "anion_doping": true
+      },
+      "validation": {
+        "check_no_overlap": true,
+        "check_N_present": true,
+        "min_distance": 1.5
+      }
+    },
+    {
+      "task_id": "cv3_039",
+      "description": "Create a Co substitution at Ni site in FCC nickel (magnetic dopant).",
+      "input": {
+        "host_material": "Ni",
+        "structure_type": "fcc",
+        "defect_type": "substitution",
+        "dopant": "Co",
+        "dopant_site": "Ni",
+        "supercell": [
+          3,
+          3,
+          3
+        ],
+        "concentration": "single_defect"
+      },
+      "expected_properties": {
+        "contains_Co": true,
+        "Co_count": 1
+      },
+      "validation": {
+        "check_no_overlap": true,
+        "check_Co_present": true,
+        "min_distance": 2.0
+      }
+    },
+    {
+      "task_id": "cv3_040",
+      "description": "Create a Mn substitution at Fe site in BCC iron.",
+      "input": {
+        "host_material": "Fe",
+        "structure_type": "bcc",
+        "defect_type": "substitution",
+        "dopant": "Mn",
+        "dopant_site": "Fe",
+        "supercell": [
+          4,
+          4,
+          4
+        ],
+        "concentration": "single_defect"
+      },
+      "expected_properties": {
+        "contains_Mn": true,
+        "Mn_count": 1
+      },
+      "validation": {
+        "check_no_overlap": true,
+        "check_Mn_present": true,
+        "min_distance": 2.0
+      }
+    },
+    {
+      "task_id": "cv3_041",
+      "description": "Create an octahedral C interstitial in FCC nickel at (0.5, 0.5, 0.5).",
+      "input": {
+        "host_material": "Ni",
+        "structure_type": "fcc",
+        "defect_type": "interstitial",
+        "interstitial_element": "C",
+        "interstitial_site": "octahedral",
+        "supercell": [
+          3,
+          3,
+          3
+        ],
+        "concentration": "single_defect"
+      },
+      "expected_properties": {
+        "contains_C": true,
+        "C_count": 1,
+        "interstitial_type": "octahedral"
+      },
+      "validation": {
+        "check_C_present": true,
+        "min_distance": 1.5
+      }
+    },
+    {
+      "task_id": "cv3_042",
+      "description": "Create a tetrahedral H interstitial in FCC palladium at (0.25, 0.25, 0.25).",
+      "input": {
+        "host_material": "Pd",
+        "structure_type": "fcc",
+        "defect_type": "interstitial",
+        "interstitial_element": "H",
+        "interstitial_site": "tetrahedral",
+        "supercell": [
+          3,
+          3,
+          3
+        ],
+        "concentration": "single_defect"
+      },
+      "expected_properties": {
+        "contains_H": true,
+        "H_count": 1,
+        "interstitial_type": "tetrahedral"
+      },
+      "validation": {
+        "check_H_present": true,
+        "min_distance": 1.0
+      }
+    },
+    {
+      "task_id": "cv3_043",
+      "description": "Create an octahedral N interstitial in BCC iron (nitrogen steel).",
+      "input": {
+        "host_material": "Fe",
+        "structure_type": "bcc",
+        "defect_type": "interstitial",
+        "interstitial_element": "N",
+        "interstitial_site": "octahedral",
+        "supercell": [
+          4,
+          4,
+          4
+        ],
+        "concentration": "single_defect"
+      },
+      "expected_properties": {
+        "contains_N": true,
+        "N_count": 1,
+        "interstitial_type": "octahedral"
+      },
+      "validation": {
+        "check_N_present": true,
+        "min_distance": 1.2
+      }
+    },
+    {
+      "task_id": "cv3_044",
+      "description": "Create a tetrahedral C interstitial in BCC iron (carbon steel).",
+      "input": {
+        "host_material": "Fe",
+        "structure_type": "bcc",
+        "defect_type": "interstitial",
+        "interstitial_element": "C",
+        "interstitial_site": "tetrahedral",
+        "supercell": [
+          4,
+          4,
+          4
+        ],
+        "concentration": "single_defect"
+      },
+      "expected_properties": {
+        "contains_C": true,
+        "C_count": 1,
+        "interstitial_type": "tetrahedral"
+      },
+      "validation": {
+        "check_C_present": true,
+        "min_distance": 1.2
+      }
+    },
+    {
+      "task_id": "cv3_045",
+      "description": "Create a tetrahedral interstitial in diamond Si at hexagonal site (0.625, 0.625, 0.625).",
+      "input": {
+        "host_material": "Si",
+        "structure_type": "diamond",
+        "defect_type": "interstitial",
+        "interstitial_element": "Si",
+        "interstitial_site": "hexagonal",
+        "supercell": [
+          3,
+          3,
+          3
+        ],
+        "concentration": "single_defect"
+      },
+      "expected_properties": {
+        "extra_Si": 1,
+        "interstitial_type": "hexagonal"
+      },
+      "validation": {
+        "check_atom_count": true,
+        "min_distance": 1.5
+      }
+    },
+    {
+      "task_id": "cv3_046",
+      "description": "Create an O interstitial at the octahedral void in fluorite UO₂.",
+      "input": {
+        "host_material": "UO2",
+        "structure_type": "fluorite",
+        "defect_type": "interstitial",
+        "interstitial_element": "O",
+        "interstitial_site": "octahedral",
+        "supercell": [
+          2,
+          2,
+          2
+        ],
+        "concentration": "single_defect"
+      },
+      "expected_properties": {
+        "extra_O": 1,
+        "interstitial_at_octahedral": true
+      },
+      "validation": {
+        "check_O_excess": true,
+        "min_distance": 1.8
+      }
+    },
+    {
+      "task_id": "cv3_047",
+      "description": "Create a Li interstitial in rocksalt LiCoO₂ cathode material.",
+      "input": {
+        "host_material": "LiCoO2",
+        "structure_type": "layered_rocksalt",
+        "defect_type": "interstitial",
+        "interstitial_element": "Li",
+        "supercell": [
+          3,
+          3,
+          1
+        ],
+        "concentration": "single_defect"
+      },
+      "expected_properties": {
+        "extra_Li": 1,
+        "layered_structure": true
+      },
+      "validation": {
+        "check_Li_excess": true,
+        "min_distance": 1.5
+      }
+    },
+    {
+      "task_id": "cv3_048",
+      "description": "Create an octahedral H interstitial in BCC vanadium (hydrogen storage).",
+      "input": {
+        "host_material": "V",
+        "structure_type": "bcc",
+        "defect_type": "interstitial",
+        "interstitial_element": "H",
+        "interstitial_site": "octahedral",
+        "supercell": [
+          3,
+          3,
+          3
+        ],
+        "concentration": "single_defect"
+      },
+      "expected_properties": {
+        "contains_H": true,
+        "H_count": 1
+      },
+      "validation": {
+        "check_H_present": true,
+        "min_distance": 1.0
+      }
+    },
+    {
+      "task_id": "cv3_049",
+      "description": "Create an O interstitial in wurtzite ZnO at the octahedral void.",
+      "input": {
+        "host_material": "ZnO",
+        "structure_type": "wurtzite",
+        "defect_type": "interstitial",
+        "interstitial_element": "O",
+        "supercell": [
+          3,
+          3,
+          2
+        ],
+        "concentration": "single_defect"
+      },
+      "expected_properties": {
+        "extra_O": 1,
+        "structure_valid": true
+      },
+      "validation": {
+        "check_O_excess": true,
+        "min_distance": 1.5
+      }
+    },
+    {
+      "task_id": "cv3_050",
+      "description": "Create a Cu interstitial in FCC copper (self-interstitial).",
+      "input": {
+        "host_material": "Cu",
+        "structure_type": "fcc",
+        "defect_type": "interstitial",
+        "interstitial_element": "Cu",
+        "interstitial_site": "octahedral",
+        "supercell": [
+          3,
+          3,
+          3
+        ],
+        "concentration": "single_defect"
+      },
+      "expected_properties": {
+        "extra_Cu": 1,
+        "self_interstitial": true
+      },
+      "validation": {
+        "check_atom_count": true,
+        "min_distance": 1.8
+      }
+    },
+    {
+      "task_id": "cv3_051",
+      "description": "Create a Ga antisite (Ga on As site) in zincblende GaAs.",
+      "input": {
+        "host_material": "GaAs",
+        "structure_type": "zincblende",
+        "defect_type": "antisite",
+        "antisite_species": "Ga",
+        "target_site": "As",
+        "supercell": [
+          3,
+          3,
+          3
+        ],
+        "concentration": "single_defect"
+      },
+      "expected_properties": {
+        "antisite_count": 1,
+        "Ga_on_As_site": true
+      },
+      "validation": {
+        "check_no_overlap": true,
+        "min_distance": 2.0
+      }
+    },
+    {
+      "task_id": "cv3_052",
+      "description": "Create an antisite pair in zincblende GaAs: one Ga on As site AND one As on Ga site.",
+      "input": {
+        "host_material": "GaAs",
+        "structure_type": "zincblende",
+        "defect_type": "antisite_pair",
+        "swap_atoms": [
+          "Ga",
+          "As"
+        ],
+        "supercell": [
+          3,
+          3,
+          3
+        ],
+        "concentration": "single_pair"
+      },
+      "expected_properties": {
+        "stoichiometry_preserved": true,
+        "antisite_count": 2
+      },
+      "validation": {
+        "check_no_overlap": true,
+        "check_stoichiometry": true,
+        "min_distance": 2.0
+      }
+    },
+    {
+      "task_id": "cv3_053",
+      "description": "Create a Ni antisite (Ni on Al site) in L1₂ ordered Ni₃Al.",
+      "input": {
+        "host_material": "Ni3Al",
+        "structure_type": "L12",
+        "defect_type": "antisite",
+        "antisite_species": "Ni",
+        "target_site": "Al",
+        "supercell": [
+          3,
+          3,
+          3
+        ],
+        "concentration": "single_defect"
+      },
+      "expected_properties": {
+        "antisite_count": 1,
+        "Ni_on_Al_site": true
+      },
+      "validation": {
+        "check_no_overlap": true,
+        "min_distance": 2.0
+      }
+    },
+    {
+      "task_id": "cv3_054",
+      "description": "Create an Al antisite (Al on Ni site) in L1₂ ordered Ni₃Al.",
+      "input": {
+        "host_material": "Ni3Al",
+        "structure_type": "L12",
+        "defect_type": "antisite",
+        "antisite_species": "Al",
+        "target_site": "Ni",
+        "supercell": [
+          3,
+          3,
+          3
+        ],
+        "concentration": "single_defect"
+      },
+      "expected_properties": {
+        "antisite_count": 1,
+        "Al_on_Ni_site": true
+      },
+      "validation": {
+        "check_no_overlap": true,
+        "min_distance": 2.0
+      }
+    },
+    {
+      "task_id": "cv3_055",
+      "description": "Create an antisite pair in L1₀ ordered CoPt: swap one Co and one Pt.",
+      "input": {
+        "host_material": "CoPt",
+        "structure_type": "L10",
+        "defect_type": "antisite_pair",
+        "swap_atoms": [
+          "Co",
+          "Pt"
+        ],
+        "supercell": [
+          3,
+          3,
+          2
+        ],
+        "concentration": "single_pair"
+      },
+      "expected_properties": {
+        "stoichiometry_preserved": true,
+        "antisite_count": 2
+      },
+      "validation": {
+        "check_no_overlap": true,
+        "check_stoichiometry": true,
+        "min_distance": 2.0
+      }
+    },
+    {
+      "task_id": "cv3_056",
+      "description": "Create a Schottky defect in rocksalt MgO: remove one Mg and one O maintaining charge neutrality.",
+      "input": {
+        "host_material": "MgO",
+        "structure_type": "rocksalt",
+        "defect_type": "schottky",
+        "supercell": [
+          3,
+          3,
+          3
+        ],
+        "concentration": "single_pair"
+      },
+      "expected_properties": {
+        "vacancy_types": [
+          "Mg",
+          "O"
+        ],
+        "vacancy_count": 2,
+        "charge_neutral": true
+      },
+      "validation": {
+        "check_no_overlap": true,
+        "check_charge_balance": true
+      }
+    },
+    {
+      "task_id": "cv3_057",
+      "description": "Create a Schottky trio in fluorite CaF₂: remove one Ca and two F to maintain charge neutrality.",
+      "input": {
+        "host_material": "CaF2",
+        "structure_type": "fluorite",
+        "defect_type": "schottky",
+        "supercell": [
+          2,
+          2,
+          2
+        ],
+        "concentration": "single_trio"
+      },
+      "expected_properties": {
+        "Ca_vacancy_count": 1,
+        "F_vacancy_count": 2,
+        "charge_neutral": true
+      },
+      "validation": {
+        "check_no_overlap": true,
+        "check_charge_balance": true
+      }
+    },
+    {
+      "task_id": "cv3_058",
+      "description": "Create a cation Frenkel pair in rocksalt AgBr: Ag vacancy + Ag interstitial.",
+      "input": {
+        "host_material": "AgBr",
+        "structure_type": "rocksalt",
+        "defect_type": "frenkel",
+        "defect_element": "Ag",
+        "supercell": [
+          3,
+          3,
+          3
+        ],
+        "concentration": "single_pair"
+      },
+      "expected_properties": {
+        "Ag_vacancy_count": 1,
+        "Ag_interstitial_count": 1,
+        "net_Ag_change": 0
+      },
+      "validation": {
+        "check_no_overlap": true,
+        "check_Ag_conservation": true
+      }
+    },
+    {
+      "task_id": "cv3_059",
+      "description": "Create an anion Frenkel pair in fluorite BaF₂: F vacancy + F interstitial at octahedral site.",
+      "input": {
+        "host_material": "BaF2",
+        "structure_type": "fluorite",
+        "defect_type": "frenkel",
+        "defect_element": "F",
+        "interstitial_site": "octahedral",
+        "supercell": [
+          2,
+          2,
+          2
+        ],
+        "concentration": "single_pair"
+      },
+      "expected_properties": {
+        "F_vacancy_count": 1,
+        "F_interstitial_count": 1,
+        "net_F_change": 0
+      },
+      "validation": {
+        "check_no_overlap": true,
+        "check_F_conservation": true
+      }
+    },
+    {
+      "task_id": "cv3_060",
+      "description": "Create an O Frenkel pair in fluorite ThO₂: O vacancy + O interstitial.",
+      "input": {
+        "host_material": "ThO2",
+        "structure_type": "fluorite",
+        "defect_type": "frenkel",
+        "defect_element": "O",
+        "interstitial_site": "octahedral",
+        "supercell": [
+          2,
+          2,
+          2
+        ],
+        "concentration": "single_pair"
+      },
+      "expected_properties": {
+        "O_vacancy_count": 1,
+        "O_interstitial_count": 1,
+        "net_O_change": 0
+      },
+      "validation": {
+        "check_no_overlap": true,
+        "check_O_conservation": true
+      }
+    },
+    {
+      "task_id": "cv3_061",
+      "description": "Create a Schottky defect in perovskite BaTiO₃: remove one Ba, one Ti, and three O atoms.",
+      "input": {
+        "host_material": "BaTiO3",
+        "structure_type": "perovskite",
+        "defect_type": "schottky",
+        "supercell": [
+          3,
+          3,
+          3
+        ],
+        "concentration": "single_unit"
+      },
+      "expected_properties": {
+        "Ba_vacancy_count": 1,
+        "Ti_vacancy_count": 1,
+        "O_vacancy_count": 3,
+        "charge_neutral": true
+      },
+      "validation": {
+        "check_no_overlap": true,
+        "check_charge_balance": true
+      }
+    },
+    {
+      "task_id": "cv3_062",
+      "description": "Create a cation Frenkel pair in spinel MgAl₂O₄: Mg vacancy + Mg interstitial.",
+      "input": {
+        "host_material": "MgAl2O4",
+        "structure_type": "spinel",
+        "defect_type": "frenkel",
+        "defect_element": "Mg",
+        "supercell": [
+          1,
+          1,
+          1
+        ],
+        "concentration": "single_pair"
+      },
+      "expected_properties": {
+        "Mg_vacancy_count": 1,
+        "Mg_interstitial_count": 1,
+        "net_Mg_change": 0
+      },
+      "validation": {
+        "check_no_overlap": true,
+        "check_Mg_conservation": true
+      }
+    },
+    {
+      "task_id": "cv3_063",
+      "description": "Create a <100> self-interstitial dumbbell in FCC copper.",
+      "input": {
+        "host_material": "Cu",
+        "structure_type": "fcc",
+        "defect_type": "self_dumbbell",
+        "dumbbell_direction": [
+          1,
+          0,
+          0
+        ],
+        "supercell": [
+          3,
+          3,
+          3
+        ],
+        "concentration": "single_defect"
+      },
+      "expected_properties": {
+        "extra_atoms": 1,
+        "dumbbell_configuration": true,
+        "dumbbell_axis": [
+          1,
+          0,
+          0
+        ]
+      },
+      "validation": {
+        "check_dumbbell_geometry": true,
+        "dumbbell_separation": {
+          "min": 0.6,
+          "max": 1.2
+        }
+      }
+    },
+    {
+      "task_id": "cv3_064",
+      "description": "Create a <100> self-interstitial dumbbell in FCC aluminum.",
+      "input": {
+        "host_material": "Al",
+        "structure_type": "fcc",
+        "defect_type": "self_dumbbell",
+        "dumbbell_direction": [
+          1,
+          0,
+          0
+        ],
+        "supercell": [
+          3,
+          3,
+          3
+        ],
+        "concentration": "single_defect"
+      },
+      "expected_properties": {
+        "extra_atoms": 1,
+        "dumbbell_configuration": true
+      },
+      "validation": {
+        "check_dumbbell_geometry": true,
+        "dumbbell_separation": {
+          "min": 0.5,
+          "max": 1.0
+        }
+      }
+    },
+    {
+      "task_id": "cv3_065",
+      "description": "Create a <110> self-interstitial dumbbell in BCC molybdenum.",
+      "input": {
+        "host_material": "Mo",
+        "structure_type": "bcc",
+        "defect_type": "self_dumbbell",
+        "dumbbell_direction": [
+          1,
+          1,
+          0
+        ],
+        "supercell": [
+          4,
+          4,
+          4
+        ],
+        "concentration": "single_defect"
+      },
+      "expected_properties": {
+        "extra_atoms": 1,
+        "dumbbell_configuration": true
+      },
+      "validation": {
+        "check_dumbbell_geometry": true,
+        "min_distance": 1.5
+      }
+    },
+    {
+      "task_id": "cv3_066",
+      "description": "Create a <110> mixed dumbbell (W-C pair) in BCC tungsten.",
+      "input": {
+        "host_material": "W",
+        "structure_type": "bcc",
+        "defect_type": "mixed_dumbbell",
+        "interstitial_element": "C",
+        "dumbbell_direction": [
+          1,
+          1,
+          0
+        ],
+        "supercell": [
+          3,
+          3,
+          3
+        ],
+        "concentration": "single_defect"
+      },
+      "expected_properties": {
+        "contains_C": true,
+        "dumbbell_configuration": true
+      },
+      "validation": {
+        "check_C_present": true,
+        "min_distance": 1.5
+      }
+    },
+    {
+      "task_id": "cv3_067",
+      "description": "Create a <110> self-interstitial dumbbell in diamond silicon.",
+      "input": {
+        "host_material": "Si",
+        "structure_type": "diamond",
+        "defect_type": "self_dumbbell",
+        "dumbbell_direction": [
+          1,
+          1,
+          0
+        ],
+        "supercell": [
+          3,
+          3,
+          3
+        ],
+        "concentration": "single_defect"
+      },
+      "expected_properties": {
+        "extra_atoms": 1,
+        "dumbbell_configuration": true
+      },
+      "validation": {
+        "check_dumbbell_geometry": true,
+        "min_distance": 1.5
+      }
+    },
+    {
+      "task_id": "cv3_068",
+      "description": "Create a <110> mixed dumbbell (Fe-N pair) in BCC iron (nitrogen steel).",
+      "input": {
+        "host_material": "Fe",
+        "structure_type": "bcc",
+        "defect_type": "mixed_dumbbell",
+        "interstitial_element": "N",
+        "dumbbell_direction": [
+          1,
+          1,
+          0
+        ],
+        "supercell": [
+          4,
+          4,
+          4
+        ],
+        "concentration": "single_defect"
+      },
+      "expected_properties": {
+        "contains_N": true,
+        "dumbbell_configuration": true
+      },
+      "validation": {
+        "check_N_present": true,
+        "min_distance": 1.2
+      }
+    },
+    {
+      "task_id": "cv3_069",
+      "description": "Create a <110> divacancy in FCC copper.",
+      "input": {
+        "host_material": "Cu",
+        "structure_type": "fcc",
+        "defect_type": "divacancy",
+        "orientation": [
+          1,
+          1,
+          0
+        ],
+        "supercell": [
+          4,
+          4,
+          4
+        ],
+        "concentration": "single_pair"
+      },
+      "expected_properties": {
+        "vacancy_count": 2,
+        "vacancies_are_neighbors": true
+      },
+      "validation": {
+        "check_no_overlap": true,
+        "check_vacancy_count": true
+      }
+    },
+    {
+      "task_id": "cv3_070",
+      "description": "Create a <110> divacancy in FCC aluminum.",
+      "input": {
+        "host_material": "Al",
+        "structure_type": "fcc",
+        "defect_type": "divacancy",
+        "orientation": [
+          1,
+          1,
+          0
+        ],
+        "supercell": [
+          4,
+          4,
+          4
+        ],
+        "concentration": "single_pair"
+      },
+      "expected_properties": {
+        "vacancy_count": 2,
+        "vacancies_are_neighbors": true
+      },
+      "validation": {
+        "check_no_overlap": true,
+        "check_vacancy_count": true
+      }
+    },
+    {
+      "task_id": "cv3_071",
+      "description": "Create a divacancy in diamond silicon along <110>.",
+      "input": {
+        "host_material": "Si",
+        "structure_type": "diamond",
+        "defect_type": "divacancy",
+        "orientation": [
+          1,
+          1,
+          0
+        ],
+        "supercell": [
+          3,
+          3,
+          3
+        ],
+        "concentration": "single_pair"
+      },
+      "expected_properties": {
+        "vacancy_count": 2,
+        "vacancies_are_neighbors": true
+      },
+      "validation": {
+        "check_no_overlap": true,
+        "check_vacancy_count": true
+      }
+    },
+    {
+      "task_id": "cv3_072",
+      "description": "Create a trivacancy cluster in FCC copper on {111} plane.",
+      "input": {
+        "host_material": "Cu",
+        "structure_type": "fcc",
+        "defect_type": "vacancy_cluster",
+        "cluster_type": "trivacancy",
+        "cluster_plane": [
+          1,
+          1,
+          1
+        ],
+        "supercell": [
+          4,
+          4,
+          4
+        ],
+        "concentration": "single_cluster"
+      },
+      "expected_properties": {
+        "vacancy_count": 3,
+        "triangular_arrangement": true
+      },
+      "validation": {
+        "check_no_overlap": true,
+        "check_vacancy_count": true
+      }
+    },
+    {
+      "task_id": "cv3_073",
+      "description": "Create a tetravacancy (SFT precursor) in FCC gold.",
+      "input": {
+        "host_material": "Au",
+        "structure_type": "fcc",
+        "defect_type": "sft_precursor",
+        "vacancy_count": 4,
+        "arrangement": "tetrahedral",
+        "supercell": [
+          4,
+          4,
+          4
+        ],
+        "concentration": "single_cluster"
+      },
+      "expected_properties": {
+        "vacancy_count": 4,
+        "tetrahedral_arrangement": true
+      },
+      "validation": {
+        "check_no_overlap": true,
+        "check_vacancy_count": true
+      }
+    },
+    {
+      "task_id": "cv3_074",
+      "description": "Create a <100> divacancy in BCC tungsten.",
+      "input": {
+        "host_material": "W",
+        "structure_type": "bcc",
+        "defect_type": "divacancy",
+        "orientation": [
+          1,
+          0,
+          0
+        ],
+        "supercell": [
+          4,
+          4,
+          4
+        ],
+        "concentration": "single_pair"
+      },
+      "expected_properties": {
+        "vacancy_count": 2,
+        "vacancies_are_neighbors": true
+      },
+      "validation": {
+        "check_no_overlap": true,
+        "check_vacancy_count": true
+      }
+    },
+    {
+      "task_id": "cv3_075",
+      "description": "Create a nitrogen-vacancy (NV) center in diamond: N substitution adjacent to vacancy.",
+      "input": {
+        "host_material": "C",
+        "structure_type": "diamond",
+        "defect_type": "NV_center",
+        "dopant": "N",
+        "supercell": [
+          3,
+          3,
+          3
+        ],
+        "concentration": "single_center"
+      },
+      "expected_properties": {
+        "contains_N": true,
+        "N_count": 1,
+        "vacancy_count": 1,
+        "N_adjacent_to_vacancy": true
+      },
+      "validation": {
+        "check_no_overlap": true,
+        "check_N_present": true,
+        "min_distance": 1.4
+      }
+    },
+    {
+      "task_id": "cv3_076",
+      "description": "Create a tin-vacancy (SnV) center in diamond: Sn at split-vacancy configuration.",
+      "input": {
+        "host_material": "C",
+        "structure_type": "diamond",
+        "defect_type": "split_vacancy_center",
+        "dopant": "Sn",
+        "supercell": [
+          3,
+          3,
+          3
+        ],
+        "concentration": "single_center"
+      },
+      "expected_properties": {
+        "contains_Sn": true,
+        "Sn_count": 1,
+        "vacancy_count": 2,
+        "Sn_at_midpoint": true
+      },
+      "validation": {
+        "check_no_overlap": true,
+        "check_Sn_present": true
+      }
+    },
+    {
+      "task_id": "cv3_077",
+      "description": "Create a phosphorus-vacancy (PV) center in diamond.",
+      "input": {
+        "host_material": "C",
+        "structure_type": "diamond",
+        "defect_type": "dopant_vacancy_pair",
+        "dopant": "P",
+        "supercell": [
+          3,
+          3,
+          3
+        ],
+        "concentration": "single_center"
+      },
+      "expected_properties": {
+        "contains_P": true,
+        "P_count": 1,
+        "vacancy_count": 1,
+        "P_adjacent_to_vacancy": true
+      },
+      "validation": {
+        "check_no_overlap": true,
+        "check_P_present": true
+      }
+    },
+    {
+      "task_id": "cv3_078",
+      "description": "Create an E-center (phosphorus-vacancy pair) in silicon.",
+      "input": {
+        "host_material": "Si",
+        "structure_type": "diamond",
+        "defect_type": "dopant_vacancy_pair",
+        "dopant": "P",
+        "supercell": [
+          3,
+          3,
+          3
+        ],
+        "concentration": "single_center"
+      },
+      "expected_properties": {
+        "contains_P": true,
+        "P_count": 1,
+        "vacancy_count": 1
+      },
+      "validation": {
+        "check_no_overlap": true,
+        "check_P_present": true,
+        "min_distance": 2.0
+      }
+    },
+    {
+      "task_id": "cv3_079",
+      "description": "Create an A-center (oxygen-vacancy pair) in silicon.",
+      "input": {
+        "host_material": "Si",
+        "structure_type": "diamond",
+        "defect_type": "dopant_vacancy_pair",
+        "dopant": "O",
+        "supercell": [
+          3,
+          3,
+          3
+        ],
+        "concentration": "single_center"
+      },
+      "expected_properties": {
+        "contains_O": true,
+        "O_count": 1,
+        "vacancy_count": 1
+      },
+      "validation": {
+        "check_no_overlap": true,
+        "check_O_present": true
+      }
+    },
+    {
+      "task_id": "cv3_080",
+      "description": "Create an F-center analog in rocksalt MgO: oxygen vacancy (electron trap).",
+      "input": {
+        "host_material": "MgO",
+        "structure_type": "rocksalt",
+        "defect_type": "F_center",
+        "vacancy_element": "O",
+        "supercell": [
+          3,
+          3,
+          3
+        ],
+        "concentration": "single_defect"
+      },
+      "expected_properties": {
+        "O_vacancy_count": 1,
+        "structure_valid": true
+      },
+      "validation": {
+        "check_no_overlap": true,
+        "check_O_removed": true
+      }
+    },
+    {
+      "task_id": "cv3_081",
+      "description": "Create a single Li vacancy in layered LiCoO2 while preserving the CoO2 framework.",
+      "input": {
+        "host_material": "LiCoO2",
+        "structure_type": "layered_oxide",
+        "defect_type": "vacancy",
+        "vacancy_element": "Li",
+        "supercell": [
+          3,
+          3,
+          1
+        ],
+        "concentration": "single_defect"
+      },
+      "expected_properties": {
+        "structure_valid": true,
+        "vacancy_count": 1
+      },
+      "validation": {
+        "check_no_overlap": true,
+        "check_Li_removed": true,
+        "min_distance": 1.5
+      }
+    },
+    {
+      "task_id": "cv3_082",
+      "description": "Create an oxygen vacancy in fluorite CeO2 with a 2x2x2 supercell.",
+      "input": {
+        "host_material": "CeO2",
+        "structure_type": "fluorite",
+        "defect_type": "vacancy",
+        "vacancy_element": "O",
+        "supercell": [
+          2,
+          2,
+          2
+        ],
+        "concentration": "single_defect"
+      },
+      "expected_properties": {
+        "structure_valid": true,
+        "vacancy_count": 1
+      },
+      "validation": {
+        "check_no_overlap": true,
+        "check_O_removed": true,
+        "min_distance": 1.5
+      }
+    },
+    {
+      "task_id": "cv3_083",
+      "description": "Create an Al substitution at a Mg site in rocksalt MgO.",
+      "input": {
+        "host_material": "MgO",
+        "structure_type": "rocksalt",
+        "defect_type": "substitution",
+        "dopant": "Al",
+        "dopant_site": "Mg",
+        "supercell": [
+          3,
+          3,
+          3
+        ],
+        "concentration": "single_defect"
+      },
+      "expected_properties": {
+        "composition_contains": [
+          "Al"
+        ],
+        "original_elements": [
+          "Mg",
+          "O"
+        ],
+        "defect_count": 1
+      },
+      "validation": {
+        "check_no_overlap": true,
+        "check_composition": true,
+        "min_distance": 1.5
+      }
+    },
+    {
+      "task_id": "cv3_084",
+      "description": "Create a nitrogen substitution at an oxygen site in rutile TiO2.",
+      "input": {
+        "host_material": "TiO2",
+        "structure_type": "rutile",
+        "defect_type": "substitution",
+        "dopant": "N",
+        "dopant_site": "O",
+        "supercell": [
+          2,
+          2,
+          3
+        ],
+        "concentration": "single_defect"
+      },
+      "expected_properties": {
+        "composition_contains": [
+          "N"
+        ],
+        "original_elements": [
+          "Ti",
+          "O"
+        ],
+        "defect_count": 1
+      },
+      "validation": {
+        "check_no_overlap": true,
+        "check_composition": true,
+        "min_distance": 1.5
+      }
+    },
+    {
+      "task_id": "cv3_085",
+      "description": "Create a carbon interstitial at an octahedral site in BCC iron.",
+      "input": {
+        "host_material": "Fe",
+        "structure_type": "bcc",
+        "defect_type": "interstitial",
+        "dopant": "C",
+        "interstitial_site": "octahedral",
+        "supercell": [
+          4,
+          4,
+          4
+        ],
+        "concentration": "single_defect"
+      },
+      "expected_properties": {
+        "contains_C": true,
+        "C_count": 1,
+        "interstitial_at_octahedral": true
+      },
+      "validation": {
+        "check_no_overlap": true,
+        "min_distance": 1.2
+      }
+    },
+    {
+      "task_id": "cv3_086",
+      "description": "Create a hydrogen interstitial in FCC palladium at an octahedral site.",
+      "input": {
+        "host_material": "Pd",
+        "structure_type": "fcc",
+        "defect_type": "interstitial",
+        "dopant": "H",
+        "interstitial_site": "octahedral",
+        "supercell": [
+          3,
+          3,
+          3
+        ],
+        "concentration": "single_defect"
+      },
+      "expected_properties": {
+        "contains_H": true,
+        "H_count": 1,
+        "interstitial_at_octahedral": true
+      },
+      "validation": {
+        "check_no_overlap": true,
+        "min_distance": 0.8
+      }
+    },
+    {
+      "task_id": "cv3_087",
+      "description": "Create a Mg-on-Al antisite defect in spinel MgAl2O4.",
+      "input": {
+        "host_material": "MgAl2O4",
+        "structure_type": "spinel",
+        "defect_type": "antisite",
+        "dopant": "Mg",
+        "dopant_site": "Al",
+        "supercell": [
+          2,
+          2,
+          2
+        ],
+        "concentration": "single_defect"
+      },
+      "expected_properties": {
+        "antisite_count": 1,
+        "original_elements": [
+          "Mg",
+          "Al",
+          "O"
+        ],
+        "structure_valid": true
+      },
+      "validation": {
+        "check_no_overlap": true,
+        "min_distance": 1.5
+      }
+    },
+    {
+      "task_id": "cv3_088",
+      "description": "Create a Schottky defect pair in CsCl by removing one Cs atom and one Cl atom.",
+      "input": {
+        "host_material": "CsCl",
+        "structure_type": "cscl",
+        "defect_type": "schottky",
+        "vacancy_elements": [
+          "Cs",
+          "Cl"
+        ],
+        "supercell": [
+          3,
+          3,
+          3
+        ],
+        "concentration": "single_pair"
+      },
+      "expected_properties": {
+        "vacancy_count": 2,
+        "charge_neutral": true
+      },
+      "validation": {
+        "check_no_overlap": true,
+        "min_distance": 2.0
+      }
+    },
+    {
+      "task_id": "cv3_089",
+      "description": "Create a fluorine Frenkel pair in fluorite CaF2: one F vacancy and one F interstitial.",
+      "input": {
+        "host_material": "CaF2",
+        "structure_type": "fluorite",
+        "defect_type": "frenkel",
+        "defect_element": "F",
+        "supercell": [
+          2,
+          2,
+          2
+        ],
+        "concentration": "single_pair"
+      },
+      "expected_properties": {
+        "vacancy_count": 1,
+        "interstitial_count": 1,
+        "structure_valid": true
+      },
+      "validation": {
+        "check_no_overlap": true,
+        "min_distance": 1.5
+      }
+    },
+    {
+      "task_id": "cv3_090",
+      "description": "Create a divacancy in graphene by removing two neighboring carbon atoms from a monolayer supercell.",
+      "input": {
+        "host_material": "graphene",
+        "structure_type": "2D_monolayer",
+        "defect_type": "divacancy",
+        "vacancy_element": "C",
+        "supercell": [
+          5,
+          5,
+          1
+        ],
+        "concentration": "single_divacancy"
+      },
+      "expected_properties": {
+        "vacancy_count": 2,
+        "is_layered": true
+      },
+      "validation": {
+        "check_no_overlap": true,
+        "min_distance": 1.0
+      }
+    },
+    {
+      "task_id": "cv3_091",
+      "description": "Create a compact tri-vacancy cluster in BCC tungsten.",
+      "input": {
+        "host_material": "W",
+        "structure_type": "bcc",
+        "defect_type": "vacancy_cluster",
+        "vacancy_element": "W",
+        "vacancy_count": 3,
+        "supercell": [
+          4,
+          4,
+          4
+        ],
+        "concentration": "cluster"
+      },
+      "expected_properties": {
+        "vacancy_count": 3,
+        "structure_valid": true
+      },
+      "validation": {
+        "check_no_overlap": true,
+        "min_distance": 2.0
+      }
+    },
+    {
+      "task_id": "cv3_092",
+      "description": "Create a boron substitution in graphene at a carbon site.",
+      "input": {
+        "host_material": "graphene",
+        "structure_type": "2D_monolayer",
+        "defect_type": "substitution",
+        "dopant": "B",
+        "dopant_site": "C",
+        "supercell": [
+          5,
+          5,
+          1
+        ],
+        "concentration": "single_defect"
+      },
+      "expected_properties": {
+        "composition_contains": [
+          "B"
+        ],
+        "original_elements": [
+          "C"
+        ],
+        "defect_count": 1,
+        "is_layered": true
+      },
+      "validation": {
+        "check_no_overlap": true,
+        "min_distance": 1.0
+      }
+    },
+    {
+      "task_id": "cv3_093",
+      "description": "Create a phosphorus substitution at a sulfur site in monolayer MoS2.",
+      "input": {
+        "host_material": "MoS2",
+        "structure_type": "2H_monolayer",
+        "defect_type": "substitution",
+        "dopant": "P",
+        "dopant_site": "S",
+        "supercell": [
+          4,
+          4,
+          1
+        ],
+        "concentration": "single_defect"
+      },
+      "expected_properties": {
+        "composition_contains": [
+          "P"
+        ],
+        "original_elements": [
+          "Mo",
+          "S"
+        ],
+        "defect_count": 1,
+        "is_layered": true
+      },
+      "validation": {
+        "check_no_overlap": true,
+        "min_distance": 1.2
+      }
+    },
+    {
+      "task_id": "cv3_094",
+      "description": "Create an oxygen interstitial in cubic perovskite SrTiO3.",
+      "input": {
+        "host_material": "SrTiO3",
+        "structure_type": "perovskite",
+        "defect_type": "interstitial",
+        "dopant": "O",
+        "interstitial_site": "interstitial",
+        "supercell": [
+          3,
+          3,
+          3
+        ],
+        "concentration": "single_defect"
+      },
+      "expected_properties": {
+        "contains_O": true,
+        "structure_valid": true
+      },
+      "validation": {
+        "check_no_overlap": true,
+        "min_distance": 1.2
+      }
+    },
+    {
+      "task_id": "cv3_095",
+      "description": "Create a Zn vacancy in wurtzite ZnO using a 3x3x2 supercell.",
+      "input": {
+        "host_material": "ZnO",
+        "structure_type": "wurtzite",
+        "defect_type": "vacancy",
+        "vacancy_element": "Zn",
+        "supercell": [
+          3,
+          3,
+          2
+        ],
+        "concentration": "single_defect"
+      },
+      "expected_properties": {
+        "vacancy_count": 1,
+        "structure_valid": true
+      },
+      "validation": {
+        "check_no_overlap": true,
+        "check_Zn_removed": true,
+        "min_distance": 1.5
+      }
+    },
+    {
+      "task_id": "cv3_096",
+      "description": "Create a Ga-on-As antisite defect in zincblende GaAs.",
+      "input": {
+        "host_material": "GaAs",
+        "structure_type": "zincblende",
+        "defect_type": "antisite",
+        "dopant": "Ga",
+        "dopant_site": "As",
+        "supercell": [
+          3,
+          3,
+          3
+        ],
+        "concentration": "single_defect"
+      },
+      "expected_properties": {
+        "antisite_count": 1,
+        "original_elements": [
+          "Ga",
+          "As"
+        ],
+        "structure_valid": true
+      },
+      "validation": {
+        "check_no_overlap": true,
+        "min_distance": 2.0
+      }
+    },
+    {
+      "task_id": "cv3_097",
+      "description": "Create a silicon self-interstitial in diamond cubic silicon at a tetrahedral site.",
+      "input": {
+        "host_material": "Si",
+        "structure_type": "diamond",
+        "defect_type": "interstitial",
+        "dopant": "Si",
+        "interstitial_site": "tetrahedral",
+        "supercell": [
+          3,
+          3,
+          3
+        ],
+        "concentration": "single_defect"
+      },
+      "expected_properties": {
+        "structure_valid": true,
+        "interstitial_at_octahedral": false
+      },
+      "validation": {
+        "check_no_overlap": true,
+        "min_distance": 1.5
+      }
+    },
+    {
+      "task_id": "cv3_098",
+      "description": "Create a Cr substitution at an Al site in spinel MgAl2O4.",
+      "input": {
+        "host_material": "MgAl2O4",
+        "structure_type": "spinel",
+        "defect_type": "substitution",
+        "dopant": "Cr",
+        "dopant_site": "Al",
+        "supercell": [
+          2,
+          2,
+          2
+        ],
+        "concentration": "single_defect"
+      },
+      "expected_properties": {
+        "composition_contains": [
+          "Cr"
+        ],
+        "original_elements": [
+          "Mg",
+          "Al",
+          "O"
+        ],
+        "defect_count": 1
+      },
+      "validation": {
+        "check_no_overlap": true,
+        "check_composition": true,
+        "min_distance": 1.5
+      }
+    },
+    {
+      "task_id": "cv3_099",
+      "description": "Create a Nb substitution at a Ti site in cubic SrTiO3.",
+      "input": {
+        "host_material": "SrTiO3",
+        "structure_type": "perovskite",
+        "defect_type": "substitution",
+        "dopant": "Nb",
+        "dopant_site": "Ti",
+        "supercell": [
+          3,
+          3,
+          3
+        ],
+        "concentration": "single_defect"
+      },
+      "expected_properties": {
+        "composition_contains": [
+          "Nb"
+        ],
+        "original_elements": [
+          "Sr",
+          "Ti",
+          "O"
+        ],
+        "defect_count": 1
+      },
+      "validation": {
+        "check_no_overlap": true,
+        "check_composition": true,
+        "min_distance": 1.5
+      }
+    },
+    {
+      "task_id": "cv3_100",
+      "description": "Create a sulfur vacancy in monolayer WS2.",
+      "input": {
+        "host_material": "WS2",
+        "structure_type": "2H_monolayer",
+        "defect_type": "vacancy",
+        "vacancy_element": "S",
+        "supercell": [
+          4,
+          4,
+          1
+        ],
+        "concentration": "single_defect"
+      },
+      "expected_properties": {
+        "vacancy_count": 1,
+        "is_layered": true
+      },
+      "validation": {
+        "check_no_overlap": true,
+        "check_S_removed": true,
+        "min_distance": 1.2
+      }
+    }
+  ]
+}

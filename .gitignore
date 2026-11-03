@@ -1,0 +1,14 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+.env
+.env.*
+!.env.example
+/benchmarks/
+/outputs/
+/output/
+*.log
+*.zip
+*.tar.gz
+.DS_Store

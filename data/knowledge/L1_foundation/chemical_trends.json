@@ -1,0 +1,918 @@
+{
+  "_metadata": {
+    "description": "Chemical trends across the periodic table",
+    "purpose": "Enable LLM to predict properties of unfamiliar materials based on chemical trends",
+    "usage": "Reference when encountering materials not in the static database",
+    "source": "Periodic table trends and materials science",
+    "license": "Educational reference",
+    "citation": "Standard chemistry references",
+    "version": "2025.12",
+    "last_updated": "2025-12-31T18:02:33.847316"
+  },
+  "periodic_trends": {
+    "atomic_radius": {
+      "description": "Size of atoms across the periodic table",
+      "trends": {
+        "across_period": "Decreases left to right (more protons, same shell)",
+        "down_group": "Increases top to bottom (more electron shells)"
+      },
+      "implications": [
+        "Larger atoms → larger lattice constants",
+        "Size mismatch affects solid solubility (Hume-Rothery)",
+        "Affects coordination preferences in compounds"
+      ],
+      "reference_values_pm": {
+        "group_1": {
+          "Li": 152,
+          "Na": 186,
+          "K": 227,
+          "Rb": 248,
+          "Cs": 265
+        },
+        "group_2": {
+          "Be": 112,
+          "Mg": 160,
+          "Ca": 197,
+          "Sr": 215,
+          "Ba": 222
+        },
+        "group_11": {
+          "Cu": 128,
+          "Ag": 144,
+          "Au": 144
+        },
+        "group_10": {
+          "Ni": 124,
+          "Pd": 137,
+          "Pt": 139
+        }
+      }
+    },
+    "electronegativity": {
+      "description": "Tendency to attract electrons in a bond",
+      "trends": {
+        "across_period": "Increases left to right",
+        "down_group": "Decreases top to bottom"
+      },
+      "scale": "Pauling scale (F = 4.0 is highest)",
+      "implications": [
+        "Large difference → ionic bonding",
+        "Small difference → covalent bonding",
+        "Affects charge transfer in compounds"
+      ],
+      "reference_values": {
+        "nonmetals": {
+          "F": 4.0,
+          "O": 3.5,
+          "N": 3.0,
+          "Cl": 3.2,
+          "C": 2.5,
+          "S": 2.6
+        },
+        "metals": {
+          "Au": 2.5,
+          "Pt": 2.3,
+          "Pd": 2.2,
+          "Ag": 1.9,
+          "Cu": 1.9,
+          "Fe": 1.8,
+          "Al": 1.6
+        }
+      }
+    },
+    "ionization_energy": {
+      "description": "Energy to remove an electron",
+      "trends": {
+        "across_period": "Increases left to right",
+        "down_group": "Decreases top to bottom"
+      },
+      "implications": [
+        "Low IE → easily forms cations (metals)",
+        "High IE → resists electron loss (nonmetals)",
+        "Affects oxidation states"
+      ]
+    },
+    "electron_affinity": {
+      "description": "Energy released when gaining an electron",
+      "trends": {
+        "across_period": "Generally increases (with exceptions)",
+        "down_group": "Generally decreases"
+      },
+      "implications": [
+        "High EA → easily forms anions",
+        "Affects reduction potential"
+      ]
+    },
+    "metallic_character": {
+      "description": "Tendency to exhibit metallic properties",
+      "trends": {
+        "across_period": "Decreases left to right",
+        "down_group": "Increases top to bottom"
+      },
+      "boundary": "Metalloids (B, Si, Ge, As, Sb, Te) at metal-nonmetal boundary"
+    }
+  },
+  "material_families": {
+    "III_V_semiconductors": {
+      "description": "Compounds of group III and group V elements",
+      "general_properties": {
+        "structure": "Zincblende (cubic) or wurtzite (hexagonal)",
+        "bonding": "Partially ionic, partially covalent",
+        "band_gap_range": "0.17 eV (InSb) to 6.2 eV (AlN)",
+        "lattice_constant_range": "5.4-6.5 Å for zincblende"
+      },
+      "members": {
+        "GaAs": {
+          "structure": "zincblende",
+          "a": 5.65,
+          "Eg": 1.42,
+          "direct": true
+        },
+        "GaN": {
+          "structure": "wurtzite",
+          "a": 3.19,
+          "c": 5.19,
+          "Eg": 3.4,
+          "direct": true
+        },
+        "InP": {
+          "structure": "zincblende",
+          "a": 5.87,
+          "Eg": 1.35,
+          "direct": true
+        },
+        "InAs": {
+          "structure": "zincblende",
+          "a": 6.06,
+          "Eg": 0.35,
+          "direct": true
+        },
+        "InSb": {
+          "structure": "zincblende",
+          "a": 6.48,
+          "Eg": 0.17,
+          "direct": true
+        },
+        "GaP": {
+          "structure": "zincblende",
+          "a": 5.45,
+          "Eg": 2.26,
+          "direct": false
+        },
+        "AlAs": {
+          "structure": "zincblende",
+          "a": 5.66,
+          "Eg": 2.16,
+          "direct": false
+        },
+        "AlN": {
+          "structure": "wurtzite",
+          "a": 3.11,
+          "c": 4.98,
+          "Eg": 6.2,
+          "direct": true
+        },
+        "AlP": {
+          "structure": "zincblende",
+          "a": 5.46,
+          "Eg": 2.45,
+          "direct": false
+        },
+        "GaSb": {
+          "structure": "zincblende",
+          "a": 6.1,
+          "Eg": 0.73,
+          "direct": true
+        }
+      },
+      "trends": [
+        "Heavier elements → smaller band gap",
+        "Heavier elements → larger lattice constant",
+        "Al compounds tend to be indirect gap",
+        "In compounds have smallest gaps"
+      ],
+      "applications": [
+        "LEDs",
+        "lasers",
+        "high-speed electronics",
+        "solar cells"
+      ]
+    },
+    "II_VI_semiconductors": {
+      "description": "Compounds of group II and group VI elements",
+      "general_properties": {
+        "structure": "Zincblende or wurtzite",
+        "bonding": "More ionic than III-V",
+        "band_gap_range": "0.1 eV (HgTe) to 3.9 eV (ZnS)"
+      },
+      "members": {
+        "ZnO": {
+          "structure": "wurtzite",
+          "a": 3.25,
+          "c": 5.21,
+          "Eg": 3.37,
+          "direct": true
+        },
+        "ZnS": {
+          "structure": "zincblende",
+          "a": 5.41,
+          "Eg": 3.68,
+          "direct": true
+        },
+        "ZnSe": {
+          "structure": "zincblende",
+          "a": 5.67,
+          "Eg": 2.7,
+          "direct": true
+        },
+        "ZnTe": {
+          "structure": "zincblende",
+          "a": 6.1,
+          "Eg": 2.26,
+          "direct": true
+        },
+        "CdS": {
+          "structure": "wurtzite",
+          "a": 4.14,
+          "c": 6.72,
+          "Eg": 2.42,
+          "direct": true
+        },
+        "CdSe": {
+          "structure": "wurtzite",
+          "a": 4.3,
+          "c": 7.01,
+          "Eg": 1.74,
+          "direct": true
+        },
+        "CdTe": {
+          "structure": "zincblende",
+          "a": 6.48,
+          "Eg": 1.44,
+          "direct": true
+        },
+        "HgTe": {
+          "structure": "zincblende",
+          "a": 6.46,
+          "Eg": -0.15,
+          "note": "semimetal"
+        }
+      },
+      "trends": [
+        "Cd compounds have smaller gaps than Zn compounds",
+        "Heavier chalcogenides have smaller gaps",
+        "ZnO is exceptional - wurtzite preferred, wide gap"
+      ],
+      "applications": [
+        "Quantum dots",
+        "solar cells",
+        "IR detectors",
+        "phosphors"
+      ]
+    },
+    "transition_metal_oxides": {
+      "description": "Oxides of transition metals with diverse properties",
+      "common_structures": {
+        "rocksalt": {
+          "examples": [
+            "NiO",
+            "CoO",
+            "FeO",
+            "MnO"
+          ],
+          "coordination": "6:6"
+        },
+        "rutile": {
+          "examples": [
+            "TiO2",
+            "SnO2",
+            "RuO2"
+          ],
+          "coordination": "6:3"
+        },
+        "corundum": {
+          "examples": [
+            "Al2O3",
+            "Fe2O3",
+            "Cr2O3"
+          ],
+          "coordination": "6:4"
+        },
+        "spinel": {
+          "examples": [
+            "Fe3O4",
+            "Co3O4",
+            "Mn3O4"
+          ],
+          "formula": "AB2O4"
+        },
+        "perovskite": {
+          "examples": [
+            "SrTiO3",
+            "BaTiO3",
+            "LaMnO3"
+          ],
+          "formula": "ABO3"
+        }
+      },
+      "members": {
+        "TiO2_rutile": {
+          "structure": "rutile",
+          "a": 4.59,
+          "c": 2.96,
+          "Eg": 3.0
+        },
+        "TiO2_anatase": {
+          "structure": "anatase",
+          "a": 3.78,
+          "c": 9.51,
+          "Eg": 3.2
+        },
+        "Al2O3": {
+          "structure": "corundum",
+          "a": 4.76,
+          "c": 12.99,
+          "Eg": 8.8
+        },
+        "Fe2O3": {
+          "structure": "corundum",
+          "a": 5.04,
+          "c": 13.75,
+          "Eg": 2.2
+        },
+        "NiO": {
+          "structure": "rocksalt",
+          "a": 4.18,
+          "Eg": 3.7
+        },
+        "CoO": {
+          "structure": "rocksalt",
+          "a": 4.26,
+          "Eg": 2.4
+        },
+        "ZnO": {
+          "structure": "wurtzite",
+          "a": 3.25,
+          "c": 5.21,
+          "Eg": 3.37
+        },
+        "CeO2": {
+          "structure": "fluorite",
+          "a": 5.41,
+          "Eg": 3.2
+        },
+        "ZrO2": {
+          "structure": "monoclinic/tetragonal/cubic",
+          "Eg": 5.0
+        }
+      },
+      "properties": [
+        "Often wide band gap insulators or semiconductors",
+        "Can exhibit magnetism (NiO, Fe2O3)",
+        "Important for catalysis (TiO2, CeO2)",
+        "Ferroelectricity in perovskites (BaTiO3)"
+      ]
+    },
+    "perovskites": {
+      "description": "ABO3 structure with corner-sharing BO6 octahedra",
+      "general_properties": {
+        "structure": "Cubic (ideal) or distorted",
+        "tolerance_factor": "t = (r_A + r_O) / √2(r_B + r_O)",
+        "stability": "0.8 < t < 1.0 for stable perovskite"
+      },
+      "members": {
+        "SrTiO3": {
+          "a": 3.91,
+          "Eg": 3.2,
+          "properties": [
+            "paraelectric",
+            "photocatalyst"
+          ]
+        },
+        "BaTiO3": {
+          "a": 4.01,
+          "Eg": 3.2,
+          "properties": [
+            "ferroelectric",
+            "piezoelectric"
+          ]
+        },
+        "PbTiO3": {
+          "a": 3.9,
+          "properties": [
+            "ferroelectric",
+            "high Tc"
+          ]
+        },
+        "LaMnO3": {
+          "a": 3.88,
+          "properties": [
+            "antiferromagnetic",
+            "CMR"
+          ]
+        },
+        "LaAlO3": {
+          "a": 3.79,
+          "Eg": 5.6,
+          "properties": [
+            "substrate material"
+          ]
+        },
+        "SrVO3": {
+          "a": 3.84,
+          "properties": [
+            "metallic",
+            "correlated electron"
+          ]
+        },
+        "BiFeO3": {
+          "a": 3.96,
+          "properties": [
+            "multiferroic"
+          ]
+        }
+      },
+      "applications": [
+        "Ferroelectrics",
+        "piezoelectrics",
+        "catalysis",
+        "fuel cells"
+      ]
+    },
+    "layered_materials_2D": {
+      "description": "Materials with strong in-plane bonding, weak interlayer bonding",
+      "general_properties": {
+        "bonding": "Covalent in-plane, van der Waals between layers",
+        "exfoliation": "Can be exfoliated to monolayers",
+        "anisotropy": "Highly anisotropic properties"
+      },
+      "members": {
+        "graphene": {
+          "structure": "hexagonal",
+          "a": 2.46,
+          "properties": [
+            "semimetal",
+            "high mobility"
+          ]
+        },
+        "hBN": {
+          "structure": "hexagonal",
+          "a": 2.5,
+          "Eg": 5.9,
+          "properties": [
+            "insulator",
+            "substrate"
+          ]
+        },
+        "MoS2": {
+          "structure": "2H",
+          "a": 3.16,
+          "Eg_bulk": 1.2,
+          "Eg_mono": 1.9,
+          "properties": [
+            "semiconductor"
+          ]
+        },
+        "WS2": {
+          "structure": "2H",
+          "a": 3.15,
+          "Eg_bulk": 1.3,
+          "Eg_mono": 2.0,
+          "properties": [
+            "semiconductor"
+          ]
+        },
+        "MoSe2": {
+          "structure": "2H",
+          "a": 3.29,
+          "Eg_bulk": 1.1,
+          "Eg_mono": 1.5
+        },
+        "WSe2": {
+          "structure": "2H",
+          "a": 3.28,
+          "Eg_bulk": 1.2,
+          "Eg_mono": 1.6
+        },
+        "black_phosphorus": {
+          "structure": "orthorhombic",
+          "Eg": "0.3-2.0 (layer dependent)"
+        }
+      },
+      "trends": [
+        "Monolayers often have larger band gaps than bulk",
+        "TMDs (MoS2, WS2) transition from indirect to direct gap in monolayer",
+        "W compounds have slightly larger gaps than Mo compounds"
+      ],
+      "applications": [
+        "Electronics",
+        "optoelectronics",
+        "catalysis",
+        "sensors"
+      ]
+    },
+    "fcc_metals": {
+      "description": "Face-centered cubic metals",
+      "general_properties": {
+        "packing_efficiency": 0.74,
+        "coordination_number": 12,
+        "slip_systems": "12 (ductile)"
+      },
+      "members": {
+        "Cu": {
+          "a": 3.61,
+          "d_band": -2.67,
+          "properties": [
+            "high conductivity"
+          ]
+        },
+        "Ag": {
+          "a": 4.09,
+          "d_band": -4.3,
+          "properties": [
+            "highest conductivity"
+          ]
+        },
+        "Au": {
+          "a": 4.08,
+          "d_band": -3.56,
+          "properties": [
+            "noble",
+            "weak binding"
+          ]
+        },
+        "Al": {
+          "a": 4.05,
+          "properties": [
+            "lightweight",
+            "oxide passivation"
+          ]
+        },
+        "Ni": {
+          "a": 3.52,
+          "d_band": -1.29,
+          "properties": [
+            "magnetic",
+            "strong binding"
+          ]
+        },
+        "Pd": {
+          "a": 3.89,
+          "d_band": -1.83,
+          "properties": [
+            "H absorption"
+          ]
+        },
+        "Pt": {
+          "a": 3.92,
+          "d_band": -2.25,
+          "properties": [
+            "noble",
+            "catalyst"
+          ]
+        },
+        "Rh": {
+          "a": 3.8,
+          "d_band": -1.73,
+          "properties": [
+            "catalyst"
+          ]
+        },
+        "Ir": {
+          "a": 3.84,
+          "d_band": -2.11,
+          "properties": [
+            "hard",
+            "catalyst"
+          ]
+        }
+      },
+      "trends": [
+        "Coinage metals (Cu, Ag, Au) have filled d-band, weak adsorption",
+        "Pt-group metals are excellent catalysts",
+        "Lattice constant increases down group"
+      ]
+    },
+    "bcc_metals": {
+      "description": "Body-centered cubic metals",
+      "general_properties": {
+        "packing_efficiency": 0.68,
+        "coordination_number": 8,
+        "slip_systems": "48 (but pencil glide)"
+      },
+      "members": {
+        "Fe": {
+          "a": 2.87,
+          "d_band": -1.5,
+          "properties": [
+            "magnetic",
+            "abundant"
+          ]
+        },
+        "Cr": {
+          "a": 2.88,
+          "d_band": -1.1,
+          "properties": [
+            "antiferromagnetic",
+            "corrosion resistant"
+          ]
+        },
+        "Mo": {
+          "a": 3.15,
+          "d_band": -0.92,
+          "properties": [
+            "refractory",
+            "catalyst"
+          ]
+        },
+        "W": {
+          "a": 3.16,
+          "d_band": -0.8,
+          "properties": [
+            "highest melting point"
+          ]
+        },
+        "V": {
+          "a": 3.02,
+          "d_band": -0.7,
+          "properties": [
+            "strong N binding"
+          ]
+        },
+        "Nb": {
+          "a": 3.3,
+          "properties": [
+            "superconductor"
+          ]
+        },
+        "Ta": {
+          "a": 3.3,
+          "properties": [
+            "corrosion resistant"
+          ]
+        }
+      },
+      "trends": [
+        "Group 6 (Cr, Mo, W) are refractory with high melting points",
+        "Early transition metals have high d-band center, strong binding",
+        "BCC metals often have higher surface energies than FCC"
+      ]
+    },
+    "hcp_metals": {
+      "description": "Hexagonal close-packed metals",
+      "general_properties": {
+        "packing_efficiency": 0.74,
+        "coordination_number": 12,
+        "c_a_ratio_ideal": 1.633
+      },
+      "members": {
+        "Ti": {
+          "a": 2.95,
+          "c": 4.68,
+          "c_a": 1.59,
+          "properties": [
+            "lightweight",
+            "biocompatible"
+          ]
+        },
+        "Zr": {
+          "a": 3.23,
+          "c": 5.15,
+          "c_a": 1.59,
+          "properties": [
+            "nuclear applications"
+          ]
+        },
+        "Co": {
+          "a": 2.51,
+          "c": 4.07,
+          "c_a": 1.62,
+          "properties": [
+            "magnetic",
+            "catalyst"
+          ]
+        },
+        "Zn": {
+          "a": 2.66,
+          "c": 4.95,
+          "c_a": 1.86,
+          "properties": [
+            "low melting"
+          ]
+        },
+        "Mg": {
+          "a": 3.21,
+          "c": 5.21,
+          "c_a": 1.62,
+          "properties": [
+            "lightweight"
+          ]
+        },
+        "Ru": {
+          "a": 2.71,
+          "c": 4.28,
+          "c_a": 1.58,
+          "properties": [
+            "catalyst"
+          ]
+        },
+        "Os": {
+          "a": 2.73,
+          "c": 4.32,
+          "c_a": 1.58,
+          "properties": [
+            "densest element"
+          ]
+        }
+      },
+      "trends": [
+        "c/a ratio varies significantly from ideal",
+        "Zn has anomalously high c/a ratio",
+        "Ru and Os are excellent catalysts"
+      ]
+    }
+  },
+  "dopant_compatibility": {
+    "description": "Common dopants and their compatibility with host materials",
+    "silicon_dopants": {
+      "n_type": {
+        "P": {
+          "radius_mismatch": "3%",
+          "solubility": "high",
+          "ionization": 45
+        },
+        "As": {
+          "radius_mismatch": "5%",
+          "solubility": "high",
+          "ionization": 54
+        },
+        "Sb": {
+          "radius_mismatch": "15%",
+          "solubility": "medium",
+          "ionization": 43
+        }
+      },
+      "p_type": {
+        "B": {
+          "radius_mismatch": "25%",
+          "solubility": "high",
+          "ionization": 45
+        },
+        "Al": {
+          "radius_mismatch": "8%",
+          "solubility": "low",
+          "ionization": 72
+        },
+        "Ga": {
+          "radius_mismatch": "4%",
+          "solubility": "medium",
+          "ionization": 74
+        }
+      },
+      "isoelectronic": {
+        "Ge": {
+          "radius_mismatch": "4%",
+          "effect": "strain engineering"
+        },
+        "C": {
+          "radius_mismatch": "35%",
+          "effect": "strain, SiC precipitates"
+        }
+      }
+    },
+    "gaas_dopants": {
+      "n_type": {
+        "Si_on_Ga": {
+          "site": "Ga",
+          "ionization": 6
+        },
+        "Te_on_As": {
+          "site": "As",
+          "ionization": 30
+        },
+        "Se_on_As": {
+          "site": "As",
+          "ionization": 6
+        }
+      },
+      "p_type": {
+        "Zn_on_Ga": {
+          "site": "Ga",
+          "ionization": 31
+        },
+        "Be_on_Ga": {
+          "site": "Ga",
+          "ionization": 28
+        },
+        "C_on_As": {
+          "site": "As",
+          "ionization": 26
+        }
+      }
+    },
+    "metal_dopants": {
+      "Fe_alloys": {
+        "C": {
+          "effect": "interstitial hardening",
+          "max_solubility": "2.1%"
+        },
+        "Cr": {
+          "effect": "corrosion resistance",
+          "solubility": "high"
+        },
+        "Ni": {
+          "effect": "austenite stabilizer",
+          "solubility": "high"
+        },
+        "Mn": {
+          "effect": "deoxidizer, strength",
+          "solubility": "high"
+        },
+        "Mo": {
+          "effect": "strength, creep resistance",
+          "solubility": "medium"
+        }
+      },
+      "Cu_alloys": {
+        "Zn": {
+          "effect": "brass",
+          "solubility": "high"
+        },
+        "Sn": {
+          "effect": "bronze",
+          "solubility": "medium"
+        },
+        "Ni": {
+          "effect": "cupronickel",
+          "solubility": "complete"
+        },
+        "Al": {
+          "effect": "aluminum bronze",
+          "solubility": "medium"
+        }
+      }
+    }
+  },
+  "property_correlations": {
+    "melting_point_vs_cohesive_energy": {
+      "description": "Higher cohesive energy → higher melting point",
+      "correlation": "T_m ≈ 120 * E_coh (K, eV)",
+      "examples": {
+        "W": {
+          "E_coh": 8.9,
+          "T_m": 3695
+        },
+        "Fe": {
+          "E_coh": 4.3,
+          "T_m": 1811
+        },
+        "Cu": {
+          "E_coh": 3.5,
+          "T_m": 1358
+        },
+        "Al": {
+          "E_coh": 3.4,
+          "T_m": 933
+        }
+      }
+    },
+    "hardness_vs_shear_modulus": {
+      "description": "Harder materials have higher shear modulus",
+      "correlation": "H ≈ 0.15 * G (GPa)",
+      "note": "Approximate for metals"
+    },
+    "thermal_conductivity_vs_electrical": {
+      "description": "Wiedemann-Franz law for metals",
+      "formula": "κ / σT = L (Lorenz number)",
+      "L_value": "2.44 × 10^-8 W·Ω/K²"
+    },
+    "band_gap_vs_lattice_constant": {
+      "description": "For semiconductors in same family",
+      "trend": "Larger lattice constant → smaller band gap",
+      "example": "GaAs (5.65 Å, 1.42 eV) vs InAs (6.06 Å, 0.35 eV)"
+    }
+  },
+  "estimation_from_neighbors": {
+    "description": "Estimate properties of unknown materials from periodic table neighbors",
+    "method": [
+      "1. Identify the element's position in periodic table",
+      "2. Find known properties of neighboring elements",
+      "3. Interpolate based on periodic trends",
+      "4. Apply corrections for specific effects (d-electron count, etc.)"
+    ],
+    "example": {
+      "unknown": "Tc (technetium)",
+      "neighbors": {
+        "Mo": {
+          "a": 3.15,
+          "T_m": 2896
+        },
+        "Ru": {
+          "a": 2.71,
+          "T_m": 2607
+        }
+      },
+      "estimate": "Tc should have properties between Mo and Ru"
+    }
+  }
+}

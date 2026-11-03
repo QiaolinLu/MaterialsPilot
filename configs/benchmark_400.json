@@ -1,0 +1,38 @@
+{
+  "name": "materialspilot_paper_aligned_400",
+  "description": "MaterialsPilot benchmark: four task families with 100 tasks each; implementation details in docs/implementation.md",
+  "model": "openrouter-deepseek-v3.2",
+  "method": "agent_methods",
+  "enable_mlip": true,
+  "mlip_model": "chgnet",
+  "max_agent_iterations": 5,
+  "methods_feedback_transformer": "rule",
+  "methods_feedback_context_expansion": true,
+  "rate_limit_seconds": 0,
+  "tasks": [
+    {
+      "task_type": "defect",
+      "limit": 100,
+      "description": "All 100 defect-engineering tasks"
+    },
+    {
+      "task_type": "adsorption",
+      "limit": 100,
+      "description": "All 100 surface-adsorption tasks"
+    },
+    {
+      "task_type": "grain_boundary",
+      "limit": 100,
+      "description": "All 100 grain-boundary tasks"
+    },
+    {
+      "task_type": "interface",
+      "limit": 100,
+      "description": "All 100 heterostructure-interface tasks"
+    }
+  ],
+  "mlip_device": "cuda",
+  "method_profile": "paper_aligned_v1",
+  "automatic_structure_repair": false,
+  "methods_enable_reflection": false
+}

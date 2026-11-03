@@ -1,0 +1,214 @@
+{
+  "_metadata": {
+    "description": "Generalizable defect construction principles for any crystal structure",
+    "purpose": "Enable LLM to construct defects in unseen materials using structure-type rules",
+    "version": "2026.01",
+    "last_updated": "2026-11-03",
+    "source_urls": ["https://pymatgen.org/pymatgen.core.html"],
+    "revision": "r4_contract_clarification"
+  },
+  "_usage_guide": {
+    "principle": "Explicit task geometry, cell and charge constraints override examples.",
+    "workflow": [
+      "Verify the parent lattice, complete basis and cell convention.",
+      "Preserve the pristine reference; apply the requested supercell and site edits.",
+      "Check operation-derived composition and periodic geometry; do not invent compensating defects."
+    ]
+  },
+  "supercell_rules": {
+    "principle": "Explicit task cell, concentration and geometry take precedence. Primitive and conventional cells are both valid when their lattice and complete basis are consistent.",
+    "reason": "Parent basis, lattice and multiplicity must use the same cell convention.",
+    "atom_count_formulas": {
+      "general": "N_supercell = N_parent * abs(det(M)); L_supercell = M @ L_parent for integer nonsingular M and row lattice vectors.",
+      "site_edits": "n_final[e] = n_initial[e] - n_removed[e] + n_added[e]. A substitution removes one host species and adds one dopant; it does not change total site count.",
+      "coordinates": "f_supercell = (f_parent + integer_parent_image) @ inv(M); division by repeat factors applies only to diagonal M."
+    },
+    "expected_atoms_examples": {
+      "condition": "Illustrations only: use the verified parent count and requested transformation, not a material-name constant.",
+      "eight_site_parent": "An 8-site parent with diag(3,3,3) gives 216 sites before edits.",
+      "two_site_parent": "A 2-site primitive parent with the same repetition gives 54 sites; these are different simulation cells."
+    },
+    "pymatgen_code": {
+      "pattern": "supercell = parent.copy(); supercell.make_supercell(integer_matrix)",
+      "note": "Preserve the pristine parent and supercell for independent site mapping; batch removal indices refer to the unedited structure."
+    },
+    "size_selection": "If unspecified, size the cell by concentration and periodic image separation; establish isolation by convergence, not a fixed repetition count.",
+    "code": "from numbers import Integral\n\ndef counts_after_edits(initial, removed=None, added=None):\n    \"\"\"Integer counts for ordered, fully occupied sites; substitutions count as remove+add.\"\"\"\n    removed, added = removed or {}, added or {}\n    for mapping in (initial, removed, added):\n        if any(isinstance(n, bool) or not isinstance(n, Integral) or n < 0 for n in mapping.values()):\n            raise ValueError(\"Site counts must be nonnegative integers\")\n    if any(n > initial.get(e, 0) for e, n in removed.items()):\n        raise ValueError(\"Cannot remove more original sites of a species than exist\")\n    result = {e: initial.get(e, 0) - removed.get(e, 0) + added.get(e, 0)\n              for e in set(initial) | set(removed) | set(added)}\n    return {e: n for e, n in result.items() if n}\n"
+  },
+  "vacancy_construction": {
+    "principle": "Remove atom from lattice site",
+    "steps": [
+      "1. Build the requested supercell from a verified parent and retain an unedited reference",
+      "2. Identify target site by species and/or position",
+      "3. Remove site using structure.remove_sites([index])",
+      "4. Verify remaining atom count = original - 1"
+    ],
+    "site_selection": {
+      "random": "Any equivalent site (for dilute concentration)",
+      "specific": "Match fractional coordinates to target position",
+      "by_distance": "Match the requested environment with periodic neighbors; being far from a cell edge is not a physical distinction in a periodic bulk."
+    },
+    "charge_considerations": {
+      "metals": "No charge balance needed",
+      "ionic_compounds": "May need compensating defect for charge neutrality",
+      "semiconductors": "Creates localized states in band gap"
+    }
+  },
+  "substitution_construction": {
+    "principle": "Replace host atom with dopant atom at same site",
+    "steps": [
+      "1. Create supercell",
+      "2. Find index of atom to replace",
+      "3. Use structure.replace(index, 'Dopant') or structure[index] = 'Dopant'",
+      "4. Verify composition changed correctly"
+    ],
+    "site_preference_rules": {
+      "size_matching": "Dopant prefers sites of similar ionic radius",
+      "valence_matching": "Dopant prefers sites of similar oxidation state",
+      "electronegativity": "Consider electronegativity difference for bonding"
+    },
+    "dopant_separation": {
+      "dilute_limit": "Use the specified separation or concentration and periodic image distances; no universal distance guarantees noninteracting dopants.",
+      "clustering": "If dopants cluster, use specific pair positions"
+    }
+  },
+  "interstitial_construction": {
+    "principle": "Add extra atom at non-lattice position",
+    "steps": [
+      "1. Build the requested supercell from a verified parent",
+      "2. Identify interstitial site from structure type template",
+      "3. Map the parent fractional position and chosen parent-cell image through the inverse integer supercell matrix",
+      "4. Add atom using structure.append('Species', coords)",
+      "5. Check the requested coordination and element-pair separations using periodic neighbors"
+    ],
+    "site_types_by_structure": {
+      "reference": "L2_structures.defect.interstitial_sites",
+      "condition": "Template coordinates require the same parent basis and cell setting; confirm the unoccupied site and periodic coordination."
+    },
+    "coordinate_conversion": {
+      "rule": "For row lattice vectors L_super = M @ L_parent, use f_super = (f_parent + image) @ inv(M).",
+      "example": "Only for M=diag(3,3,3) and image=(0,0,0), (0.5,0.5,0.5) maps to (1/6,1/6,1/6)."
+    }
+  },
+  "dumbbell_interstitial": {
+    "principle": "Split interstitial - two atoms share one lattice site",
+    "description": "Replace one lattice atom with two atoms displaced along crystallographic direction",
+    "steps": [
+      "1. Build the requested supercell and retain the target site in the pristine reference",
+      "2. Get Cartesian coordinates of target lattice site",
+      "3. Remove atom at target site",
+      "4. Choose separation from the explicit task or a material- and orientation-specific starting estimate",
+      "5. Add two atoms at: center ± (separation/2) × normalized_direction",
+      "6. Use coords_are_cartesian=True for precise placement",
+      "7. Verify periodic contacts and the requested dumbbell geometry; recheck after any relaxation"
+    ],
+    "common_orientations": {
+      "fcc": "<100> candidate",
+      "bcc": "<110> candidate",
+      "diamond": "<110> candidate",
+      "condition": "Examples, not universal stability rankings; explicit task orientation takes precedence."
+    },
+    "displacement_formula": {
+      "nearest_neighbor_by_structure": {"fcc": "d_NN = a / sqrt(2)", "bcc": "d_NN = a * sqrt(3) / 2", "diamond": "d_NN = a * sqrt(3) / 4"},
+      "dumbbell_separation": "A fraction of the actual local nearest-neighbor distance can initialize a model; it is not a universal equilibrium distance or acceptance threshold.",
+      "critical_constraint": "Use task geometry and chemically appropriate element-pair constraints; a validation cutoff does not define a physical dumbbell."
+    }
+  },
+  "antisite_construction": {
+    "principle": "Atom on wrong sublattice in compound",
+    "applicable_structures": ["zincblende", "rocksalt", "perovskite", "heusler", "spinel"],
+    "steps": [
+      "1. Create supercell",
+      "2. Find atom of species A on sublattice A",
+      "3. Find atom of species B on sublattice B",
+      "4. Swap their species: A→B and B→A",
+      "5. Verify composition unchanged but arrangement different"
+    ],
+    "types": {
+      "single_antisite": "One atom on wrong site (creates charge imbalance in ionic)",
+      "antisite_pair": "Two atoms swapped (charge neutral)"
+    }
+  },
+  "schottky_defect": {
+    "principle": "Paired cation and anion vacancies for charge neutrality",
+    "applicable_structures": ["rocksalt", "fluorite", "perovskite"],
+    "steps": [
+      "1. Create supercell",
+      "2. Find nearest-neighbor cation-anion pair",
+      "3. Remove both atoms",
+      "4. Verify charge balance maintained"
+    ],
+    "stoichiometry_rules": {
+      "rocksalt_MX": "Remove 1 M + 1 X",
+      "fluorite_MX2": "Remove 1 M + 2 X",
+      "perovskite_ABX3": "Remove 1 A + 1 B + 3 X (rare, usually just oxygen vacancies)"
+    }
+  },
+  "frenkel_defect": {
+    "principle": "Vacancy-interstitial pair of same species",
+    "applicable_structures": ["fluorite", "rocksalt"],
+    "steps": [
+      "1. Create supercell",
+      "2. Remove atom from lattice site (create vacancy)",
+      "3. Add same species at interstitial site",
+      "4. Net composition unchanged"
+    ],
+    "common_cases": {
+      "fluorite_anion_frenkel": {"description": "F/O vacancy + F/O at octahedral interstitial", "interstitial_site": [0.5, 0.5, 0.5]},
+      "rocksalt_cation_frenkel": {"description": "Cation vacancy + cation at interstitial", "less_common": true}
+    }
+  },
+  "complex_defects": {
+    "NV_center": {
+      "description": "One N substitution plus one distinct neighboring vacancy in the C host.",
+      "counting": "(N0-2) C + 1 N; total N0-1.",
+      "construction_reference": "L2_structures.defect.complex_defects.defect_complexes.NV_center; resolve periodic neighbors from the verified parent, not fixed supercell coordinates."
+    },
+    "E_center": {
+      "description": "One P substitution plus one distinct neighboring vacancy in the Si host.",
+      "counting": "(N0-2) Si + 1 P; total N0-1.",
+      "construction_reference": "L2_structures.defect.complex_defects.defect_complexes.E_center; resolve periodic neighbors from the verified parent, not fixed supercell coordinates."
+    },
+    "divacancy": {
+      "description": "Two vacancies with a specified relative geometry",
+      "orientations": {
+        "selection": "Map the requested crystal direction and separation to the appropriate parent neighbor shell; do not assume every direction is nearest-neighbor."
+      },
+      "construction": [
+        "1. Create supercell",
+        "2. Select two original sites satisfying the requested periodic direction and separation",
+        "3. Remove both",
+        "4. Final: original - 2 atoms"
+      ]
+    }
+  },
+  "distance_constraints": {
+    "minimum_interatomic": {
+      "principle": "Use task-specified or chemically justified element-pair distances, including bonded versus nonbonded context; knowledge does not prescribe a universal pass threshold.",
+      "measurement": "Use periodic minimum-image distances and include self images when assessing a small cell or defect-image separation."
+    },
+    "defect_separation": {
+      "principle": "Explicit concentration, separation and supercell constraints take precedence. Isolation is established by measured periodic geometry and property convergence, not a fixed 3x3x3 or 10 Angstrom rule."
+    }
+  },
+  "charge_balance_rules": {
+    "principle": "Track the requested charge state and operation-derived stoichiometry. Do not add or remove atoms solely to force a nominal oxidation-state sum to zero when electronic compensation or a charged defect was requested.",
+    "strategies": {
+      "compensating_vacancy": "Add vacancy of opposite charge",
+      "compensating_substitution": "Add aliovalent dopant",
+      "electron_hole": "Accept electronic compensation (for DFT)"
+    },
+    "examples": {
+      "Gd_doped_CeO2": {
+        "substitution": "Gd³⁺ replaces Ce⁴⁺ (1- charge)",
+        "compensation": "Add oxygen vacancy (2+ charge)",
+        "ratio": "2 Gd : 1 V_O for charge balance"
+      },
+      "Fe_doped_SrTiO3": {"substitution": "Fe³⁺ replaces Sr²⁺ (1+ charge) or Ti⁴⁺ (1- charge)", "compensation": "Depends on Fe site preference"}
+    }
+  },
+  "pymatgen_api_patterns": {
+    "reference": "L1_foundation.shared.pymatgen_api",
+    "operations": "Use make_supercell, remove_sites, replace and append on a copy of the verified parent. Batch removal uses original indices; sequential removal must avoid index shifts."
+  }
+}

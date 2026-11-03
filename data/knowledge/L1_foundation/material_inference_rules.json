@@ -1,0 +1,155 @@
+{
+  "_metadata": {
+    "description": "Rules for inferring properties of unseen materials from known principles",
+    "purpose": "Enable LLM to generalize to materials not in the knowledge base",
+    "version": "2026.01",
+    "last_updated": "2026-01-11"
+  },
+
+  "structure_type_inference": {
+    "description": "Rules for inferring crystal structure type from chemical formula",
+    "rules": [
+      {
+        "pattern": "Single element, Group 8-10 transition metals (Fe, Co, Ni, Ru, Rh, Pd, Os, Ir, Pt)",
+        "inference": "fcc or hcp, check periodic table position"
+      },
+      {
+        "pattern": "Single element, Group 4-6 transition metals (Ti, V, Cr, Zr, Nb, Mo, Hf, Ta, W)",
+        "inference": "bcc for most, hcp for Ti, Zr, Hf at room temperature"
+      },
+      {
+        "pattern": "Single element, Group 11 (Cu, Ag, Au) or Group 13 (Al)",
+        "inference": "fcc"
+      },
+      {
+        "pattern": "MX formula with M=alkali/alkaline earth, X=halide",
+        "inference": "rocksalt (NaCl type) for similar ionic radii"
+      },
+      {
+        "pattern": "MX2 formula with M=Group 4, X=O",
+        "inference": "fluorite (CaF2 type) or rutile (TiO2 type)"
+      },
+      {
+        "pattern": "MO2 with M=Ce, Zr, Hf, Th",
+        "inference": "fluorite structure"
+      },
+      {
+        "pattern": "ABX3 formula",
+        "inference": "perovskite structure"
+      },
+      {
+        "pattern": "A2BX4 or AB2X4 formula",
+        "inference": "spinel structure"
+      },
+      {
+        "pattern": "Group 14 elements (C, Si, Ge)",
+        "inference": "diamond structure"
+      },
+      {
+        "pattern": "III-V compounds (GaAs, InP, etc.)",
+        "inference": "zincblende structure"
+      },
+      {
+        "pattern": "II-VI compounds (ZnS, CdTe, etc.)",
+        "inference": "zincblende or wurtzite"
+      }
+    ]
+  },
+
+  "lattice_constant_estimation": {
+    "description": "Rules for estimating lattice constants from atomic/ionic radii",
+    "methods": {
+      "metallic": {
+        "fcc": "a = 2 * sqrt(2) * r_metallic",
+        "bcc": "a = 4 * r_metallic / sqrt(3)",
+        "hcp": "a = 2 * r_metallic, c/a = 1.633 (ideal)"
+      },
+      "ionic": {
+        "rocksalt": "a = 2 * (r_cation + r_anion)",
+        "fluorite": "a = 4 * r_cation / sqrt(3) (cation in center of anion cube)",
+        "perovskite": "a = sqrt(2) * (r_A + r_O) or a = 2 * (r_B + r_O)"
+      },
+      "covalent": {
+        "diamond": "a = 8 * r_covalent / sqrt(3)",
+        "zincblende": "a = 4 * d_bond / sqrt(3), where d_bond = r_A + r_B"
+      }
+    },
+    "fallback": "Use periodic trends: lattice constant generally increases down a group"
+  },
+
+  "property_interpolation": {
+    "description": "Interpolate properties between known similar materials",
+    "rules": [
+      {
+        "condition": "Alloy or solid solution AxB(1-x)",
+        "method": "Vegard's law: a_alloy = x * a_A + (1-x) * a_B"
+      },
+      {
+        "condition": "Same structure type, neighboring elements",
+        "method": "Linear interpolation based on atomic number"
+      },
+      {
+        "condition": "Same chemical family (e.g., all alkali halides)",
+        "method": "Scale by ionic radius ratio"
+      }
+    ]
+  },
+
+  "defect_energy_estimation": {
+    "description": "Rules for estimating defect formation energies",
+    "vacancy_formation": {
+      "metals": "Roughly 1/3 of cohesive energy",
+      "ionic": "Depends on charge state, typically 2-5 eV for cation vacancies",
+      "covalent": "High due to dangling bonds, typically 3-4 eV for Si"
+    },
+    "substitution_favorability": {
+      "size_rule": "Hume-Rothery: < 15% size difference for significant solubility",
+      "valence_rule": "Same or ±1 valence preferred",
+      "electronegativity": "Similar electronegativity preferred"
+    }
+  },
+
+  "surface_energy_trends": {
+    "description": "General trends for surface energies",
+    "fcc": {
+      "order": "(111) < (100) < (110)",
+      "reason": "Higher coordination = lower energy"
+    },
+    "bcc": {
+      "order": "(110) < (100) < (111)",
+      "reason": "Different coordination pattern"
+    },
+    "ionic": {
+      "polar_surfaces": "Higher energy, may reconstruct",
+      "nonpolar_surfaces": "Lower energy, more stable"
+    }
+  },
+
+  "chemical_similarity_groups": {
+    "description": "Groups of materials with similar properties for knowledge transfer",
+    "noble_metals": ["Au", "Ag", "Pt", "Pd", "Rh", "Ir"],
+    "refractory_metals": ["W", "Mo", "Ta", "Nb", "Re"],
+    "alkaline_earth_oxides": ["MgO", "CaO", "SrO", "BaO"],
+    "fluorite_oxides": ["CeO2", "ZrO2", "ThO2", "UO2"],
+    "perovskite_oxides": ["SrTiO3", "BaTiO3", "LaAlO3", "PbTiO3"],
+    "III-V_semiconductors": ["GaAs", "InP", "InAs", "GaSb", "AlAs"],
+    "II-VI_semiconductors": ["ZnS", "ZnO", "CdTe", "CdS"],
+    "2D_TMDs": ["MoS2", "WS2", "MoSe2", "WSe2", "MoTe2", "WTe2"]
+  },
+
+  "fallback_strategies": {
+    "unknown_material": [
+      "1. Identify chemical family from formula",
+      "2. Find most similar known material in same family",
+      "3. Apply property estimation rules",
+      "4. Use periodic trends for adjustment",
+      "5. Add uncertainty warning to output"
+    ],
+    "unknown_structure_type": [
+      "1. Check formula pattern against structure_type_inference rules",
+      "2. Query ionic/atomic radii from L1_foundation",
+      "3. Apply radius ratio rules for ionic compounds",
+      "4. Default to most common structure type for that chemical family"
+    ]
+  }
+}

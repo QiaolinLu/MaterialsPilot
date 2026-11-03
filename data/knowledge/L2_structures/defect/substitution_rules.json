@@ -1,0 +1,385 @@
+{
+  "_metadata": {
+    "description": "Data from defects/substitution_rules.json",
+    "source": "To be documented",
+    "note": "These are guidelines - actual stability depends on specific conditions",
+    "license": "See source",
+    "version": "2025.12",
+    "last_updated": "2025-12-31T18:02:33.834336"
+  },
+  "hume_rothery_rules": {
+    "description": "Classical rules for substitutional solid solution formation in metals",
+    "rules": {
+      "size_factor": {
+        "description": "Atomic radii should differ by less than 15%",
+        "formula": "|r1 - r2| / r1 < 0.15",
+        "importance": "critical",
+        "notes": "Larger size difference leads to lattice strain and limited solubility"
+      },
+      "electronegativity": {
+        "description": "Similar electronegativity favors solid solution",
+        "formula": "|EN1 - EN2| < 0.4",
+        "importance": "moderate",
+        "notes": "Large difference leads to compound formation instead"
+      },
+      "valence": {
+        "description": "Similar valence electrons favor substitution",
+        "importance": "moderate",
+        "notes": "Higher valence solute in lower valence solvent has higher solubility"
+      },
+      "crystal_structure": {
+        "description": "Same crystal structure favors complete miscibility",
+        "importance": "high",
+        "notes": "Different structures limit solubility"
+      }
+    }
+  },
+  "ionic_substitution_rules": {
+    "description": "Rules for ionic compound substitution (Pauling rules extension)",
+    "rules": {
+      "charge_balance": {
+        "description": "Total charge must be maintained",
+        "importance": "critical",
+        "examples": [
+          "Al3+ for Si4+ requires charge compensation",
+          "Ca2+ for Na+ requires vacancy or interstitial"
+        ]
+      },
+      "ionic_radius_match": {
+        "description": "Ionic radii should match within ~15% for same coordination",
+        "importance": "high",
+        "notes": "Use Shannon ionic radii for appropriate oxidation state and CN"
+      },
+      "coordination_preference": {
+        "description": "Substituent should prefer similar coordination environment",
+        "importance": "moderate"
+      }
+    }
+  },
+  "semiconductor_doping_rules": {
+    "description": "Rules for semiconductor doping",
+    "n_type_dopants": {
+      "Si": [
+        "P",
+        "As",
+        "Sb"
+      ],
+      "Ge": [
+        "P",
+        "As",
+        "Sb"
+      ],
+      "GaAs": [
+        "Si_Ga",
+        "Te_As",
+        "Se_As",
+        "S_As"
+      ],
+      "GaN": [
+        "Si_Ga",
+        "O_N"
+      ],
+      "ZnO": [
+        "Al_Zn",
+        "Ga_Zn",
+        "In_Zn"
+      ],
+      "TiO2": [
+        "Nb_Ti",
+        "Ta_Ti",
+        "F_O"
+      ]
+    },
+    "p_type_dopants": {
+      "Si": [
+        "B",
+        "Al",
+        "Ga",
+        "In"
+      ],
+      "Ge": [
+        "B",
+        "Al",
+        "Ga"
+      ],
+      "GaAs": [
+        "Zn_Ga",
+        "Be_Ga",
+        "Mg_Ga",
+        "C_As"
+      ],
+      "GaN": [
+        "Mg_Ga",
+        "Be_Ga"
+      ],
+      "ZnO": [
+        "N_O",
+        "Li_Zn",
+        "Na_Zn"
+      ],
+      "notes": "p-type doping in wide bandgap materials is often difficult"
+    },
+    "isoelectronic_dopants": {
+      "description": "Same valence, no free carriers, used for optical properties",
+      "Si": [
+        "Ge",
+        "C",
+        "Sn"
+      ],
+      "GaAs": [
+        "N_As",
+        "In_Ga",
+        "Al_Ga"
+      ],
+      "notes": "Used for strain engineering and optical centers"
+    }
+  },
+  "compatible_substitution_pairs": {
+    "description": "Element pairs that commonly substitute for each other",
+    "group_IV": {
+      "pairs": [
+        [
+          "Si",
+          "Ge"
+        ],
+        [
+          "Si",
+          "C"
+        ],
+        [
+          "Ge",
+          "Sn"
+        ],
+        [
+          "Si",
+          "Sn"
+        ]
+      ],
+      "notes": "Same valence, varying size mismatch"
+    },
+    "group_III": {
+      "pairs": [
+        [
+          "Al",
+          "Ga"
+        ],
+        [
+          "Ga",
+          "In"
+        ],
+        [
+          "Al",
+          "In"
+        ],
+        [
+          "B",
+          "Al"
+        ]
+      ],
+      "notes": "Common in III-V semiconductors"
+    },
+    "group_V": {
+      "pairs": [
+        [
+          "N",
+          "P"
+        ],
+        [
+          "P",
+          "As"
+        ],
+        [
+          "As",
+          "Sb"
+        ]
+      ],
+      "notes": "Common in III-V semiconductors"
+    },
+    "transition_metals_3d": {
+      "pairs": [
+        [
+          "Fe",
+          "Co"
+        ],
+        [
+          "Fe",
+          "Ni"
+        ],
+        [
+          "Co",
+          "Ni"
+        ],
+        [
+          "Fe",
+          "Mn"
+        ],
+        [
+          "Cr",
+          "Fe"
+        ],
+        [
+          "Mn",
+          "Co"
+        ]
+      ],
+      "notes": "Similar size and electronic structure"
+    },
+    "transition_metals_4d": {
+      "pairs": [
+        [
+          "Zr",
+          "Hf"
+        ],
+        [
+          "Nb",
+          "Ta"
+        ],
+        [
+          "Mo",
+          "W"
+        ],
+        [
+          "Ru",
+          "Os"
+        ]
+      ],
+      "notes": "4d-5d pairs have very similar radii"
+    },
+    "alkaline_earth": {
+      "pairs": [
+        [
+          "Mg",
+          "Ca"
+        ],
+        [
+          "Ca",
+          "Sr"
+        ],
+        [
+          "Sr",
+          "Ba"
+        ]
+      ],
+      "notes": "Common in oxides and perovskites"
+    },
+    "lanthanides": {
+      "pairs": "All lanthanides can substitute for each other",
+      "notes": "Lanthanide contraction gives gradual size change"
+    },
+    "chalcogens": {
+      "pairs": [
+        [
+          "O",
+          "S"
+        ],
+        [
+          "S",
+          "Se"
+        ],
+        [
+          "Se",
+          "Te"
+        ]
+      ],
+      "notes": "Common in chalcogenides"
+    }
+  },
+  "size_mismatch_data": {
+    "description": "Atomic/ionic radius differences for common substitutions",
+    "unit": "percent_mismatch",
+    "semiconductors": {
+      "Si-Ge": 4.2,
+      "Si-C": 35.0,
+      "Si-Sn": 18.6,
+      "Ge-Sn": 13.8,
+      "GaAs-AlAs": 0.1,
+      "GaAs-InAs": 7.2,
+      "GaN-AlN": 2.4,
+      "GaN-InN": 11.0
+    },
+    "metals": {
+      "Fe-Ni": 1.6,
+      "Fe-Co": 0.8,
+      "Fe-Cr": 1.6,
+      "Fe-Mn": 0.8,
+      "Cu-Zn": 4.7,
+      "Cu-Ni": 3.1,
+      "Cu-Al": 11.7,
+      "Al-Mg": 11.9
+    },
+    "oxides": {
+      "Ti4+-Zr4+_CN6": 11.5,
+      "Ti4+-Nb5+_CN6": 5.8,
+      "Fe3+-Al3+_CN6": 17.0,
+      "Mg2+-Ni2+_CN6": 4.2,
+      "Ca2+-Sr2+_CN6": 15.3
+    }
+  },
+  "solubility_limits": {
+    "description": "Approximate maximum solubility at room temperature",
+    "unit": "atomic_percent",
+    "metals": {
+      "Cu-Zn": 38.0,
+      "Cu-Ni": 100.0,
+      "Cu-Al": 9.4,
+      "Fe-Cr": 100.0,
+      "Fe-Ni": 100.0,
+      "Al-Mg": 14.9,
+      "Al-Si": 1.65,
+      "Al-Cu": 5.65
+    },
+    "semiconductors": {
+      "Si-Ge": 100.0,
+      "Si-C": 0.001,
+      "Si-B": 0.8,
+      "Si-P": 0.1,
+      "Si-As": 0.1,
+      "GaAs-AlAs": 100.0,
+      "GaAs-InAs": 100.0
+    },
+    "notes": "Values are approximate and temperature-dependent"
+  },
+  "charge_compensation_mechanisms": {
+    "description": "How charge balance is maintained for aliovalent substitution",
+    "mechanisms": {
+      "vacancy_formation": {
+        "description": "Create vacancies to balance charge",
+        "example": "2Al3+ + V_O for 2Ti4+ in TiO2"
+      },
+      "interstitial_formation": {
+        "description": "Add interstitials to balance charge",
+        "example": "Li+ interstitial for Al3+ substituting Si4+"
+      },
+      "electronic_compensation": {
+        "description": "Free carriers compensate charge",
+        "example": "P5+ for Si4+ creates free electron"
+      },
+      "coupled_substitution": {
+        "description": "Two substitutions that together maintain charge",
+        "example": "Ca2+ + Al3+ for 2Si4+ in silicates"
+      }
+    }
+  },
+  "prediction_guidelines": {
+    "favorable_substitution": [
+      "Size mismatch < 15%",
+      "Same or similar oxidation state",
+      "Similar electronegativity (within 0.4)",
+      "Same preferred coordination number",
+      "Same crystal structure preference"
+    ],
+    "unfavorable_substitution": [
+      "Size mismatch > 30%",
+      "Very different oxidation states without compensation",
+      "Large electronegativity difference (> 1.0)",
+      "Different coordination preferences",
+      "Tendency to form competing compounds"
+    ],
+    "special_considerations": [
+      "Jahn-Teller active ions (Cu2+, Mn3+) have specific site preferences",
+      "Magnetic ions may have spin-state dependent radii",
+      "d0 and d10 ions are often more flexible in coordination",
+      "Lanthanides prefer high coordination numbers (8-12)"
+    ]
+  }
+}

@@ -1,0 +1,341 @@
+{
+  "_metadata": {
+    "description": "Knowledge Registry for Hierarchical Text-to-Structure RAG Framework",
+    "version": "4.0.0",
+    "last_updated": "2026-11-03",
+    "purpose": "Three levels: L1 foundation (including shared API and constraints), L2 structures, L3 applications"
+  },
+  "knowledge_levels": {
+    "L1_foundation": {
+      "description": "Universal element data and physical/chemical principles (original L0 plus L1)",
+      "always_loaded": true,
+      "categories": [
+        "periodic_table",
+        "ionic_radii",
+        "bond_lengths",
+        "oxidation_states",
+        "physical_principles",
+        "chemical_trends",
+        "estimation_rules",
+        "interface_principles",
+        "material_inference_rules"
+      ],
+      "subcategories": {
+        "shared": [
+          "pymatgen_api",
+          "physical_constraints"
+        ]
+      }
+    },
+    "L2_structures": {
+      "description": "Structure-type specific knowledge loaded based on target structure",
+      "always_loaded": false,
+      "subcategories": {
+        "bulk": [
+          "crystal_structures",
+          "structure_types",
+          "metal_properties",
+          "space_groups",
+          "wyckoff_positions"
+        ],
+        "surface": [
+          "surface_sites",
+          "surface_structures",
+          "periodic_geometry"
+        ],
+        "defect": [
+          "defect_physics",
+          "defect_construction",
+          "formation_energies",
+          "substitution_rules",
+          "complex_defects",
+          "interstitial_sites",
+          "advanced_structures"
+        ],
+        "interface": [
+          "interface_types",
+          "grain_boundary",
+          "construction_patterns"
+        ],
+        "framework": [
+          "topologies",
+          "common_mofs",
+          "sbu_library",
+          "linker_library"
+        ],
+        "atom_operations": [
+          "geometry",
+          "operations"
+        ]
+      }
+    },
+    "L3_applications": {
+      "description": "Application-specific knowledge for specialized tasks",
+      "always_loaded": false,
+      "subcategories": {
+        "catalysis": [
+          "adsorbate_chemistry",
+          "coadsorption_interactions",
+          "adsorption_energies",
+          "scaling_relations",
+          "surface_energies",
+          "adsorbate_placement",
+          "adsorption_construction"
+        ],
+        "gas_storage": [],
+        "electronics": []
+      }
+    }
+  },
+  "task_knowledge_map": {
+    "defect": {
+      "description": "Point defect generation (vacancies, substitutions, interstitials)",
+      "L1": [
+        "*"
+      ],
+      "L2": {
+        "bulk": [
+          "*"
+        ],
+        "defect": [
+          "*"
+        ]
+      },
+      "L3": {}
+    },
+    "vacancy": {
+      "description": "Vacancy defect generation",
+      "inherits": "defect"
+    },
+    "substitution": {
+      "description": "Substitutional defect generation",
+      "inherits": "defect"
+    },
+    "interstitial": {
+      "description": "Interstitial defect generation",
+      "inherits": "defect"
+    },
+    "adsorption": {
+      "description": "Surface adsorption structure generation",
+      "L1": [
+        "*"
+      ],
+      "L2": {
+        "bulk": [
+          "crystal_structures",
+          "metal_properties"
+        ],
+        "surface": [
+          "*"
+        ]
+      },
+      "L3": {
+        "catalysis": [
+          "*"
+        ]
+      }
+    },
+    "coadsorption": {
+      "description": "Co-adsorption structure generation",
+      "inherits": "adsorption"
+    },
+    "surface": {
+      "description": "Surface slab generation",
+      "L1": [
+        "*"
+      ],
+      "L2": {
+        "bulk": [
+          "crystal_structures",
+          "metal_properties",
+          "space_groups"
+        ],
+        "surface": [
+          "*"
+        ]
+      },
+      "L3": {}
+    },
+    "mof": {
+      "description": "Metal-Organic Framework structure generation",
+      "L1": [
+        "*"
+      ],
+      "L2": {
+        "bulk": [
+          "space_groups",
+          "wyckoff_positions"
+        ],
+        "framework": [
+          "*"
+        ]
+      },
+      "L3": {
+        "gas_storage": [
+          "*"
+        ]
+      }
+    },
+    "mof_design": {
+      "description": "MOF design from specifications",
+      "inherits": "mof"
+    },
+    "mof_reconstruction": {
+      "description": "MOF reconstruction from partial data",
+      "inherits": "mof"
+    },
+    "interface": {
+      "description": "Interface/heterostructure generation",
+      "L1": [
+        "*"
+      ],
+      "L2": {
+        "bulk": [
+          "*"
+        ],
+        "interface": [
+          "*"
+        ]
+      },
+      "L3": {}
+    },
+    "heterostructure": {
+      "description": "Heterostructure generation",
+      "inherits": "interface"
+    },
+    "grain_boundary": {
+      "description": "Grain boundary structure generation",
+      "L1": [
+        "*"
+      ],
+      "L2": {
+        "bulk": [
+          "*"
+        ],
+        "interface": [
+          "*"
+        ]
+      },
+      "L3": {}
+    },
+    "bulk": {
+      "description": "Bulk crystal structure generation",
+      "L1": [
+        "*"
+      ],
+      "L2": {
+        "bulk": [
+          "*"
+        ]
+      },
+      "L3": {}
+    },
+    "general": {
+      "description": "General-purpose structure generation for arbitrary prompts",
+      "L1": [
+        "*"
+      ],
+      "L2": {
+        "bulk": [
+          "*"
+        ]
+      },
+      "L3": {}
+    },
+    "atomworld_structure_edit": {
+      "description": "Reference-preserving atom edits; no target structures in retrieval",
+      "L1": [
+        "*"
+      ],
+      "L2": {
+        "atom_operations": [
+          "*"
+        ]
+      },
+      "L3": {}
+    },
+    "atomworld": {
+      "inherits": "atomworld_structure_edit"
+    },
+    "co_adsorption": {
+      "inherits": "adsorption"
+    },
+    "stepped_adsorption": {
+      "inherits": "adsorption"
+    },
+    "complex_adsorption": {
+      "inherits": "adsorption"
+    },
+    "coverage_adsorption": {
+      "inherits": "adsorption"
+    }
+  },
+  "file_paths": {
+    "L1_foundation": {
+      "periodic_table": "L1_foundation/periodic_table.json",
+      "ionic_radii": "L1_foundation/ionic_radii.json",
+      "bond_lengths": "L1_foundation/bond_lengths.json",
+      "oxidation_states": "L1_foundation/oxidation_states.json",
+      "physical_principles": "L1_foundation/physical_principles.json",
+      "chemical_trends": "L1_foundation/chemical_trends.json",
+      "estimation_rules": "L1_foundation/estimation_rules.json",
+      "interface_principles": "L1_foundation/interface_principles.json",
+      "material_inference_rules": "L1_foundation/material_inference_rules.json",
+      "shared": {
+        "pymatgen_api": "L1_foundation/shared/pymatgen_api.json",
+        "physical_constraints": "L1_foundation/shared/physical_constraints.json"
+      }
+    },
+    "L2_structures": {
+      "bulk": {
+        "crystal_structures": "L2_structures/bulk/crystal_structures.json",
+        "structure_types": "L2_structures/bulk/structure_types.json",
+        "metal_properties": "L2_structures/bulk/metal_properties.json",
+        "space_groups": "L2_structures/bulk/space_groups.json",
+        "wyckoff_positions": "L2_structures/bulk/wyckoff_positions.json"
+      },
+      "surface": {
+        "surface_sites": "L2_structures/surface/surface_sites.json",
+        "surface_structures": "L2_structures/surface/surface_structures.json",
+        "periodic_geometry": "L2_structures/surface/periodic_geometry.json"
+      },
+      "defect": {
+        "defect_physics": "L2_structures/defect/defect_physics.json",
+        "defect_construction": "L2_structures/defect/defect_construction.json",
+        "formation_energies": "L2_structures/defect/formation_energies.json",
+        "substitution_rules": "L2_structures/defect/substitution_rules.json",
+        "complex_defects": "L2_structures/defect/complex_defects.json",
+        "interstitial_sites": "L2_structures/defect/interstitial_sites.json",
+        "advanced_structures": "L2_structures/defect/advanced_structures.json"
+      },
+      "interface": {
+        "interface_types": "L2_structures/interface/interface_types.json",
+        "grain_boundary": "L2_structures/interface/grain_boundary.json",
+        "construction_patterns": "L2_structures/interface/construction_patterns.json"
+      },
+      "framework": {
+        "topologies": "L2_structures/framework/topologies.json",
+        "common_mofs": "L2_structures/framework/common_mofs.json",
+        "sbu_library": "L2_structures/framework/sbu_library.json",
+        "linker_library": "L2_structures/framework/linker_library.json"
+      },
+      "atom_operations": {
+        "geometry": "L2_structures/atom_operations/geometry.json",
+        "operations": "L2_structures/atom_operations/operations.json"
+      }
+    },
+    "L3_applications": {
+      "catalysis": {
+        "adsorbate_chemistry": "L3_applications/catalysis/adsorbate_chemistry.json",
+        "coadsorption_interactions": "L3_applications/catalysis/coadsorption_interactions.json",
+        "adsorption_energies": "L3_applications/catalysis/adsorption_energies.json",
+        "scaling_relations": "L3_applications/catalysis/scaling_relations.json",
+        "surface_energies": "L3_applications/catalysis/surface_energies.json",
+        "adsorbate_placement": "L3_applications/catalysis/adsorbate_placement.json",
+        "adsorption_construction": "L3_applications/catalysis/adsorption_construction.json"
+      },
+      "gas_storage": {},
+      "electronics": {}
+    }
+  }
+}

@@ -1,0 +1,364 @@
+{
+  "_metadata": {
+    "description": "Comprehensive surface structure knowledge for slab construction",
+    "purpose": "Enable accurate surface slab generation for any metal or oxide",
+    "source": "Surface science literature and DFT calculations",
+    "version": "2026.11-r4",
+    "last_updated": "2026-11-03",
+    "source_urls": [
+      "https://docs.ase-lib.org/_modules/ase/build/surface.html",
+      "https://pymatgen.org/pymatgen.core.html#pymatgen.core.surface.SlabGenerator.get_slabs"
+    ]
+  },
+  "fcc_surfaces": {
+    "(111)": {
+      "symmetry": "p3m1 (hexagonal)",
+      "surface_atoms_per_layer": 1,
+      "coordination_number": 9,
+      "surface_energy_rank": 1,
+      "description": "Most stable, close-packed surface",
+      "stacking": "ABCABC",
+      "interlayer_spacing": "a/sqrt(3)",
+      "adsorption_sites": {
+        "top": {
+          "coordination": 1
+        },
+        "bridge": {
+          "coordination": 2
+        },
+        "fcc_hollow": {
+          "coordination": 3,
+          "note": "No atom directly below in the second substrate layer; this does not exclude deeper-layer atoms",
+          "second_layer_atom_below": false
+        },
+        "hcp_hollow": {
+          "coordination": 3,
+          "note": "Above an atom in the second substrate layer",
+          "second_layer_atom_below": true
+        }
+      },
+      "reconstruction": {
+        "Au(111)": "22 x sqrt(3) herringbone",
+        "Pt(111)": "No reconstruction"
+      },
+      "slab_parameters": {
+        "min_layers": 4,
+        "recommended_layers": 6,
+        "vacuum": 15
+      },
+      "site_coordinate_scope": "Use actual surface neighbors and periodic images; fractional offsets depend on the basis."
+    },
+    "(100)": {
+      "symmetry": "p4mm (square)",
+      "surface_atoms_per_layer": 1,
+      "coordination_number": 8,
+      "surface_energy_rank": 2,
+      "description": "Open surface with square arrangement",
+      "interlayer_spacing": "a/2",
+      "adsorption_sites": {
+        "top": {
+          "coordination": 1
+        },
+        "bridge": {
+          "coordination": 2
+        },
+        "hollow": {
+          "coordination": 4
+        }
+      },
+      "reconstruction": {
+        "Au(100)": "hex reconstruction",
+        "Pt(100)": "hex reconstruction",
+        "Ir(100)": "5x1 reconstruction"
+      },
+      "slab_parameters": {
+        "min_layers": 4,
+        "recommended_layers": 5,
+        "vacuum": 15
+      },
+      "site_coordinate_scope": "Use actual surface neighbors and periodic images; fractional offsets depend on the basis."
+    },
+    "(110)": {
+      "symmetry": "p2mm (rectangular)",
+      "surface_atoms_per_layer": 2,
+      "coordination_number": 7,
+      "surface_energy_rank": 3,
+      "description": "Ridged surface, most open fcc surface",
+      "adsorption_sites": {
+        "top": {
+          "coordination": 1
+        },
+        "short_bridge": {
+          "coordination": 2
+        },
+        "long_bridge": {
+          "coordination": 2
+        },
+        "hollow": {
+          "coordination": 4
+        }
+      },
+      "reconstruction": {
+        "Au(110)": "1x2 missing row",
+        "Pt(110)": "1x2 missing row"
+      },
+      "slab_parameters": {
+        "min_layers": 6,
+        "recommended_layers": 8,
+        "vacuum": 15
+      },
+      "site_coordinate_scope": "Use actual surface neighbors and periodic images; fractional offsets depend on the basis."
+    },
+    "(211)": {
+      "symmetry": "stepped surface",
+      "description": "(111) terraces with (100) steps",
+      "step_atoms": "Under-coordinated, highly reactive",
+      "slab_parameters": {
+        "min_layers": 9,
+        "vacuum": 15
+      }
+    },
+    "(311)": {
+      "symmetry": "stepped surface",
+      "description": "(100) terraces with (111) steps",
+      "slab_parameters": {
+        "min_layers": 7,
+        "vacuum": 15
+      }
+    }
+  },
+  "bcc_surfaces": {
+    "(110)": {
+      "symmetry": "c2mm (rectangular)",
+      "surface_atoms_per_layer": 1,
+      "coordination_number": 6,
+      "surface_energy_rank": 1,
+      "description": "Most stable bcc surface, close-packed",
+      "adsorption_sites": {
+        "top": {
+          "coordination": 1
+        },
+        "short_bridge": {
+          "coordination": 2
+        },
+        "long_bridge": {
+          "coordination": 2
+        },
+        "hollow": {
+          "coordination": 3,
+          "note": "Three-fold pseudo-hollow in the ideal bcc(110) surface net; use local neighbor geometry"
+        }
+      },
+      "slab_parameters": {
+        "min_layers": 4,
+        "recommended_layers": 6,
+        "vacuum": 15
+      },
+      "site_coordinate_scope": "Use actual surface neighbors and periodic images; fractional offsets depend on the basis."
+    },
+    "(100)": {
+      "symmetry": "p4mm (square)",
+      "surface_atoms_per_layer": 1,
+      "coordination_number": 4,
+      "surface_energy_rank": 2,
+      "description": "Open surface, high reactivity",
+      "adsorption_sites": {
+        "top": {
+          "coordination": 1
+        },
+        "bridge": {
+          "coordination": 2
+        },
+        "hollow": {
+          "coordination": 4
+        }
+      },
+      "slab_parameters": {
+        "min_layers": 6,
+        "recommended_layers": 8,
+        "vacuum": 15
+      },
+      "site_coordinate_scope": "Use actual surface neighbors and periodic images; fractional offsets depend on the basis."
+    },
+    "(111)": {
+      "symmetry": "p3m1",
+      "surface_atoms_per_layer": 1,
+      "coordination_number": 4,
+      "surface_energy_rank": 3,
+      "description": "Open, polar-like surface",
+      "slab_parameters": {
+        "min_layers": 6,
+        "vacuum": 15
+      }
+    }
+  },
+  "hcp_surfaces": {
+    "(0001)": {
+      "symmetry": "p6mm (hexagonal)",
+      "description": "Basal plane, close-packed",
+      "equivalent_to": "Same triangular top-layer net as fcc(111); AB versus ABC subsurface stacking differs",
+      "adsorption_sites": {
+        "top": {
+          "coordination": 1
+        },
+        "bridge": {
+          "coordination": 2
+        },
+        "fcc_hollow": {
+          "coordination": 3,
+          "second_layer_atom_below": false,
+          "note": "No atom directly below in the second substrate layer; this does not exclude deeper-layer atoms"
+        },
+        "hcp_hollow": {
+          "coordination": 3,
+          "second_layer_atom_below": true,
+          "note": "Above an atom in the second substrate layer"
+        }
+      },
+      "slab_parameters": {
+        "min_layers": 4,
+        "vacuum": 15
+      },
+      "site_coordinate_scope": "Use actual surface neighbors and periodic images; fractional offsets depend on the basis."
+    },
+    "(10-10)": {
+      "description": "Prism plane",
+      "symmetry": "rectangular",
+      "slab_parameters": {
+        "min_layers": 6,
+        "vacuum": 15
+      }
+    },
+    "(11-20)": {
+      "description": "A-plane",
+      "slab_parameters": {
+        "min_layers": 6,
+        "vacuum": 15
+      }
+    }
+  },
+  "oxide_surfaces": {
+    "rocksalt_MO": {
+      "(100)": {
+        "termination": "Mixed M-O layer",
+        "non_polar": true,
+        "stable": true,
+        "adsorption_sites": {
+          "on_metal": {
+            "coordination": 1
+          },
+          "on_oxygen": {
+            "coordination": 1
+          },
+          "bridge_M_O": {
+            "coordination": 2
+          }
+        }
+      },
+      "(111)": {
+        "terminations": [
+          "M-terminated",
+          "O-terminated"
+        ],
+        "polar": true,
+        "reconstruction": "Often facets to (100)"
+      }
+    },
+    "rutile_TiO2": {
+      "(110)": {
+        "most_stable": true,
+        "terminations": {
+          "stoichiometric": "Bridging O rows with 5-fold Ti",
+          "reduced": "Oxygen vacancies at bridging sites"
+        },
+        "adsorption_sites": {
+          "5f_Ti": {
+            "description": "5-fold coordinated Ti"
+          },
+          "bridging_O": {
+            "description": "2-fold O between Ti rows"
+          },
+          "in_plane_O": {
+            "description": "3-fold O in surface plane"
+          }
+        }
+      },
+      "(101)": {
+        "description": "Common in anatase, also exists in rutile"
+      }
+    },
+    "perovskite_ABO3": {
+      "(001)": {
+        "terminations": [
+          "AO",
+          "BO2"
+        ],
+        "polarity": "Alternating charged layers",
+        "stability": "BO2 often more stable"
+      },
+      "(110)": {
+        "terminations": [
+          "ABO",
+          "O2"
+        ],
+        "polar": true
+      }
+    },
+    "corundum_M2O3": {
+      "(0001)": {
+        "terminations": [
+          "M-terminated",
+          "O-terminated",
+          "mixed"
+        ],
+        "example": "Al2O3(0001)"
+      }
+    }
+  },
+  "surface_construction_rules": {
+    "symmetric_slab": {
+      "description": "Equivalent top and bottom surfaces",
+      "advantage": "A symmetric charge distribution cancels the normal dipole; verify termination and charge after modifications",
+      "pymatgen": "slab_gen.get_slabs(symmetrize=True)"
+    },
+    "asymmetric_slab": {
+      "description": "Different terminations on top and bottom",
+      "use_case": "When studying specific termination",
+      "note": "May have dipole correction needed"
+    },
+    "vacuum_size": {
+      "minimum": 10,
+      "recommended": 15,
+      "for_molecules": 20,
+      "unit": "Angstrom",
+      "scope": "Illustrative starting sizes; converge vacuum for the material, adsorbate and observable"
+    },
+    "k_point_sampling": {
+      "rule": "Dense in surface directions, 1 in vacuum direction",
+      "example": "6x6x1 for surface calculations"
+    }
+  },
+  "pymatgen_construction": {
+    "imports": [
+      "from pymatgen.core import Structure",
+      "from pymatgen.core.surface import SlabGenerator, generate_all_slabs"
+    ],
+    "basic_slab": {
+      "code": "SlabGenerator(bulk, miller_index, min_slab_size, min_vacuum_size)",
+      "parameters": {
+        "bulk": "Bulk Structure object",
+        "miller_index": "Tuple like (1, 1, 1)",
+        "min_slab_size": "Minimum slab thickness in Angstrom",
+        "min_vacuum_size": "Vacuum thickness in Angstrom"
+      }
+    },
+    "get_slabs": {
+      "method": "slabs = slab_gen.get_slabs()",
+      "returns": "List of Slab objects with different terminations"
+    },
+    "supercell": {
+      "method": "slab.make_supercell([m, n, 1])",
+      "note": "Expand lattice vectors a,b when they span the surface; [m,n,1] refers to lattice directions, not global Cartesian x,y,z"
+    }
+  }
+}

@@ -1,0 +1,980 @@
+{
+  "_metadata": {
+    "description": "Common organic linkers used in MOF synthesis",
+    "source": "Literature and MOF databases",
+    "note": "Linkers connect SBUs to form the MOF framework",
+    "license": "Academic reference",
+    "citation": "Various literature sources",
+    "version": "2025.12",
+    "last_updated": "2025-12-31T18:02:33.829031"
+  },
+  "BDC": {
+    "name": "1,4-Benzenedicarboxylic acid",
+    "iupac_name": "terephthalic acid",
+    "formula": "C8H6O4",
+    "molecular_weight": 166.13,
+    "connectivity": 2,
+    "functional_groups": [
+      "carboxylic acid",
+      "carboxylic acid"
+    ],
+    "geometry": "linear",
+    "length_angstrom": 7.0,
+    "example_mofs": [
+      "MOF-5",
+      "UiO-66",
+      "MIL-53",
+      "MIL-101"
+    ],
+    "compatible_sbus": [
+      "Zn4O",
+      "Zr6O4(OH)4",
+      "Fe3O",
+      "Cr3O",
+      "Al3O"
+    ],
+    "functionalization": {
+      "NH2-BDC": {
+        "group": "amino",
+        "position": 2,
+        "effect": "enhanced CO2 adsorption"
+      },
+      "Br-BDC": {
+        "group": "bromo",
+        "position": 2,
+        "effect": "post-synthetic modification site"
+      },
+      "NO2-BDC": {
+        "group": "nitro",
+        "position": 2,
+        "effect": "electron withdrawing"
+      },
+      "OH-BDC": {
+        "group": "hydroxyl",
+        "position": 2,
+        "effect": "hydrogen bonding"
+      }
+    },
+    "synthesis_source": "commercial",
+    "cost": "low"
+  },
+  "BTC": {
+    "name": "1,3,5-Benzenetricarboxylic acid",
+    "iupac_name": "trimesic acid",
+    "formula": "C9H6O6",
+    "molecular_weight": 210.14,
+    "connectivity": 3,
+    "functional_groups": [
+      "carboxylic acid",
+      "carboxylic acid",
+      "carboxylic acid"
+    ],
+    "geometry": "trigonal planar",
+    "example_mofs": [
+      "HKUST-1",
+      "MIL-100",
+      "MOF-14"
+    ],
+    "compatible_sbus": [
+      "Cu2_paddlewheel",
+      "Fe3O",
+      "Cr3O",
+      "Al3O"
+    ],
+    "synthesis_source": "commercial",
+    "cost": "low"
+  },
+  "BPDC": {
+    "name": "4,4'-Biphenyldicarboxylic acid",
+    "formula": "C14H10O4",
+    "molecular_weight": 242.23,
+    "connectivity": 2,
+    "functional_groups": [
+      "carboxylic acid",
+      "carboxylic acid"
+    ],
+    "geometry": "linear",
+    "length_angstrom": 11.3,
+    "example_mofs": [
+      "UiO-67",
+      "IRMOF-9",
+      "DUT-5"
+    ],
+    "compatible_sbus": [
+      "Zn4O",
+      "Zr6O4(OH)4"
+    ],
+    "synthesis_source": "commercial",
+    "cost": "moderate"
+  },
+  "TPDC": {
+    "name": "4,4''-Terphenyldicarboxylic acid",
+    "formula": "C20H14O4",
+    "molecular_weight": 318.33,
+    "connectivity": 2,
+    "functional_groups": [
+      "carboxylic acid",
+      "carboxylic acid"
+    ],
+    "geometry": "linear",
+    "length_angstrom": 15.6,
+    "example_mofs": [
+      "UiO-68",
+      "IRMOF-16"
+    ],
+    "compatible_sbus": [
+      "Zn4O",
+      "Zr6O4(OH)4"
+    ],
+    "synthesis_source": "synthesis required",
+    "cost": "high"
+  },
+  "NDC": {
+    "name": "2,6-Naphthalenedicarboxylic acid",
+    "formula": "C12H8O4",
+    "molecular_weight": 216.19,
+    "connectivity": 2,
+    "functional_groups": [
+      "carboxylic acid",
+      "carboxylic acid"
+    ],
+    "geometry": "linear",
+    "length_angstrom": 9.2,
+    "example_mofs": [
+      "IRMOF-8",
+      "DUT-6"
+    ],
+    "compatible_sbus": [
+      "Zn4O",
+      "Zr6O4(OH)4"
+    ],
+    "synthesis_source": "commercial",
+    "cost": "moderate"
+  },
+  "BTB": {
+    "name": "4,4',4''-Benzene-1,3,5-triyl-tribenzoic acid",
+    "formula": "C27H18O6",
+    "molecular_weight": 438.43,
+    "connectivity": 3,
+    "functional_groups": [
+      "carboxylic acid",
+      "carboxylic acid",
+      "carboxylic acid"
+    ],
+    "geometry": "trigonal planar",
+    "example_mofs": [
+      "MOF-177",
+      "MOF-14"
+    ],
+    "compatible_sbus": [
+      "Zn4O",
+      "Cu2_paddlewheel"
+    ],
+    "synthesis_source": "synthesis required",
+    "cost": "high"
+  },
+  "TATB": {
+    "name": "4,4',4''-(1,3,5-Triazine-2,4,6-triyl)tribenzoic acid",
+    "formula": "C24H15N3O6",
+    "molecular_weight": 441.4,
+    "connectivity": 3,
+    "functional_groups": [
+      "carboxylic acid",
+      "carboxylic acid",
+      "carboxylic acid"
+    ],
+    "geometry": "trigonal planar",
+    "example_mofs": [
+      "PCN-6",
+      "PCN-6'"
+    ],
+    "compatible_sbus": [
+      "Cu2_paddlewheel"
+    ],
+    "synthesis_source": "synthesis required",
+    "cost": "high"
+  },
+  "DOBDC": {
+    "name": "2,5-Dihydroxyterephthalic acid",
+    "formula": "C8H6O6",
+    "molecular_weight": 198.13,
+    "connectivity": 2,
+    "functional_groups": [
+      "carboxylic acid",
+      "carboxylic acid",
+      "hydroxyl",
+      "hydroxyl"
+    ],
+    "geometry": "linear",
+    "length_angstrom": 7.0,
+    "example_mofs": [
+      "MOF-74",
+      "CPO-27"
+    ],
+    "compatible_sbus": [
+      "Mg2_dobdc",
+      "Ni2_dobdc",
+      "Co2_dobdc",
+      "Zn2_dobdc"
+    ],
+    "creates_open_metal_sites": true,
+    "synthesis_source": "commercial",
+    "cost": "moderate"
+  },
+  "DOBPDC": {
+    "name": "4,4'-Dihydroxy-[1,1'-biphenyl]-3,3'-dicarboxylic acid",
+    "formula": "C14H10O6",
+    "molecular_weight": 274.23,
+    "connectivity": 2,
+    "functional_groups": [
+      "carboxylic acid",
+      "carboxylic acid",
+      "hydroxyl",
+      "hydroxyl"
+    ],
+    "geometry": "linear",
+    "length_angstrom": 11.3,
+    "example_mofs": [
+      "mmen-Mg2(dobpdc)",
+      "Mg-MOF-74 expanded"
+    ],
+    "compatible_sbus": [
+      "Mg2_dobdc",
+      "Ni2_dobdc"
+    ],
+    "creates_open_metal_sites": true,
+    "synthesis_source": "synthesis required",
+    "cost": "high"
+  },
+  "TCPP": {
+    "name": "Tetrakis(4-carboxyphenyl)porphyrin",
+    "formula": "C48H30N4O8",
+    "molecular_weight": 790.78,
+    "connectivity": 4,
+    "functional_groups": [
+      "carboxylic acid",
+      "carboxylic acid",
+      "carboxylic acid",
+      "carboxylic acid",
+      "porphyrin"
+    ],
+    "geometry": "square planar",
+    "example_mofs": [
+      "PCN-222",
+      "MOF-525",
+      "PCN-224"
+    ],
+    "compatible_sbus": [
+      "Zr6O8",
+      "Zr6O4(OH)4"
+    ],
+    "metalation": {
+      "possible": true,
+      "metals": [
+        "Fe",
+        "Co",
+        "Mn",
+        "Cu",
+        "Zn",
+        "Ni"
+      ],
+      "effect": "catalytic activity"
+    },
+    "synthesis_source": "commercial",
+    "cost": "high"
+  },
+  "TCPB": {
+    "name": "1,2,4,5-Tetrakis(4-carboxyphenyl)benzene",
+    "formula": "C34H22O8",
+    "molecular_weight": 562.54,
+    "connectivity": 4,
+    "functional_groups": [
+      "carboxylic acid",
+      "carboxylic acid",
+      "carboxylic acid",
+      "carboxylic acid"
+    ],
+    "geometry": "rectangular",
+    "example_mofs": [
+      "NU-1000"
+    ],
+    "compatible_sbus": [
+      "Zr6O8"
+    ],
+    "synthesis_source": "synthesis required",
+    "cost": "high"
+  },
+  "2-methylimidazole": {
+    "name": "2-Methylimidazole",
+    "formula": "C4H6N2",
+    "molecular_weight": 82.1,
+    "connectivity": 2,
+    "functional_groups": [
+      "imidazole"
+    ],
+    "geometry": "angular",
+    "bond_angle": 145,
+    "example_mofs": [
+      "ZIF-8",
+      "ZIF-67"
+    ],
+    "compatible_sbus": [
+      "Zn_imidazolate",
+      "Co_imidazolate"
+    ],
+    "synthesis_source": "commercial",
+    "cost": "low"
+  },
+  "imidazole": {
+    "name": "Imidazole",
+    "formula": "C3H4N2",
+    "molecular_weight": 68.08,
+    "connectivity": 2,
+    "functional_groups": [
+      "imidazole"
+    ],
+    "geometry": "angular",
+    "bond_angle": 145,
+    "example_mofs": [
+      "ZIF-4",
+      "ZIF-1"
+    ],
+    "compatible_sbus": [
+      "Zn_imidazolate",
+      "Co_imidazolate"
+    ],
+    "synthesis_source": "commercial",
+    "cost": "low"
+  },
+  "benzimidazole": {
+    "name": "Benzimidazole",
+    "formula": "C7H6N2",
+    "molecular_weight": 118.14,
+    "connectivity": 2,
+    "functional_groups": [
+      "imidazole",
+      "benzene"
+    ],
+    "geometry": "angular",
+    "bond_angle": 145,
+    "example_mofs": [
+      "ZIF-7",
+      "ZIF-11"
+    ],
+    "compatible_sbus": [
+      "Zn_imidazolate"
+    ],
+    "synthesis_source": "commercial",
+    "cost": "low"
+  },
+  "BPY": {
+    "name": "4,4'-Bipyridine",
+    "formula": "C10H8N2",
+    "molecular_weight": 156.19,
+    "connectivity": 2,
+    "functional_groups": [
+      "pyridine",
+      "pyridine"
+    ],
+    "geometry": "linear",
+    "length_angstrom": 7.1,
+    "example_mofs": [
+      "pillared MOFs",
+      "DMOF-1"
+    ],
+    "compatible_sbus": [
+      "Cu2_paddlewheel",
+      "Zn2_paddlewheel"
+    ],
+    "role": "pillar linker",
+    "synthesis_source": "commercial",
+    "cost": "low"
+  },
+  "DABCO": {
+    "name": "1,4-Diazabicyclo[2.2.2]octane",
+    "formula": "C6H12N2",
+    "molecular_weight": 112.17,
+    "connectivity": 2,
+    "functional_groups": [
+      "tertiary amine",
+      "tertiary amine"
+    ],
+    "geometry": "linear",
+    "length_angstrom": 2.6,
+    "example_mofs": [
+      "DMOF-1",
+      "pillared MOFs"
+    ],
+    "compatible_sbus": [
+      "Cu2_paddlewheel",
+      "Zn2_paddlewheel"
+    ],
+    "role": "pillar linker",
+    "synthesis_source": "commercial",
+    "cost": "low"
+  },
+  "HHTP": {
+    "name": "2,3,6,7,10,11-Hexahydroxytriphenylene",
+    "formula": "C18H12O6",
+    "molecular_weight": 324.29,
+    "connectivity": 6,
+    "functional_groups": [
+      "catechol",
+      "catechol",
+      "catechol"
+    ],
+    "geometry": "trigonal planar",
+    "example_mofs": [
+      "Cu3(HHTP)2",
+      "Ni3(HITP)2"
+    ],
+    "compatible_sbus": [
+      "Cu_catecholate",
+      "Ni_catecholate"
+    ],
+    "conductive": true,
+    "synthesis_source": "synthesis required",
+    "cost": "very high"
+  },
+  "HITP": {
+    "name": "2,3,6,7,10,11-Hexaiminotriphenylene",
+    "formula": "C18H12N6",
+    "molecular_weight": 312.33,
+    "connectivity": 6,
+    "functional_groups": [
+      "imine",
+      "imine",
+      "imine"
+    ],
+    "geometry": "trigonal planar",
+    "example_mofs": [
+      "Ni3(HITP)2"
+    ],
+    "compatible_sbus": [
+      "Ni_bis(diimine)"
+    ],
+    "conductive": true,
+    "synthesis_source": "synthesis required",
+    "cost": "very high"
+  },
+  "H4TBAPy": {
+    "name": "1,3,6,8-Tetrakis(p-benzoic acid)pyrene",
+    "formula": "C44H26O8",
+    "molecular_weight": 694.68,
+    "connectivity": 4,
+    "functional_groups": [
+      "carboxylic acid",
+      "carboxylic acid",
+      "carboxylic acid",
+      "carboxylic acid",
+      "pyrene"
+    ],
+    "geometry": "rectangular",
+    "example_mofs": [
+      "NU-1000"
+    ],
+    "compatible_sbus": [
+      "Zr6O8"
+    ],
+    "fluorescent": true,
+    "synthesis_source": "synthesis required",
+    "cost": "very high"
+  },
+  "BPTC": {
+    "name": "3,3',5,5'-Biphenyltetracarboxylic acid",
+    "formula": "C16H10O8",
+    "molecular_weight": 330.25,
+    "connectivity": 4,
+    "functional_groups": [
+      "carboxylic acid",
+      "carboxylic acid",
+      "carboxylic acid",
+      "carboxylic acid"
+    ],
+    "geometry": "rectangular",
+    "example_mofs": [
+      "MOF-505",
+      "NOTT-100"
+    ],
+    "compatible_sbus": [
+      "Cu2_paddlewheel",
+      "Zr6O4(OH)4"
+    ],
+    "synthesis_source": "commercial",
+    "cost": "moderate"
+  },
+  "BTEC": {
+    "name": "1,2,4,5-Benzenetetracarboxylic acid",
+    "iupac_name": "pyromellitic acid",
+    "formula": "C10H6O8",
+    "molecular_weight": 254.15,
+    "connectivity": 4,
+    "functional_groups": [
+      "carboxylic acid",
+      "carboxylic acid",
+      "carboxylic acid",
+      "carboxylic acid"
+    ],
+    "geometry": "planar tetratopic",
+    "example_mofs": [
+      "MIL-120",
+      "MIL-118"
+    ],
+    "compatible_sbus": [
+      "Al chain",
+      "In chain"
+    ],
+    "synthesis_source": "commercial",
+    "cost": "low"
+  },
+  "H6TATB": {
+    "name": "4,4',4''-(1,3,5-Triazine-2,4,6-triyl)tris(benzene-1,2-dicarboxylic acid)",
+    "formula": "C27H15N3O12",
+    "molecular_weight": 573.42,
+    "connectivity": 6,
+    "functional_groups": [
+      "carboxylic acid",
+      "carboxylic acid",
+      "carboxylic acid",
+      "carboxylic acid",
+      "carboxylic acid",
+      "carboxylic acid"
+    ],
+    "geometry": "hexatopic planar",
+    "example_mofs": [
+      "PCN-61"
+    ],
+    "compatible_sbus": [
+      "Cu2_paddlewheel"
+    ],
+    "synthesis_source": "synthesis required",
+    "cost": "high"
+  },
+  "TPBTM": {
+    "name": "N,N',N''-Tris(isophthalyl)-1,3,5-benzenetricarboxamide",
+    "formula": "C33H21N3O12",
+    "molecular_weight": 651.54,
+    "connectivity": 6,
+    "functional_groups": [
+      "carboxylic acid",
+      "amide"
+    ],
+    "geometry": "hexatopic",
+    "example_mofs": [
+      "PCN-66"
+    ],
+    "compatible_sbus": [
+      "Cu2_paddlewheel"
+    ],
+    "synthesis_source": "synthesis required",
+    "cost": "very high"
+  },
+  "H8ETTC": {
+    "name": "5,5',5'',5'''-(Ethene-1,1,2,2-tetrayl)tetraisophthalic acid",
+    "formula": "C34H22O16",
+    "molecular_weight": 686.53,
+    "connectivity": 8,
+    "functional_groups": [
+      "carboxylic acid"
+    ],
+    "geometry": "octatopic",
+    "example_mofs": [
+      "NU-110"
+    ],
+    "compatible_sbus": [
+      "Cu2_paddlewheel"
+    ],
+    "ultra_high_connectivity": true,
+    "synthesis_source": "synthesis required",
+    "cost": "very high"
+  },
+  "BPYDC": {
+    "name": "2,2'-Bipyridine-5,5'-dicarboxylic acid",
+    "formula": "C12H8N2O4",
+    "molecular_weight": 244.21,
+    "connectivity": 2,
+    "functional_groups": [
+      "carboxylic acid",
+      "carboxylic acid",
+      "pyridine",
+      "pyridine"
+    ],
+    "geometry": "linear",
+    "length_angstrom": 9.5,
+    "example_mofs": [
+      "UiO-67-bpy",
+      "MOF-253"
+    ],
+    "compatible_sbus": [
+      "Zr6O4(OH)4",
+      "Al chain"
+    ],
+    "metalation": {
+      "possible": true,
+      "metals": ["Pt", "Pd", "Ir", "Ru", "Cu"],
+      "effect": "catalytic activity"
+    },
+    "synthesis_source": "commercial",
+    "cost": "moderate"
+  },
+  "TPDC-NH2": {
+    "name": "2'-Amino-4,4''-terphenyldicarboxylic acid",
+    "formula": "C20H15NO4",
+    "molecular_weight": 333.34,
+    "connectivity": 2,
+    "functional_groups": [
+      "carboxylic acid",
+      "carboxylic acid",
+      "amino"
+    ],
+    "geometry": "linear",
+    "length_angstrom": 15.6,
+    "example_mofs": [
+      "UiO-68-NH2"
+    ],
+    "compatible_sbus": [
+      "Zr6O4(OH)4"
+    ],
+    "post_synthetic_modification": true,
+    "synthesis_source": "synthesis required",
+    "cost": "high"
+  },
+  "DCIM": {
+    "name": "4,5-Dichloroimidazole",
+    "formula": "C3H2Cl2N2",
+    "molecular_weight": 136.97,
+    "connectivity": 2,
+    "functional_groups": [
+      "imidazole",
+      "chloro"
+    ],
+    "geometry": "angular",
+    "bond_angle": 145,
+    "example_mofs": [
+      "ZIF-71"
+    ],
+    "compatible_sbus": [
+      "Zn_imidazolate"
+    ],
+    "hydrophobic": true,
+    "synthesis_source": "commercial",
+    "cost": "moderate"
+  },
+  "nIM": {
+    "name": "2-Nitroimidazole",
+    "formula": "C3H3N3O2",
+    "molecular_weight": 113.07,
+    "connectivity": 2,
+    "functional_groups": [
+      "imidazole",
+      "nitro"
+    ],
+    "geometry": "angular",
+    "bond_angle": 145,
+    "example_mofs": [
+      "ZIF-65"
+    ],
+    "compatible_sbus": [
+      "Zn_imidazolate"
+    ],
+    "synthesis_source": "commercial",
+    "cost": "low"
+  },
+  "cbIM": {
+    "name": "5-Chlorobenzimidazole",
+    "formula": "C7H5ClN2",
+    "molecular_weight": 152.58,
+    "connectivity": 2,
+    "functional_groups": [
+      "benzimidazole",
+      "chloro"
+    ],
+    "geometry": "angular",
+    "bond_angle": 145,
+    "example_mofs": [
+      "ZIF-95"
+    ],
+    "compatible_sbus": [
+      "Zn_imidazolate"
+    ],
+    "synthesis_source": "commercial",
+    "cost": "moderate"
+  },
+  "pur": {
+    "name": "Purine",
+    "formula": "C5H4N4",
+    "molecular_weight": 120.11,
+    "connectivity": 3,
+    "functional_groups": [
+      "imidazole",
+      "pyrimidine"
+    ],
+    "geometry": "triangular coordination",
+    "example_mofs": [
+      "ZIF-20"
+    ],
+    "compatible_sbus": [
+      "Zn_imidazolate"
+    ],
+    "biological_relevance": true,
+    "synthesis_source": "commercial",
+    "cost": "moderate"
+  },
+  "TIPA": {
+    "name": "Tri(4-imidazolylphenyl)amine",
+    "formula": "C27H21N7",
+    "molecular_weight": 447.51,
+    "connectivity": 3,
+    "functional_groups": [
+      "imidazole",
+      "imidazole",
+      "imidazole",
+      "amine"
+    ],
+    "geometry": "trigonal",
+    "example_mofs": [
+      "ZIF-300 series"
+    ],
+    "compatible_sbus": [
+      "Zn_imidazolate"
+    ],
+    "synthesis_source": "synthesis required",
+    "cost": "high"
+  },
+  "H2BPDC-OH": {
+    "name": "3,3'-Dihydroxy-4,4'-biphenyldicarboxylic acid",
+    "formula": "C14H10O6",
+    "molecular_weight": 274.23,
+    "connectivity": 2,
+    "functional_groups": [
+      "carboxylic acid",
+      "carboxylic acid",
+      "hydroxyl",
+      "hydroxyl"
+    ],
+    "geometry": "linear",
+    "length_angstrom": 11.3,
+    "example_mofs": [
+      "UiO-67-OH"
+    ],
+    "compatible_sbus": [
+      "Zr6O4(OH)4"
+    ],
+    "hydrogen_bonding": true,
+    "synthesis_source": "synthesis required",
+    "cost": "moderate"
+  },
+  "THIOPHENE_DC": {
+    "name": "2,5-Thiophenedicarboxylic acid",
+    "formula": "C6H4O4S",
+    "molecular_weight": 172.16,
+    "connectivity": 2,
+    "functional_groups": [
+      "carboxylic acid",
+      "carboxylic acid",
+      "thiophene"
+    ],
+    "geometry": "angular",
+    "example_mofs": [
+      "MIL-140D"
+    ],
+    "compatible_sbus": [
+      "Zr chain"
+    ],
+    "sulfur_containing": true,
+    "synthesis_source": "commercial",
+    "cost": "low"
+  },
+  "FUMARIC": {
+    "name": "Fumaric acid",
+    "iupac_name": "(E)-butenedioic acid",
+    "formula": "C4H4O4",
+    "molecular_weight": 116.07,
+    "connectivity": 2,
+    "functional_groups": [
+      "carboxylic acid",
+      "carboxylic acid",
+      "alkene"
+    ],
+    "geometry": "linear",
+    "length_angstrom": 4.5,
+    "example_mofs": [
+      "MIL-88A",
+      "Zr-fum"
+    ],
+    "compatible_sbus": [
+      "Fe3O",
+      "Zr6O4(OH)4"
+    ],
+    "short_linker": true,
+    "synthesis_source": "commercial",
+    "cost": "very low"
+  },
+  "MUCONIC": {
+    "name": "Muconic acid",
+    "iupac_name": "(2E,4E)-hexa-2,4-dienedioic acid",
+    "formula": "C6H6O4",
+    "molecular_weight": 142.11,
+    "connectivity": 2,
+    "functional_groups": [
+      "carboxylic acid",
+      "carboxylic acid",
+      "diene"
+    ],
+    "geometry": "linear",
+    "length_angstrom": 6.5,
+    "example_mofs": [
+      "MIL-88C"
+    ],
+    "compatible_sbus": [
+      "Fe3O"
+    ],
+    "flexible": true,
+    "synthesis_source": "commercial",
+    "cost": "low"
+  },
+  "PZDC": {
+    "name": "Pyrazine-2,3-dicarboxylic acid",
+    "formula": "C6H4N2O4",
+    "molecular_weight": 168.11,
+    "connectivity": 2,
+    "functional_groups": [
+      "carboxylic acid",
+      "carboxylic acid",
+      "pyrazine"
+    ],
+    "geometry": "angular",
+    "example_mofs": [
+      "MIL-140A"
+    ],
+    "compatible_sbus": [
+      "Zr chain"
+    ],
+    "nitrogen_heterocycle": true,
+    "synthesis_source": "commercial",
+    "cost": "moderate"
+  },
+  "H4BPTC": {
+    "name": "3,3',4,4'-Biphenyltetracarboxylic acid",
+    "formula": "C16H10O8",
+    "molecular_weight": 330.25,
+    "connectivity": 4,
+    "functional_groups": [
+      "carboxylic acid"
+    ],
+    "geometry": "tetratopic planar",
+    "example_mofs": [
+      "MOF-505"
+    ],
+    "compatible_sbus": [
+      "Cu2_paddlewheel"
+    ],
+    "synthesis_source": "commercial",
+    "cost": "moderate"
+  },
+  "TMQDC": {
+    "name": "3,3',5,5'-Tetramethyl-4,4'-bipyridine-N,N'-dioxide dicarboxylic acid",
+    "formula": "C18H18N2O6",
+    "molecular_weight": 358.34,
+    "connectivity": 2,
+    "functional_groups": [
+      "carboxylic acid",
+      "N-oxide"
+    ],
+    "geometry": "linear",
+    "example_mofs": [
+      "NOTT-202"
+    ],
+    "compatible_sbus": [
+      "In cluster"
+    ],
+    "breathing": true,
+    "synthesis_source": "synthesis required",
+    "cost": "high"
+  },
+  "H3BTE": {
+    "name": "4,4',4''-Benzene-1,3,5-triyl-tris(ethynyl-benzoic acid)",
+    "formula": "C33H18O6",
+    "molecular_weight": 514.49,
+    "connectivity": 3,
+    "functional_groups": [
+      "carboxylic acid",
+      "alkyne"
+    ],
+    "geometry": "trigonal planar extended",
+    "example_mofs": [
+      "MOF-180"
+    ],
+    "compatible_sbus": [
+      "Zn4O"
+    ],
+    "extended_linker": true,
+    "synthesis_source": "synthesis required",
+    "cost": "very high"
+  },
+  "H3BBC": {
+    "name": "4,4',4''-(Benzene-1,3,5-triyl-tris(benzene-4,1-diyl))tribenzoic acid",
+    "formula": "C45H30O6",
+    "molecular_weight": 678.71,
+    "connectivity": 3,
+    "functional_groups": [
+      "carboxylic acid"
+    ],
+    "geometry": "trigonal planar extended",
+    "example_mofs": [
+      "MOF-200",
+      "MOF-210"
+    ],
+    "compatible_sbus": [
+      "Zn4O"
+    ],
+    "ultra_high_surface_area": true,
+    "synthesis_source": "synthesis required",
+    "cost": "very high"
+  },
+  "AZDC": {
+    "name": "Azobenzene-4,4'-dicarboxylic acid",
+    "formula": "C14H10N2O4",
+    "molecular_weight": 270.24,
+    "connectivity": 2,
+    "functional_groups": [
+      "carboxylic acid",
+      "carboxylic acid",
+      "azo"
+    ],
+    "geometry": "linear",
+    "length_angstrom": 11.0,
+    "example_mofs": [
+      "PCN-123"
+    ],
+    "compatible_sbus": [
+      "Zr6O4(OH)4"
+    ],
+    "photoswitchable": true,
+    "cis_trans_isomerization": true,
+    "synthesis_source": "commercial",
+    "cost": "moderate"
+  },
+  "SBTC": {
+    "name": "Stilbene-4,4'-dicarboxylic acid",
+    "formula": "C16H12O4",
+    "molecular_weight": 268.27,
+    "connectivity": 2,
+    "functional_groups": [
+      "carboxylic acid",
+      "carboxylic acid",
+      "alkene"
+    ],
+    "geometry": "linear",
+    "length_angstrom": 11.5,
+    "example_mofs": [
+      "UMCM-8"
+    ],
+    "compatible_sbus": [
+      "Zn4O"
+    ],
+    "fluorescent": true,
+    "synthesis_source": "commercial",
+    "cost": "moderate"
+  }
+}

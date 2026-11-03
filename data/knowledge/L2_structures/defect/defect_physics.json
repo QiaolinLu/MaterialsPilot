@@ -1,0 +1,166 @@
+{
+  "_metadata": {
+    "source": "Solid state physics textbooks and literature",
+    "description": "Physical principles of defects in crystals",
+    "license": "Educational reference",
+    "citation": "Freysoldt et al., Rev. Mod. Phys. 86, 253 (2014)",
+    "version": "2025.12",
+    "last_updated": "2025-12-31T18:02:33.836202"
+  },
+  "vacancy": {
+    "description": "Missing atom from lattice site",
+    "formation_mechanism": "Remove atom, leaving empty site",
+    "typical_formation_energy_eV": {
+      "Si": 3.5,
+      "Ge": 2.5,
+      "GaAs_Ga": 2.5,
+      "GaAs_As": 3.0,
+      "Fe": 1.5,
+      "Cu": 1.3,
+      "Al": 0.7,
+      "Ni": 1.6,
+      "Pt": 1.1
+    },
+    "relaxation_effects": "Neighboring atoms relax inward toward vacancy",
+    "concentration_formula": "n_vacancies / n_total_atoms",
+    "minimum_separation_rule": "Vacancies should be >5 Å apart to avoid interaction",
+    "electronic_effects": "Creates localized states in band gap for semiconductors"
+  },
+  "substitution": {
+    "description": "Foreign atom replacing host atom",
+    "formation_mechanism": "Replace host atom with dopant atom",
+    "site_preference": "Dopant prefers sites of similar size/valence",
+    "concentration_formula": "n_dopants / n_host_atoms_of_same_type",
+    "minimum_separation_rule": "Dopants should be >5 Å apart for dilute limit",
+    "common_dopants": {
+      "Si": [
+        "B",
+        "P",
+        "As",
+        "Ge",
+        "C"
+      ],
+      "GaAs": [
+        "Al",
+        "In",
+        "P",
+        "N",
+        "Si"
+      ],
+      "Fe": [
+        "Co",
+        "Ni",
+        "Cr",
+        "Mn",
+        "V"
+      ],
+      "Cu": [
+        "Ag",
+        "Au",
+        "Zn",
+        "Ni"
+      ]
+    },
+    "size_mismatch_effects": "Large size mismatch causes local strain"
+  },
+  "interstitial": {
+    "description": "Extra atom in non-lattice position",
+    "formation_mechanism": "Insert atom at interstitial site",
+    "common_sites": {
+      "fcc": {
+        "octahedral": {
+          "position": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "coordination": 6,
+          "description": "Center of octahedron formed by 6 atoms"
+        },
+        "tetrahedral": {
+          "position": [
+            0.25,
+            0.25,
+            0.25
+          ],
+          "coordination": 4,
+          "description": "Center of tetrahedron formed by 4 atoms"
+        }
+      },
+      "bcc": {
+        "octahedral": {
+          "position": [
+            0.5,
+            0.5,
+            0
+          ],
+          "coordination": 6,
+          "description": "Distorted octahedral site"
+        },
+        "tetrahedral": {
+          "position": [
+            0.25,
+            0.5,
+            0
+          ],
+          "coordination": 4,
+          "description": "Tetrahedral site"
+        }
+      },
+      "diamond": {
+        "tetrahedral": {
+          "position": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "coordination": 4,
+          "description": "Tetrahedral interstitial"
+        },
+        "hexagonal": {
+          "position": [
+            0.625,
+            0.625,
+            0.625
+          ],
+          "coordination": 6,
+          "description": "Hexagonal interstitial site"
+        }
+      }
+    },
+    "typical_interstitials": [
+      "H",
+      "C",
+      "N",
+      "O",
+      "B"
+    ],
+    "diffusion": "Interstitials typically have lower migration barriers than vacancies"
+  },
+  "antisite": {
+    "description": "Atom on wrong sublattice in compound",
+    "formation_mechanism": "Swap atoms between sublattices",
+    "applicable_structures": [
+      "zincblende",
+      "rocksalt",
+      "perovskite"
+    ],
+    "example": "Ga on As site in GaAs (Ga_As antisite)",
+    "concentration_formula": "n_antisites / n_sublattice_sites"
+  },
+  "frenkel_pair": {
+    "description": "Vacancy-interstitial pair",
+    "formation_mechanism": "Atom moves from lattice site to interstitial position",
+    "formation_energy": "Sum of vacancy and interstitial formation energies minus binding",
+    "recombination": "Can recombine if vacancy and interstitial are close"
+  },
+  "schottky_defect": {
+    "description": "Paired cation and anion vacancies in ionic crystals",
+    "formation_mechanism": "Remove cation-anion pair to maintain charge neutrality",
+    "applicable_structures": [
+      "rocksalt",
+      "fluorite"
+    ],
+    "charge_neutrality": "Must maintain overall charge balance"
+  }
+}

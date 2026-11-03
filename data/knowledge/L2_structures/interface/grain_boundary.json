@@ -1,0 +1,30 @@
+{
+  "_metadata": {
+    "description": "General grain-boundary geometry and periodic CSL construction",
+    "version": "2026.11-r4",
+    "last_updated": "2026-11-03",
+    "sources": [
+      "https://pymatgen.org/pymatgen.core.html#pymatgen.core.interface.GrainBoundaryGenerator"
+    ]
+  },
+  "grain_boundary_geometry": {
+    "description": "A grain boundary joins two crystalline orientations with a specified boundary plane.",
+    "tilt": "A pure tilt rotation axis lies in the boundary plane; symmetric tilt gives equal-magnitude, mirrored plane inclinations in the two grains, while asymmetric tilt does not.",
+    "twist": "A pure twist rotation axis is parallel to the boundary normal; a general mixed boundary has both tilt and twist components.",
+    "twin": "A twin obeys a material-specific crystallographic symmetry relation. Do not infer its axis, angle or plane from the word twin alone.",
+    "basis": "Evaluate directions using the direct lattice and plane normals using the reciprocal lattice. Preserve signed literal indices; <uvw> and {hkl} families do not select a unique direction or plane."
+  },
+  "csl_theory": {
+    "definition": "Sigma is the coincidence-lattice index relative to the parent lattice. Sigma alone does not determine the rotation axis, angle branch, boundary plane or energy.",
+    "cubic_api": "GrainBoundaryGenerator.enum_sigma_cubic(cutoff, axis) returns dict[int, list[float]]. Read the requested Sigma key and use its numeric angle list; do not treat it as records, angle/Sigma pairs or a scalar.",
+    "precision": "Distinguish the task display precision from the exact construction angle. The GB guard helper selects one full-precision candidate within half a displayed unit, rejects absent/ambiguous matches and never changes scoring tolerances or Sigma.",
+    "noncubic": "Use lattice-specific enumeration with the required axial ratio; cubic CSL arithmetic is not an hcp construction method.",
+    "limits": "CSL compatibility is a lattice condition, not proof of chemical-basis identity, low energy, collision-free geometry or the requested plane."
+  },
+  "construction": {
+    "method": "Use the installed pymatgen.core.interface.GrainBoundaryGenerator on a verified prototype, retaining the native periodic lattice together with all sites. Rotation followed by unrelated rectangular reboxing cannot substitute for commensurability.",
+    "dimensions": "Choose gap and occupied grain thickness from the task and verify along the boundary normal. A periodic bicrystal has two boundaries; no external vacuum or fixed supercell factor is universally required.",
+    "evidence": "Verify material identity, local crystal orientations, misorientation, boundary plane, periodic contacts and requested thickness from the returned structure. Do not use constructor labels or global bicrystal space group as substitutes for local grain evidence.",
+    "resources": "Resource limits do not permit deleting atoms or weakening requested geometry. Report construction incompatibility, unmeasured geometry and resource failure separately."
+  }
+}

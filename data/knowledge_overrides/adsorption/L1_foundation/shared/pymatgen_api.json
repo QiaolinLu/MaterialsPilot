@@ -1,0 +1,265 @@
+{
+  "_metadata": {
+    "source": "https://pymatgen.org/pymatgen.core.html",
+    "description": "API contracts verified against the installed pymatgen 2026.3.23 runtime; examples state their coordinate assumptions.",
+    "license": "See source",
+    "version": "2026.11-r4",
+    "last_updated": "2026-11-03"
+  },
+  "structure_creation": {
+    "description": "How to create a Structure object",
+    "imports": [
+      "from pymatgen.core import Structure, Lattice"
+    ],
+    "pattern": "Structure(lattice, species_list, coords_list)",
+    "parameters": {
+      "lattice": "Lattice object defining the unit cell",
+      "species": "List of element symbols or Species objects",
+      "coords": "List of fractional coordinates (default) or cartesian",
+      "coords_are_cartesian": "Set True for cartesian coordinates (default: False)"
+    },
+    "example": "structure = Structure(lattice, ['Pt']*4, [[0,0,0], [0.5,0.5,0], [0.5,0,0.5], [0,0.5,0.5]])",
+    "notes": [
+      "coords can be fractional (default) or cartesian",
+      "Use coords_are_cartesian=True for cartesian coordinates"
+    ]
+  },
+  "lattice_creation": {
+    "description": "How to create Lattice objects",
+    "imports": [
+      "from pymatgen.core import Lattice"
+    ],
+    "methods": {
+      "cubic": {
+        "pattern": "Lattice.cubic(a)",
+        "parameters": {
+          "a": "Lattice constant in Angstrom"
+        }
+      },
+      "tetragonal": {
+        "pattern": "Lattice.tetragonal(a, c)",
+        "parameters": {
+          "a": "a lattice constant",
+          "c": "c lattice constant"
+        }
+      },
+      "hexagonal": {
+        "pattern": "Lattice.hexagonal(a, c)",
+        "parameters": {
+          "a": "a lattice constant",
+          "c": "c lattice constant"
+        }
+      },
+      "orthorhombic": {
+        "pattern": "Lattice.orthorhombic(a, b, c)",
+        "parameters": {
+          "a": "a constant",
+          "b": "b constant",
+          "c": "c constant"
+        }
+      },
+      "from_parameters": {
+        "pattern": "Lattice.from_parameters(a, b, c, alpha, beta, gamma)",
+        "parameters": {
+          "a,b,c": "Lattice constants in Angstrom",
+          "alpha,beta,gamma": "Angles in degrees"
+        }
+      },
+      "from_matrix": {
+        "pattern": "Lattice(matrix_3x3)",
+        "parameters": {
+          "matrix_3x3": "3x3 numpy array of lattice vectors"
+        }
+      }
+    }
+  },
+  "supercell": {
+    "description": "How to create supercells",
+    "method": "structure.make_supercell([nx, ny, nz])",
+    "parameters": {
+      "scaling_matrix": "List [nx, ny, nz] or 3x3 matrix"
+    },
+    "notes": [
+      "Modifies the structure in place by default; copy it first to retain the reference.",
+      "For an integer nonsingular matrix S, the new atom count is N0 * abs(det(S)); nx*ny*nz is the diagonal case.",
+      "Use the task-specified input cell and scaling matrix; a conventional cell is not always orthogonal."
+    ],
+    "example": "structure.make_supercell([2, 2, 2])  # 8x atoms"
+  },
+  "site_removal": {
+    "description": "How to remove atoms (create vacancies)",
+    "method": "structure.remove_sites(indices)",
+    "parameters": {
+      "indices": "List of site indices to remove (0-based)"
+    },
+    "notes": [
+      "Pass all zero-based indices from the current structure in one call.",
+      "For separate deletion calls, process original indices in descending order or recompute them after each deletion."
+    ],
+    "example": "structure.remove_sites([0, 5, 10])  # Remove 3 atoms"
+  },
+  "site_replacement": {
+    "description": "How to replace atoms (substitution)",
+    "method": "structure.replace(index, new_species)",
+    "parameters": {
+      "index": "Site index to replace (0-based)",
+      "new_species": "New element symbol or Species object"
+    },
+    "notes": [
+      "new_species can be string like 'Ga' or Element object"
+    ],
+    "example": "structure.replace(0, 'Ge')  # Replace first atom with Ge"
+  },
+  "add_site": {
+    "description": "How to add atoms to structure",
+    "method": "structure.append(species, coords, coords_are_cartesian=False)",
+    "parameters": {
+      "species": "Element symbol or Species object",
+      "coords": "Coordinates (fractional by default)",
+      "coords_are_cartesian": "Set True for cartesian coordinates"
+    },
+    "notes": [
+      "Use coords_are_cartesian=True for Cartesian positions in Angstrom.",
+      "Place an adsorbate relative to its local binding site and surface normal in one consistent periodic image."
+    ],
+    "example": "structure.append('C', [x, y, z], coords_are_cartesian=True)"
+  },
+  "distance_calculation": {
+    "description": "How to calculate distances",
+    "methods": {
+      "site_distance": {
+        "pattern": "site1.distance(site2)",
+        "returns": "Distance in Angstroms"
+      },
+      "get_distance": {
+        "pattern": "structure.get_distance(i, j)",
+        "returns": "Distance between sites i and j"
+      },
+      "get_all_distances": {
+        "pattern": "structure.distance_matrix",
+        "returns": "NxN distance matrix"
+      }
+    },
+    "notes": [
+      "Accounts for periodic boundary conditions"
+    ]
+  },
+  "slab_generation": {
+    "description": "Generate surface slab from bulk structure",
+    "imports": [
+      "from pymatgen.core.surface import SlabGenerator"
+    ],
+    "pattern": "SlabGenerator(bulk, miller_index, min_slab_size, min_vacuum_size)",
+    "parameters": {
+      "initial_structure": "Bulk structure",
+      "miller_index": "Tuple like (1,1,1) for (111) surface",
+      "min_slab_size": "Minimum slab thickness in Angstrom (typically 8-12)",
+      "min_vacuum_size": "Vacuum layer thickness (typically 15-20)",
+      "center_slab": "True to center slab in cell",
+      "in_unit_planes": "If True, min_slab_size is in unit planes",
+      "primitive": "If True, return primitive cell"
+    },
+    "example": "slabgen = SlabGenerator(bulk, (1,1,1), min_slab_size=8.0, min_vacuum_size=15.0, center_slab=True)\nslabs = slabgen.get_slabs()\nslab = slabs[0]",
+    "notes": [
+      "get_slabs() returns alternative terminations; select one that matches the requested orientation and termination.",
+      "The numerical thickness and vacuum in this example are illustrative, not universal minima."
+    ]
+  },
+  "find_surface_atoms": {
+    "description": "Identify the requested exposed surface in a consistent periodic image.",
+    "pattern": "normal = np.cross(slab.lattice.matrix[0], slab.lattice.matrix[1]); normal /= np.linalg.norm(normal)\nheights = unwrapped_slab_coords @ normal\nsurface_indices = np.flatnonzero(heights.max() - heights <= layer_tolerance)",
+    "applicability": "a and b span the surface; unwrapped_slab_coords contains slab atoms only in a contiguous image across the vacuum; cross(a,b) points toward the requested side. layer_tolerance is in Angstrom and resolves the actual layer spacing.",
+    "notes": [
+      "For stepped or reconstructed surfaces, also identify the local coordination and terrace; the highest layer alone does not enumerate all exposed sites."
+    ]
+  },
+  "file_io": {
+    "description": "How to save and load structures",
+    "save": {
+      "cif": "structure.to(filename='output.cif')",
+      "poscar": "structure.to(filename='POSCAR')",
+      "json": "structure.to(filename='structure.json')"
+    },
+    "load": {
+      "cif": "Structure.from_file('input.cif')",
+      "poscar": "Structure.from_file('POSCAR')",
+      "string": "Structure.from_str(cif_string, fmt='cif')"
+    }
+  },
+  "symmetry_analysis": {
+    "description": "Analyze structure symmetry",
+    "imports": [
+      "from pymatgen.symmetry.analyzer import SpacegroupAnalyzer"
+    ],
+    "pattern": "SpacegroupAnalyzer(structure)",
+    "methods": {
+      "get_space_group_symbol": "Returns space group symbol",
+      "get_space_group_number": "Returns space group number",
+      "get_conventional_standard_structure": "Returns conventional cell",
+      "get_primitive_standard_structure": "Returns primitive cell"
+    },
+    "example": "sga = SpacegroupAnalyzer(structure)\nprint(sga.get_space_group_symbol())"
+  },
+  "neighbor_finding": {
+    "description": "Find neighboring atoms",
+    "imports": [
+      "from pymatgen.analysis.local_env import VoronoiNN, CrystalNN"
+    ],
+    "methods": {
+      "get_neighbors": {
+        "pattern": "structure.get_neighbors(site, r)",
+        "parameters": {
+          "site": "Site object",
+          "r": "Cutoff radius in Angstrom"
+        },
+        "returns": "List of (neighbor, distance, index) tuples"
+      },
+      "voronoi": {
+        "pattern": "VoronoiNN().get_cn(structure, site_index)",
+        "returns": "Coordination number"
+      }
+    }
+  },
+  "element_filtering": {
+    "description": "Filter sites by element",
+    "methods": {
+      "indices_from_symbol": {
+        "pattern": "structure.indices_from_symbol(symbol)",
+        "returns": "List of indices for given element"
+      },
+      "by_species": {
+        "pattern": "[i for i, site in enumerate(structure) if site.specie.symbol == 'Fe']",
+        "returns": "List of indices"
+      }
+    },
+    "example": "fe_indices = structure.indices_from_symbol('Fe')"
+  },
+  "adsorption_site_finder": {
+    "description": "Enumerate geometric site candidates on a slab; task requirements determine which candidate to use.",
+    "imports": [
+      "from pymatgen.core.adsorption import AdsorbateSiteFinder"
+    ],
+    "pattern": "AdsorbateSiteFinder(slab, mi_vec=list(surface_normal))",
+    "methods": {
+      "find_adsorption_sites": {
+        "pattern": "asf.find_adsorption_sites(distance=requested_height)",
+        "returns": "Dictionary mapping ontop, bridge, hollow and all to lists of Cartesian candidate coordinates.",
+        "parameters": {
+          "distance": "Offset in Angstrom along the surface normal, chosen from the task or an explicitly identified initial estimate."
+        }
+      }
+    },
+    "correct_usage": {
+      "description": "slab has a consistent periodic image; surface_normal points toward the requested side. requested_site_type is an API candidate class, not a physical site label such as fcc/hcp.",
+      "code": [
+        "asf = AdsorbateSiteFinder(slab, mi_vec=list(surface_normal))",
+        "sites = asf.find_adsorption_sites(distance=requested_height)",
+        "candidate_sites = sites[requested_site_type]"
+      ]
+    },
+    "notes": [
+      "Select by the requested local geometry and stacking, rather than by list order; report an empty candidate list.",
+      "Returned positions already include the requested normal offset. Preserve the adsorbate binding atom and internal molecular geometry when placing it."
+    ]
+  }
+}

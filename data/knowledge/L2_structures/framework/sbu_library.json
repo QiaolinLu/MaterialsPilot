@@ -1,0 +1,541 @@
+{
+  "_metadata": {
+    "description": "Common Secondary Building Units (SBUs) in MOF chemistry",
+    "source": "Literature and CoRE MOF database",
+    "note": "SBUs are the inorganic nodes that connect organic linkers",
+    "license": "CC BY 4.0",
+    "citation": "CoRE MOF Database",
+    "version": "2025.12",
+    "last_updated": "2025-12-31T18:02:33.831615"
+  },
+  "Zn4O": {
+    "name": "Zinc Oxide Cluster",
+    "formula": "Zn4O(COO)6",
+    "metal": "Zn",
+    "coordination": 6,
+    "geometry": "octahedral",
+    "description": "Tetrahedral Zn4O cluster with 6 carboxylate connections",
+    "connectivity": 6,
+    "point_symmetry": "Td",
+    "example_mofs": [
+      "MOF-5",
+      "IRMOF-1",
+      "IRMOF-3",
+      "IRMOF-8"
+    ],
+    "compatible_linkers": [
+      "BDC",
+      "NH2-BDC",
+      "NDC",
+      "BPDC"
+    ],
+    "stability": {
+      "thermal": "moderate (up to 400°C)",
+      "water": "low",
+      "acid": "low"
+    },
+    "synthesis_conditions": {
+      "temperature_C": [
+        85,
+        120
+      ],
+      "solvent": [
+        "DMF",
+        "DEF"
+      ],
+      "modulator": "none typically needed"
+    }
+  },
+  "Cu2_paddlewheel": {
+    "name": "Copper Paddlewheel",
+    "formula": "Cu2(COO)4",
+    "metal": "Cu",
+    "coordination": 4,
+    "geometry": "square planar",
+    "description": "Dinuclear copper cluster with 4 bridging carboxylates",
+    "connectivity": 4,
+    "point_symmetry": "D4h",
+    "example_mofs": [
+      "HKUST-1",
+      "MOF-14",
+      "PCN-6"
+    ],
+    "compatible_linkers": [
+      "BTC",
+      "BTB",
+      "TATB"
+    ],
+    "axial_sites": true,
+    "axial_ligands": [
+      "H2O",
+      "pyridine",
+      "none"
+    ],
+    "stability": {
+      "thermal": "moderate (up to 300°C)",
+      "water": "moderate",
+      "acid": "low"
+    },
+    "synthesis_conditions": {
+      "temperature_C": [
+        85,
+        120
+      ],
+      "solvent": [
+        "DMF",
+        "ethanol",
+        "water"
+      ],
+      "modulator": "none typically needed"
+    },
+    "open_metal_sites": true
+  },
+  "Zr6O4OH4": {
+    "name": "Zirconium Oxo Cluster",
+    "formula": "Zr6O4(OH)4(COO)12",
+    "metal": "Zr",
+    "coordination": 12,
+    "geometry": "cuboctahedral",
+    "description": "Hexanuclear Zr cluster with exceptional stability",
+    "connectivity": 12,
+    "point_symmetry": "Oh",
+    "example_mofs": [
+      "UiO-66",
+      "UiO-67",
+      "UiO-68",
+      "MOF-808"
+    ],
+    "compatible_linkers": [
+      "BDC",
+      "BPDC",
+      "TPDC",
+      "BTC"
+    ],
+    "stability": {
+      "thermal": "high (up to 500°C)",
+      "water": "high",
+      "acid": "moderate"
+    },
+    "synthesis_conditions": {
+      "temperature_C": [
+        100,
+        150
+      ],
+      "solvent": [
+        "DMF"
+      ],
+      "modulator": [
+        "acetic acid",
+        "formic acid",
+        "benzoic acid"
+      ]
+    },
+    "defect_engineering": true
+  },
+  "Zr6O8": {
+    "name": "Zirconium Oxo Cluster (8-connected)",
+    "formula": "Zr6O8(COO)8",
+    "metal": "Zr",
+    "coordination": 8,
+    "geometry": "cubic",
+    "description": "8-connected Zr6 cluster for csq and other topologies",
+    "connectivity": 8,
+    "point_symmetry": "Oh",
+    "example_mofs": [
+      "PCN-222",
+      "MOF-525",
+      "PCN-224"
+    ],
+    "compatible_linkers": [
+      "TCPP",
+      "porphyrin-based"
+    ],
+    "stability": {
+      "thermal": "high",
+      "water": "high",
+      "acid": "moderate"
+    },
+    "synthesis_conditions": {
+      "temperature_C": [
+        100,
+        140
+      ],
+      "solvent": [
+        "DMF",
+        "DEF"
+      ],
+      "modulator": [
+        "benzoic acid",
+        "acetic acid"
+      ]
+    }
+  },
+  "Fe3O": {
+    "name": "Iron Oxo Trimer",
+    "formula": "Fe3O(COO)6",
+    "metal": "Fe",
+    "coordination": 6,
+    "geometry": "trigonal prismatic",
+    "description": "Trinuclear iron cluster with central oxo",
+    "connectivity": 6,
+    "point_symmetry": "D3h",
+    "example_mofs": [
+      "MIL-88",
+      "MIL-100",
+      "MIL-101"
+    ],
+    "compatible_linkers": [
+      "BDC",
+      "BTC"
+    ],
+    "stability": {
+      "thermal": "high",
+      "water": "high",
+      "acid": "moderate"
+    },
+    "synthesis_conditions": {
+      "temperature_C": [
+        150,
+        220
+      ],
+      "solvent": [
+        "DMF",
+        "water"
+      ],
+      "modulator": [
+        "HF",
+        "HCl"
+      ]
+    },
+    "redox_active": true
+  },
+  "Cr3O": {
+    "name": "Chromium Oxo Trimer",
+    "formula": "Cr3O(COO)6",
+    "metal": "Cr",
+    "coordination": 6,
+    "geometry": "trigonal prismatic",
+    "description": "Trinuclear chromium cluster, isostructural to Fe3O",
+    "connectivity": 6,
+    "point_symmetry": "D3h",
+    "example_mofs": [
+      "MIL-101(Cr)",
+      "MIL-100(Cr)"
+    ],
+    "compatible_linkers": [
+      "BDC",
+      "BTC"
+    ],
+    "stability": {
+      "thermal": "very high",
+      "water": "very high",
+      "acid": "high"
+    },
+    "synthesis_conditions": {
+      "temperature_C": [
+        200,
+        220
+      ],
+      "solvent": [
+        "water"
+      ],
+      "modulator": [
+        "HF"
+      ]
+    },
+    "open_metal_sites": true
+  },
+  "Al3O": {
+    "name": "Aluminum Oxo Trimer",
+    "formula": "Al3O(COO)6",
+    "metal": "Al",
+    "coordination": 6,
+    "geometry": "trigonal prismatic",
+    "description": "Trinuclear aluminum cluster",
+    "connectivity": 6,
+    "point_symmetry": "D3h",
+    "example_mofs": [
+      "MIL-53(Al)",
+      "MIL-96(Al)"
+    ],
+    "compatible_linkers": [
+      "BDC",
+      "BTC"
+    ],
+    "stability": {
+      "thermal": "high",
+      "water": "high",
+      "acid": "moderate"
+    },
+    "synthesis_conditions": {
+      "temperature_C": [
+        150,
+        200
+      ],
+      "solvent": [
+        "water",
+        "DMF"
+      ],
+      "modulator": "none typically needed"
+    },
+    "breathing": true
+  },
+  "Zn_imidazolate": {
+    "name": "Zinc Imidazolate",
+    "formula": "Zn(Im)4",
+    "metal": "Zn",
+    "coordination": 4,
+    "geometry": "tetrahedral",
+    "description": "Tetrahedral Zn with 4 imidazolate ligands",
+    "connectivity": 4,
+    "point_symmetry": "Td",
+    "example_mofs": [
+      "ZIF-8",
+      "ZIF-67",
+      "ZIF-4",
+      "ZIF-7"
+    ],
+    "compatible_linkers": [
+      "2-methylimidazole",
+      "imidazole",
+      "benzimidazole"
+    ],
+    "stability": {
+      "thermal": "high (up to 550°C)",
+      "water": "high",
+      "acid": "low"
+    },
+    "synthesis_conditions": {
+      "temperature_C": [
+        25,
+        140
+      ],
+      "solvent": [
+        "methanol",
+        "DMF",
+        "water"
+      ],
+      "modulator": "excess linker"
+    }
+  },
+  "Co_imidazolate": {
+    "name": "Cobalt Imidazolate",
+    "formula": "Co(Im)4",
+    "metal": "Co",
+    "coordination": 4,
+    "geometry": "tetrahedral",
+    "description": "Tetrahedral Co with 4 imidazolate ligands",
+    "connectivity": 4,
+    "point_symmetry": "Td",
+    "example_mofs": [
+      "ZIF-67"
+    ],
+    "compatible_linkers": [
+      "2-methylimidazole",
+      "imidazole"
+    ],
+    "stability": {
+      "thermal": "high",
+      "water": "moderate",
+      "acid": "low"
+    },
+    "synthesis_conditions": {
+      "temperature_C": [
+        25,
+        100
+      ],
+      "solvent": [
+        "methanol",
+        "water"
+      ],
+      "modulator": "excess linker"
+    },
+    "magnetic": true
+  },
+  "Mg2_dobdc": {
+    "name": "Magnesium Chain",
+    "formula": "Mg2(dobdc)",
+    "metal": "Mg",
+    "coordination": 5,
+    "geometry": "square pyramidal",
+    "description": "1D chain of edge-sharing MgO5 polyhedra",
+    "connectivity": "1D chain",
+    "example_mofs": [
+      "Mg-MOF-74",
+      "CPO-27-Mg"
+    ],
+    "compatible_linkers": [
+      "DOBDC",
+      "DOBPDC"
+    ],
+    "stability": {
+      "thermal": "moderate",
+      "water": "low",
+      "acid": "low"
+    },
+    "synthesis_conditions": {
+      "temperature_C": [
+        100,
+        125
+      ],
+      "solvent": [
+        "DMF",
+        "ethanol",
+        "water"
+      ],
+      "modulator": "none"
+    },
+    "open_metal_sites": true,
+    "high_density_oms": true
+  },
+  "Ni2_dobdc": {
+    "name": "Nickel Chain",
+    "formula": "Ni2(dobdc)",
+    "metal": "Ni",
+    "coordination": 5,
+    "geometry": "square pyramidal",
+    "description": "1D chain of edge-sharing NiO5 polyhedra",
+    "connectivity": "1D chain",
+    "example_mofs": [
+      "Ni-MOF-74",
+      "CPO-27-Ni"
+    ],
+    "compatible_linkers": [
+      "DOBDC",
+      "DOBPDC"
+    ],
+    "stability": {
+      "thermal": "moderate",
+      "water": "moderate",
+      "acid": "low"
+    },
+    "synthesis_conditions": {
+      "temperature_C": [
+        100,
+        125
+      ],
+      "solvent": [
+        "DMF",
+        "ethanol",
+        "water"
+      ],
+      "modulator": "none"
+    },
+    "open_metal_sites": true
+  },
+  "V_oxo_chain": {
+    "name": "Vanadium Oxo Chain",
+    "formula": "VO(COO)2",
+    "metal": "V",
+    "coordination": 6,
+    "geometry": "octahedral",
+    "description": "1D chain of corner-sharing VO6 octahedra",
+    "connectivity": "1D chain",
+    "example_mofs": [
+      "MIL-47"
+    ],
+    "compatible_linkers": [
+      "BDC"
+    ],
+    "stability": {
+      "thermal": "high",
+      "water": "high",
+      "acid": "moderate"
+    },
+    "redox_active": true
+  },
+  "Ti8O8": {
+    "name": "Titanium Oxo Cluster",
+    "formula": "Ti8O8(OH)4(COO)12",
+    "metal": "Ti",
+    "coordination": 12,
+    "geometry": "complex",
+    "description": "Octanuclear Ti cluster",
+    "connectivity": 12,
+    "example_mofs": [
+      "MIL-125",
+      "MIL-125-NH2"
+    ],
+    "compatible_linkers": [
+      "BDC",
+      "NH2-BDC"
+    ],
+    "stability": {
+      "thermal": "high",
+      "water": "moderate",
+      "acid": "low"
+    },
+    "synthesis_conditions": {
+      "temperature_C": [
+        150,
+        180
+      ],
+      "solvent": [
+        "DMF",
+        "methanol"
+      ],
+      "modulator": "none"
+    },
+    "photocatalytic": true
+  },
+  "Hf6O4OH4": {
+    "name": "Hafnium Oxo Cluster",
+    "formula": "Hf6O4(OH)4(COO)12",
+    "metal": "Hf",
+    "coordination": 12,
+    "geometry": "cuboctahedral",
+    "description": "Hexanuclear Hf cluster, isostructural to Zr6",
+    "connectivity": 12,
+    "point_symmetry": "Oh",
+    "example_mofs": [
+      "Hf-UiO-66",
+      "Hf-UiO-67"
+    ],
+    "compatible_linkers": [
+      "BDC",
+      "BPDC"
+    ],
+    "stability": {
+      "thermal": "very high",
+      "water": "very high",
+      "acid": "high"
+    },
+    "synthesis_conditions": {
+      "temperature_C": [
+        100,
+        150
+      ],
+      "solvent": [
+        "DMF"
+      ],
+      "modulator": [
+        "acetic acid",
+        "formic acid"
+      ]
+    },
+    "radiopaque": true
+  },
+  "Ce6O4OH4": {
+    "name": "Cerium Oxo Cluster",
+    "formula": "Ce6O4(OH)4(COO)12",
+    "metal": "Ce",
+    "coordination": 12,
+    "geometry": "cuboctahedral",
+    "description": "Hexanuclear Ce cluster, isostructural to Zr6",
+    "connectivity": 12,
+    "example_mofs": [
+      "Ce-UiO-66"
+    ],
+    "compatible_linkers": [
+      "BDC",
+      "BPDC"
+    ],
+    "stability": {
+      "thermal": "high",
+      "water": "high",
+      "acid": "moderate"
+    },
+    "redox_active": true,
+    "Ce3_Ce4_switching": true
+  }
+}

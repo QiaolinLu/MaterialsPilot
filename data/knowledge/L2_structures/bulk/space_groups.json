@@ -1,0 +1,1338 @@
+{
+  "_metadata": {
+    "description": "Space group information for crystal structure analysis",
+    "source": "International Tables for Crystallography",
+    "note": "230 space groups in 3D, organized by crystal system",
+    "license": "IUCr reference",
+    "citation": "International Tables for Crystallography, Vol. A",
+    "version": "2025.12",
+    "last_updated": "2025-12-31T18:02:33.838825"
+  },
+  "crystal_systems": {
+    "triclinic": {
+      "number_range": [
+        1,
+        2
+      ],
+      "lattice_constraints": "a ≠ b ≠ c, α ≠ β ≠ γ ≠ 90°",
+      "point_groups": [
+        "1",
+        "-1"
+      ],
+      "space_groups": {
+        "1": {
+          "symbol": "P1",
+          "point_group": "1",
+          "centrosymmetric": false
+        },
+        "2": {
+          "symbol": "P-1",
+          "point_group": "-1",
+          "centrosymmetric": true
+        }
+      }
+    },
+    "monoclinic": {
+      "number_range": [
+        3,
+        15
+      ],
+      "lattice_constraints": "a ≠ b ≠ c, α = γ = 90°, β ≠ 90°",
+      "point_groups": [
+        "2",
+        "m",
+        "2/m"
+      ],
+      "space_groups": {
+        "3": {
+          "symbol": "P2",
+          "point_group": "2",
+          "centrosymmetric": false
+        },
+        "4": {
+          "symbol": "P2_1",
+          "point_group": "2",
+          "centrosymmetric": false
+        },
+        "5": {
+          "symbol": "C2",
+          "point_group": "2",
+          "centrosymmetric": false
+        },
+        "6": {
+          "symbol": "Pm",
+          "point_group": "m",
+          "centrosymmetric": false
+        },
+        "7": {
+          "symbol": "Pc",
+          "point_group": "m",
+          "centrosymmetric": false
+        },
+        "8": {
+          "symbol": "Cm",
+          "point_group": "m",
+          "centrosymmetric": false
+        },
+        "9": {
+          "symbol": "Cc",
+          "point_group": "m",
+          "centrosymmetric": false
+        },
+        "10": {
+          "symbol": "P2/m",
+          "point_group": "2/m",
+          "centrosymmetric": true
+        },
+        "11": {
+          "symbol": "P2_1/m",
+          "point_group": "2/m",
+          "centrosymmetric": true
+        },
+        "12": {
+          "symbol": "C2/m",
+          "point_group": "2/m",
+          "centrosymmetric": true
+        },
+        "13": {
+          "symbol": "P2/c",
+          "point_group": "2/m",
+          "centrosymmetric": true
+        },
+        "14": {
+          "symbol": "P2_1/c",
+          "point_group": "2/m",
+          "centrosymmetric": true
+        },
+        "15": {
+          "symbol": "C2/c",
+          "point_group": "2/m",
+          "centrosymmetric": true
+        }
+      }
+    },
+    "orthorhombic": {
+      "number_range": [
+        16,
+        74
+      ],
+      "lattice_constraints": "a ≠ b ≠ c, α = β = γ = 90°",
+      "point_groups": [
+        "222",
+        "mm2",
+        "mmm"
+      ],
+      "common_space_groups": {
+        "19": {
+          "symbol": "P2_12_12_1",
+          "point_group": "222",
+          "centrosymmetric": false,
+          "notes": "Most common for proteins"
+        },
+        "33": {
+          "symbol": "Pna2_1",
+          "point_group": "mm2",
+          "centrosymmetric": false
+        },
+        "36": {
+          "symbol": "Cmc2_1",
+          "point_group": "mm2",
+          "centrosymmetric": false
+        },
+        "55": {
+          "symbol": "Pbam",
+          "point_group": "mmm",
+          "centrosymmetric": true
+        },
+        "57": {
+          "symbol": "Pbcm",
+          "point_group": "mmm",
+          "centrosymmetric": true
+        },
+        "58": {
+          "symbol": "Pnnm",
+          "point_group": "mmm",
+          "centrosymmetric": true
+        },
+        "59": {
+          "symbol": "Pmmn",
+          "point_group": "mmm",
+          "centrosymmetric": true
+        },
+        "60": {
+          "symbol": "Pbcn",
+          "point_group": "mmm",
+          "centrosymmetric": true
+        },
+        "61": {
+          "symbol": "Pbca",
+          "point_group": "mmm",
+          "centrosymmetric": true
+        },
+        "62": {
+          "symbol": "Pnma",
+          "point_group": "mmm",
+          "centrosymmetric": true,
+          "notes": "Very common for inorganics"
+        },
+        "63": {
+          "symbol": "Cmcm",
+          "point_group": "mmm",
+          "centrosymmetric": true
+        },
+        "64": {
+          "symbol": "Cmce",
+          "point_group": "mmm",
+          "centrosymmetric": true
+        },
+        "65": {
+          "symbol": "Cmmm",
+          "point_group": "mmm",
+          "centrosymmetric": true
+        },
+        "66": {
+          "symbol": "Cccm",
+          "point_group": "mmm",
+          "centrosymmetric": true
+        },
+        "67": {
+          "symbol": "Cmme",
+          "point_group": "mmm",
+          "centrosymmetric": true
+        },
+        "68": {
+          "symbol": "Ccce",
+          "point_group": "mmm",
+          "centrosymmetric": true
+        },
+        "69": {
+          "symbol": "Fmmm",
+          "point_group": "mmm",
+          "centrosymmetric": true
+        },
+        "70": {
+          "symbol": "Fddd",
+          "point_group": "mmm",
+          "centrosymmetric": true
+        },
+        "71": {
+          "symbol": "Immm",
+          "point_group": "mmm",
+          "centrosymmetric": true
+        },
+        "72": {
+          "symbol": "Ibam",
+          "point_group": "mmm",
+          "centrosymmetric": true
+        },
+        "73": {
+          "symbol": "Ibca",
+          "point_group": "mmm",
+          "centrosymmetric": true
+        },
+        "74": {
+          "symbol": "Imma",
+          "point_group": "mmm",
+          "centrosymmetric": true
+        }
+      }
+    },
+    "tetragonal": {
+      "number_range": [
+        75,
+        142
+      ],
+      "lattice_constraints": "a = b ≠ c, α = β = γ = 90°",
+      "point_groups": [
+        "4",
+        "-4",
+        "4/m",
+        "422",
+        "4mm",
+        "-42m",
+        "4/mmm"
+      ],
+      "common_space_groups": {
+        "82": {
+          "symbol": "I-4",
+          "point_group": "-4",
+          "centrosymmetric": false
+        },
+        "87": {
+          "symbol": "I4/m",
+          "point_group": "4/m",
+          "centrosymmetric": true
+        },
+        "88": {
+          "symbol": "I4_1/a",
+          "point_group": "4/m",
+          "centrosymmetric": true
+        },
+        "121": {
+          "symbol": "I-42m",
+          "point_group": "-42m",
+          "centrosymmetric": false
+        },
+        "122": {
+          "symbol": "I-42d",
+          "point_group": "-42m",
+          "centrosymmetric": false
+        },
+        "123": {
+          "symbol": "P4/mmm",
+          "point_group": "4/mmm",
+          "centrosymmetric": true
+        },
+        "129": {
+          "symbol": "P4/nmm",
+          "point_group": "4/mmm",
+          "centrosymmetric": true
+        },
+        "136": {
+          "symbol": "P4_2/mnm",
+          "point_group": "4/mmm",
+          "centrosymmetric": true,
+          "notes": "Rutile structure"
+        },
+        "139": {
+          "symbol": "I4/mmm",
+          "point_group": "4/mmm",
+          "centrosymmetric": true
+        },
+        "140": {
+          "symbol": "I4/mcm",
+          "point_group": "4/mmm",
+          "centrosymmetric": true
+        },
+        "141": {
+          "symbol": "I4_1/amd",
+          "point_group": "4/mmm",
+          "centrosymmetric": true,
+          "notes": "Anatase TiO2"
+        },
+        "142": {
+          "symbol": "I4_1/acd",
+          "point_group": "4/mmm",
+          "centrosymmetric": true
+        }
+      }
+    },
+    "trigonal": {
+      "number_range": [
+        143,
+        167
+      ],
+      "lattice_constraints": "a = b = c, α = β = γ ≠ 90° (rhombohedral) or a = b ≠ c, α = β = 90°, γ = 120° (hexagonal)",
+      "point_groups": [
+        "3",
+        "-3",
+        "32",
+        "3m",
+        "-3m"
+      ],
+      "common_space_groups": {
+        "143": {
+          "symbol": "P3",
+          "point_group": "3",
+          "centrosymmetric": false
+        },
+        "146": {
+          "symbol": "R3",
+          "point_group": "3",
+          "centrosymmetric": false
+        },
+        "147": {
+          "symbol": "P-3",
+          "point_group": "-3",
+          "centrosymmetric": true
+        },
+        "148": {
+          "symbol": "R-3",
+          "point_group": "-3",
+          "centrosymmetric": true
+        },
+        "155": {
+          "symbol": "R32",
+          "point_group": "32",
+          "centrosymmetric": false
+        },
+        "160": {
+          "symbol": "R3m",
+          "point_group": "3m",
+          "centrosymmetric": false
+        },
+        "161": {
+          "symbol": "R3c",
+          "point_group": "3m",
+          "centrosymmetric": false
+        },
+        "164": {
+          "symbol": "P-3m1",
+          "point_group": "-3m",
+          "centrosymmetric": true
+        },
+        "166": {
+          "symbol": "R-3m",
+          "point_group": "-3m",
+          "centrosymmetric": true,
+          "notes": "Corundum structure"
+        },
+        "167": {
+          "symbol": "R-3c",
+          "point_group": "-3m",
+          "centrosymmetric": true
+        }
+      }
+    },
+    "hexagonal": {
+      "number_range": [
+        168,
+        194
+      ],
+      "lattice_constraints": "a = b ≠ c, α = β = 90°, γ = 120°",
+      "point_groups": [
+        "6",
+        "-6",
+        "6/m",
+        "622",
+        "6mm",
+        "-6m2",
+        "6/mmm"
+      ],
+      "common_space_groups": {
+        "173": {
+          "symbol": "P6_3",
+          "point_group": "6",
+          "centrosymmetric": false
+        },
+        "176": {
+          "symbol": "P6_3/m",
+          "point_group": "6/m",
+          "centrosymmetric": true
+        },
+        "180": {
+          "symbol": "P6_222",
+          "point_group": "622",
+          "centrosymmetric": false
+        },
+        "182": {
+          "symbol": "P6_322",
+          "point_group": "622",
+          "centrosymmetric": false
+        },
+        "185": {
+          "symbol": "P6_3cm",
+          "point_group": "6mm",
+          "centrosymmetric": false
+        },
+        "186": {
+          "symbol": "P6_3mc",
+          "point_group": "6mm",
+          "centrosymmetric": false,
+          "notes": "Wurtzite structure"
+        },
+        "187": {
+          "symbol": "P-6m2",
+          "point_group": "-6m2",
+          "centrosymmetric": false
+        },
+        "189": {
+          "symbol": "P-62m",
+          "point_group": "-6m2",
+          "centrosymmetric": false
+        },
+        "191": {
+          "symbol": "P6/mmm",
+          "point_group": "6/mmm",
+          "centrosymmetric": true
+        },
+        "193": {
+          "symbol": "P6_3/mcm",
+          "point_group": "6/mmm",
+          "centrosymmetric": true
+        },
+        "194": {
+          "symbol": "P6_3/mmc",
+          "point_group": "6/mmm",
+          "centrosymmetric": true,
+          "notes": "HCP metals"
+        }
+      }
+    },
+    "cubic": {
+      "number_range": [
+        195,
+        230
+      ],
+      "lattice_constraints": "a = b = c, α = β = γ = 90°",
+      "point_groups": [
+        "23",
+        "m-3",
+        "432",
+        "-43m",
+        "m-3m"
+      ],
+      "common_space_groups": {
+        "195": {
+          "symbol": "P23",
+          "point_group": "23",
+          "centrosymmetric": false
+        },
+        "198": {
+          "symbol": "P2_13",
+          "point_group": "23",
+          "centrosymmetric": false
+        },
+        "200": {
+          "symbol": "Pm-3",
+          "point_group": "m-3",
+          "centrosymmetric": true
+        },
+        "201": {
+          "symbol": "Pn-3",
+          "point_group": "m-3",
+          "centrosymmetric": true
+        },
+        "202": {
+          "symbol": "Fm-3",
+          "point_group": "m-3",
+          "centrosymmetric": true
+        },
+        "204": {
+          "symbol": "Im-3",
+          "point_group": "m-3",
+          "centrosymmetric": true
+        },
+        "205": {
+          "symbol": "Pa-3",
+          "point_group": "m-3",
+          "centrosymmetric": true,
+          "notes": "Pyrite structure"
+        },
+        "206": {
+          "symbol": "Ia-3",
+          "point_group": "m-3",
+          "centrosymmetric": true
+        },
+        "215": {
+          "symbol": "P-43m",
+          "point_group": "-43m",
+          "centrosymmetric": false
+        },
+        "216": {
+          "symbol": "F-43m",
+          "point_group": "-43m",
+          "centrosymmetric": false,
+          "notes": "Zincblende structure"
+        },
+        "217": {
+          "symbol": "I-43m",
+          "point_group": "-43m",
+          "centrosymmetric": false
+        },
+        "218": {
+          "symbol": "P-43n",
+          "point_group": "-43m",
+          "centrosymmetric": false
+        },
+        "219": {
+          "symbol": "F-43c",
+          "point_group": "-43m",
+          "centrosymmetric": false
+        },
+        "220": {
+          "symbol": "I-43d",
+          "point_group": "-43m",
+          "centrosymmetric": false
+        },
+        "221": {
+          "symbol": "Pm-3m",
+          "point_group": "m-3m",
+          "centrosymmetric": true,
+          "notes": "Simple cubic, perovskite"
+        },
+        "224": {
+          "symbol": "Pn-3m",
+          "point_group": "m-3m",
+          "centrosymmetric": true
+        },
+        "225": {
+          "symbol": "Fm-3m",
+          "point_group": "m-3m",
+          "centrosymmetric": true,
+          "notes": "FCC metals, rock salt"
+        },
+        "226": {
+          "symbol": "Fm-3c",
+          "point_group": "m-3m",
+          "centrosymmetric": true
+        },
+        "227": {
+          "symbol": "Fd-3m",
+          "point_group": "m-3m",
+          "centrosymmetric": true,
+          "notes": "Diamond, spinel"
+        },
+        "228": {
+          "symbol": "Fd-3c",
+          "point_group": "m-3m",
+          "centrosymmetric": true
+        },
+        "229": {
+          "symbol": "Im-3m",
+          "point_group": "m-3m",
+          "centrosymmetric": true,
+          "notes": "BCC metals"
+        },
+        "230": {
+          "symbol": "Ia-3d",
+          "point_group": "m-3m",
+          "centrosymmetric": true,
+          "notes": "Garnet structure"
+        }
+      }
+    }
+  },
+  "common_structures": {
+    "FCC": {
+      "space_group": 225,
+      "symbol": "Fm-3m",
+      "examples": [
+        "Cu",
+        "Al",
+        "Au",
+        "Ag",
+        "Pt",
+        "Pd",
+        "Ni",
+        "Pb"
+      ],
+      "wyckoff_positions": {
+        "metal": "4a (0,0,0)"
+      }
+    },
+    "BCC": {
+      "space_group": 229,
+      "symbol": "Im-3m",
+      "examples": [
+        "Fe",
+        "W",
+        "Mo",
+        "Cr",
+        "V",
+        "Nb",
+        "Ta"
+      ],
+      "wyckoff_positions": {
+        "metal": "2a (0,0,0)"
+      }
+    },
+    "HCP": {
+      "space_group": 194,
+      "symbol": "P6_3/mmc",
+      "examples": [
+        "Mg",
+        "Ti",
+        "Zn",
+        "Co",
+        "Zr",
+        "Ru",
+        "Os"
+      ],
+      "wyckoff_positions": {
+        "metal": "2c (1/3,2/3,1/4)"
+      }
+    },
+    "diamond": {
+      "space_group": 227,
+      "symbol": "Fd-3m",
+      "examples": [
+        "C",
+        "Si",
+        "Ge"
+      ],
+      "wyckoff_positions": {
+        "atom": "8a (0,0,0)"
+      }
+    },
+    "zincblende": {
+      "space_group": 216,
+      "symbol": "F-43m",
+      "examples": [
+        "ZnS",
+        "GaAs",
+        "InP",
+        "CdTe"
+      ],
+      "wyckoff_positions": {
+        "cation": "4a (0,0,0)",
+        "anion": "4c (1/4,1/4,1/4)"
+      }
+    },
+    "wurtzite": {
+      "space_group": 186,
+      "symbol": "P6_3mc",
+      "examples": [
+        "ZnO",
+        "GaN",
+        "AlN",
+        "CdS"
+      ],
+      "wyckoff_positions": {
+        "cation": "2b (1/3,2/3,0)",
+        "anion": "2b (1/3,2/3,u)"
+      },
+      "notes": "u ≈ 0.375"
+    },
+    "rock_salt": {
+      "space_group": 225,
+      "symbol": "Fm-3m",
+      "examples": [
+        "NaCl",
+        "MgO",
+        "TiN",
+        "FeO"
+      ],
+      "wyckoff_positions": {
+        "cation": "4a (0,0,0)",
+        "anion": "4b (1/2,1/2,1/2)"
+      }
+    },
+    "fluorite": {
+      "space_group": 225,
+      "symbol": "Fm-3m",
+      "examples": [
+        "CaF2",
+        "CeO2",
+        "UO2",
+        "ZrO2"
+      ],
+      "wyckoff_positions": {
+        "cation": "4a (0,0,0)",
+        "anion": "8c (1/4,1/4,1/4)"
+      }
+    },
+    "antifluorite": {
+      "space_group": 225,
+      "symbol": "Fm-3m",
+      "examples": [
+        "Li2O",
+        "Na2O",
+        "K2O"
+      ],
+      "wyckoff_positions": {
+        "cation": "8c (1/4,1/4,1/4)",
+        "anion": "4a (0,0,0)"
+      }
+    },
+    "rutile": {
+      "space_group": 136,
+      "symbol": "P4_2/mnm",
+      "examples": [
+        "TiO2",
+        "SnO2",
+        "MnO2",
+        "RuO2"
+      ],
+      "wyckoff_positions": {
+        "cation": "2a (0,0,0)",
+        "anion": "4f (x,x,0)"
+      },
+      "notes": "x ≈ 0.305"
+    },
+    "anatase": {
+      "space_group": 141,
+      "symbol": "I4_1/amd",
+      "examples": [
+        "TiO2"
+      ],
+      "wyckoff_positions": {
+        "Ti": "4a (0,0,0)",
+        "O": "8e (0,0,z)"
+      },
+      "notes": "z ≈ 0.208"
+    },
+    "perovskite": {
+      "space_group": 221,
+      "symbol": "Pm-3m",
+      "examples": [
+        "SrTiO3",
+        "BaTiO3",
+        "CaTiO3"
+      ],
+      "wyckoff_positions": {
+        "A": "1a (0,0,0)",
+        "B": "1b (1/2,1/2,1/2)",
+        "O": "3c (1/2,1/2,0)"
+      }
+    },
+    "spinel": {
+      "space_group": 227,
+      "symbol": "Fd-3m",
+      "examples": [
+        "MgAl2O4",
+        "Fe3O4",
+        "Co3O4"
+      ],
+      "wyckoff_positions": {
+        "A_tet": "8a (1/8,1/8,1/8)",
+        "B_oct": "16d (1/2,1/2,1/2)",
+        "O": "32e (x,x,x)"
+      },
+      "notes": "x ≈ 0.25"
+    },
+    "inverse_spinel": {
+      "space_group": 227,
+      "symbol": "Fd-3m",
+      "examples": [
+        "Fe3O4",
+        "NiFe2O4"
+      ],
+      "wyckoff_positions": {
+        "B_tet": "8a",
+        "A+B_oct": "16d",
+        "O": "32e"
+      },
+      "notes": "Half of B cations on tetrahedral sites"
+    },
+    "corundum": {
+      "space_group": 167,
+      "symbol": "R-3c",
+      "examples": [
+        "Al2O3",
+        "Fe2O3",
+        "Cr2O3"
+      ],
+      "wyckoff_positions": {
+        "cation": "12c (0,0,z)",
+        "O": "18e (x,0,1/4)"
+      }
+    },
+    "pyrite": {
+      "space_group": 205,
+      "symbol": "Pa-3",
+      "examples": [
+        "FeS2",
+        "CoS2",
+        "NiS2"
+      ],
+      "wyckoff_positions": {
+        "Fe": "4a (0,0,0)",
+        "S": "8c (x,x,x)"
+      },
+      "notes": "x ≈ 0.385"
+    },
+    "CsCl": {
+      "space_group": 221,
+      "symbol": "Pm-3m",
+      "examples": [
+        "CsCl",
+        "CsBr",
+        "CsI"
+      ],
+      "wyckoff_positions": {
+        "Cs": "1a (0,0,0)",
+        "Cl": "1b (1/2,1/2,1/2)"
+      }
+    },
+    "layered_rocksalt": {
+      "space_group": 166,
+      "symbol": "R-3m",
+      "examples": [
+        "LiCoO2",
+        "LiNiO2",
+        "NaCoO2"
+      ],
+      "wyckoff_positions": {
+        "Li": "3a (0,0,0)",
+        "Co": "3b (0,0,1/2)",
+        "O": "6c (0,0,z)"
+      },
+      "notes": "Battery cathode materials"
+    }
+  },
+  "lattice_types": {
+    "P": {
+      "name": "Primitive",
+      "points_per_cell": 1
+    },
+    "I": {
+      "name": "Body-centered",
+      "points_per_cell": 2,
+      "centering_vector": [
+        0.5,
+        0.5,
+        0.5
+      ]
+    },
+    "F": {
+      "name": "Face-centered",
+      "points_per_cell": 4,
+      "centering_vectors": [
+        [
+          0.5,
+          0.5,
+          0
+        ],
+        [
+          0.5,
+          0,
+          0.5
+        ],
+        [
+          0,
+          0.5,
+          0.5
+        ]
+      ]
+    },
+    "A": {
+      "name": "A-face centered",
+      "points_per_cell": 2,
+      "centering_vector": [
+        0,
+        0.5,
+        0.5
+      ]
+    },
+    "B": {
+      "name": "B-face centered",
+      "points_per_cell": 2,
+      "centering_vector": [
+        0.5,
+        0,
+        0.5
+      ]
+    },
+    "C": {
+      "name": "C-face centered",
+      "points_per_cell": 2,
+      "centering_vector": [
+        0.5,
+        0.5,
+        0
+      ]
+    },
+    "R": {
+      "name": "Rhombohedral",
+      "points_per_cell": 3,
+      "notes": "Hexagonal setting has 3 points"
+    }
+  },
+  "symmetry_operations": {
+    "identity": {
+      "symbol": "1",
+      "matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ]
+    },
+    "inversion": {
+      "symbol": "-1",
+      "matrix": [
+        [
+          -1,
+          0,
+          0
+        ],
+        [
+          0,
+          -1,
+          0
+        ],
+        [
+          0,
+          0,
+          -1
+        ]
+      ]
+    },
+    "2_fold_z": {
+      "symbol": "2_z",
+      "matrix": [
+        [
+          -1,
+          0,
+          0
+        ],
+        [
+          0,
+          -1,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ]
+    },
+    "2_fold_y": {
+      "symbol": "2_y",
+      "matrix": [
+        [
+          -1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          -1
+        ]
+      ]
+    },
+    "2_fold_x": {
+      "symbol": "2_x",
+      "matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          -1,
+          0
+        ],
+        [
+          0,
+          0,
+          -1
+        ]
+      ]
+    },
+    "mirror_z": {
+      "symbol": "m_z",
+      "matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          -1
+        ]
+      ]
+    },
+    "mirror_y": {
+      "symbol": "m_y",
+      "matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          -1,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ]
+    },
+    "mirror_x": {
+      "symbol": "m_x",
+      "matrix": [
+        [
+          -1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ]
+    },
+    "3_fold_111": {
+      "symbol": "3_111",
+      "matrix": [
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ]
+      ]
+    },
+    "4_fold_z": {
+      "symbol": "4_z",
+      "matrix": [
+        [
+          0,
+          -1,
+          0
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ]
+    },
+    "6_fold_z": {
+      "symbol": "6_z",
+      "matrix": [
+        [
+          1,
+          -1,
+          0
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ]
+    }
+  },
+  "point_group_properties": {
+    "1": {
+      "order": 1,
+      "centrosymmetric": false,
+      "polar": true,
+      "chiral": true
+    },
+    "-1": {
+      "order": 2,
+      "centrosymmetric": true,
+      "polar": false,
+      "chiral": false
+    },
+    "2": {
+      "order": 2,
+      "centrosymmetric": false,
+      "polar": true,
+      "chiral": true
+    },
+    "m": {
+      "order": 2,
+      "centrosymmetric": false,
+      "polar": true,
+      "chiral": false
+    },
+    "2/m": {
+      "order": 4,
+      "centrosymmetric": true,
+      "polar": false,
+      "chiral": false
+    },
+    "222": {
+      "order": 4,
+      "centrosymmetric": false,
+      "polar": false,
+      "chiral": true
+    },
+    "mm2": {
+      "order": 4,
+      "centrosymmetric": false,
+      "polar": true,
+      "chiral": false
+    },
+    "mmm": {
+      "order": 8,
+      "centrosymmetric": true,
+      "polar": false,
+      "chiral": false
+    },
+    "4": {
+      "order": 4,
+      "centrosymmetric": false,
+      "polar": true,
+      "chiral": true
+    },
+    "-4": {
+      "order": 4,
+      "centrosymmetric": false,
+      "polar": false,
+      "chiral": false
+    },
+    "4/m": {
+      "order": 8,
+      "centrosymmetric": true,
+      "polar": false,
+      "chiral": false
+    },
+    "422": {
+      "order": 8,
+      "centrosymmetric": false,
+      "polar": false,
+      "chiral": true
+    },
+    "4mm": {
+      "order": 8,
+      "centrosymmetric": false,
+      "polar": true,
+      "chiral": false
+    },
+    "-42m": {
+      "order": 8,
+      "centrosymmetric": false,
+      "polar": false,
+      "chiral": false
+    },
+    "4/mmm": {
+      "order": 16,
+      "centrosymmetric": true,
+      "polar": false,
+      "chiral": false
+    },
+    "3": {
+      "order": 3,
+      "centrosymmetric": false,
+      "polar": true,
+      "chiral": true
+    },
+    "-3": {
+      "order": 6,
+      "centrosymmetric": true,
+      "polar": false,
+      "chiral": false
+    },
+    "32": {
+      "order": 6,
+      "centrosymmetric": false,
+      "polar": false,
+      "chiral": true
+    },
+    "3m": {
+      "order": 6,
+      "centrosymmetric": false,
+      "polar": true,
+      "chiral": false
+    },
+    "-3m": {
+      "order": 12,
+      "centrosymmetric": true,
+      "polar": false,
+      "chiral": false
+    },
+    "6": {
+      "order": 6,
+      "centrosymmetric": false,
+      "polar": true,
+      "chiral": true
+    },
+    "-6": {
+      "order": 6,
+      "centrosymmetric": false,
+      "polar": false,
+      "chiral": false
+    },
+    "6/m": {
+      "order": 12,
+      "centrosymmetric": true,
+      "polar": false,
+      "chiral": false
+    },
+    "622": {
+      "order": 12,
+      "centrosymmetric": false,
+      "polar": false,
+      "chiral": true
+    },
+    "6mm": {
+      "order": 12,
+      "centrosymmetric": false,
+      "polar": true,
+      "chiral": false
+    },
+    "-6m2": {
+      "order": 12,
+      "centrosymmetric": false,
+      "polar": false,
+      "chiral": false
+    },
+    "6/mmm": {
+      "order": 24,
+      "centrosymmetric": true,
+      "polar": false,
+      "chiral": false
+    },
+    "23": {
+      "order": 12,
+      "centrosymmetric": false,
+      "polar": false,
+      "chiral": true
+    },
+    "m-3": {
+      "order": 24,
+      "centrosymmetric": true,
+      "polar": false,
+      "chiral": false
+    },
+    "432": {
+      "order": 24,
+      "centrosymmetric": false,
+      "polar": false,
+      "chiral": true
+    },
+    "-43m": {
+      "order": 24,
+      "centrosymmetric": false,
+      "polar": false,
+      "chiral": false
+    },
+    "m-3m": {
+      "order": 48,
+      "centrosymmetric": true,
+      "polar": false,
+      "chiral": false
+    }
+  }
+}

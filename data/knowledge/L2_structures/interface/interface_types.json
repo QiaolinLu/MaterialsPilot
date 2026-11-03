@@ -1,0 +1,174 @@
+{
+  "_metadata": {
+    "description": "Generalizable interface type definitions and construction principles",
+    "purpose": "Enable LLM to construct interfaces between any compatible materials",
+    "version": "2026.01",
+    "last_updated": "2026-01-11"
+  },
+
+  "interface_categories": {
+    "metal_metal": {
+      "description": "Interface between two metallic materials",
+      "bonding": "Metallic bonding across interface",
+      "typical_distance": {"min": 2.5, "max": 3.5, "unit": "Angstrom"},
+      "construction_notes": "Match surface lattices, consider epitaxial relationships"
+    },
+    "metal_oxide": {
+      "description": "Interface between metal and oxide",
+      "bonding": "Metal-oxygen bonds at interface",
+      "typical_distance": {"min": 2.0, "max": 3.0, "unit": "Angstrom"},
+      "construction_notes": "Place metal atoms above oxygen sites for strong bonding"
+    },
+    "metal_semiconductor": {
+      "description": "Interface between metal and semiconductor (Schottky/Ohmic)",
+      "bonding": "Mixed covalent-metallic",
+      "typical_distance": {"min": 2.2, "max": 3.2, "unit": "Angstrom"},
+      "construction_notes": "Consider band alignment and Fermi level pinning"
+    },
+    "semiconductor_semiconductor": {
+      "description": "Interface between two semiconductors (heterostructure)",
+      "bonding": "Covalent bonds across interface",
+      "typical_distance": {"min": 1.5, "max": 2.5, "unit": "Angstrom"},
+      "construction_notes": "Match bond lengths at interface, consider strain"
+    },
+    "2D_substrate": {
+      "description": "2D material on bulk substrate (van der Waals)",
+      "bonding": "Van der Waals interaction",
+      "typical_distance": {"min": 3.0, "max": 4.0, "unit": "Angstrom"},
+      "construction_notes": "No chemical bonding, can have lattice mismatch"
+    },
+    "2D_2D": {
+      "description": "Van der Waals heterostructure of 2D materials",
+      "bonding": "Van der Waals interaction",
+      "typical_distance": {"min": 3.0, "max": 3.5, "unit": "Angstrom"},
+      "construction_notes": "Twist angle can create moire patterns"
+    },
+    "oxide_oxide": {
+      "description": "Interface between two oxides",
+      "bonding": "Ionic/covalent across interface",
+      "typical_distance": {"min": 2.0, "max": 2.8, "unit": "Angstrom"},
+      "construction_notes": "Match oxygen sublattices, consider polarity"
+    }
+  },
+
+  "lattice_matching_principles": {
+    "strain_tolerance": {
+      "coherent": {"max_strain": 0.05, "description": "Full epitaxial alignment possible"},
+      "semicoherent": {"max_strain": 0.25, "description": "Misfit dislocations at interface"},
+      "incoherent": {"min_strain": 0.25, "description": "No epitaxial relationship"}
+    },
+    "supercell_matching": {
+      "description": "Find integer ratios of lattice vectors to minimize strain",
+      "formula": "strain = |a_film * m - a_sub * n| / (a_sub * n)",
+      "common_ratios": ["1:1", "2:3", "3:4", "1:sqrt(2) (45 degree rotation)"]
+    },
+    "domain_matching": {
+      "description": "Match domains of atoms rather than single lattice constants",
+      "example": "m domains of film match n domains of substrate"
+    }
+  },
+
+  "surface_properties": {
+    "fcc_111": {
+      "symmetry": "hexagonal",
+      "coordination": 9,
+      "surface_lattice": "a_surf = a_bulk / sqrt(2)",
+      "stacking": "ABC"
+    },
+    "fcc_100": {
+      "symmetry": "square",
+      "coordination": 8,
+      "surface_lattice": "a_surf = a_bulk / sqrt(2)"
+    },
+    "fcc_110": {
+      "symmetry": "rectangular",
+      "coordination": 7,
+      "surface_lattice": "a_surf = a_bulk, b_surf = a_bulk / sqrt(2)"
+    },
+    "bcc_110": {
+      "symmetry": "rectangular",
+      "coordination": 6,
+      "surface_lattice": "a_surf = a_bulk, b_surf = a_bulk * sqrt(2)"
+    },
+    "bcc_100": {
+      "symmetry": "square",
+      "coordination": 4,
+      "surface_lattice": "a_surf = a_bulk"
+    },
+    "diamond_001": {
+      "symmetry": "square",
+      "reconstruction": "2x1 dimer rows",
+      "surface_lattice": "a_surf = a_bulk / sqrt(2)"
+    },
+    "perovskite_001": {
+      "symmetry": "square",
+      "terminations": ["AO", "BO2"],
+      "surface_lattice": "a_surf = a_bulk"
+    },
+    "rutile_110": {
+      "symmetry": "rectangular",
+      "terminations": ["bridging O", "5-fold Ti"],
+      "surface_lattice": "a_surf = a_bulk, b_surf = c_bulk"
+    }
+  },
+
+  "construction_guidelines": {
+    "slab_thickness": {
+      "minimum_layers": {
+        "fcc_metals": {"111": 4, "100": 4, "110": 6},
+        "bcc_metals": {"110": 4, "100": 6},
+        "diamond": {"001": 6, "111": 6},
+        "perovskite": {"001": 4},
+        "rutile": {"110": 4, "001": 6}
+      },
+      "recommended_angstrom": 10.0
+    },
+    "vacuum_spacing": {
+      "minimum": 15.0,
+      "recommended": 20.0,
+      "for_charged_systems": 25.0
+    },
+    "interface_gap": {
+      "formula": "Use typical_distance from interface_categories",
+      "adjustment": "May need optimization with DFT"
+    }
+  },
+
+  "pymatgen_construction_pattern": {
+    "imports": [
+      "from pymatgen.core import Structure, Lattice",
+      "from pymatgen.core.surface import SlabGenerator",
+      "import numpy as np"
+    ],
+    "steps": [
+      "1. Create bulk structures for film and substrate",
+      "2. Use SlabGenerator to create slabs with appropriate thickness",
+      "3. Calculate lattice mismatch and determine supercell",
+      "4. Create new combined lattice with total c = sub_c + gap + film_c",
+      "5. Collect all sites from both slabs with adjusted z-coordinates",
+      "6. Create final Structure and verify minimum distances"
+    ],
+    "code_pattern": {
+      "slab_generation": "slabs = SlabGenerator(bulk, miller_index, min_slab_size, min_vacuum_size).get_slabs()",
+      "stacking": "Manually adjust fractional coordinates when combining slabs"
+    }
+  },
+
+  "common_errors": {
+    "atomic_overlap": {
+      "error": "Atoms too close (< 1.5 Angstrom)",
+      "cause": "Wrong interface distance or supercell mismatch",
+      "fix": "Adjust interface_distance or check supercell dimensions"
+    },
+    "strain_too_high": {
+      "error": "Lattice mismatch > 10%",
+      "cause": "Incompatible materials or wrong supercell",
+      "fix": "Try different supercell ratios or 45 degree rotation"
+    },
+    "vacuum_too_small": {
+      "error": "Periodic images interact",
+      "cause": "Vacuum < 15 Angstrom",
+      "fix": "Increase vacuum to at least 15 Angstrom"
+    }
+  }
+}

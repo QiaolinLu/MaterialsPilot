@@ -1,0 +1,17 @@
+Third-party knowledge attribution
+
+The generic atom-operation knowledge in
+data/knowledge/L2_structures/atom_operations/geometry.json and operations.json
+was derived from the AtomWorld implementation by theNotfish and contributors,
+commit db1933021551236f5a989e5339e89baa84e4ebcb:
+
+https://github.com/MasterAI-EAM/atomworld/blob/db1933021551236f5a989e5339e89baa84e4ebcb/src/atom_world/actions.py
+https://github.com/MasterAI-EAM/atomworld/blob/db1933021551236f5a989e5339e89baa84e4ebcb/src/atom_world/cell_actions.py
+
+The existing MIT license notice is preserved in
+docs/third_party/AtomWorld_LICENSE.txt. Source hashes and semantic notes remain
+in the knowledge JSON metadata. No AtomWorld benchmark samples or targets are
+included in this package.
+
+Other knowledge-source references are retained in the respective JSON files.
+Third-party package licenses remain governed by their respective authors.

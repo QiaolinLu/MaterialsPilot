@@ -1,0 +1,490 @@
+{
+  "_metadata": {
+    "description": "Physical properties of metals",
+    "coverage": "FCC, BCC, HCP transition metals and main group metals",
+    "total_metals": 25,
+    "source": "Materials Project and CRC Handbook",
+    "license": "CC BY 4.0 / Reference data",
+    "citation": "Materials Project (materialsproject.org)",
+    "version": "2025.12",
+    "last_updated": "2025-12-31T18:02:33.826130"
+  },
+  "Pt": {
+    "structure": "fcc",
+    "lattice_constant": 3.92,
+    "d_band_center": -2.25,
+    "description": "Noble metal, excellent oxidation catalyst",
+    "common_facets": [
+      "(111)",
+      "(100)",
+      "(110)"
+    ],
+    "work_function": 5.65,
+    "electronegativity": 2.28,
+    "cohesive_energy": 5.84,
+    "melting_point": 2041,
+    "applications": [
+      "automotive catalysis",
+      "fuel cells",
+      "ORR"
+    ]
+  },
+  "Cu": {
+    "structure": "fcc",
+    "lattice_constant": 3.61,
+    "d_band_center": -2.67,
+    "description": "Coinage metal, good for CO2 reduction",
+    "common_facets": [
+      "(111)",
+      "(100)",
+      "(110)"
+    ],
+    "work_function": 4.65,
+    "electronegativity": 1.9,
+    "cohesive_energy": 3.49,
+    "melting_point": 1358,
+    "applications": [
+      "CO2 reduction",
+      "methanol synthesis"
+    ]
+  },
+  "Ni": {
+    "structure": "fcc",
+    "lattice_constant": 3.52,
+    "d_band_center": -1.29,
+    "description": "Transition metal, strong adsorbate binding, magnetic",
+    "common_facets": [
+      "(111)",
+      "(100)",
+      "(110)"
+    ],
+    "work_function": 5.15,
+    "electronegativity": 1.91,
+    "cohesive_energy": 4.44,
+    "melting_point": 1728,
+    "magnetic": "ferromagnetic",
+    "applications": [
+      "hydrogenation",
+      "steam reforming"
+    ]
+  },
+  "Pd": {
+    "structure": "fcc",
+    "lattice_constant": 3.89,
+    "d_band_center": -1.83,
+    "description": "Noble metal, hydrogen storage applications",
+    "common_facets": [
+      "(111)",
+      "(100)"
+    ],
+    "work_function": 5.12,
+    "electronegativity": 2.2,
+    "cohesive_energy": 3.89,
+    "melting_point": 1828,
+    "applications": [
+      "hydrogenation",
+      "H2 storage",
+      "Suzuki coupling"
+    ]
+  },
+  "Au": {
+    "structure": "fcc",
+    "lattice_constant": 4.08,
+    "d_band_center": -3.56,
+    "description": "Noble metal, weak adsorbate binding",
+    "common_facets": [
+      "(111)",
+      "(100)"
+    ],
+    "work_function": 5.1,
+    "electronegativity": 2.54,
+    "cohesive_energy": 3.81,
+    "melting_point": 1337,
+    "applications": [
+      "CO oxidation (nanoparticles)",
+      "selective oxidation"
+    ]
+  },
+  "Ag": {
+    "structure": "fcc",
+    "lattice_constant": 4.09,
+    "d_band_center": -4.3,
+    "description": "Coinage metal, ethylene epoxidation catalyst",
+    "common_facets": [
+      "(111)",
+      "(100)"
+    ],
+    "work_function": 4.26,
+    "electronegativity": 1.93,
+    "cohesive_energy": 2.95,
+    "melting_point": 1235,
+    "applications": [
+      "ethylene epoxidation",
+      "formaldehyde synthesis"
+    ]
+  },
+  "Al": {
+    "structure": "fcc",
+    "lattice_constant": 4.05,
+    "d_band_center": null,
+    "description": "Main group metal, lightweight, oxide passivation",
+    "common_facets": [
+      "(111)",
+      "(100)"
+    ],
+    "work_function": 4.28,
+    "electronegativity": 1.61,
+    "cohesive_energy": 3.39,
+    "melting_point": 933,
+    "applications": [
+      "structural",
+      "Al2O3 support"
+    ]
+  },
+  "Rh": {
+    "structure": "fcc",
+    "lattice_constant": 3.8,
+    "d_band_center": -1.73,
+    "description": "Noble metal, automotive catalyst",
+    "common_facets": [
+      "(111)",
+      "(100)"
+    ],
+    "work_function": 4.98,
+    "electronegativity": 2.28,
+    "cohesive_energy": 5.75,
+    "melting_point": 2237,
+    "applications": [
+      "automotive catalysis",
+      "NOx reduction",
+      "hydroformylation"
+    ]
+  },
+  "Ir": {
+    "structure": "fcc",
+    "lattice_constant": 3.84,
+    "d_band_center": -2.11,
+    "description": "Noble metal, oxygen evolution catalyst",
+    "common_facets": [
+      "(111)",
+      "(100)"
+    ],
+    "work_function": 5.27,
+    "electronegativity": 2.2,
+    "cohesive_energy": 6.94,
+    "melting_point": 2719,
+    "applications": [
+      "OER",
+      "water splitting",
+      "C-H activation"
+    ]
+  },
+  "Fe": {
+    "structure": "bcc",
+    "lattice_constant": 2.87,
+    "d_band_center": -1.5,
+    "description": "Transition metal, Fischer-Tropsch catalyst, magnetic",
+    "common_facets": [
+      "(110)",
+      "(100)",
+      "(111)"
+    ],
+    "work_function": 4.5,
+    "electronegativity": 1.83,
+    "cohesive_energy": 4.28,
+    "melting_point": 1811,
+    "magnetic": "ferromagnetic",
+    "applications": [
+      "Fischer-Tropsch",
+      "ammonia synthesis",
+      "steel"
+    ]
+  },
+  "W": {
+    "structure": "bcc",
+    "lattice_constant": 3.16,
+    "d_band_center": -0.8,
+    "description": "Refractory metal, highest melting point",
+    "common_facets": [
+      "(110)",
+      "(100)"
+    ],
+    "work_function": 4.55,
+    "electronegativity": 2.36,
+    "cohesive_energy": 8.9,
+    "melting_point": 3695,
+    "applications": [
+      "HER",
+      "high-temperature applications"
+    ]
+  },
+  "Mo": {
+    "structure": "bcc",
+    "lattice_constant": 3.15,
+    "d_band_center": -0.92,
+    "description": "Refractory metal, hydrodesulfurization catalyst",
+    "common_facets": [
+      "(110)",
+      "(100)"
+    ],
+    "work_function": 4.6,
+    "electronegativity": 2.16,
+    "cohesive_energy": 6.82,
+    "melting_point": 2896,
+    "applications": [
+      "HDS",
+      "HER",
+      "MoS2 precursor"
+    ]
+  },
+  "Cr": {
+    "structure": "bcc",
+    "lattice_constant": 2.88,
+    "d_band_center": -1.1,
+    "description": "Transition metal, corrosion resistant, antiferromagnetic",
+    "common_facets": [
+      "(110)",
+      "(100)"
+    ],
+    "work_function": 4.5,
+    "electronegativity": 1.66,
+    "cohesive_energy": 4.1,
+    "melting_point": 2180,
+    "magnetic": "antiferromagnetic",
+    "applications": [
+      "corrosion protection",
+      "stainless steel"
+    ]
+  },
+  "V": {
+    "structure": "bcc",
+    "lattice_constant": 3.02,
+    "d_band_center": -0.7,
+    "description": "Early transition metal, strong N binding",
+    "common_facets": [
+      "(110)",
+      "(100)"
+    ],
+    "work_function": 4.3,
+    "electronegativity": 1.63,
+    "cohesive_energy": 5.31,
+    "melting_point": 2183,
+    "applications": [
+      "vanadium redox batteries",
+      "steel alloys"
+    ]
+  },
+  "Nb": {
+    "structure": "bcc",
+    "lattice_constant": 3.3,
+    "d_band_center": -0.6,
+    "description": "Refractory metal, superconductor",
+    "common_facets": [
+      "(110)",
+      "(100)"
+    ],
+    "work_function": 4.3,
+    "electronegativity": 1.6,
+    "cohesive_energy": 7.57,
+    "melting_point": 2750,
+    "applications": [
+      "superconducting magnets",
+      "steel alloys"
+    ]
+  },
+  "Ta": {
+    "structure": "bcc",
+    "lattice_constant": 3.3,
+    "d_band_center": -0.55,
+    "description": "Refractory metal, corrosion resistant",
+    "common_facets": [
+      "(110)",
+      "(100)"
+    ],
+    "work_function": 4.25,
+    "electronegativity": 1.5,
+    "cohesive_energy": 8.1,
+    "melting_point": 3290,
+    "applications": [
+      "capacitors",
+      "chemical equipment"
+    ]
+  },
+  "Ru": {
+    "structure": "hcp",
+    "lattice_constant_a": 2.71,
+    "lattice_constant_c": 4.28,
+    "d_band_center": -1.41,
+    "description": "Transition metal, ammonia synthesis catalyst",
+    "common_facets": [
+      "(0001)",
+      "(10-10)"
+    ],
+    "work_function": 4.71,
+    "electronegativity": 2.2,
+    "cohesive_energy": 6.74,
+    "melting_point": 2607,
+    "applications": [
+      "ammonia synthesis",
+      "methanation",
+      "OER"
+    ]
+  },
+  "Co": {
+    "structure": "hcp",
+    "lattice_constant_a": 2.51,
+    "lattice_constant_c": 4.07,
+    "d_band_center": -1.17,
+    "description": "Transition metal, Fischer-Tropsch catalyst, magnetic",
+    "common_facets": [
+      "(0001)",
+      "(10-10)"
+    ],
+    "work_function": 5.0,
+    "electronegativity": 1.88,
+    "cohesive_energy": 4.39,
+    "melting_point": 1768,
+    "magnetic": "ferromagnetic",
+    "applications": [
+      "Fischer-Tropsch",
+      "OER",
+      "batteries"
+    ]
+  },
+  "Ti": {
+    "structure": "hcp",
+    "lattice_constant_a": 2.95,
+    "lattice_constant_c": 4.68,
+    "d_band_center": -0.5,
+    "description": "Early transition metal, biocompatible, strong N binding",
+    "common_facets": [
+      "(0001)",
+      "(10-10)"
+    ],
+    "work_function": 4.33,
+    "electronegativity": 1.54,
+    "cohesive_energy": 4.85,
+    "melting_point": 1941,
+    "applications": [
+      "aerospace",
+      "biomedical",
+      "TiO2 precursor"
+    ]
+  },
+  "Zn": {
+    "structure": "hcp",
+    "lattice_constant_a": 2.66,
+    "lattice_constant_c": 4.95,
+    "d_band_center": -7.5,
+    "description": "Post-transition metal, filled d-band",
+    "common_facets": [
+      "(0001)",
+      "(10-10)"
+    ],
+    "work_function": 4.33,
+    "electronegativity": 1.65,
+    "cohesive_energy": 1.35,
+    "melting_point": 693,
+    "applications": [
+      "galvanization",
+      "batteries",
+      "ZnO precursor"
+    ]
+  },
+  "Mg": {
+    "structure": "hcp",
+    "lattice_constant_a": 3.21,
+    "lattice_constant_c": 5.21,
+    "d_band_center": null,
+    "description": "Alkaline earth metal, lightweight",
+    "common_facets": [
+      "(0001)",
+      "(10-10)"
+    ],
+    "work_function": 3.66,
+    "electronegativity": 1.31,
+    "cohesive_energy": 1.51,
+    "melting_point": 923,
+    "applications": [
+      "lightweight alloys",
+      "batteries",
+      "H2 storage"
+    ]
+  },
+  "Zr": {
+    "structure": "hcp",
+    "lattice_constant_a": 3.23,
+    "lattice_constant_c": 5.15,
+    "d_band_center": -0.4,
+    "description": "Early transition metal, nuclear applications",
+    "common_facets": [
+      "(0001)",
+      "(10-10)"
+    ],
+    "work_function": 4.05,
+    "electronegativity": 1.33,
+    "cohesive_energy": 6.25,
+    "melting_point": 2128,
+    "applications": [
+      "nuclear cladding",
+      "ZrO2 precursor"
+    ]
+  },
+  "Os": {
+    "structure": "hcp",
+    "lattice_constant_a": 2.73,
+    "lattice_constant_c": 4.32,
+    "d_band_center": -1.8,
+    "description": "Densest naturally occurring element",
+    "common_facets": [
+      "(0001)",
+      "(10-10)"
+    ],
+    "work_function": 4.83,
+    "electronegativity": 2.2,
+    "cohesive_energy": 8.17,
+    "melting_point": 3306,
+    "applications": [
+      "hard alloys",
+      "electrical contacts"
+    ]
+  },
+  "Re": {
+    "structure": "hcp",
+    "lattice_constant_a": 2.76,
+    "lattice_constant_c": 4.46,
+    "d_band_center": -1.2,
+    "description": "Refractory metal, high melting point",
+    "common_facets": [
+      "(0001)",
+      "(10-10)"
+    ],
+    "work_function": 4.72,
+    "electronegativity": 1.9,
+    "cohesive_energy": 8.03,
+    "melting_point": 3459,
+    "applications": [
+      "jet engines",
+      "catalysis"
+    ]
+  },
+  "Mn": {
+    "structure": "complex",
+    "lattice_constant": 8.91,
+    "d_band_center": -1.2,
+    "description": "Transition metal, complex structure (alpha-Mn)",
+    "common_facets": [
+      "various"
+    ],
+    "work_function": 4.1,
+    "electronegativity": 1.55,
+    "cohesive_energy": 2.92,
+    "melting_point": 1519,
+    "magnetic": "antiferromagnetic",
+    "applications": [
+      "steel alloys",
+      "batteries",
+      "MnO2 precursor"
+    ]
+  }
+}

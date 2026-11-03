@@ -1,0 +1,186 @@
+{
+  "_metadata": {
+    "source": "Surface science literature and DFT studies",
+    "description": "Adsorption sites on common metal surfaces",
+    "license": "Educational reference",
+    "citation": "Nørskov et al., Nature Chemistry 1, 37 (2009)",
+    "version": "2026.11-r4",
+    "last_updated": "2026-11-03",
+    "source_urls": [
+      "https://docs.ase-lib.org/_modules/ase/build/surface.html"
+    ]
+  },
+  "(111)": {
+    "description": "Most stable FCC surface, hexagonal arrangement",
+    "structure": "fcc",
+    "surface_energy_relative": "lowest",
+    "sites": {
+      "top": {
+        "coordination": 1,
+        "position": "directly above surface atom",
+        "description": "Single metal atom coordination"
+      },
+      "bridge": {
+        "coordination": 2,
+        "position": "between two adjacent atoms",
+        "description": "Two-fold coordination between nearest neighbors"
+      },
+      "fcc": {
+        "coordination": 3,
+        "position": "Three-fold hollow without an atom directly below in the second substrate layer",
+        "description": "Determine the second-layer registry using local surface geometry and periodic images, not fixed fractional offsets.",
+        "second_layer_atom_below": false
+      },
+      "hcp": {
+        "coordination": 3,
+        "position": "Three-fold hollow above an atom in the second substrate layer",
+        "description": "Determine the second-layer registry using local surface geometry and periodic images, not fixed fractional offsets.",
+        "second_layer_atom_below": true
+      }
+    }
+  },
+  "(100)": {
+    "description": "Square arrangement of surface atoms",
+    "structure": "fcc",
+    "surface_energy_relative": "medium",
+    "sites": {
+      "top": {
+        "coordination": 1,
+        "position": "directly above surface atom",
+        "description": "Single metal atom coordination"
+      },
+      "bridge": {
+        "coordination": 2,
+        "position": "between two adjacent atoms",
+        "description": "Two-fold coordination"
+      },
+      "hollow": {
+        "coordination": 4,
+        "position": "4-fold hollow site",
+        "description": "Four-fold coordination in center of square"
+      }
+    }
+  },
+  "(110)": {
+    "description": "Rectangular arrangement, rows of atoms",
+    "structure": "fcc",
+    "surface_energy_relative": "highest",
+    "sites": {
+      "top": {
+        "coordination": 1,
+        "position": "directly above surface atom",
+        "description": "Single metal atom coordination"
+      },
+      "short-bridge": {
+        "coordination": 2,
+        "position": "between atoms along close-packed row",
+        "description": "Bridge along [1-10] direction"
+      },
+      "long-bridge": {
+        "coordination": 2,
+        "position": "between atoms across rows",
+        "description": "Bridge along [001] direction"
+      },
+      "hollow": {
+        "coordination": 4,
+        "position": "4-fold hollow in trough",
+        "description": "Four-fold site in surface trough"
+      }
+    }
+  },
+  "(0001)": {
+    "description": "Basal plane of HCP metals",
+    "structure": "hcp",
+    "surface_energy_relative": "lowest",
+    "sites": {
+      "top": {
+        "coordination": 1,
+        "position": "directly above surface atom",
+        "description": "Single metal atom coordination"
+      },
+      "bridge": {
+        "coordination": 2,
+        "position": "between two adjacent atoms",
+        "description": "Two-fold coordination"
+      },
+      "fcc": {
+        "coordination": 3,
+        "position": "Three-fold hollow without an atom directly below in the second substrate layer",
+        "description": "Determine the second-layer registry using local surface geometry and periodic images, not fixed fractional offsets.",
+        "second_layer_atom_below": false
+      },
+      "hcp": {
+        "coordination": 3,
+        "position": "Three-fold hollow above an atom in the second substrate layer",
+        "description": "Determine the second-layer registry using local surface geometry and periodic images, not fixed fractional offsets.",
+        "second_layer_atom_below": true
+      }
+    }
+  },
+  "(10-10)": {
+    "description": "Prismatic plane of HCP metals",
+    "structure": "hcp",
+    "surface_energy_relative": "medium",
+    "sites": {
+      "top": {
+        "coordination": 1,
+        "position": "directly above surface atom",
+        "description": "Single metal atom coordination"
+      },
+      "bridge": {
+        "coordination": 2,
+        "position": "between two adjacent atoms",
+        "description": "Two-fold coordination"
+      }
+    }
+  },
+  "bcc(110)": {
+    "description": "Most stable BCC surface",
+    "structure": "bcc",
+    "surface_energy_relative": "lowest",
+    "sites": {
+      "top": {
+        "coordination": 1,
+        "position": "directly above surface atom",
+        "description": "Single metal atom coordination"
+      },
+      "short-bridge": {
+        "coordination": 2,
+        "position": "between nearest neighbor atoms",
+        "description": "Two-fold coordination along short axis"
+      },
+      "long-bridge": {
+        "coordination": 2,
+        "position": "between atoms along long axis",
+        "description": "Two-fold coordination along long axis"
+      },
+      "hollow": {
+        "coordination": 3,
+        "position": "3-fold pseudo-hollow",
+        "description": "Three-fold site in surface corrugation"
+      }
+    }
+  },
+  "bcc(100)": {
+    "description": "Open BCC surface",
+    "structure": "bcc",
+    "surface_energy_relative": "medium",
+    "sites": {
+      "top": {
+        "coordination": 1,
+        "position": "directly above surface atom",
+        "description": "Single metal atom coordination"
+      },
+      "bridge": {
+        "coordination": 2,
+        "position": "between two adjacent atoms",
+        "description": "Two-fold coordination"
+      },
+      "hollow": {
+        "coordination": 4,
+        "position": "4-fold hollow site",
+        "description": "Four-fold coordination"
+      }
+    }
+  }
+}

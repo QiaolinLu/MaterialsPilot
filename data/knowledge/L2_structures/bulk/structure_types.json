@@ -1,0 +1,113 @@
+{
+  "_metadata": {
+    "source": "Kittel, Introduction to Solid State Physics",
+    "description": "Common crystal structure types and their properties",
+    "license": "Educational reference",
+    "citation": "Kittel, C. Introduction to Solid State Physics, 8th Ed.",
+    "version": "2025.12",
+    "last_updated": "2025-12-31T18:02:33.825078"
+  },
+  "fcc": {
+    "name": "Face-Centered Cubic",
+    "atoms_per_unit_cell": 4,
+    "basis_positions": [
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        0.5,
+        0.5,
+        0
+      ],
+      [
+        0.5,
+        0,
+        0.5
+      ],
+      [
+        0,
+        0.5,
+        0.5
+      ]
+    ],
+    "description": "Face-centered cubic, close-packed structure",
+    "coordination_number": 12,
+    "packing_efficiency": 0.74,
+    "space_group": "Fm-3m",
+    "space_group_number": 225,
+    "common_metals": [
+      "Pt",
+      "Cu",
+      "Ni",
+      "Pd",
+      "Au",
+      "Ag",
+      "Rh",
+      "Ir",
+      "Al"
+    ]
+  },
+  "bcc": {
+    "name": "Body-Centered Cubic",
+    "atoms_per_unit_cell": 2,
+    "basis_positions": [
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        0.5,
+        0.5,
+        0.5
+      ]
+    ],
+    "description": "Body-centered cubic",
+    "coordination_number": 8,
+    "packing_efficiency": 0.68,
+    "space_group": "Im-3m",
+    "space_group_number": 229,
+    "common_metals": [
+      "Fe",
+      "W",
+      "Mo",
+      "Cr",
+      "V",
+      "Nb",
+      "Ta"
+    ]
+  },
+  "hcp": {
+    "name": "Hexagonal Close-Packed",
+    "atoms_per_unit_cell": 2,
+    "basis_positions": [
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        0.333,
+        0.667,
+        0.5
+      ]
+    ],
+    "description": "Hexagonal close-packed",
+    "coordination_number": 12,
+    "packing_efficiency": 0.74,
+    "space_group": "P6_3/mmc",
+    "space_group_number": 194,
+    "ideal_c_over_a": 1.633,
+    "common_metals": [
+      "Ru",
+      "Co",
+      "Ti",
+      "Zn",
+      "Mg",
+      "Zr",
+      "Hf"
+    ]
+  }
+}

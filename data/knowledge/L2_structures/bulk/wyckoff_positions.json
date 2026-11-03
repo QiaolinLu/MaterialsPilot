@@ -1,0 +1,1163 @@
+{
+  "_metadata": {
+    "description": "Data from symmetry/wyckoff_positions.json",
+    "source": "To be documented",
+    "note": "Wyckoff positions define special positions in the unit cell with specific site symmetry",
+    "license": "See source",
+    "version": "2025.12",
+    "last_updated": "2025-12-31T18:02:33.837253"
+  },
+  "Fm-3m_225": {
+    "space_group": 225,
+    "symbol": "Fm-3m",
+    "wyckoff_positions": {
+      "4a": {
+        "multiplicity": 4,
+        "site_symmetry": "m-3m",
+        "coordinates": [
+          "0,0,0"
+        ],
+        "special": true
+      },
+      "4b": {
+        "multiplicity": 4,
+        "site_symmetry": "m-3m",
+        "coordinates": [
+          "1/2,1/2,1/2"
+        ],
+        "special": true
+      },
+      "8c": {
+        "multiplicity": 8,
+        "site_symmetry": "-43m",
+        "coordinates": [
+          "1/4,1/4,1/4"
+        ],
+        "special": true
+      },
+      "24d": {
+        "multiplicity": 24,
+        "site_symmetry": "m.mm",
+        "coordinates": [
+          "0,1/4,1/4"
+        ],
+        "special": true
+      },
+      "24e": {
+        "multiplicity": 24,
+        "site_symmetry": "4m.m",
+        "coordinates": [
+          "x,0,0"
+        ],
+        "special": true
+      },
+      "32f": {
+        "multiplicity": 32,
+        "site_symmetry": ".3m",
+        "coordinates": [
+          "x,x,x"
+        ],
+        "special": true
+      },
+      "48g": {
+        "multiplicity": 48,
+        "site_symmetry": "2.mm",
+        "coordinates": [
+          "x,1/4,1/4"
+        ],
+        "special": true
+      },
+      "48h": {
+        "multiplicity": 48,
+        "site_symmetry": "m.m2",
+        "coordinates": [
+          "0,y,y"
+        ],
+        "special": true
+      },
+      "48i": {
+        "multiplicity": 48,
+        "site_symmetry": "m.m2",
+        "coordinates": [
+          "1/2,y,y"
+        ],
+        "special": true
+      },
+      "96j": {
+        "multiplicity": 96,
+        "site_symmetry": "m..",
+        "coordinates": [
+          "0,y,z"
+        ],
+        "special": true
+      },
+      "96k": {
+        "multiplicity": 96,
+        "site_symmetry": "..m",
+        "coordinates": [
+          "x,x,z"
+        ],
+        "special": true
+      },
+      "192l": {
+        "multiplicity": 192,
+        "site_symmetry": "1",
+        "coordinates": [
+          "x,y,z"
+        ],
+        "special": false
+      }
+    },
+    "structure_examples": {
+      "FCC_metal": {
+        "atom": "4a"
+      },
+      "rock_salt": {
+        "cation": "4a",
+        "anion": "4b"
+      },
+      "fluorite": {
+        "cation": "4a",
+        "anion": "8c"
+      }
+    }
+  },
+  "Im-3m_229": {
+    "space_group": 229,
+    "symbol": "Im-3m",
+    "wyckoff_positions": {
+      "2a": {
+        "multiplicity": 2,
+        "site_symmetry": "m-3m",
+        "coordinates": [
+          "0,0,0"
+        ],
+        "special": true
+      },
+      "6b": {
+        "multiplicity": 6,
+        "site_symmetry": "4/mm.m",
+        "coordinates": [
+          "0,1/2,1/2"
+        ],
+        "special": true
+      },
+      "8c": {
+        "multiplicity": 8,
+        "site_symmetry": ".-3m",
+        "coordinates": [
+          "1/4,1/4,1/4"
+        ],
+        "special": true
+      },
+      "12d": {
+        "multiplicity": 12,
+        "site_symmetry": "-4m.2",
+        "coordinates": [
+          "1/4,0,1/2"
+        ],
+        "special": true
+      },
+      "12e": {
+        "multiplicity": 12,
+        "site_symmetry": "4m.m",
+        "coordinates": [
+          "x,0,0"
+        ],
+        "special": true
+      },
+      "16f": {
+        "multiplicity": 16,
+        "site_symmetry": ".3m",
+        "coordinates": [
+          "x,x,x"
+        ],
+        "special": true
+      },
+      "24g": {
+        "multiplicity": 24,
+        "site_symmetry": "mm2..",
+        "coordinates": [
+          "0,y,y"
+        ],
+        "special": true
+      },
+      "24h": {
+        "multiplicity": 24,
+        "site_symmetry": "m.m2",
+        "coordinates": [
+          "0,y,1/2"
+        ],
+        "special": true
+      },
+      "48i": {
+        "multiplicity": 48,
+        "site_symmetry": "..m",
+        "coordinates": [
+          "x,x,z"
+        ],
+        "special": true
+      },
+      "48j": {
+        "multiplicity": 48,
+        "site_symmetry": "m..",
+        "coordinates": [
+          "0,y,z"
+        ],
+        "special": true
+      },
+      "48k": {
+        "multiplicity": 48,
+        "site_symmetry": "..2",
+        "coordinates": [
+          "x,y,1/2"
+        ],
+        "special": true
+      },
+      "96l": {
+        "multiplicity": 96,
+        "site_symmetry": "1",
+        "coordinates": [
+          "x,y,z"
+        ],
+        "special": false
+      }
+    },
+    "structure_examples": {
+      "BCC_metal": {
+        "atom": "2a"
+      }
+    }
+  },
+  "P6_3mmc_194": {
+    "space_group": 194,
+    "symbol": "P6_3/mmc",
+    "wyckoff_positions": {
+      "2a": {
+        "multiplicity": 2,
+        "site_symmetry": "-3m.",
+        "coordinates": [
+          "0,0,0"
+        ],
+        "special": true
+      },
+      "2b": {
+        "multiplicity": 2,
+        "site_symmetry": "-6m2",
+        "coordinates": [
+          "0,0,1/4"
+        ],
+        "special": true
+      },
+      "2c": {
+        "multiplicity": 2,
+        "site_symmetry": "-6m2",
+        "coordinates": [
+          "1/3,2/3,1/4"
+        ],
+        "special": true
+      },
+      "2d": {
+        "multiplicity": 2,
+        "site_symmetry": "-6m2",
+        "coordinates": [
+          "1/3,2/3,3/4"
+        ],
+        "special": true
+      },
+      "4e": {
+        "multiplicity": 4,
+        "site_symmetry": "3m.",
+        "coordinates": [
+          "0,0,z"
+        ],
+        "special": true
+      },
+      "4f": {
+        "multiplicity": 4,
+        "site_symmetry": "3m.",
+        "coordinates": [
+          "1/3,2/3,z"
+        ],
+        "special": true
+      },
+      "6g": {
+        "multiplicity": 6,
+        "site_symmetry": ".2/m.",
+        "coordinates": [
+          "1/2,0,0"
+        ],
+        "special": true
+      },
+      "6h": {
+        "multiplicity": 6,
+        "site_symmetry": "mm2",
+        "coordinates": [
+          "x,2x,1/4"
+        ],
+        "special": true
+      },
+      "12i": {
+        "multiplicity": 12,
+        "site_symmetry": "m..",
+        "coordinates": [
+          "x,2x,z"
+        ],
+        "special": true
+      },
+      "12j": {
+        "multiplicity": 12,
+        "site_symmetry": "m..",
+        "coordinates": [
+          "x,y,1/4"
+        ],
+        "special": true
+      },
+      "12k": {
+        "multiplicity": 12,
+        "site_symmetry": ".m.",
+        "coordinates": [
+          "x,0,z"
+        ],
+        "special": true
+      },
+      "24l": {
+        "multiplicity": 24,
+        "site_symmetry": "1",
+        "coordinates": [
+          "x,y,z"
+        ],
+        "special": false
+      }
+    },
+    "structure_examples": {
+      "HCP_metal": {
+        "atom": "2c"
+      }
+    }
+  },
+  "Fd-3m_227": {
+    "space_group": 227,
+    "symbol": "Fd-3m",
+    "wyckoff_positions": {
+      "8a": {
+        "multiplicity": 8,
+        "site_symmetry": "-43m",
+        "coordinates": [
+          "0,0,0"
+        ],
+        "special": true
+      },
+      "8b": {
+        "multiplicity": 8,
+        "site_symmetry": "-43m",
+        "coordinates": [
+          "1/2,1/2,1/2"
+        ],
+        "special": true
+      },
+      "16c": {
+        "multiplicity": 16,
+        "site_symmetry": ".-3m",
+        "coordinates": [
+          "1/8,1/8,1/8"
+        ],
+        "special": true
+      },
+      "16d": {
+        "multiplicity": 16,
+        "site_symmetry": ".-3m",
+        "coordinates": [
+          "5/8,5/8,5/8"
+        ],
+        "special": true
+      },
+      "32e": {
+        "multiplicity": 32,
+        "site_symmetry": ".3m",
+        "coordinates": [
+          "x,x,x"
+        ],
+        "special": true
+      },
+      "48f": {
+        "multiplicity": 48,
+        "site_symmetry": "2.mm",
+        "coordinates": [
+          "x,0,0"
+        ],
+        "special": true
+      },
+      "48g": {
+        "multiplicity": 48,
+        "site_symmetry": "2.mm",
+        "coordinates": [
+          "x,1/4,1/4"
+        ],
+        "special": true
+      },
+      "96h": {
+        "multiplicity": 96,
+        "site_symmetry": "..m",
+        "coordinates": [
+          "0,y,-y"
+        ],
+        "special": true
+      },
+      "96i": {
+        "multiplicity": 96,
+        "site_symmetry": "..2",
+        "coordinates": [
+          "x,x,z"
+        ],
+        "special": true
+      },
+      "192j": {
+        "multiplicity": 192,
+        "site_symmetry": "1",
+        "coordinates": [
+          "x,y,z"
+        ],
+        "special": false
+      }
+    },
+    "structure_examples": {
+      "diamond": {
+        "atom": "8a"
+      },
+      "spinel": {
+        "A_tet": "8a",
+        "B_oct": "16d",
+        "O": "32e"
+      }
+    }
+  },
+  "F-43m_216": {
+    "space_group": 216,
+    "symbol": "F-43m",
+    "wyckoff_positions": {
+      "4a": {
+        "multiplicity": 4,
+        "site_symmetry": "-43m",
+        "coordinates": [
+          "0,0,0"
+        ],
+        "special": true
+      },
+      "4b": {
+        "multiplicity": 4,
+        "site_symmetry": "-43m",
+        "coordinates": [
+          "1/2,1/2,1/2"
+        ],
+        "special": true
+      },
+      "4c": {
+        "multiplicity": 4,
+        "site_symmetry": "-43m",
+        "coordinates": [
+          "1/4,1/4,1/4"
+        ],
+        "special": true
+      },
+      "4d": {
+        "multiplicity": 4,
+        "site_symmetry": "-43m",
+        "coordinates": [
+          "3/4,3/4,3/4"
+        ],
+        "special": true
+      },
+      "16e": {
+        "multiplicity": 16,
+        "site_symmetry": ".3m",
+        "coordinates": [
+          "x,x,x"
+        ],
+        "special": true
+      },
+      "24f": {
+        "multiplicity": 24,
+        "site_symmetry": "2.mm",
+        "coordinates": [
+          "x,0,0"
+        ],
+        "special": true
+      },
+      "24g": {
+        "multiplicity": 24,
+        "site_symmetry": "2.mm",
+        "coordinates": [
+          "x,1/4,1/4"
+        ],
+        "special": true
+      },
+      "48h": {
+        "multiplicity": 48,
+        "site_symmetry": "..m",
+        "coordinates": [
+          "x,x,z"
+        ],
+        "special": true
+      },
+      "96i": {
+        "multiplicity": 96,
+        "site_symmetry": "1",
+        "coordinates": [
+          "x,y,z"
+        ],
+        "special": false
+      }
+    },
+    "structure_examples": {
+      "zincblende": {
+        "cation": "4a",
+        "anion": "4c"
+      }
+    }
+  },
+  "Pm-3m_221": {
+    "space_group": 221,
+    "symbol": "Pm-3m",
+    "wyckoff_positions": {
+      "1a": {
+        "multiplicity": 1,
+        "site_symmetry": "m-3m",
+        "coordinates": [
+          "0,0,0"
+        ],
+        "special": true
+      },
+      "1b": {
+        "multiplicity": 1,
+        "site_symmetry": "m-3m",
+        "coordinates": [
+          "1/2,1/2,1/2"
+        ],
+        "special": true
+      },
+      "3c": {
+        "multiplicity": 3,
+        "site_symmetry": "4/mm.m",
+        "coordinates": [
+          "0,1/2,1/2"
+        ],
+        "special": true
+      },
+      "3d": {
+        "multiplicity": 3,
+        "site_symmetry": "4/mm.m",
+        "coordinates": [
+          "1/2,0,0"
+        ],
+        "special": true
+      },
+      "6e": {
+        "multiplicity": 6,
+        "site_symmetry": "4m.m",
+        "coordinates": [
+          "x,0,0"
+        ],
+        "special": true
+      },
+      "6f": {
+        "multiplicity": 6,
+        "site_symmetry": "4m.m",
+        "coordinates": [
+          "x,1/2,1/2"
+        ],
+        "special": true
+      },
+      "8g": {
+        "multiplicity": 8,
+        "site_symmetry": ".3m",
+        "coordinates": [
+          "x,x,x"
+        ],
+        "special": true
+      },
+      "12h": {
+        "multiplicity": 12,
+        "site_symmetry": "mm2..",
+        "coordinates": [
+          "x,1/2,0"
+        ],
+        "special": true
+      },
+      "12i": {
+        "multiplicity": 12,
+        "site_symmetry": "m.m2",
+        "coordinates": [
+          "0,y,y"
+        ],
+        "special": true
+      },
+      "12j": {
+        "multiplicity": 12,
+        "site_symmetry": "m.m2",
+        "coordinates": [
+          "1/2,y,y"
+        ],
+        "special": true
+      },
+      "24k": {
+        "multiplicity": 24,
+        "site_symmetry": "m..",
+        "coordinates": [
+          "0,y,z"
+        ],
+        "special": true
+      },
+      "24l": {
+        "multiplicity": 24,
+        "site_symmetry": "m..",
+        "coordinates": [
+          "1/2,y,z"
+        ],
+        "special": true
+      },
+      "24m": {
+        "multiplicity": 24,
+        "site_symmetry": "..m",
+        "coordinates": [
+          "x,x,z"
+        ],
+        "special": true
+      },
+      "48n": {
+        "multiplicity": 48,
+        "site_symmetry": "1",
+        "coordinates": [
+          "x,y,z"
+        ],
+        "special": false
+      }
+    },
+    "structure_examples": {
+      "simple_cubic": {
+        "atom": "1a"
+      },
+      "CsCl": {
+        "Cs": "1a",
+        "Cl": "1b"
+      },
+      "perovskite": {
+        "A": "1a",
+        "B": "1b",
+        "O": "3c"
+      }
+    }
+  },
+  "P4_2mnm_136": {
+    "space_group": 136,
+    "symbol": "P4_2/mnm",
+    "wyckoff_positions": {
+      "2a": {
+        "multiplicity": 2,
+        "site_symmetry": "mmm",
+        "coordinates": [
+          "0,0,0"
+        ],
+        "special": true
+      },
+      "2b": {
+        "multiplicity": 2,
+        "site_symmetry": "mmm",
+        "coordinates": [
+          "0,0,1/2"
+        ],
+        "special": true
+      },
+      "4c": {
+        "multiplicity": 4,
+        "site_symmetry": "m.2m",
+        "coordinates": [
+          "0,1/2,0"
+        ],
+        "special": true
+      },
+      "4d": {
+        "multiplicity": 4,
+        "site_symmetry": "..2/m",
+        "coordinates": [
+          "0,1/2,1/4"
+        ],
+        "special": true
+      },
+      "4e": {
+        "multiplicity": 4,
+        "site_symmetry": "m.2m",
+        "coordinates": [
+          "0,0,z"
+        ],
+        "special": true
+      },
+      "4f": {
+        "multiplicity": 4,
+        "site_symmetry": "m.mm",
+        "coordinates": [
+          "x,x,0"
+        ],
+        "special": true
+      },
+      "4g": {
+        "multiplicity": 4,
+        "site_symmetry": "m.2m",
+        "coordinates": [
+          "x,-x,0"
+        ],
+        "special": true
+      },
+      "8h": {
+        "multiplicity": 8,
+        "site_symmetry": "..m",
+        "coordinates": [
+          "0,y,z"
+        ],
+        "special": true
+      },
+      "8i": {
+        "multiplicity": 8,
+        "site_symmetry": "m..",
+        "coordinates": [
+          "x,x,z"
+        ],
+        "special": true
+      },
+      "8j": {
+        "multiplicity": 8,
+        "site_symmetry": "..2",
+        "coordinates": [
+          "x,y,0"
+        ],
+        "special": true
+      },
+      "16k": {
+        "multiplicity": 16,
+        "site_symmetry": "1",
+        "coordinates": [
+          "x,y,z"
+        ],
+        "special": false
+      }
+    },
+    "structure_examples": {
+      "rutile": {
+        "Ti": "2a",
+        "O": "4f"
+      }
+    }
+  },
+  "P6_3mc_186": {
+    "space_group": 186,
+    "symbol": "P6_3mc",
+    "wyckoff_positions": {
+      "2a": {
+        "multiplicity": 2,
+        "site_symmetry": "3m.",
+        "coordinates": [
+          "0,0,z"
+        ],
+        "special": true
+      },
+      "2b": {
+        "multiplicity": 2,
+        "site_symmetry": "3m.",
+        "coordinates": [
+          "1/3,2/3,z"
+        ],
+        "special": true
+      },
+      "6c": {
+        "multiplicity": 6,
+        "site_symmetry": ".m.",
+        "coordinates": [
+          "x,-x,z"
+        ],
+        "special": true
+      },
+      "12d": {
+        "multiplicity": 12,
+        "site_symmetry": "1",
+        "coordinates": [
+          "x,y,z"
+        ],
+        "special": false
+      }
+    },
+    "structure_examples": {
+      "wurtzite": {
+        "cation": "2b",
+        "anion": "2b"
+      }
+    }
+  },
+  "R-3m_166": {
+    "space_group": 166,
+    "symbol": "R-3m",
+    "wyckoff_positions": {
+      "3a": {
+        "multiplicity": 3,
+        "site_symmetry": "-3m",
+        "coordinates": [
+          "0,0,0"
+        ],
+        "special": true
+      },
+      "3b": {
+        "multiplicity": 3,
+        "site_symmetry": "-3m",
+        "coordinates": [
+          "0,0,1/2"
+        ],
+        "special": true
+      },
+      "6c": {
+        "multiplicity": 6,
+        "site_symmetry": "3m",
+        "coordinates": [
+          "0,0,z"
+        ],
+        "special": true
+      },
+      "9d": {
+        "multiplicity": 9,
+        "site_symmetry": ".2/m",
+        "coordinates": [
+          "1/2,0,1/2"
+        ],
+        "special": true
+      },
+      "9e": {
+        "multiplicity": 9,
+        "site_symmetry": ".2/m",
+        "coordinates": [
+          "1/2,0,0"
+        ],
+        "special": true
+      },
+      "18f": {
+        "multiplicity": 18,
+        "site_symmetry": ".m",
+        "coordinates": [
+          "x,-x,z"
+        ],
+        "special": true
+      },
+      "18g": {
+        "multiplicity": 18,
+        "site_symmetry": ".2",
+        "coordinates": [
+          "x,0,1/2"
+        ],
+        "special": true
+      },
+      "18h": {
+        "multiplicity": 18,
+        "site_symmetry": ".2",
+        "coordinates": [
+          "x,0,0"
+        ],
+        "special": true
+      },
+      "36i": {
+        "multiplicity": 36,
+        "site_symmetry": "1",
+        "coordinates": [
+          "x,y,z"
+        ],
+        "special": false
+      }
+    },
+    "structure_examples": {
+      "layered_rocksalt": {
+        "Li": "3a",
+        "Co": "3b",
+        "O": "6c"
+      }
+    },
+    "notes": "Hexagonal setting, multiply by 3 for rhombohedral"
+  },
+  "R-3c_167": {
+    "space_group": 167,
+    "symbol": "R-3c",
+    "wyckoff_positions": {
+      "6a": {
+        "multiplicity": 6,
+        "site_symmetry": "32",
+        "coordinates": [
+          "0,0,1/4"
+        ],
+        "special": true
+      },
+      "6b": {
+        "multiplicity": 6,
+        "site_symmetry": "-3.",
+        "coordinates": [
+          "0,0,0"
+        ],
+        "special": true
+      },
+      "12c": {
+        "multiplicity": 12,
+        "site_symmetry": "3.",
+        "coordinates": [
+          "0,0,z"
+        ],
+        "special": true
+      },
+      "18d": {
+        "multiplicity": 18,
+        "site_symmetry": ".2",
+        "coordinates": [
+          "x,0,1/4"
+        ],
+        "special": true
+      },
+      "18e": {
+        "multiplicity": 18,
+        "site_symmetry": ".2",
+        "coordinates": [
+          "x,0,0"
+        ],
+        "special": true
+      },
+      "36f": {
+        "multiplicity": 36,
+        "site_symmetry": "1",
+        "coordinates": [
+          "x,y,z"
+        ],
+        "special": false
+      }
+    },
+    "structure_examples": {
+      "corundum": {
+        "Al": "12c",
+        "O": "18e"
+      }
+    }
+  },
+  "Pnma_62": {
+    "space_group": 62,
+    "symbol": "Pnma",
+    "wyckoff_positions": {
+      "4a": {
+        "multiplicity": 4,
+        "site_symmetry": "-1",
+        "coordinates": [
+          "0,0,0"
+        ],
+        "special": true
+      },
+      "4b": {
+        "multiplicity": 4,
+        "site_symmetry": "-1",
+        "coordinates": [
+          "0,0,1/2"
+        ],
+        "special": true
+      },
+      "4c": {
+        "multiplicity": 4,
+        "site_symmetry": ".m.",
+        "coordinates": [
+          "x,1/4,z"
+        ],
+        "special": true
+      },
+      "8d": {
+        "multiplicity": 8,
+        "site_symmetry": "1",
+        "coordinates": [
+          "x,y,z"
+        ],
+        "special": false
+      }
+    },
+    "structure_examples": {
+      "olivine": "Common structure for LiFePO4 battery cathode"
+    }
+  },
+  "I4_1amd_141": {
+    "space_group": 141,
+    "symbol": "I4_1/amd",
+    "wyckoff_positions": {
+      "4a": {
+        "multiplicity": 4,
+        "site_symmetry": "-4m2",
+        "coordinates": [
+          "0,3/4,1/8"
+        ],
+        "special": true
+      },
+      "4b": {
+        "multiplicity": 4,
+        "site_symmetry": "-4m2",
+        "coordinates": [
+          "0,1/4,3/8"
+        ],
+        "special": true
+      },
+      "8c": {
+        "multiplicity": 8,
+        "site_symmetry": ".2/m.",
+        "coordinates": [
+          "0,0,0"
+        ],
+        "special": true
+      },
+      "8d": {
+        "multiplicity": 8,
+        "site_symmetry": ".m.",
+        "coordinates": [
+          "0,0,z"
+        ],
+        "special": true
+      },
+      "8e": {
+        "multiplicity": 8,
+        "site_symmetry": "..2",
+        "coordinates": [
+          "0,1/4,z"
+        ],
+        "special": true
+      },
+      "16f": {
+        "multiplicity": 16,
+        "site_symmetry": "..m",
+        "coordinates": [
+          "x,x+1/4,z"
+        ],
+        "special": true
+      },
+      "16g": {
+        "multiplicity": 16,
+        "site_symmetry": ".2.",
+        "coordinates": [
+          "x,y,0"
+        ],
+        "special": true
+      },
+      "16h": {
+        "multiplicity": 16,
+        "site_symmetry": "..2",
+        "coordinates": [
+          "0,y,z"
+        ],
+        "special": true
+      },
+      "32i": {
+        "multiplicity": 32,
+        "site_symmetry": "1",
+        "coordinates": [
+          "x,y,z"
+        ],
+        "special": false
+      }
+    },
+    "structure_examples": {
+      "anatase": {
+        "Ti": "4a",
+        "O": "8e"
+      }
+    }
+  },
+  "Pa-3_205": {
+    "space_group": 205,
+    "symbol": "Pa-3",
+    "wyckoff_positions": {
+      "4a": {
+        "multiplicity": 4,
+        "site_symmetry": ".-3.",
+        "coordinates": [
+          "0,0,0"
+        ],
+        "special": true
+      },
+      "4b": {
+        "multiplicity": 4,
+        "site_symmetry": ".-3.",
+        "coordinates": [
+          "1/2,1/2,1/2"
+        ],
+        "special": true
+      },
+      "8c": {
+        "multiplicity": 8,
+        "site_symmetry": ".3.",
+        "coordinates": [
+          "x,x,x"
+        ],
+        "special": true
+      },
+      "24d": {
+        "multiplicity": 24,
+        "site_symmetry": "1",
+        "coordinates": [
+          "x,y,z"
+        ],
+        "special": false
+      }
+    },
+    "structure_examples": {
+      "pyrite": {
+        "Fe": "4a",
+        "S": "8c"
+      }
+    }
+  },
+  "site_symmetry_notation": {
+    "description": "Hermann-Mauguin notation for site symmetry",
+    "symbols": {
+      "1": "no symmetry (general position)",
+      "-1": "inversion center",
+      "2": "2-fold rotation axis",
+      "m": "mirror plane",
+      "3": "3-fold rotation axis",
+      "4": "4-fold rotation axis",
+      "6": "6-fold rotation axis",
+      "-3": "3-fold rotoinversion",
+      "-4": "4-fold rotoinversion",
+      "-6": "6-fold rotoinversion",
+      ".": "placeholder for absent symmetry element"
+    },
+    "examples": {
+      "m-3m": "full cubic symmetry (48 operations)",
+      "-43m": "tetrahedral symmetry (24 operations)",
+      "4m.m": "4-fold axis with two mirror planes",
+      ".3m": "3-fold axis with mirror plane",
+      "mm2": "two perpendicular mirrors with 2-fold axis"
+    }
+  },
+  "multiplicity_rules": {
+    "description": "Rules for determining site multiplicity",
+    "general_position": "Multiplicity equals order of point group",
+    "special_position": "Multiplicity = (order of point group) / (order of site symmetry)",
+    "examples": {
+      "Fm-3m": {
+        "point_group_order": 192,
+        "4a_site_symmetry_order": 48,
+        "4a_multiplicity": "192/48 = 4"
+      }
+    }
+  },
+  "equivalent_positions": {
+    "description": "How to generate equivalent positions from Wyckoff position",
+    "example_Fm-3m_4a": {
+      "representative": "(0,0,0)",
+      "centering_translations": [
+        "(0,0,0)",
+        "(0,1/2,1/2)",
+        "(1/2,0,1/2)",
+        "(1/2,1/2,0)"
+      ],
+      "all_positions": [
+        "(0,0,0)",
+        "(0,1/2,1/2)",
+        "(1/2,0,1/2)",
+        "(1/2,1/2,0)"
+      ]
+    }
+  }
+}

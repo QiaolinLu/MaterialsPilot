@@ -1,0 +1,305 @@
+{
+  "_metadata": {
+    "source": "Catalysis literature and DFT studies",
+    "description": "Adsorbate properties and binding preferences",
+    "license": "Educational reference",
+    "citation": "Nørskov et al., J. Catal. 209, 275 (2002)",
+    "version": "2025.12",
+    "last_updated": "2025-12-31T18:02:33.850891"
+  },
+  "CO": {
+    "atoms": [
+      "C",
+      "O"
+    ],
+    "geometry": "linear",
+    "bond_length": 1.13,
+    "binding_atom": "C",
+    "binding_mechanism": "C lone pair donates to metal, metal d-electrons backbond to CO pi*",
+    "site_preference": {
+      "general": [
+        "top",
+        "bridge"
+      ],
+      "reasoning": "CO prefers sites that maximize metal-C backbonding",
+      "metal_specific": {
+        "Pt": "top preferred on (111)",
+        "Ni": "hollow preferred due to strong d-band",
+        "Cu": "top preferred",
+        "Pd": "bridge and hollow sites",
+        "Au": "top site, weak binding"
+      }
+    },
+    "typical_height": 1.85,
+    "vibrational_frequency_cm-1": 2143
+  },
+  "H": {
+    "atoms": [
+      "H"
+    ],
+    "geometry": "single atom",
+    "binding_atom": "H",
+    "binding_mechanism": "H 1s orbital interacts with metal d-band",
+    "site_preference": {
+      "general": [
+        "fcc",
+        "hcp",
+        "hollow"
+      ],
+      "reasoning": "H is small, prefers high-coordination hollow sites"
+    },
+    "typical_height": 0.9
+  },
+  "O": {
+    "atoms": [
+      "O"
+    ],
+    "geometry": "single atom",
+    "binding_atom": "O",
+    "binding_mechanism": "O 2p orbitals interact with metal d-band",
+    "site_preference": {
+      "general": [
+        "fcc",
+        "hollow"
+      ],
+      "reasoning": "O prefers high-coordination sites for maximum bonding"
+    },
+    "typical_height": 1.2
+  },
+  "N": {
+    "atoms": [
+      "N"
+    ],
+    "geometry": "single atom",
+    "binding_atom": "N",
+    "binding_mechanism": "N 2p orbitals interact with metal d-band",
+    "site_preference": {
+      "general": [
+        "fcc",
+        "hollow"
+      ],
+      "reasoning": "N prefers high-coordination sites"
+    },
+    "typical_height": 1.1
+  },
+  "OH": {
+    "atoms": [
+      "O",
+      "H"
+    ],
+    "geometry": "bent",
+    "bond_length": 0.97,
+    "binding_atom": "O",
+    "binding_mechanism": "O lone pair donates to metal surface",
+    "site_preference": {
+      "general": [
+        "top",
+        "bridge"
+      ],
+      "reasoning": "OH prefers lower coordination due to O-H bond"
+    },
+    "typical_height": 1.95
+  },
+  "NO": {
+    "atoms": [
+      "N",
+      "O"
+    ],
+    "geometry": "linear",
+    "bond_length": 1.15,
+    "binding_atom": "N",
+    "binding_mechanism": "Similar to CO, N lone pair donation and backbonding",
+    "site_preference": {
+      "general": [
+        "hollow",
+        "bridge"
+      ],
+      "reasoning": "NO similar to CO but can also bind via O"
+    },
+    "typical_height": 1.8
+  },
+  "H2O": {
+    "atoms": [
+      "O",
+      "H",
+      "H"
+    ],
+    "geometry": "bent",
+    "bond_length": 0.96,
+    "bond_angle": 104.5,
+    "binding_atom": "O",
+    "binding_mechanism": "O lone pair weakly interacts with metal",
+    "site_preference": {
+      "general": [
+        "top"
+      ],
+      "reasoning": "H2O weakly bound, prefers top site via O lone pair"
+    },
+    "typical_height": 2.3
+  },
+  "NH3": {
+    "atoms": [
+      "N",
+      "H",
+      "H",
+      "H"
+    ],
+    "geometry": "pyramidal",
+    "bond_length": 1.01,
+    "bond_angle": 107.8,
+    "binding_atom": "N",
+    "binding_mechanism": "N lone pair donates to metal surface",
+    "site_preference": {
+      "general": [
+        "top"
+      ],
+      "reasoning": "NH3 binds via N lone pair at top site"
+    },
+    "typical_height": 2.1
+  },
+  "CH3": {
+    "atoms": [
+      "C",
+      "H",
+      "H",
+      "H"
+    ],
+    "geometry": "pyramidal",
+    "bond_length": 1.09,
+    "binding_atom": "C",
+    "binding_mechanism": "C radical binds to metal surface",
+    "site_preference": {
+      "general": [
+        "top",
+        "hollow"
+      ],
+      "reasoning": "CH3 prefers top or hollow depending on metal"
+    },
+    "typical_height": 2.0
+  },
+  "CH2": {
+    "atoms": [
+      "C",
+      "H",
+      "H"
+    ],
+    "geometry": "bent",
+    "bond_length": 1.08,
+    "binding_atom": "C",
+    "binding_mechanism": "Carbene binds to metal with two bonds",
+    "site_preference": {
+      "general": [
+        "bridge",
+        "hollow"
+      ],
+      "reasoning": "CH2 needs two bonds, prefers bridge or hollow"
+    },
+    "typical_height": 1.5
+  },
+  "CH": {
+    "atoms": [
+      "C",
+      "H"
+    ],
+    "geometry": "linear",
+    "bond_length": 1.12,
+    "binding_atom": "C",
+    "binding_mechanism": "Methylidyne binds strongly to metal",
+    "site_preference": {
+      "general": [
+        "hollow"
+      ],
+      "reasoning": "CH needs three bonds, prefers hollow site"
+    },
+    "typical_height": 1.3
+  },
+  "C": {
+    "atoms": [
+      "C"
+    ],
+    "geometry": "single atom",
+    "binding_atom": "C",
+    "binding_mechanism": "C atom binds strongly in hollow site",
+    "site_preference": {
+      "general": [
+        "hollow"
+      ],
+      "reasoning": "C needs maximum coordination"
+    },
+    "typical_height": 0.8
+  },
+  "S": {
+    "atoms": [
+      "S"
+    ],
+    "geometry": "single atom",
+    "binding_atom": "S",
+    "binding_mechanism": "S 3p orbitals interact with metal d-band",
+    "site_preference": {
+      "general": [
+        "hollow",
+        "fcc"
+      ],
+      "reasoning": "S prefers high-coordination sites"
+    },
+    "typical_height": 1.5
+  },
+  "OOH": {
+    "atoms": [
+      "O",
+      "O",
+      "H"
+    ],
+    "geometry": "bent",
+    "bond_length_OO": 1.33,
+    "bond_length_OH": 0.98,
+    "binding_atom": "O",
+    "binding_mechanism": "Terminal O binds to metal surface",
+    "site_preference": {
+      "general": [
+        "top",
+        "bridge"
+      ],
+      "reasoning": "OOH intermediate in ORR, binds via terminal O"
+    },
+    "typical_height": 2.0
+  },
+  "COOH": {
+    "atoms": [
+      "C",
+      "O",
+      "O",
+      "H"
+    ],
+    "geometry": "planar",
+    "binding_atom": "C",
+    "binding_mechanism": "C binds to metal, important CO2RR intermediate",
+    "site_preference": {
+      "general": [
+        "top"
+      ],
+      "reasoning": "COOH binds via C at top site"
+    },
+    "typical_height": 2.2
+  },
+  "CHO": {
+    "atoms": [
+      "C",
+      "H",
+      "O"
+    ],
+    "geometry": "bent",
+    "bond_length_CO": 1.22,
+    "bond_length_CH": 1.11,
+    "binding_atom": "C",
+    "binding_mechanism": "Formyl intermediate binds via C",
+    "site_preference": {
+      "general": [
+        "top",
+        "bridge"
+      ],
+      "reasoning": "CHO binds via C, important in CO hydrogenation"
+    },
+    "typical_height": 1.9
+  }
+}

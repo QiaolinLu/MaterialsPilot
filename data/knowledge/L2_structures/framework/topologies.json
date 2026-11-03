@@ -1,0 +1,787 @@
+{
+  "_metadata": {
+    "description": "Common MOF topologies from RCSR",
+    "source": "RCSR Database (http://rcsr.anu.edu.au/)",
+    "note": "Vertex figures describe the coordination environment at each node",
+    "license": "Free for academic use",
+    "citation": "O'Keeffe et al., Acc. Chem. Res. 41, 1782 (2008)",
+    "version": "2025.12",
+    "last_updated": "2025-12-31T18:02:33.832509"
+  },
+  "pcu": {
+    "name": "Primitive Cubic",
+    "symbol": "pcu",
+    "coordination": 6,
+    "vertex_symbol": "4^12.6^3",
+    "description": "Simple cubic net, 6-connected nodes",
+    "space_group": "Pm-3m",
+    "example_mofs": [
+      "MOF-5",
+      "IRMOF series",
+      "HKUST-1 (also tbo)"
+    ],
+    "node_geometry": "octahedral",
+    "edge_count_per_node": 6,
+    "common_sbus": [
+      "Zn4O",
+      "Cu2 paddlewheel"
+    ],
+    "applications": [
+      "gas storage",
+      "catalysis"
+    ]
+  },
+  "dia": {
+    "name": "Diamond",
+    "symbol": "dia",
+    "coordination": 4,
+    "vertex_symbol": "6^6",
+    "description": "Diamond-like net, 4-connected tetrahedral nodes",
+    "space_group": "Fd-3m",
+    "example_mofs": [
+      "ZIF-8 (sod)",
+      "many ZIFs"
+    ],
+    "node_geometry": "tetrahedral",
+    "edge_count_per_node": 4,
+    "common_sbus": [
+      "Zn(imidazolate)4",
+      "single metal ions"
+    ],
+    "applications": [
+      "gas separation",
+      "catalysis"
+    ]
+  },
+  "sod": {
+    "name": "Sodalite",
+    "symbol": "sod",
+    "coordination": 4,
+    "vertex_symbol": "4.6^2",
+    "description": "Sodalite cage topology, common in ZIFs",
+    "space_group": "Im-3m",
+    "example_mofs": [
+      "ZIF-8",
+      "ZIF-67"
+    ],
+    "node_geometry": "tetrahedral",
+    "edge_count_per_node": 4,
+    "cage_type": "truncated octahedron",
+    "common_sbus": [
+      "Zn(imidazolate)4",
+      "Co(imidazolate)4"
+    ],
+    "applications": [
+      "gas separation",
+      "membrane"
+    ]
+  },
+  "fcu": {
+    "name": "Face-Centered Cubic",
+    "symbol": "fcu",
+    "coordination": 12,
+    "vertex_symbol": "3^24.4^36.5^6",
+    "description": "12-connected cuboctahedral net",
+    "space_group": "Fm-3m",
+    "example_mofs": [
+      "UiO-66",
+      "UiO-67",
+      "UiO-68"
+    ],
+    "node_geometry": "cuboctahedral",
+    "edge_count_per_node": 12,
+    "common_sbus": [
+      "Zr6O4(OH)4",
+      "Hf6 cluster"
+    ],
+    "applications": [
+      "water stability",
+      "catalysis",
+      "drug delivery"
+    ]
+  },
+  "bcu": {
+    "name": "Body-Centered Cubic",
+    "symbol": "bcu",
+    "coordination": 8,
+    "vertex_symbol": "4^24.6^4",
+    "description": "8-connected body-centered cubic net",
+    "space_group": "Im-3m",
+    "example_mofs": [
+      "PCN-222",
+      "MOF-525"
+    ],
+    "node_geometry": "cubic",
+    "edge_count_per_node": 8,
+    "common_sbus": [
+      "Zr6 cluster with 8 connections"
+    ],
+    "applications": [
+      "catalysis",
+      "light harvesting"
+    ]
+  },
+  "tbo": {
+    "name": "Twisted Boracite",
+    "symbol": "tbo",
+    "coordination": [
+      3,
+      4
+    ],
+    "vertex_symbol": "6^2.8^2 and 8^3",
+    "description": "3,4-connected net, triangular and square nodes",
+    "space_group": "Fm-3m",
+    "example_mofs": [
+      "HKUST-1 (Cu-BTC)",
+      "MOF-14"
+    ],
+    "node_geometry": [
+      "triangular",
+      "square planar"
+    ],
+    "edge_count_per_node": [
+      3,
+      4
+    ],
+    "common_sbus": [
+      "Cu2 paddlewheel (4-c)",
+      "BTC linker (3-c)"
+    ],
+    "applications": [
+      "gas storage",
+      "catalysis"
+    ]
+  },
+  "pto": {
+    "name": "Platinum Oxide",
+    "symbol": "pto",
+    "coordination": [
+      3,
+      4
+    ],
+    "vertex_symbol": "8^3 and 8^6",
+    "description": "3,4-connected net",
+    "space_group": "Pm-3n",
+    "example_mofs": [
+      "MOF-177"
+    ],
+    "node_geometry": [
+      "triangular",
+      "tetrahedral"
+    ],
+    "edge_count_per_node": [
+      3,
+      4
+    ],
+    "common_sbus": [
+      "Zn4O (4-c)",
+      "BTB linker (3-c)"
+    ],
+    "applications": [
+      "high surface area",
+      "gas storage"
+    ]
+  },
+  "nbo": {
+    "name": "Niobium Oxide",
+    "symbol": "nbo",
+    "coordination": 4,
+    "vertex_symbol": "6^2.8^2",
+    "description": "4-connected net with square planar nodes",
+    "space_group": "Im-3m",
+    "example_mofs": [
+      "MOF-101"
+    ],
+    "node_geometry": "square planar",
+    "edge_count_per_node": 4,
+    "common_sbus": [
+      "Cu2 paddlewheel"
+    ],
+    "applications": [
+      "gas storage"
+    ]
+  },
+  "rht": {
+    "name": "Rhombicuboctahedral",
+    "symbol": "rht",
+    "coordination": [
+      3,
+      24
+    ],
+    "vertex_symbol": "complex",
+    "description": "3,24-connected net with very high connectivity",
+    "space_group": "Fm-3m",
+    "example_mofs": [
+      "PCN-61",
+      "NU-100"
+    ],
+    "node_geometry": [
+      "triangular",
+      "rhombicuboctahedral"
+    ],
+    "edge_count_per_node": [
+      3,
+      24
+    ],
+    "common_sbus": [
+      "Cu2 paddlewheel clusters",
+      "hexatopic linkers"
+    ],
+    "applications": [
+      "ultra-high surface area",
+      "gas storage"
+    ]
+  },
+  "csq": {
+    "name": "CsCl-like Square",
+    "symbol": "csq",
+    "coordination": [
+      4,
+      8
+    ],
+    "vertex_symbol": "4^6 and 4^12.6^12.8^4",
+    "description": "4,8-connected net",
+    "space_group": "P4/mmm",
+    "example_mofs": [
+      "PCN-224",
+      "MOF-545"
+    ],
+    "node_geometry": [
+      "square planar",
+      "cubic"
+    ],
+    "edge_count_per_node": [
+      4,
+      8
+    ],
+    "common_sbus": [
+      "Zr6 cluster (8-c)",
+      "porphyrin (4-c)"
+    ],
+    "applications": [
+      "catalysis",
+      "photocatalysis"
+    ]
+  },
+  "ftw": {
+    "name": "Fluorite-like",
+    "symbol": "ftw",
+    "coordination": [
+      4,
+      12
+    ],
+    "vertex_symbol": "complex",
+    "description": "4,12-connected net",
+    "space_group": "Pm-3m",
+    "example_mofs": [
+      "MOF-525",
+      "PCN-223"
+    ],
+    "node_geometry": [
+      "square planar",
+      "cuboctahedral"
+    ],
+    "edge_count_per_node": [
+      4,
+      12
+    ],
+    "common_sbus": [
+      "Zr6 cluster",
+      "porphyrin linker"
+    ],
+    "applications": [
+      "catalysis"
+    ]
+  },
+  "she": {
+    "name": "Shubnikov",
+    "symbol": "she",
+    "coordination": [
+      4,
+      12
+    ],
+    "vertex_symbol": "complex",
+    "description": "4,12-connected net",
+    "space_group": "Im-3m",
+    "example_mofs": [
+      "NU-1000"
+    ],
+    "node_geometry": [
+      "square planar",
+      "cuboctahedral"
+    ],
+    "edge_count_per_node": [
+      4,
+      12
+    ],
+    "common_sbus": [
+      "Zr6 cluster",
+      "pyrene-based linker"
+    ],
+    "applications": [
+      "catalysis",
+      "enzyme immobilization"
+    ]
+  },
+  "lvt": {
+    "name": "Laves Phase T",
+    "symbol": "lvt",
+    "coordination": 4,
+    "vertex_symbol": "4^2.6^4",
+    "description": "4-connected net",
+    "space_group": "I4_1/amd",
+    "example_mofs": [
+      "ZIF-4"
+    ],
+    "node_geometry": "tetrahedral",
+    "edge_count_per_node": 4,
+    "common_sbus": [
+      "Zn(imidazolate)4"
+    ],
+    "applications": [
+      "phase transitions"
+    ]
+  },
+  "qtz": {
+    "name": "Quartz",
+    "symbol": "qtz",
+    "coordination": 4,
+    "vertex_symbol": "6^5.8",
+    "description": "Chiral 4-connected net",
+    "space_group": "P6_222",
+    "example_mofs": [
+      "ZIF-14"
+    ],
+    "node_geometry": "tetrahedral",
+    "edge_count_per_node": 4,
+    "common_sbus": [
+      "Zn(imidazolate)4"
+    ],
+    "chirality": true,
+    "applications": [
+      "chiral separation"
+    ]
+  },
+  "sql": {
+    "name": "Square Lattice",
+    "symbol": "sql",
+    "coordination": 4,
+    "vertex_symbol": "4^4",
+    "description": "2D square lattice, 4-connected",
+    "dimensionality": 2,
+    "example_mofs": [
+      "many 2D MOFs",
+      "MOF-2"
+    ],
+    "node_geometry": "square planar",
+    "edge_count_per_node": 4,
+    "common_sbus": [
+      "Cu2 paddlewheel",
+      "Zn2 paddlewheel"
+    ],
+    "applications": [
+      "2D materials",
+      "membranes"
+    ]
+  },
+  "hcb": {
+    "name": "Honeycomb",
+    "symbol": "hcb",
+    "coordination": 3,
+    "vertex_symbol": "6^3",
+    "description": "2D honeycomb lattice, 3-connected",
+    "dimensionality": 2,
+    "example_mofs": [
+      "Ni3(HITP)2",
+      "Cu3(HHTP)2"
+    ],
+    "node_geometry": "trigonal planar",
+    "edge_count_per_node": 3,
+    "common_sbus": [
+      "metal-bis(dithiolene)",
+      "triphenylene-based"
+    ],
+    "applications": [
+      "conductivity",
+      "electrocatalysis"
+    ]
+  },
+  "kgm": {
+    "name": "Kagome",
+    "symbol": "kgm",
+    "coordination": 4,
+    "vertex_symbol": "3.6.3.6",
+    "description": "2D Kagome lattice",
+    "dimensionality": 2,
+    "example_mofs": [
+      "Cu-CAT-1"
+    ],
+    "node_geometry": "square planar",
+    "edge_count_per_node": 4,
+    "common_sbus": [
+      "Cu2 paddlewheel"
+    ],
+    "applications": [
+      "magnetism",
+      "conductivity"
+    ]
+  },
+  "mtn": {
+    "name": "MTN Zeolite",
+    "symbol": "mtn",
+    "coordination": [3, 4],
+    "vertex_symbol": "complex",
+    "description": "Zeolite MTN topology with large mesoporous cages",
+    "space_group": "Fd-3m",
+    "example_mofs": [
+      "MIL-100",
+      "MIL-101"
+    ],
+    "node_geometry": ["triangular", "tetrahedral"],
+    "edge_count_per_node": [3, 4],
+    "cage_types": {
+      "small": "pentagonal dodecahedron (20 vertices)",
+      "large": "hexacaidecahedron (28 vertices)"
+    },
+    "common_sbus": [
+      "Fe3O",
+      "Cr3O",
+      "Al3O"
+    ],
+    "applications": [
+      "gas storage",
+      "drug delivery",
+      "catalysis"
+    ]
+  },
+  "spn": {
+    "name": "Spinel Net",
+    "symbol": "spn",
+    "coordination": [3, 4],
+    "vertex_symbol": "6^3 and 6^6",
+    "description": "3,4-connected spinel-like net",
+    "space_group": "Fd-3m",
+    "example_mofs": [
+      "MOF-500"
+    ],
+    "node_geometry": ["triangular", "tetrahedral"],
+    "edge_count_per_node": [3, 4],
+    "common_sbus": [
+      "Zn4O",
+      "triangular organic node"
+    ],
+    "applications": [
+      "gas storage"
+    ]
+  },
+  "acs": {
+    "name": "Augmented CsCl",
+    "symbol": "acs",
+    "coordination": 6,
+    "vertex_symbol": "4^9.6^6",
+    "description": "6-connected net derived from CsCl structure",
+    "space_group": "P6/mmm",
+    "example_mofs": [
+      "MOF-235"
+    ],
+    "node_geometry": "trigonal prismatic",
+    "edge_count_per_node": 6,
+    "common_sbus": [
+      "Fe3O cluster"
+    ],
+    "applications": [
+      "catalysis"
+    ]
+  },
+  "pts": {
+    "name": "Platinum Sulfide",
+    "symbol": "pts",
+    "coordination": [4, 4],
+    "vertex_symbol": "4^2.8^4",
+    "description": "4,4-connected net with two types of 4-connected nodes",
+    "space_group": "P4_2/mmc",
+    "example_mofs": [
+      "CdSDB"
+    ],
+    "node_geometry": ["square planar", "tetrahedral"],
+    "edge_count_per_node": [4, 4],
+    "common_sbus": [
+      "metal ion",
+      "tetrahedral linker"
+    ],
+    "applications": [
+      "luminescence",
+      "sensing"
+    ]
+  },
+  "sra": {
+    "name": "Strontium Silicide",
+    "symbol": "sra",
+    "coordination": [4, 4],
+    "vertex_symbol": "4^2.6^2.8^2",
+    "description": "4,4-connected net",
+    "space_group": "Cmcm",
+    "example_mofs": [
+      "SNU-series"
+    ],
+    "node_geometry": ["square planar", "tetrahedral"],
+    "edge_count_per_node": [4, 4],
+    "common_sbus": [
+      "Zn paddlewheel"
+    ],
+    "applications": [
+      "gas separation"
+    ]
+  },
+  "flu": {
+    "name": "Fluorite",
+    "symbol": "flu",
+    "coordination": [4, 8],
+    "vertex_symbol": "4^6 and 4^24.6^8",
+    "description": "4,8-connected fluorite-type net",
+    "space_group": "Fm-3m",
+    "example_mofs": [
+      "PCN-521",
+      "MOF-812"
+    ],
+    "node_geometry": ["tetrahedral", "cubic"],
+    "edge_count_per_node": [4, 8],
+    "common_sbus": [
+      "Zr6 cluster (8-c)",
+      "tetrahedral linker (4-c)"
+    ],
+    "applications": [
+      "gas storage",
+      "catalysis"
+    ]
+  },
+  "scu": {
+    "name": "Square Cupola",
+    "symbol": "scu",
+    "coordination": [4, 8],
+    "vertex_symbol": "4^8.5^4 and 4^20.5^8",
+    "description": "4,8-connected net",
+    "space_group": "I4/mmm",
+    "example_mofs": [
+      "PCN-700"
+    ],
+    "node_geometry": ["square planar", "square antiprismatic"],
+    "edge_count_per_node": [4, 8],
+    "common_sbus": [
+      "Zr6 cluster",
+      "linear dicarboxylate"
+    ],
+    "applications": [
+      "variable pore size"
+    ]
+  },
+  "the": {
+    "name": "Theta",
+    "symbol": "the",
+    "coordination": [4, 4],
+    "vertex_symbol": "4.8^2.10^2.12",
+    "description": "4,4-connected theta net",
+    "space_group": "I4/mcm",
+    "example_mofs": [
+      "SIFSIX series"
+    ],
+    "node_geometry": ["square planar", "square planar"],
+    "edge_count_per_node": [4, 4],
+    "common_sbus": [
+      "metal-SiF6 chains"
+    ],
+    "pillared_layer": true,
+    "applications": [
+      "gas separation",
+      "CO2 capture"
+    ]
+  },
+  "ith": {
+    "name": "Zeolite ITH",
+    "symbol": "ith",
+    "coordination": 4,
+    "vertex_symbol": "complex",
+    "description": "Zeolite ITH topology",
+    "space_group": "Amm2",
+    "example_mofs": [
+      "ZIF-95"
+    ],
+    "node_geometry": "tetrahedral",
+    "edge_count_per_node": 4,
+    "common_sbus": [
+      "Zn(imidazolate)4"
+    ],
+    "applications": [
+      "gas separation",
+      "CO2/CH4 separation"
+    ]
+  },
+  "gis": {
+    "name": "Gismondine",
+    "symbol": "gis",
+    "coordination": 4,
+    "vertex_symbol": "4.6^2.8^3",
+    "description": "Zeolite GIS topology",
+    "space_group": "I4_1/amd",
+    "example_mofs": [
+      "ZIF-6"
+    ],
+    "node_geometry": "tetrahedral",
+    "edge_count_per_node": 4,
+    "common_sbus": [
+      "Zn(imidazolate)4"
+    ],
+    "applications": [
+      "gas adsorption"
+    ]
+  },
+  "rho": {
+    "name": "Zeolite RHO",
+    "symbol": "rho",
+    "coordination": 4,
+    "vertex_symbol": "3^2.4.6^2.8^2",
+    "description": "Zeolite RHO topology with large cavities",
+    "space_group": "Im-3m",
+    "example_mofs": [
+      "ZIF-71",
+      "ZIF-96"
+    ],
+    "node_geometry": "tetrahedral",
+    "edge_count_per_node": 4,
+    "cage_type": "alpha cage (26 vertices)",
+    "common_sbus": [
+      "Zn(imidazolate)4"
+    ],
+    "applications": [
+      "gas separation",
+      "membrane"
+    ]
+  },
+  "lta": {
+    "name": "Zeolite LTA",
+    "symbol": "lta",
+    "coordination": 4,
+    "vertex_symbol": "4^2.6^2.8^2",
+    "description": "Zeolite A topology with sodalite cages",
+    "space_group": "Pm-3m",
+    "example_mofs": [
+      "ZIF-20"
+    ],
+    "node_geometry": "tetrahedral",
+    "edge_count_per_node": 4,
+    "cage_types": {
+      "sodalite": "truncated octahedron",
+      "alpha": "large central cage"
+    },
+    "common_sbus": [
+      "Zn(imidazolate)4"
+    ],
+    "applications": [
+      "molecular sieving",
+      "gas separation"
+    ]
+  },
+  "afx": {
+    "name": "Zeolite AFX",
+    "symbol": "afx",
+    "coordination": 4,
+    "vertex_symbol": "complex",
+    "description": "Zeolite AFX topology",
+    "space_group": "P6_3/mmc",
+    "example_mofs": [
+      "ZIF-300"
+    ],
+    "node_geometry": "tetrahedral",
+    "edge_count_per_node": 4,
+    "common_sbus": [
+      "Zn(imidazolate)4"
+    ],
+    "applications": [
+      "gas separation"
+    ]
+  },
+  "ctn": {
+    "name": "Carbon Nitride",
+    "symbol": "ctn",
+    "coordination": [3, 4],
+    "vertex_symbol": "6^4 and 6^6",
+    "description": "3,4-connected carbon nitride net",
+    "space_group": "I-43d",
+    "example_mofs": [
+      "UMCM-1"
+    ],
+    "node_geometry": ["triangular", "tetrahedral"],
+    "edge_count_per_node": [3, 4],
+    "chiral": true,
+    "common_sbus": [
+      "Zn4O",
+      "BTB linker"
+    ],
+    "applications": [
+      "high porosity"
+    ]
+  },
+  "etb": {
+    "name": "Edingtonite Binary",
+    "symbol": "etb",
+    "coordination": 4,
+    "vertex_symbol": "4.6^5",
+    "description": "1D rod-based topology",
+    "space_group": "R-3",
+    "example_mofs": [
+      "MOF-74",
+      "CPO-27"
+    ],
+    "node_geometry": "1D rod",
+    "edge_count_per_node": "rod-based",
+    "common_sbus": [
+      "M2(dobdc) rod"
+    ],
+    "open_metal_sites": true,
+    "applications": [
+      "CO2 capture",
+      "gas separation"
+    ]
+  },
+  "pto-a": {
+    "name": "Augmented Platinum Oxide",
+    "symbol": "pto-a",
+    "coordination": [3, 4],
+    "vertex_symbol": "complex",
+    "description": "Augmented pto net with larger pores",
+    "space_group": "Pm-3n",
+    "example_mofs": [
+      "MOF-180",
+      "MOF-210"
+    ],
+    "node_geometry": ["triangular", "tetrahedral"],
+    "edge_count_per_node": [3, 4],
+    "common_sbus": [
+      "Zn4O",
+      "large triangular linker"
+    ],
+    "applications": [
+      "ultra-high surface area",
+      "gas storage"
+    ]
+  },
+  "pcu-a": {
+    "name": "Augmented Primitive Cubic",
+    "symbol": "pcu-a",
+    "coordination": 6,
+    "vertex_symbol": "complex",
+    "description": "Augmented pcu net",
+    "space_group": "Pm-3m",
+    "example_mofs": [
+      "MOF-399"
+    ],
+    "node_geometry": "octahedral",
+    "edge_count_per_node": 6,
+    "common_sbus": [
+      "Zn4O extended"
+    ],
+    "applications": [
+      "ultra-high porosity"
+    ]
+  }
+}

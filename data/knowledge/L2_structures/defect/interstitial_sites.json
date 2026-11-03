@@ -1,0 +1,155 @@
+{
+  "_metadata": {
+    "description": "Comprehensive interstitial site database for various crystal structures",
+    "purpose": "Enable accurate placement of interstitial atoms in any structure type",
+    "source": "Crystallographic data and literature",
+    "version": "2026.01",
+    "last_updated": "2026-11-03",
+    "source_urls": ["https://pymatgen.org/pymatgen.core.html"],
+    "revision": "r4_contract_clarification"
+  },
+  "fcc": {
+    "conventional_cell_atoms": 4,
+    "octahedral_sites": {
+      "count_per_cell": 4,
+      "positions": [[0.5, 0.0, 0.0], [0.0, 0.5, 0.0], [0.0, 0.0, 0.5], [0.5, 0.5, 0.5]],
+      "coordination": 6,
+      "hole_radius_ratio": 0.414,
+      "description": "Surrounded by 6 atoms in octahedral arrangement",
+      "typical_interstitials": ["C", "N", "O"]
+    },
+    "tetrahedral_sites": {
+      "count_per_cell": 8,
+      "positions": [
+        [0.25, 0.25, 0.25],
+        [0.75, 0.75, 0.25],
+        [0.75, 0.25, 0.75],
+        [0.25, 0.75, 0.75],
+        [0.75, 0.25, 0.25],
+        [0.25, 0.75, 0.25],
+        [0.25, 0.25, 0.75],
+        [0.75, 0.75, 0.75]
+      ],
+      "coordination": 4,
+      "hole_radius_ratio": 0.225,
+      "description": "Surrounded by 4 atoms in tetrahedral arrangement",
+      "typical_interstitials": ["H"]
+    }
+  },
+  "bcc": {
+    "conventional_cell_atoms": 2,
+    "octahedral_sites": {
+      "count_per_cell": 6,
+      "positions": [[0.5, 0.0, 0.0], [0.0, 0.5, 0.0], [0.0, 0.0, 0.5], [0.5, 0.5, 0.0], [0.5, 0.0, 0.5], [0.0, 0.5, 0.5]],
+      "coordination": 6,
+      "hole_radius_ratio": 0.155,
+      "description": "Distorted octahedral, 2 atoms closer than other 4",
+      "note": "Smaller than tetrahedral in bcc"
+    },
+    "tetrahedral_sites": {
+      "count_per_cell": 12,
+      "positions": [
+        [0.25, 0.5, 0.0],
+        [0.75, 0.5, 0.0],
+        [0.5, 0.25, 0.0],
+        [0.5, 0.75, 0.0],
+        [0.25, 0.0, 0.5],
+        [0.75, 0.0, 0.5],
+        [0.0, 0.25, 0.5],
+        [0.0, 0.75, 0.5],
+        [0.5, 0.0, 0.25],
+        [0.5, 0.0, 0.75],
+        [0.0, 0.5, 0.25],
+        [0.0, 0.5, 0.75]
+      ],
+      "coordination": 4,
+      "hole_radius_ratio": 0.291,
+      "description": "Tetrahedral void in the ideal bcc reference; occupancy preference depends on host, interstitial species and relaxation, not void size alone."
+    }
+  },
+  "hcp": {
+    "conventional_cell_atoms": 2,
+    "octahedral_sites": {
+      "count_per_cell": 2,
+      "positions": [[0.333, 0.667, 0.25], [0.667, 0.333, 0.75]],
+      "coordination": 6,
+      "description": "Between basal planes"
+    },
+    "tetrahedral_sites": {
+      "count_per_cell": 4,
+      "positions": [[0.0, 0.0, 0.375], [0.0, 0.0, 0.625], [0.333, 0.667, 0.125], [0.333, 0.667, 0.875]],
+      "coordination": 4
+    }
+  },
+  "diamond": {
+    "conventional_cell_atoms": 8,
+    "tetrahedral_sites": {
+      "count_per_cell": 8,
+      "positions": [
+        [0.5, 0.5, 0.5],
+        [0.5, 0.0, 0.0],
+        [0.0, 0.5, 0.0],
+        [0.0, 0.0, 0.5],
+        [0.75, 0.75, 0.25],
+        [0.75, 0.25, 0.75],
+        [0.25, 0.75, 0.75],
+        [0.25, 0.25, 0.25]
+      ],
+      "coordination": 4,
+      "description": "Large tetrahedral voids in diamond structure"
+    },
+    "hexagonal_sites": {
+      "count_per_cell": 16,
+      "representative_positions": [[0.625, 0.625, 0.625], [0.375, 0.375, 0.375]],
+      "coordination": 6,
+      "description": "Hexagonal interstitial sites"
+    },
+    "bond_center": {"description": "Midpoint of covalent bond, high energy", "example_position": [0.125, 0.125, 0.125]}
+  },
+  "rocksalt": {
+    "conventional_cell_atoms": 8,
+    "note": "Structure already has atoms at all fcc positions",
+    "interstitial_difficulty": "Limited interstitial space",
+    "possible_sites": {"face_center_between_cations": {"example": [0.5, 0.25, 0.25], "note": "Between 4 cations"}}
+  },
+  "fluorite": {
+    "conventional_cell_atoms": 12,
+    "octahedral_void": {
+      "position": [0.5, 0.5, 0.5],
+      "description": "Large void at body center, surrounded by 8 anions",
+      "used_for": "Anion Frenkel defect, oxygen interstitial in CeO2"
+    },
+    "anion_frenkel": {"vacancy": "Remove anion from (0.25, 0.25, 0.25)", "interstitial": "Add anion at (0.5, 0.5, 0.5)"}
+  },
+  "perovskite": {
+    "conventional_cell_atoms": 5,
+    "A_site": [0, 0, 0],
+    "B_site": [0.5, 0.5, 0.5],
+    "O_sites": [[0.5, 0.5, 0], [0.5, 0, 0.5], [0, 0.5, 0.5]],
+    "interstitial_sites": {
+      "note": "Perovskite is quite densely packed",
+      "possible_oxygen_interstitial": {"position": [0.5, 0, 0], "description": "Requires significant lattice distortion"}
+    }
+  },
+  "spinel": {
+    "conventional_cell_atoms": 56,
+    "tetrahedral_voids": {"description": "8a Wyckoff sites (normally occupied by A cations)", "interstitial_note": "Can accommodate extra cations"},
+    "octahedral_voids": {
+      "description": "16d Wyckoff sites (normally occupied by B cations)",
+      "interstitial_note": "16c sites are empty octahedral voids"
+    }
+  },
+  "supercell_coordinate_conversion": {
+    "formula": "For row lattice vectors L_super=M@L_parent: f_super=(f_parent+integer_parent_image)@inv(M). Componentwise division is valid only for diagonal repetition matrices.",
+    "example": {
+      "unit_cell_position": [0.5, 0.5, 0.5],
+      "supercell_size": [3, 3, 3],
+      "supercell_position": [0.16666666666666666, 0.16666666666666666, 0.16666666666666666],
+      "condition": "Diagonal M=diag(3,3,3), zero parent-cell image; not a general matrix example."
+    },
+    "multiple_interstitials": {
+      "method": "Select distinct parent-cell images, then apply the same inverse integer transformation; check periodic positions and requested separations.",
+      "example": "For second interstitial at (0.5, 0.5, 0.5) in 3x3x3: use (1.5, 0.5, 0.5) then divide"
+    }
+  }
+}

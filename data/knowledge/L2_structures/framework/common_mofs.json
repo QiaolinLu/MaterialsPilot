@@ -1,0 +1,573 @@
+{
+  "_metadata": {
+    "description": "Common MOF structures with properties and synthesis conditions",
+    "source": "Literature, CoRE MOF, and QMOF databases",
+    "license": "CC BY 4.0",
+    "citation": "Chung et al., J. Chem. Eng. Data 64, 5985 (2019)",
+    "version": "2025.12",
+    "last_updated": "2025-12-31T18:02:33.830239"
+  },
+  "MOF-5": {
+    "name": "MOF-5",
+    "aliases": [
+      "IRMOF-1"
+    ],
+    "formula": "Zn4O(BDC)3",
+    "topology": "pcu",
+    "sbu": "Zn4O",
+    "linker": "BDC",
+    "space_group": "Fm-3m",
+    "lattice_parameter_a": 25.83,
+    "pore_diameter_angstrom": 11.2,
+    "surface_area_m2_g": 3800,
+    "pore_volume_cm3_g": 1.55,
+    "density_g_cm3": 0.59,
+    "stability": {
+      "thermal_C": 400,
+      "water": "unstable",
+      "acid": "unstable"
+    },
+    "applications": [
+      "gas storage",
+      "hydrogen storage"
+    ],
+    "synthesis": {
+      "metal_source": "Zn(NO3)2·6H2O",
+      "linker": "H2BDC",
+      "solvent": "DEF or DMF",
+      "temperature_C": 85,
+      "time_h": 24
+    },
+    "discovery_year": 1999,
+    "reference": "Yaghi et al., Nature 1999"
+  },
+  "HKUST-1": {
+    "name": "HKUST-1",
+    "aliases": [
+      "Cu-BTC",
+      "MOF-199"
+    ],
+    "formula": "Cu3(BTC)2",
+    "topology": "tbo",
+    "sbu": "Cu2_paddlewheel",
+    "linker": "BTC",
+    "space_group": "Fm-3m",
+    "lattice_parameter_a": 26.34,
+    "pore_diameter_angstrom": [
+      9,
+      5
+    ],
+    "surface_area_m2_g": 1850,
+    "pore_volume_cm3_g": 0.75,
+    "density_g_cm3": 0.88,
+    "stability": {
+      "thermal_C": 280,
+      "water": "moderate",
+      "acid": "unstable"
+    },
+    "open_metal_sites": true,
+    "applications": [
+      "gas storage",
+      "catalysis",
+      "sensing"
+    ],
+    "synthesis": {
+      "metal_source": "Cu(NO3)2·3H2O",
+      "linker": "H3BTC",
+      "solvent": "DMF/ethanol/water",
+      "temperature_C": 85,
+      "time_h": 12
+    },
+    "discovery_year": 1999,
+    "reference": "Chui et al., Science 1999"
+  },
+  "UiO-66": {
+    "name": "UiO-66",
+    "formula": "Zr6O4(OH)4(BDC)6",
+    "topology": "fcu",
+    "sbu": "Zr6O4OH4",
+    "linker": "BDC",
+    "space_group": "Fm-3m",
+    "lattice_parameter_a": 20.75,
+    "pore_diameter_angstrom": [
+      6,
+      8
+    ],
+    "surface_area_m2_g": 1200,
+    "pore_volume_cm3_g": 0.5,
+    "density_g_cm3": 1.24,
+    "stability": {
+      "thermal_C": 500,
+      "water": "excellent",
+      "acid": "good"
+    },
+    "defect_tolerant": true,
+    "applications": [
+      "water stable applications",
+      "catalysis",
+      "drug delivery"
+    ],
+    "synthesis": {
+      "metal_source": "ZrCl4",
+      "linker": "H2BDC",
+      "solvent": "DMF",
+      "modulator": "acetic acid or formic acid",
+      "temperature_C": 120,
+      "time_h": 24
+    },
+    "variants": {
+      "UiO-66-NH2": {
+        "linker": "NH2-BDC",
+        "surface_area_m2_g": 1100
+      },
+      "UiO-66-Br": {
+        "linker": "Br-BDC",
+        "surface_area_m2_g": 900
+      }
+    },
+    "discovery_year": 2008,
+    "reference": "Cavka et al., JACS 2008"
+  },
+  "UiO-67": {
+    "name": "UiO-67",
+    "formula": "Zr6O4(OH)4(BPDC)6",
+    "topology": "fcu",
+    "sbu": "Zr6O4OH4",
+    "linker": "BPDC",
+    "space_group": "Fm-3m",
+    "lattice_parameter_a": 26.88,
+    "pore_diameter_angstrom": [
+      12,
+      16
+    ],
+    "surface_area_m2_g": 2100,
+    "pore_volume_cm3_g": 0.95,
+    "stability": {
+      "thermal_C": 450,
+      "water": "good",
+      "acid": "moderate"
+    },
+    "applications": [
+      "catalysis",
+      "large molecule encapsulation"
+    ],
+    "synthesis": {
+      "metal_source": "ZrCl4",
+      "linker": "H2BPDC",
+      "solvent": "DMF",
+      "modulator": "benzoic acid",
+      "temperature_C": 120,
+      "time_h": 24
+    },
+    "discovery_year": 2008,
+    "reference": "Cavka et al., JACS 2008"
+  },
+  "ZIF-8": {
+    "name": "ZIF-8",
+    "aliases": [
+      "MAF-4"
+    ],
+    "formula": "Zn(mIm)2",
+    "topology": "sod",
+    "sbu": "Zn_imidazolate",
+    "linker": "2-methylimidazole",
+    "space_group": "I-43m",
+    "lattice_parameter_a": 16.99,
+    "pore_diameter_angstrom": 11.6,
+    "aperture_diameter_angstrom": 3.4,
+    "surface_area_m2_g": 1630,
+    "pore_volume_cm3_g": 0.66,
+    "density_g_cm3": 0.95,
+    "stability": {
+      "thermal_C": 550,
+      "water": "excellent",
+      "acid": "unstable"
+    },
+    "flexible_aperture": true,
+    "applications": [
+      "gas separation",
+      "membrane",
+      "catalysis"
+    ],
+    "synthesis": {
+      "metal_source": "Zn(NO3)2·6H2O",
+      "linker": "2-methylimidazole",
+      "solvent": "methanol",
+      "temperature_C": 25,
+      "time_h": 24
+    },
+    "discovery_year": 2006,
+    "reference": "Park et al., PNAS 2006"
+  },
+  "ZIF-67": {
+    "name": "ZIF-67",
+    "formula": "Co(mIm)2",
+    "topology": "sod",
+    "sbu": "Co_imidazolate",
+    "linker": "2-methylimidazole",
+    "space_group": "I-43m",
+    "lattice_parameter_a": 16.96,
+    "pore_diameter_angstrom": 11.6,
+    "aperture_diameter_angstrom": 3.4,
+    "surface_area_m2_g": 1500,
+    "stability": {
+      "thermal_C": 500,
+      "water": "good",
+      "acid": "unstable"
+    },
+    "magnetic": true,
+    "applications": [
+      "electrocatalysis precursor",
+      "battery materials"
+    ],
+    "synthesis": {
+      "metal_source": "Co(NO3)2·6H2O",
+      "linker": "2-methylimidazole",
+      "solvent": "methanol",
+      "temperature_C": 25,
+      "time_h": 24
+    },
+    "discovery_year": 2011
+  },
+  "MIL-101": {
+    "name": "MIL-101",
+    "formula": "Cr3O(BDC)3F",
+    "topology": "mtn",
+    "sbu": "Cr3O",
+    "linker": "BDC",
+    "space_group": "Fd-3m",
+    "lattice_parameter_a": 89.0,
+    "pore_diameter_angstrom": [
+      29,
+      34
+    ],
+    "surface_area_m2_g": 4100,
+    "pore_volume_cm3_g": 2.0,
+    "density_g_cm3": 0.44,
+    "stability": {
+      "thermal_C": 350,
+      "water": "excellent",
+      "acid": "good"
+    },
+    "mesoporous": true,
+    "open_metal_sites": true,
+    "applications": [
+      "gas storage",
+      "catalysis",
+      "drug delivery"
+    ],
+    "synthesis": {
+      "metal_source": "Cr(NO3)3·9H2O",
+      "linker": "H2BDC",
+      "solvent": "water",
+      "additive": "HF",
+      "temperature_C": 220,
+      "time_h": 8
+    },
+    "variants": {
+      "MIL-101(Fe)": {
+        "metal": "Fe",
+        "stability": "lower"
+      },
+      "MIL-101(Al)": {
+        "metal": "Al",
+        "stability": "moderate"
+      }
+    },
+    "discovery_year": 2005,
+    "reference": "Férey et al., Science 2005"
+  },
+  "MIL-53": {
+    "name": "MIL-53",
+    "formula": "M(OH)(BDC)",
+    "topology": "wine-rack",
+    "sbu": "M-OH chain",
+    "linker": "BDC",
+    "space_group": "Imma (open) / C2/c (closed)",
+    "breathing": true,
+    "pore_diameter_angstrom": {
+      "open": 8.5,
+      "closed": 2.6
+    },
+    "surface_area_m2_g": 1500,
+    "stability": {
+      "thermal_C": 500,
+      "water": "excellent",
+      "acid": "moderate"
+    },
+    "applications": [
+      "gas separation",
+      "sensing",
+      "breathing behavior studies"
+    ],
+    "synthesis": {
+      "metal_source": "Al(NO3)3·9H2O or Cr(NO3)3·9H2O",
+      "linker": "H2BDC",
+      "solvent": "water",
+      "temperature_C": 220,
+      "time_h": 72
+    },
+    "variants": {
+      "MIL-53(Al)": {
+        "metal": "Al"
+      },
+      "MIL-53(Cr)": {
+        "metal": "Cr"
+      },
+      "MIL-53(Fe)": {
+        "metal": "Fe"
+      }
+    },
+    "discovery_year": 2002,
+    "reference": "Serre et al., JACS 2002"
+  },
+  "MOF-74": {
+    "name": "MOF-74",
+    "aliases": [
+      "CPO-27"
+    ],
+    "formula": "M2(DOBDC)",
+    "topology": "etb",
+    "sbu": "M2_dobdc",
+    "linker": "DOBDC",
+    "space_group": "R-3",
+    "pore_diameter_angstrom": 11,
+    "surface_area_m2_g": 1200,
+    "stability": {
+      "thermal_C": 300,
+      "water": "moderate",
+      "acid": "unstable"
+    },
+    "open_metal_sites": true,
+    "high_density_oms": true,
+    "applications": [
+      "CO2 capture",
+      "gas separation",
+      "catalysis"
+    ],
+    "synthesis": {
+      "metal_source": "M(NO3)2 (M = Mg, Ni, Co, Zn, Fe, Mn)",
+      "linker": "H4DOBDC",
+      "solvent": "DMF/ethanol/water",
+      "temperature_C": 120,
+      "time_h": 24
+    },
+    "variants": {
+      "Mg-MOF-74": {
+        "metal": "Mg",
+        "CO2_uptake": "highest"
+      },
+      "Ni-MOF-74": {
+        "metal": "Ni",
+        "stability": "better"
+      },
+      "Co-MOF-74": {
+        "metal": "Co"
+      },
+      "Zn-MOF-74": {
+        "metal": "Zn"
+      }
+    },
+    "discovery_year": 2005,
+    "reference": "Rosi et al., JACS 2005"
+  },
+  "MOF-177": {
+    "name": "MOF-177",
+    "formula": "Zn4O(BTB)2",
+    "topology": "qom",
+    "sbu": "Zn4O",
+    "linker": "BTB",
+    "space_group": "P-31c",
+    "lattice_parameter_a": 37.07,
+    "pore_diameter_angstrom": 11.8,
+    "surface_area_m2_g": 4500,
+    "pore_volume_cm3_g": 1.89,
+    "density_g_cm3": 0.43,
+    "stability": {
+      "thermal_C": 350,
+      "water": "unstable",
+      "acid": "unstable"
+    },
+    "applications": [
+      "gas storage",
+      "high surface area applications"
+    ],
+    "synthesis": {
+      "metal_source": "Zn(NO3)2·6H2O",
+      "linker": "H3BTB",
+      "solvent": "DEF",
+      "temperature_C": 100,
+      "time_h": 24
+    },
+    "discovery_year": 2004,
+    "reference": "Chae et al., Nature 2004"
+  },
+  "PCN-222": {
+    "name": "PCN-222",
+    "aliases": [
+      "MOF-545"
+    ],
+    "formula": "Zr6O8(TCPP)2",
+    "topology": "csq",
+    "sbu": "Zr6O8",
+    "linker": "TCPP",
+    "space_group": "P6/mmm",
+    "pore_diameter_angstrom": 37,
+    "surface_area_m2_g": 2200,
+    "stability": {
+      "thermal_C": 350,
+      "water": "excellent",
+      "acid": "good"
+    },
+    "mesoporous": true,
+    "porphyrin_based": true,
+    "applications": [
+      "catalysis",
+      "photocatalysis",
+      "enzyme mimics"
+    ],
+    "synthesis": {
+      "metal_source": "ZrCl4",
+      "linker": "H4TCPP",
+      "solvent": "DMF",
+      "modulator": "benzoic acid",
+      "temperature_C": 120,
+      "time_h": 48
+    },
+    "metalation": {
+      "possible": true,
+      "metals": [
+        "Fe",
+        "Co",
+        "Mn",
+        "Cu"
+      ]
+    },
+    "discovery_year": 2012,
+    "reference": "Feng et al., Angew. Chem. 2012"
+  },
+  "NU-1000": {
+    "name": "NU-1000",
+    "formula": "Zr6O8(TBAPy)2",
+    "topology": "csq",
+    "sbu": "Zr6O8",
+    "linker": "H4TBAPy",
+    "space_group": "P6/mmm",
+    "pore_diameter_angstrom": [
+      12,
+      31
+    ],
+    "surface_area_m2_g": 2300,
+    "stability": {
+      "thermal_C": 400,
+      "water": "excellent",
+      "acid": "good"
+    },
+    "mesoporous": true,
+    "applications": [
+      "catalysis",
+      "enzyme immobilization",
+      "SALI"
+    ],
+    "synthesis": {
+      "metal_source": "ZrOCl2·8H2O",
+      "linker": "H4TBAPy",
+      "solvent": "DMF",
+      "modulator": "benzoic acid",
+      "temperature_C": 100,
+      "time_h": 24
+    },
+    "post_synthetic_modification": true,
+    "discovery_year": 2013,
+    "reference": "Mondloch et al., JACS 2013"
+  },
+  "MIL-125": {
+    "name": "MIL-125",
+    "formula": "Ti8O8(OH)4(BDC)6",
+    "topology": "bcu",
+    "sbu": "Ti8O8",
+    "linker": "BDC",
+    "space_group": "I4/mmm",
+    "lattice_parameter_a": 18.65,
+    "pore_diameter_angstrom": [
+      6,
+      12
+    ],
+    "surface_area_m2_g": 1550,
+    "stability": {
+      "thermal_C": 360,
+      "water": "moderate",
+      "acid": "unstable"
+    },
+    "photocatalytic": true,
+    "applications": [
+      "photocatalysis",
+      "solar fuel",
+      "CO2 reduction"
+    ],
+    "synthesis": {
+      "metal_source": "Ti(OiPr)4",
+      "linker": "H2BDC",
+      "solvent": "DMF/methanol",
+      "temperature_C": 150,
+      "time_h": 72
+    },
+    "variants": {
+      "MIL-125-NH2": {
+        "linker": "NH2-BDC",
+        "visible_light_active": true
+      }
+    },
+    "discovery_year": 2009,
+    "reference": "Dan-Hardi et al., JACS 2009"
+  },
+  "Ni3HITP2": {
+    "name": "Ni3(HITP)2",
+    "formula": "Ni3(HITP)2",
+    "topology": "hcb",
+    "sbu": "Ni_bis(diimine)",
+    "linker": "HITP",
+    "dimensionality": "2D",
+    "space_group": "P6/mmm",
+    "conductivity_S_cm": 40,
+    "conductive": true,
+    "applications": [
+      "electrocatalysis",
+      "supercapacitors",
+      "chemiresistive sensing"
+    ],
+    "synthesis": {
+      "metal_source": "NiCl2",
+      "linker": "HITP",
+      "solvent": "water/ammonia",
+      "temperature_C": 65,
+      "time_h": 2
+    },
+    "discovery_year": 2014,
+    "reference": "Sheberla et al., JACS 2014"
+  },
+  "Cu3HHTP2": {
+    "name": "Cu3(HHTP)2",
+    "formula": "Cu3(HHTP)2",
+    "topology": "hcb",
+    "sbu": "Cu_catecholate",
+    "linker": "HHTP",
+    "dimensionality": "2D",
+    "conductivity_S_cm": 0.2,
+    "conductive": true,
+    "applications": [
+      "electrocatalysis",
+      "sensing",
+      "electronics"
+    ],
+    "synthesis": {
+      "metal_source": "Cu(NO3)2",
+      "linker": "HHTP",
+      "solvent": "water",
+      "temperature_C": 85,
+      "time_h": 24
+    },
+    "discovery_year": 2012,
+    "reference": "Hmadeh et al., Chem. Mater. 2012"
+  }
+}

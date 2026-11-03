@@ -1,0 +1,984 @@
+{
+  "_metadata": {
+    "description": "DFT-calculated adsorption energies on metal surfaces",
+    "unit": "eV",
+    "sources": [
+      "CatApp database (Stanford)",
+      "Open Catalyst Project (OC20/OC22)",
+      "Computational Catalysis Database",
+      "Peer-reviewed DFT literature (PBE/RPBE functionals)"
+    ],
+    "note": "Values are approximate and depend on coverage, site, and functional used. Most values use RPBE or PBE-D3 functionals.",
+    "source": "CatApp (Stanford), OC20/OC22, peer-reviewed literature",
+    "license": "CC BY 4.0",
+    "citation": "Winther et al., Sci. Data 6, 75 (2019)",
+    "version": "2025.12",
+    "last_updated": "2025-12-31T18:02:33.852458"
+  },
+  "atomic_adsorbates": {
+    "H": {
+      "description": "Hydrogen atom adsorption",
+      "reference": "0.5 * H2(g)",
+      "surfaces": {
+        "Pt(111)": {
+          "fcc": -0.46,
+          "hcp": -0.42,
+          "top": -0.28,
+          "bridge": -0.4
+        },
+        "Pt(100)": {
+          "hollow": -0.5,
+          "bridge": -0.42,
+          "top": -0.3
+        },
+        "Pd(111)": {
+          "fcc": -0.5,
+          "hcp": -0.46,
+          "top": -0.25,
+          "bridge": -0.42
+        },
+        "Ni(111)": {
+          "fcc": -0.52,
+          "hcp": -0.48,
+          "top": -0.3,
+          "bridge": -0.45
+        },
+        "Cu(111)": {
+          "fcc": -0.2,
+          "hcp": -0.18,
+          "top": 0.05,
+          "bridge": -0.1
+        },
+        "Cu(100)": {
+          "hollow": -0.25,
+          "bridge": -0.15,
+          "top": 0.02
+        },
+        "Au(111)": {
+          "fcc": 0.15,
+          "hcp": 0.18,
+          "top": 0.35,
+          "bridge": 0.22
+        },
+        "Ag(111)": {
+          "fcc": 0.1,
+          "hcp": 0.12,
+          "top": 0.3,
+          "bridge": 0.18
+        },
+        "Rh(111)": {
+          "fcc": -0.55,
+          "hcp": -0.51,
+          "top": -0.32,
+          "bridge": -0.48
+        },
+        "Ir(111)": {
+          "fcc": -0.45,
+          "hcp": -0.41,
+          "top": -0.25,
+          "bridge": -0.38
+        },
+        "Ru(0001)": {
+          "fcc": -0.5,
+          "hcp": -0.52,
+          "top": -0.3,
+          "bridge": -0.45
+        },
+        "Co(0001)": {
+          "fcc": -0.55,
+          "hcp": -0.53,
+          "top": -0.35,
+          "bridge": -0.48
+        },
+        "Fe(110)": {
+          "hollow": -0.45,
+          "top": -0.25,
+          "bridge": -0.4
+        },
+        "Fe(100)": {
+          "hollow": -0.5,
+          "bridge": -0.42
+        },
+        "Mo(110)": {
+          "hollow": -0.6,
+          "top": -0.35,
+          "bridge": -0.52
+        },
+        "W(110)": {
+          "hollow": -0.65,
+          "top": -0.4,
+          "bridge": -0.55
+        },
+        "Al(111)": {
+          "fcc": -0.35,
+          "hcp": -0.32,
+          "top": -0.1
+        }
+      },
+      "notes": "Optimal HER catalyst has H adsorption near 0 eV (Sabatier principle)"
+    },
+    "O": {
+      "description": "Oxygen atom adsorption",
+      "reference": "0.5 * O2(g)",
+      "surfaces": {
+        "Pt(111)": {
+          "fcc": -1.2,
+          "hcp": -1.1,
+          "bridge": -0.95
+        },
+        "Pt(100)": {
+          "hollow": -1.35,
+          "bridge": -1.1
+        },
+        "Pd(111)": {
+          "fcc": -1.4,
+          "hcp": -1.3,
+          "bridge": -1.15
+        },
+        "Ni(111)": {
+          "fcc": -2.1,
+          "hcp": -2.0,
+          "bridge": -1.85
+        },
+        "Cu(111)": {
+          "fcc": -1.8,
+          "hcp": -1.7,
+          "bridge": -1.55
+        },
+        "Cu(100)": {
+          "hollow": -1.95,
+          "bridge": -1.7
+        },
+        "Au(111)": {
+          "fcc": -0.2,
+          "hcp": -0.1,
+          "bridge": 0.05
+        },
+        "Ag(111)": {
+          "fcc": -0.6,
+          "hcp": -0.5,
+          "bridge": -0.35
+        },
+        "Rh(111)": {
+          "fcc": -1.8,
+          "hcp": -1.7,
+          "bridge": -1.55
+        },
+        "Ir(111)": {
+          "fcc": -1.5,
+          "hcp": -1.4,
+          "bridge": -1.25
+        },
+        "Ru(0001)": {
+          "fcc": -2.2,
+          "hcp": -2.3,
+          "bridge": -2.05
+        },
+        "Co(0001)": {
+          "fcc": -2.3,
+          "hcp": -2.2,
+          "bridge": -2.05
+        },
+        "Fe(110)": {
+          "hollow": -2.5,
+          "bridge": -2.2
+        },
+        "Mo(110)": {
+          "hollow": -3.2,
+          "bridge": -2.9
+        },
+        "W(110)": {
+          "hollow": -3.5,
+          "bridge": -3.1
+        }
+      },
+      "notes": "Strong O binding indicates oxide formation tendency"
+    },
+    "N": {
+      "description": "Nitrogen atom adsorption",
+      "reference": "0.5 * N2(g)",
+      "surfaces": {
+        "Pt(111)": {
+          "fcc": -0.5,
+          "hcp": -0.45
+        },
+        "Pd(111)": {
+          "fcc": -0.6,
+          "hcp": -0.55
+        },
+        "Ni(111)": {
+          "fcc": -1.2,
+          "hcp": -1.15
+        },
+        "Cu(111)": {
+          "fcc": -0.3,
+          "hcp": -0.25
+        },
+        "Ru(0001)": {
+          "fcc": -1.5,
+          "hcp": -1.55
+        },
+        "Rh(111)": {
+          "fcc": -1.1,
+          "hcp": -1.05
+        },
+        "Fe(110)": {
+          "hollow": -1.8
+        },
+        "Fe(100)": {
+          "hollow": -1.95
+        },
+        "Mo(110)": {
+          "hollow": -2.2
+        },
+        "W(110)": {
+          "hollow": -2.5
+        }
+      },
+      "notes": "Important for ammonia synthesis - Fe and Ru are optimal"
+    },
+    "C": {
+      "description": "Carbon atom adsorption",
+      "reference": "graphite",
+      "surfaces": {
+        "Pt(111)": {
+          "fcc": -0.8,
+          "hcp": -0.75
+        },
+        "Pd(111)": {
+          "fcc": -0.9,
+          "hcp": -0.85
+        },
+        "Ni(111)": {
+          "fcc": -1.5,
+          "hcp": -1.45
+        },
+        "Cu(111)": {
+          "fcc": -0.5,
+          "hcp": -0.45
+        },
+        "Ru(0001)": {
+          "fcc": -1.8,
+          "hcp": -1.85
+        },
+        "Rh(111)": {
+          "fcc": -1.4,
+          "hcp": -1.35
+        },
+        "Fe(110)": {
+          "hollow": -2.0
+        },
+        "Mo(110)": {
+          "hollow": -2.5
+        },
+        "W(110)": {
+          "hollow": -2.8
+        }
+      },
+      "notes": "Strong C binding leads to coking in reforming reactions"
+    },
+    "S": {
+      "description": "Sulfur atom adsorption",
+      "reference": "0.125 * S8(g)",
+      "surfaces": {
+        "Pt(111)": {
+          "fcc": -1.1,
+          "hcp": -1.05
+        },
+        "Pd(111)": {
+          "fcc": -1.3,
+          "hcp": -1.25
+        },
+        "Ni(111)": {
+          "fcc": -1.8,
+          "hcp": -1.75
+        },
+        "Cu(111)": {
+          "fcc": -1.2,
+          "hcp": -1.15
+        },
+        "Au(111)": {
+          "fcc": -0.5,
+          "hcp": -0.45
+        },
+        "Rh(111)": {
+          "fcc": -1.5,
+          "hcp": -1.45
+        },
+        "Mo(110)": {
+          "hollow": -2.5
+        },
+        "Fe(110)": {
+          "hollow": -2.0
+        }
+      },
+      "notes": "Sulfur is a common catalyst poison - blocks active sites"
+    }
+  },
+  "molecular_adsorbates": {
+    "CO": {
+      "description": "Carbon monoxide adsorption",
+      "reference": "CO(g)",
+      "surfaces": {
+        "Pt(111)": {
+          "top": -1.7,
+          "bridge": -1.55,
+          "fcc": -1.45
+        },
+        "Pt(100)": {
+          "top": -1.85,
+          "bridge": -1.7
+        },
+        "Pd(111)": {
+          "top": -1.5,
+          "bridge": -1.8,
+          "fcc": -1.75
+        },
+        "Ni(111)": {
+          "top": -1.8,
+          "bridge": -1.9,
+          "fcc": -1.85
+        },
+        "Cu(111)": {
+          "top": -0.7,
+          "bridge": -0.55,
+          "fcc": -0.45
+        },
+        "Cu(100)": {
+          "top": -0.75,
+          "bridge": -0.6
+        },
+        "Au(111)": {
+          "top": -0.3,
+          "bridge": -0.15,
+          "fcc": -0.05
+        },
+        "Ag(111)": {
+          "top": -0.2,
+          "bridge": -0.05,
+          "fcc": 0.05
+        },
+        "Rh(111)": {
+          "top": -1.85,
+          "bridge": -1.95,
+          "fcc": -1.9
+        },
+        "Ir(111)": {
+          "top": -1.9,
+          "bridge": -1.75,
+          "fcc": -1.65
+        },
+        "Ru(0001)": {
+          "top": -1.95,
+          "bridge": -1.85,
+          "fcc": -1.8
+        },
+        "Co(0001)": {
+          "top": -1.7,
+          "bridge": -1.8,
+          "fcc": -1.75
+        },
+        "Fe(110)": {
+          "top": -1.6,
+          "bridge": -1.75
+        },
+        "Mo(110)": {
+          "top": -1.4,
+          "bridge": -1.55
+        },
+        "W(110)": {
+          "top": -1.35,
+          "bridge": -1.5
+        }
+      },
+      "notes": "CO poisoning is major issue for fuel cells. Site preference varies with metal."
+    },
+    "CO2": {
+      "description": "Carbon dioxide adsorption",
+      "reference": "CO2(g)",
+      "surfaces": {
+        "Pt(111)": {
+          "physisorbed": -0.1,
+          "bent": -0.3
+        },
+        "Pd(111)": {
+          "physisorbed": -0.15,
+          "bent": -0.35
+        },
+        "Ni(111)": {
+          "physisorbed": -0.2,
+          "bent": -0.5
+        },
+        "Cu(111)": {
+          "physisorbed": -0.15,
+          "bent": -0.25
+        },
+        "Cu(100)": {
+          "physisorbed": -0.18,
+          "bent": -0.3
+        },
+        "Au(111)": {
+          "physisorbed": -0.05
+        },
+        "Ag(111)": {
+          "physisorbed": -0.08
+        },
+        "Fe(110)": {
+          "bent": -0.6
+        },
+        "Zn(0001)": {
+          "physisorbed": -0.12
+        }
+      },
+      "notes": "Bent CO2 indicates activation - important for CO2 reduction"
+    },
+    "H2O": {
+      "description": "Water adsorption",
+      "reference": "H2O(g)",
+      "surfaces": {
+        "Pt(111)": {
+          "top": -0.35,
+          "bilayer": -0.55
+        },
+        "Pd(111)": {
+          "top": -0.4,
+          "bilayer": -0.6
+        },
+        "Ni(111)": {
+          "top": -0.45,
+          "bilayer": -0.65
+        },
+        "Cu(111)": {
+          "top": -0.3,
+          "bilayer": -0.5
+        },
+        "Cu(100)": {
+          "top": -0.35,
+          "bilayer": -0.55
+        },
+        "Au(111)": {
+          "top": -0.15,
+          "bilayer": -0.35
+        },
+        "Ag(111)": {
+          "top": -0.2,
+          "bilayer": -0.4
+        },
+        "Ru(0001)": {
+          "top": -0.5,
+          "bilayer": -0.7
+        },
+        "Rh(111)": {
+          "top": -0.45,
+          "bilayer": -0.65
+        }
+      },
+      "notes": "Water structure important for electrochemistry"
+    },
+    "OH": {
+      "description": "Hydroxyl adsorption",
+      "reference": "H2O(g) - 0.5*H2(g)",
+      "surfaces": {
+        "Pt(111)": {
+          "top": -2.2,
+          "bridge": -2.1,
+          "fcc": -2.0
+        },
+        "Pt(100)": {
+          "top": -2.3,
+          "bridge": -2.2
+        },
+        "Pd(111)": {
+          "top": -2.3,
+          "bridge": -2.2,
+          "fcc": -2.1
+        },
+        "Ni(111)": {
+          "top": -2.8,
+          "bridge": -2.7,
+          "fcc": -2.6
+        },
+        "Cu(111)": {
+          "top": -2.5,
+          "bridge": -2.4,
+          "fcc": -2.3
+        },
+        "Au(111)": {
+          "top": -1.5,
+          "bridge": -1.4,
+          "fcc": -1.3
+        },
+        "Ag(111)": {
+          "top": -1.8,
+          "bridge": -1.7,
+          "fcc": -1.6
+        },
+        "Rh(111)": {
+          "top": -2.5,
+          "bridge": -2.4
+        },
+        "Ir(111)": {
+          "top": -2.4,
+          "bridge": -2.3
+        },
+        "Ru(0001)": {
+          "top": -2.7,
+          "bridge": -2.6
+        }
+      },
+      "notes": "Key intermediate in ORR and water splitting"
+    },
+    "OOH": {
+      "description": "Hydroperoxyl adsorption",
+      "reference": "2*H2O(g) - 1.5*H2(g)",
+      "surfaces": {
+        "Pt(111)": {
+          "top": -1.1
+        },
+        "Pd(111)": {
+          "top": -1.2
+        },
+        "Ni(111)": {
+          "top": -1.5
+        },
+        "Cu(111)": {
+          "top": -1.3
+        },
+        "Au(111)": {
+          "top": -0.6
+        },
+        "Ag(111)": {
+          "top": -0.8
+        },
+        "Rh(111)": {
+          "top": -1.35
+        },
+        "Ir(111)": {
+          "top": -1.25
+        }
+      },
+      "notes": "Key intermediate in ORR - scaling with OH limits ORR efficiency"
+    },
+    "CH3": {
+      "description": "Methyl radical adsorption",
+      "reference": "CH4(g) - 0.5*H2(g)",
+      "surfaces": {
+        "Pt(111)": {
+          "top": -1.9,
+          "fcc": -1.7
+        },
+        "Pd(111)": {
+          "top": -1.8,
+          "fcc": -1.6
+        },
+        "Ni(111)": {
+          "top": -2.0,
+          "fcc": -1.8
+        },
+        "Cu(111)": {
+          "top": -1.5,
+          "fcc": -1.3
+        },
+        "Rh(111)": {
+          "top": -1.95,
+          "fcc": -1.75
+        },
+        "Ru(0001)": {
+          "top": -2.05,
+          "fcc": -1.85
+        }
+      },
+      "notes": "Important for methane activation"
+    },
+    "CH2": {
+      "description": "Methylene adsorption",
+      "reference": "CH4(g) - H2(g)",
+      "surfaces": {
+        "Pt(111)": {
+          "bridge": -3.8,
+          "fcc": -3.6
+        },
+        "Pd(111)": {
+          "bridge": -3.7,
+          "fcc": -3.5
+        },
+        "Ni(111)": {
+          "bridge": -4.2,
+          "fcc": -4.0
+        },
+        "Cu(111)": {
+          "bridge": -3.2,
+          "fcc": -3.0
+        },
+        "Rh(111)": {
+          "bridge": -4.0,
+          "fcc": -3.8
+        }
+      }
+    },
+    "CH": {
+      "description": "Methylidyne adsorption",
+      "reference": "CH4(g) - 1.5*H2(g)",
+      "surfaces": {
+        "Pt(111)": {
+          "fcc": -6.2,
+          "hcp": -6.1
+        },
+        "Pd(111)": {
+          "fcc": -6.1,
+          "hcp": -6.0
+        },
+        "Ni(111)": {
+          "fcc": -6.8,
+          "hcp": -6.7
+        },
+        "Cu(111)": {
+          "fcc": -5.5,
+          "hcp": -5.4
+        },
+        "Rh(111)": {
+          "fcc": -6.5,
+          "hcp": -6.4
+        }
+      }
+    },
+    "NH3": {
+      "description": "Ammonia adsorption",
+      "reference": "NH3(g)",
+      "surfaces": {
+        "Pt(111)": {
+          "top": -0.7
+        },
+        "Pd(111)": {
+          "top": -0.75
+        },
+        "Ni(111)": {
+          "top": -0.85
+        },
+        "Cu(111)": {
+          "top": -0.55
+        },
+        "Ru(0001)": {
+          "top": -0.9
+        },
+        "Rh(111)": {
+          "top": -0.8
+        },
+        "Fe(110)": {
+          "top": -0.8
+        },
+        "Co(0001)": {
+          "top": -0.85
+        }
+      },
+      "notes": "Product of Haber-Bosch process"
+    },
+    "NH2": {
+      "description": "Amino radical adsorption",
+      "reference": "NH3(g) - 0.5*H2(g)",
+      "surfaces": {
+        "Pt(111)": {
+          "bridge": -2.5
+        },
+        "Pd(111)": {
+          "bridge": -2.6
+        },
+        "Ni(111)": {
+          "bridge": -3.0
+        },
+        "Cu(111)": {
+          "bridge": -2.2
+        },
+        "Ru(0001)": {
+          "bridge": -3.1
+        },
+        "Rh(111)": {
+          "bridge": -2.8
+        },
+        "Fe(110)": {
+          "bridge": -2.9
+        }
+      }
+    },
+    "NH": {
+      "description": "Imino radical adsorption",
+      "reference": "NH3(g) - H2(g)",
+      "surfaces": {
+        "Pt(111)": {
+          "fcc": -3.8
+        },
+        "Pd(111)": {
+          "fcc": -3.9
+        },
+        "Ni(111)": {
+          "fcc": -4.5
+        },
+        "Cu(111)": {
+          "fcc": -3.3
+        },
+        "Ru(0001)": {
+          "fcc": -4.7
+        },
+        "Rh(111)": {
+          "fcc": -4.2
+        },
+        "Fe(110)": {
+          "hollow": -4.4
+        }
+      }
+    },
+    "NO": {
+      "description": "Nitric oxide adsorption",
+      "reference": "NO(g)",
+      "surfaces": {
+        "Pt(111)": {
+          "fcc": -1.8,
+          "hcp": -1.7,
+          "top": -1.5
+        },
+        "Pt(100)": {
+          "hollow": -2.0,
+          "bridge": -1.85
+        },
+        "Pd(111)": {
+          "fcc": -2.0,
+          "hcp": -1.9,
+          "top": -1.7
+        },
+        "Rh(111)": {
+          "fcc": -2.2,
+          "hcp": -2.1,
+          "top": -1.9
+        },
+        "Ir(111)": {
+          "fcc": -2.1,
+          "hcp": -2.0,
+          "top": -1.8
+        },
+        "Ru(0001)": {
+          "fcc": -2.5,
+          "hcp": -2.6
+        },
+        "Ni(111)": {
+          "fcc": -2.3,
+          "hcp": -2.2
+        }
+      },
+      "notes": "Important for automotive catalysis (NOx reduction)"
+    },
+    "N2": {
+      "description": "Dinitrogen adsorption",
+      "reference": "N2(g)",
+      "surfaces": {
+        "Pt(111)": {
+          "top": -0.1
+        },
+        "Ru(0001)": {
+          "top": -0.4
+        },
+        "Rh(111)": {
+          "top": -0.25
+        },
+        "Fe(110)": {
+          "top": -0.5
+        },
+        "Fe(100)": {
+          "top": -0.55
+        },
+        "Mo(110)": {
+          "top": -0.6
+        },
+        "W(110)": {
+          "top": -0.7
+        }
+      },
+      "notes": "N2 activation is rate-limiting for ammonia synthesis"
+    },
+    "HCOO": {
+      "description": "Formate adsorption",
+      "reference": "CO2(g) + 0.5*H2(g)",
+      "surfaces": {
+        "Pt(111)": {
+          "bidentate": -2.8
+        },
+        "Pd(111)": {
+          "bidentate": -2.9
+        },
+        "Cu(111)": {
+          "bidentate": -2.6
+        },
+        "Cu(100)": {
+          "bidentate": -2.7
+        },
+        "Au(111)": {
+          "bidentate": -2.2
+        },
+        "Ag(111)": {
+          "bidentate": -2.4
+        },
+        "Ni(111)": {
+          "bidentate": -3.1
+        }
+      },
+      "notes": "Key intermediate in CO2 reduction to formic acid"
+    },
+    "COOH": {
+      "description": "Carboxyl adsorption",
+      "reference": "CO2(g) + 0.5*H2(g)",
+      "surfaces": {
+        "Pt(111)": {
+          "top": -2.5
+        },
+        "Pd(111)": {
+          "top": -2.6
+        },
+        "Cu(111)": {
+          "top": -2.3
+        },
+        "Au(111)": {
+          "top": -1.9
+        },
+        "Ag(111)": {
+          "top": -2.1
+        },
+        "Ni(111)": {
+          "top": -2.8
+        }
+      },
+      "notes": "Alternative CO2 reduction intermediate - competes with formate"
+    },
+    "CHO": {
+      "description": "Formyl adsorption",
+      "reference": "CO(g) + 0.5*H2(g)",
+      "surfaces": {
+        "Pt(111)": {
+          "top": -2.1
+        },
+        "Pd(111)": {
+          "top": -2.2
+        },
+        "Cu(111)": {
+          "top": -1.8
+        },
+        "Ni(111)": {
+          "top": -2.5
+        },
+        "Rh(111)": {
+          "top": -2.35
+        }
+      },
+      "notes": "Key intermediate in CO hydrogenation"
+    },
+    "CH3O": {
+      "description": "Methoxy adsorption",
+      "reference": "CH3OH(g) - 0.5*H2(g)",
+      "surfaces": {
+        "Pt(111)": {
+          "fcc": -2.0
+        },
+        "Pd(111)": {
+          "fcc": -2.1
+        },
+        "Cu(111)": {
+          "fcc": -2.5
+        },
+        "Ni(111)": {
+          "fcc": -2.8
+        },
+        "Au(111)": {
+          "fcc": -1.4
+        }
+      },
+      "notes": "Intermediate in methanol oxidation/synthesis"
+    }
+  },
+  "alloy_effects": {
+    "description": "Adsorption energy shifts on alloy surfaces relative to pure metals (from DFT studies)",
+    "source": "CatApp database and literature",
+    "PtRu": {
+      "CO_shift": 0.15,
+      "H_shift": -0.05,
+      "notes": "Ru weakens CO binding on Pt - bifunctional mechanism"
+    },
+    "PtNi": {
+      "O_shift": -0.2,
+      "OH_shift": -0.15,
+      "notes": "Ni strengthens O binding - improved ORR"
+    },
+    "PtCo": {
+      "O_shift": -0.25,
+      "OH_shift": -0.2,
+      "notes": "Co strengthens O binding"
+    },
+    "PdAu": {
+      "CO_shift": 0.3,
+      "H_shift": 0.1,
+      "notes": "Au weakens adsorbate binding - selectivity control"
+    },
+    "NiCu": {
+      "H_shift": 0.15,
+      "CO_shift": 0.2,
+      "notes": "Cu weakens binding on Ni"
+    },
+    "PtSn": {
+      "CO_shift": 0.25,
+      "H_shift": 0.05,
+      "notes": "Sn weakens CO binding - dehydrogenation catalyst"
+    },
+    "RhPt": {
+      "NO_shift": 0.1,
+      "CO_shift": 0.05,
+      "notes": "Pt slightly weakens binding on Rh"
+    }
+  },
+  "coverage_effects": {
+    "description": "Adsorption energy change with coverage (per 0.25 ML increase)",
+    "source": "DFT calculations with lateral interaction models",
+    "H_on_Pt111": 0.05,
+    "CO_on_Pt111": 0.15,
+    "O_on_Pt111": 0.2,
+    "H_on_Ni111": 0.06,
+    "CO_on_Ni111": 0.18,
+    "O_on_Ni111": 0.25,
+    "notes": "Lateral interactions generally weaken binding at higher coverage due to repulsion"
+  },
+  "site_preference_rules": {
+    "description": "General rules for preferred adsorption sites based on DFT studies",
+    "rules": [
+      "H prefers high-coordination sites (fcc/hcp) on most metals",
+      "CO prefers top sites on late transition metals (Pt, Ir)",
+      "CO prefers bridge/hollow sites on mid transition metals (Pd, Ni, Rh)",
+      "O strongly prefers high-coordination sites (fcc/hcp hollow)",
+      "OH prefers top or bridge sites",
+      "Larger molecules prefer lower coordination sites due to steric effects",
+      "Early transition metals (Mo, W) bind adsorbates more strongly than late TMs"
+    ]
+  },
+  "scaling_relations": {
+    "description": "Linear scaling relations between adsorbate binding energies",
+    "source": "Abild-Pedersen et al., Phys. Rev. Lett. 2007; Norskov et al.",
+    "relations": {
+      "OH_from_O": {
+        "formula": "E_OH = 0.50 * E_O + 0.25",
+        "error": 0.15
+      },
+      "OOH_from_OH": {
+        "formula": "E_OOH = E_OH + 3.20",
+        "error": 0.2
+      },
+      "CH_from_C": {
+        "formula": "E_CH = 0.75 * E_C - 0.50",
+        "error": 0.2
+      },
+      "NH_from_N": {
+        "formula": "E_NH = 0.70 * E_N - 0.30",
+        "error": 0.15
+      },
+      "CHO_from_CO": {
+        "formula": "E_CHO = E_CO + 0.90",
+        "error": 0.25
+      }
+    },
+    "notes": "These relations allow estimation of binding energies from a few key descriptors"
+  }
+}

@@ -1,0 +1,11 @@
+# Direct dependencies tested with Python 3.11.
+# PyTorch is also required by the pretrained CGCNN retrieval encoder.
+# Select the CPU/CUDA build appropriate for your hardware.
+torch==2.11.0
+numpy==2.3.5
+scipy==1.17.1
+pymatgen==2026.3.23
+ase==3.28.0
+openai==1.109.1
+python-dotenv==1.2.2
+chgnet==0.4.2

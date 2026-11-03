@@ -1,0 +1,449 @@
+{
+  "_metadata": {
+    "description": "Comprehensive adsorbate binding and placement knowledge",
+    "purpose": "Enable accurate placement of adsorbates on surfaces",
+    "source": "Catalysis literature and DFT calculations",
+    "version": "2026.11-r4",
+    "last_updated": "2026-11-03",
+    "source_urls": [
+      "https://docs.ase-lib.org/ase/build/surface.html#ase.build.add_adsorbate",
+      "https://pymatgen.org/pymatgen.core.html#pymatgen.core.adsorption.AdsorbateSiteFinder"
+    ]
+  },
+  "atomic_adsorbates": {
+    "H": {
+      "binding_atom": "H",
+      "typical_height": {
+        "fcc_hollow": 0.9,
+        "top": 1.5,
+        "unit": "Angstrom"
+      },
+      "site_preference": {
+        "Pt(111)": "fcc_hollow",
+        "Pd(111)": "fcc_hollow",
+        "Ni(111)": "fcc_hollow",
+        "Cu(111)": "fcc_hollow",
+        "Au(111)": "top",
+        "Fe(110)": "hollow"
+      },
+      "binding_energy_range": {
+        "min": -0.2,
+        "max": -0.6,
+        "unit": "eV"
+      },
+      "coverage_effects": "Repulsive at high coverage",
+      "applicability": "Material/facet/coverage/binding-mode/method-dependent estimates; heights use the local normal. Preserve molecular geometry and explicit task constraints."
+    },
+    "O": {
+      "binding_atom": "O",
+      "typical_height": {
+        "fcc_hollow": 1.2,
+        "top": 1.7,
+        "unit": "Angstrom"
+      },
+      "site_preference": {
+        "Pt(111)": "fcc_hollow",
+        "Pd(111)": "fcc_hollow",
+        "Ni(111)": "fcc_hollow",
+        "Cu(111)": "fcc_hollow",
+        "Ag(111)": "fcc_hollow",
+        "Au(111)": "fcc_hollow"
+      },
+      "binding_energy_range": {
+        "min": -3.5,
+        "max": -5.0,
+        "unit": "eV"
+      },
+      "reconstruction": "Can induce surface oxide formation at high coverage",
+      "applicability": "Material/facet/coverage/binding-mode/method-dependent estimates; heights use the local normal. Preserve molecular geometry and explicit task constraints."
+    },
+    "N": {
+      "binding_atom": "N",
+      "typical_height": {
+        "hollow": 1.1,
+        "unit": "Angstrom"
+      },
+      "site_preference": {
+        "Fe(110)": "hollow",
+        "Ru(0001)": "hcp_hollow"
+      },
+      "binding_energy_range": {
+        "min": -4.0,
+        "max": -6.0,
+        "unit": "eV"
+      },
+      "applicability": "Material/facet/coverage/binding-mode/method-dependent estimates; heights use the local normal. Preserve molecular geometry and explicit task constraints."
+    },
+    "C": {
+      "binding_atom": "C",
+      "typical_height": {
+        "hollow": 1.0,
+        "unit": "Angstrom"
+      },
+      "site_preference": {
+        "Ni(111)": "fcc_hollow",
+        "Pt(111)": "fcc_hollow"
+      },
+      "binding_energy_range": {
+        "min": -6.0,
+        "max": -8.0,
+        "unit": "eV"
+      },
+      "note": "Very strong binding, can dissolve into bulk",
+      "applicability": "Material/facet/coverage/binding-mode/method-dependent estimates; heights use the local normal. Preserve molecular geometry and explicit task constraints."
+    },
+    "S": {
+      "binding_atom": "S",
+      "typical_height": {
+        "hollow": 1.5,
+        "unit": "Angstrom"
+      },
+      "site_preference": "Generally hollow sites",
+      "binding_energy_range": {
+        "min": -4.0,
+        "max": -5.5,
+        "unit": "eV"
+      },
+      "note": "Poison for many catalysts",
+      "applicability": "Material/facet/coverage/binding-mode/method-dependent estimates; heights use the local normal. Preserve molecular geometry and explicit task constraints."
+    }
+  },
+  "molecular_adsorbates": {
+    "CO": {
+      "atoms": [
+        "C",
+        "O"
+      ],
+      "geometry": "linear",
+      "bond_length": 1.13,
+      "binding_atom": "C",
+      "orientation": "perpendicular, C down",
+      "typical_heights": {
+        "top": {
+          "C": 1.85,
+          "O": 2.98
+        },
+        "bridge": {
+          "C": 1.5,
+          "O": 2.63
+        },
+        "hollow": {
+          "C": 1.3,
+          "O": 2.43
+        }
+      },
+      "site_preference": {
+        "Pt(111)": "top",
+        "Pd(111)": [
+          "hollow",
+          "bridge"
+        ],
+        "Ni(111)": "hollow",
+        "Cu(111)": "top",
+        "Rh(111)": "top",
+        "Ir(111)": "top",
+        "Ru(0001)": "top"
+      },
+      "binding_energy_range": {
+        "min": -1.0,
+        "max": -2.0,
+        "unit": "eV"
+      },
+      "vibrational_frequency": {
+        "range": [
+          1800,
+          2100
+        ],
+        "unit": "cm-1"
+      },
+      "applicability": "Material/facet/coverage/binding-mode/method-dependent estimates; heights use the local normal. Preserve molecular geometry and explicit task constraints."
+    },
+    "NO": {
+      "atoms": [
+        "N",
+        "O"
+      ],
+      "geometry": "linear or bent",
+      "bond_length": 1.15,
+      "binding_atom": "N",
+      "orientation": "perpendicular or tilted, N down",
+      "typical_heights": {
+        "hollow": {
+          "N": 1.2,
+          "O": 2.35
+        }
+      },
+      "site_preference": {
+        "Pt(111)": "fcc_hollow",
+        "Pd(111)": "fcc_hollow",
+        "Rh(111)": "hcp_hollow"
+      },
+      "binding_energy_range": {
+        "min": -1.5,
+        "max": -2.5,
+        "unit": "eV"
+      },
+      "applicability": "Material/facet/coverage/binding-mode/method-dependent estimates; heights use the local normal. Preserve molecular geometry and explicit task constraints."
+    },
+    "OH": {
+      "atoms": [
+        "O",
+        "H"
+      ],
+      "geometry": "bent from surface normal",
+      "bond_length": 0.97,
+      "binding_atom": "O",
+      "orientation": "O down, H-O tilted ~60 degrees from normal",
+      "typical_heights": {
+        "top": {
+          "O": 2.0,
+          "H": 2.7
+        },
+        "bridge": {
+          "O": 1.8,
+          "H": 2.5
+        }
+      },
+      "site_preference": {
+        "Pt(111)": "top",
+        "Pd(111)": "bridge",
+        "Au(111)": "top"
+      },
+      "binding_energy_range": {
+        "min": -2.0,
+        "max": -3.0,
+        "unit": "eV"
+      },
+      "applicability": "Material/facet/coverage/binding-mode/method-dependent estimates; heights use the local normal. Preserve molecular geometry and explicit task constraints."
+    },
+    "H2O": {
+      "atoms": [
+        "O",
+        "H",
+        "H"
+      ],
+      "geometry": "bent, 104.5 degree H-O-H angle",
+      "bond_length": 0.96,
+      "binding_atom": "O",
+      "orientation": "O down, H atoms pointing away",
+      "typical_heights": {
+        "top": {
+          "O": 2.4,
+          "H": 2.9
+        }
+      },
+      "site_preference": "top on most metals",
+      "binding_energy_range": {
+        "min": -0.2,
+        "max": -0.5,
+        "unit": "eV"
+      },
+      "applicability": "Material/facet/coverage/binding-mode/method-dependent estimates; heights use the local normal. Preserve molecular geometry and explicit task constraints."
+    },
+    "NH3": {
+      "atoms": [
+        "N",
+        "H",
+        "H",
+        "H"
+      ],
+      "geometry": "pyramidal, 107 degree H-N-H angle",
+      "bond_length": 1.01,
+      "binding_atom": "N",
+      "orientation": "N down, H atoms pointing up and out",
+      "typical_heights": {
+        "top": {
+          "N": 2.1
+        }
+      },
+      "site_preference": "top on most metals",
+      "binding_energy_range": {
+        "min": -0.5,
+        "max": -1.0,
+        "unit": "eV"
+      },
+      "applicability": "Material/facet/coverage/binding-mode/method-dependent estimates; heights use the local normal. Preserve molecular geometry and explicit task constraints."
+    },
+    "CH3": {
+      "atoms": [
+        "C",
+        "H",
+        "H",
+        "H"
+      ],
+      "geometry": "tetrahedral fragment",
+      "binding_atom": "C",
+      "typical_heights": {
+        "top": {
+          "C": 2.0
+        },
+        "hollow": {
+          "C": 1.5
+        }
+      },
+      "site_preference": {
+        "Pt(111)": "top",
+        "Ni(111)": "hollow"
+      },
+      "applicability": "Material/facet/coverage/binding-mode/method-dependent estimates; heights use the local normal. Preserve molecular geometry and explicit task constraints."
+    },
+    "CHO": {
+      "atoms": [
+        "C",
+        "H",
+        "O"
+      ],
+      "geometry": "bent",
+      "binding_atom": "C",
+      "bond_lengths": {
+        "C-O": 1.2,
+        "C-H": 1.1
+      },
+      "typical_height": 1.8,
+      "applicability": "Material/facet/coverage/binding-mode/method-dependent estimates; heights use the local normal. Preserve molecular geometry and explicit task constraints."
+    },
+    "COOH": {
+      "atoms": [
+        "C",
+        "O",
+        "O",
+        "H"
+      ],
+      "geometry": "planar carboxyl group",
+      "binding_atom": "C",
+      "bond_lengths": {
+        "C=O": 1.2,
+        "C-OH": 1.35,
+        "O-H": 0.97
+      },
+      "applicability": "Material/facet/coverage/binding-mode/method-dependent estimates; heights use the local normal. Preserve molecular geometry and explicit task constraints."
+    },
+    "OOH": {
+      "atoms": [
+        "O",
+        "O",
+        "H"
+      ],
+      "geometry": "bent hydroperoxyl",
+      "binding_atom": "terminal O",
+      "bond_lengths": {
+        "O-O": 1.45,
+        "O-H": 0.97
+      },
+      "relevance": "ORR intermediate",
+      "applicability": "Material/facet/coverage/binding-mode/method-dependent estimates; heights use the local normal. Preserve molecular geometry and explicit task constraints."
+    },
+    "N2": {
+      "atoms": [
+        "N",
+        "N"
+      ],
+      "geometry": "linear",
+      "bond_length": 1.1,
+      "binding_modes": {
+        "end_on": "One N binds to surface",
+        "side_on": "Both N atoms bind"
+      },
+      "site_preference": "Varies by mode and metal",
+      "applicability": "Material/facet/coverage/binding-mode/method-dependent estimates; heights use the local normal. Preserve molecular geometry and explicit task constraints."
+    },
+    "O2": {
+      "atoms": [
+        "O",
+        "O"
+      ],
+      "geometry": "linear or bent",
+      "bond_length": 1.21,
+      "binding_modes": {
+        "end_on": "One O binds (superoxo)",
+        "side_on": "Both O atoms bind (peroxo)"
+      },
+      "typical_height": 1.8,
+      "applicability": "Material/facet/coverage/binding-mode/method-dependent estimates; heights use the local normal. Preserve molecular geometry and explicit task constraints."
+    },
+    "CO2": {
+      "atoms": [
+        "C",
+        "O",
+        "O"
+      ],
+      "geometry": "linear (gas) or bent (adsorbed)",
+      "bond_length": 1.16,
+      "binding_modes": {
+        "physisorbed": "Linear, weak binding",
+        "chemisorbed": "Bent, C binds to surface"
+      },
+      "weak_binding": true,
+      "applicability": "Material/facet/coverage/binding-mode/method-dependent estimates; heights use the local normal. Preserve molecular geometry and explicit task constraints."
+    }
+  },
+  "coverage_and_arrangement": {
+    "coverage_definition": "theta = n_adsorbates / n_declared_surface_sites; specify the denominator and populated surface side(s)",
+    "common_coverages": {
+      "0.25_ML": "1 adsorbate per 4 surface atoms (2x2 supercell)",
+      "0.33_ML": "Approximately 1/3 coverage: 1 adsorbate per 3 declared surface sites; 0.33 and exact 1/3 are distinct",
+      "0.50_ML": "1 adsorbate per 2 surface atoms",
+      "1.0_ML": "1 adsorbate per surface atom",
+      "scope": "Examples assume one exposed site per primitive surface cell on one populated side"
+    },
+    "supercell_for_coverage": {
+      "rule": "Choose allowed integer molecule and surface-site counts satisfying the declared coverage; enlarge the cell or report incompatibility, never silently round"
+    },
+    "lateral_interactions": {
+      "repulsive": "Most adsorbates at short range",
+      "attractive": "Some H-bonding adsorbates (H2O, OH)"
+    }
+  },
+  "coadsorption_rules": {
+    "minimum_separation": {
+      "general": 2.5,
+      "H-bonding_possible": 1.8,
+      "unit": "Angstrom",
+      "scope": "Illustrative intermolecular starting separations, dependent on species and binding mode; not universal all-pair cutoffs or intramolecular bond constraints"
+    },
+    "site_competition": {
+      "same_preference": "Place on different equivalent sites",
+      "different_preference": "Each takes preferred site"
+    },
+    "common_pairs": {
+      "CO+O": {
+        "interaction": "repulsive",
+        "min_distance": 2.5
+      },
+      "CO+H": {
+        "interaction": "weak",
+        "min_distance": 2.0
+      },
+      "O+H": {
+        "interaction": "can form OH",
+        "min_distance": 1.0
+      },
+      "OH+H2O": {
+        "interaction": "H-bonding",
+        "min_distance": 1.6
+      }
+    }
+  },
+  "placement_algorithm": {
+    "single_adsorbate": [
+      "1. Construct the requested slab, exposed side and allowed surface supercell",
+      "2. Identify local surface atoms in a continuous slab representation using the surface normal (periodic_geometry)",
+      "3. Select the requested site from periodic local neighbors and subsurface registry",
+      "4. Rigidly orient and translate the complete molecule by its binding anchor(s), preserving coherent internal geometry (adsorption_construction)",
+      "5. Check inventory, local-normal binding geometry, molecular integrity and species-aware periodic separations; honor explicit task constraints"
+    ],
+    "multiple_adsorbates": [
+      "1. Choose integer molecule and declared surface-site counts consistent with coverage and populated sides",
+      "2. Assign each complete molecule a valid local site and binding orientation",
+      "3. Apply the single-adsorbate construction to each group and check all group-to-substrate and intergroup periodic separations",
+      "4. Recheck coverage, site assignments and connectivity after any wrapping, cell change or relaxation"
+    ]
+  },
+  "api_warnings": {
+    "AdsorbateSiteFinder": {
+      "warning": "find_adsorption_sites() returns a dictionary of site-type lists; its distance parameter already offsets sites along the surface normal",
+      "correct_usage": "sites = asf.find_adsorption_sites(distance=0); candidates = sites['ontop']",
+      "recommendation": "Select a candidate satisfying the requested local geometry before applying an anchor height. Generic hollow candidates require a separate second-layer registry check to distinguish fcc/hcp; do not assume the first candidate is correct"
+    }
+  }
+}
